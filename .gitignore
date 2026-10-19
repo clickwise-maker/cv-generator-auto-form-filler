@@ -1,0 +1,13 @@
+node_modules
+dist
+.output
+.vercel
+.env
+.env.*
+artifacts
+screenshots
+attachments
+.grok
+*.traineddata
+*.log
+.DS_Store
