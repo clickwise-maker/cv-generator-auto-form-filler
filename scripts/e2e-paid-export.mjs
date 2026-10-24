@@ -19,7 +19,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   await page.getByRole("button", { name: "Fill the sample dossier" }).click();
   if (viewport.width < 1024) await page.getByRole("button", { name: "Preview", exact: true }).click();
   await page.getByText("FREE PREVIEW", { exact: true }).waitFor();
-  assert.equal(await page.getByText(/Career Starter|₹1000|\$29/).count(), 0, "home must not show plans");
+  assert.equal(await page.getByText(/Career Starter|Global Pro|Single Use|₹\d|\$\d+(\/year)?$|one-time/).count(), 0, "home/dashboard must not show any price");
   if (viewport.width < 1024) await page.getByRole("button", { name: "Compose", exact: true }).click();
   assert.equal(await page.getByTestId("dash-cv-credits").textContent(), "0");
   assert.equal(await page.getByTestId("dash-drafts").textContent(), "1");
@@ -53,7 +53,9 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   await dialog.getByText("TEST MODE — no real payment").waitFor();
   await dialog.getByTestId("plan-picker").waitFor();
   for (const t of ["Single Use", "₹20", "Career Starter", "₹1000/year", "Global Single Use", "$1", "Global Pro", "$29/year", "Launch offer, future plans may change; purchased package terms stay as bought."]) await dialog.getByText(t, { exact: true }).first().waitFor();
-  step(`${viewport.width}px: plans shown only in the download paywall`);
+  const [freeDl] = await Promise.all([page.waitForEvent("download"), dialog.getByRole("button", { name: "Download FREE watermarked PDF" }).click()]);
+  assert.ok(readFileSync(await freeDl.path(), "latin1").includes("UNPAID PREVIEW"));
+  step(`${viewport.width}px: plans + free watermarked option shown only in the download paywall`);
   await dialog.screenshot({ path: `${out}/confirm-${viewport.width}.png` });
   await dialog.getByRole("button", { name: /Continue to TEST payment/ }).click();
   await dialog.getByRole("button", { name: "Simulate cancel" }).click();

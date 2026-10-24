@@ -17,6 +17,8 @@ import {
   type PublicOrder,
 } from "@/lib/payments/client";
 import { useStudio } from "@/lib/cv/store";
+import { downloadPreviewPdf } from "@/lib/cv/export-pdf";
+import { WATERMARK_LINES } from "@/lib/payments/config";
 
 type Phase =
   | { kind: "confirm" }
@@ -208,6 +210,16 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                 <div className="mt-5 flex flex-col gap-2">
                   <Button type="button" onClick={() => void start()}>
                     {isTest ? `Continue to TEST payment (${planLabel})` : `Pay ${planLabel} and unlock`}
+                  </Button>
+                  <Button
+                    type="button"
+                    tone="quiet"
+                    onClick={() => {
+                      const { profile, settings } = useStudio.getState();
+                      downloadPreviewPdf(profile, settings, WATERMARK_LINES);
+                    }}
+                  >
+                    Download FREE watermarked PDF
                   </Button>
                   <Button type="button" tone="quiet" onClick={onClose}>
                     Not now
