@@ -125,3 +125,26 @@
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * Free preview: browser printing / "Save as PDF" from the page is replaced by
+ * a notice, so Ctrl+P does not accidentally produce a clean CV. This is a
+ * deterrent only — it is not DRM and cannot stop screenshots or dev tools.
+ */
+.cv-watermark {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  body > * {
+    display: none !important;
+  }
+  body::before {
+    content: "This is a free watermarked preview. Printing is disabled here — use “Preview PDF (watermarked)” for a sample, or “Unlock Clean Download” for a clean PDF/Word file.";
+    display: block;
+    padding: 40mm 20mm;
+    font: 16pt/1.5 Georgia, serif;
+    color: #1c1915;
+  }
+}

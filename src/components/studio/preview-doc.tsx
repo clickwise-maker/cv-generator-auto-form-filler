@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
-import { PaymentGateway } from "@/components/studio/checkout";
 import { Ink } from "@/components/studio/ink";
+import { UnlockDialog } from "@/components/studio/paywall";
 import { Button, Select } from "@/components/studio/ui";
-import { downloadDocx } from "@/lib/cv/export-docx";
-import { downloadPdf } from "@/lib/cv/export-pdf";
+import { downloadPreviewPdf } from "@/lib/cv/export-pdf";
+import { watermarkDataUrl } from "@/lib/cv/watermark";
+import { WATERMARK_LINES, type ExportFormat, type PaywallStatus } from "@/lib/payments/config";
+import { fetchStatus } from "@/lib/payments/client";
 import {
   COPY,
   addressLines,
@@ -24,22 +26,31 @@ import { useStudio } from "@/lib/cv/store";
 export function PreviewColumn() {
   const settings = useStudio((state) => state.settings);
   const setSettings = useStudio((state) => state.setSettings);
-  const [busy, setBusy] = useState<"pdf" | "docx" | null>(null);
-  const [payFor, setPayFor] = useState<"pdf" | "docx" | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [unlockFor, setUnlockFor] = useState<ExportFormat | null>(null);
+  const [status, setStatus] = useState<PaywallStatus | null>(null);
+  const closeUnlock = useCallback(() => setUnlockFor(null), []);
 
-  async function download(kind: "pdf" | "docx", receipt: string) {
+  useEffect(() => {
+    void fetchStatus().then(setStatus);
+  }, []);
+
+  function previewPdf() {
     const { profile, settings: current } = useStudio.getState();
-    setBusy(kind);
+    setBusy(true);
     try {
-      if (kind === "pdf") downloadPdf(profile, current);
-      else await downloadDocx(profile, current);
-      toast.success(receipt.includes("free") ? "Free file downloaded." : `Order ${receipt.split(" · ")[0]} saved on this desk.`);
-      setPayFor(null);
+      downloadPreviewPdf(profile, current, WATERMARK_LINES);
+      toast.success("Watermarked preview PDF downloaded.");
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Could not build that file.");
     } finally {
-      setBusy(null);
+      setBusy(false);
     }
+  }
+
+  async function unlock(format: ExportFormat) {
+    setStatus(status ?? (await fetchStatus()));
+    setUnlockFor(format);
   }
 
   return (
@@ -77,29 +88,40 @@ export function PreviewColumn() {
           </Select>
         </label>
       </div>
-      <div className="mb-3 grid grid-cols-2 gap-2">
-        <Button type="button" onClick={() => setPayFor("pdf")} disabled={busy !== null}>
-          {busy === "pdf" ? "Building PDF…" : "Download PDF"}
-        </Button>
-        <Button type="button" tone="quiet" onClick={() => setPayFor("docx")} disabled={busy !== null}>
-          {busy === "docx" ? "Building Word…" : "Download Word"}
-        </Button>
+      <div className="mb-3 rounded-2xl border border-line bg-sheet p-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold tracking-wide text-forest" aria-label="Free preview">
+            FREE PREVIEW
+          </span>
+          {status?.mode === "test" ? <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900">TEST MODE</span> : null}
+          <p className="min-w-0 flex-1 text-xs text-muted">Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock{status?.priceLabel && status.mode !== "unavailable" ? ` (${status.priceLabel} one-time)` : ""}.</p>
+        </div>
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+          <Button type="button" onClick={() => void unlock("pdf")} disabled={busy}>
+            Unlock Clean Download · PDF
+          </Button>
+          <Button type="button" tone="quiet" onClick={() => void unlock("docx")} disabled={busy}>
+            Unlock Clean Download · Word
+          </Button>
+          <Button type="button" tone="quiet" onClick={previewPdf} disabled={busy}>
+            {busy ? "Building…" : "Preview PDF (watermarked)"}
+          </Button>
+        </div>
       </div>
-      <PaymentGateway
-        open={payFor !== null}
-        fileLabel={payFor === "docx" ? "Word file" : "PDF"}
-        busy={busy !== null}
-        onClose={() => {
-          if (!busy) setPayFor(null);
-        }}
-        onPaid={(receipt) => {
-          if (payFor) void download(payFor, receipt);
-        }}
-      />
+      <UnlockDialog open={unlockFor !== null} format={unlockFor ?? "pdf"} status={status} onClose={closeUnlock} />
       <p className="mb-3 text-xs text-muted">Click any line on the page to edit it. The form stays in step.</p>
-      <article key={settings.template} className="sheet-shadow rise overflow-hidden rounded-2xl border border-line bg-sheet">
+      <article key={settings.template} className="cv-preview sheet-shadow rise relative overflow-hidden rounded-2xl border border-line bg-sheet" aria-describedby="preview-watermark-note">
         {settings.template === "consulate" ? <ConsulatePage /> : settings.template === "atlas" ? <AtlasPage /> : <MeridianPage />}
+        <div
+          className="cv-watermark pointer-events-none absolute inset-0 z-10"
+          aria-hidden
+          data-testid="cv-watermark"
+          style={{ backgroundImage: watermarkDataUrl(WATERMARK_LINES, settings.paper), backgroundRepeat: "repeat-y", backgroundSize: "100% auto" }}
+        />
       </article>
+      <p id="preview-watermark-note" className="cv-print-note mt-2 text-xs text-muted">
+        Preview carries a “{WATERMARK_LINES[1]}” watermark on every page. Use “Unlock Clean Download” for a clean file. (The watermark deters casual reuse; screenshots cannot be prevented.)
+      </p>
     </div>
   );
 }
