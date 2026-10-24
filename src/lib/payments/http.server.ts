@@ -96,7 +96,7 @@ export async function handleCreateOrder(req: Request, svc = paymentService()) {
   try {
     const body = await readJson(req);
     const doc = parseDoc(body);
-    const { order, reused, publicKey } = (await svc.createOrder(doc, String(body.idempotencyKey ?? ""))) as Awaited<ReturnType<PaymentService["createOrder"]>> & { publicKey?: string };
+    const { order, reused, publicKey } = (await svc.createOrder(doc, String(body.idempotencyKey ?? ""), typeof body.planId === "string" ? body.planId : undefined)) as Awaited<ReturnType<PaymentService["createOrder"]>> & { publicKey?: string };
     return json(reused ? 200 : 201, { ...publicOrder(order), reused, publicKey });
   } catch (e) {
     return fail(e);
@@ -165,6 +165,35 @@ export async function handleCleanExport(req: Request, svc = paymentService()) {
       status: 200,
       headers: { ...headers, "content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "content-disposition": `attachment; filename="${name}.docx"` },
     });
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+export async function handleCredits(req: Request, svc = paymentService()) {
+  try {
+    const body = await readJson(req);
+    return json(200, await svc.getCredits(typeof body.entitlementId === "string" ? body.entitlementId : undefined));
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+/** Form filler: reserve one credit before filling. */
+export async function handleFormFillStart(req: Request, svc = paymentService()) {
+  try {
+    const body = await readJson(req);
+    return json(200, await svc.startFormFill(typeof body.entitlementId === "string" ? body.entitlementId : undefined, String(body.company ?? "")));
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+/** Form filler: report the outcome. success=false refunds the credit. */
+export async function handleFormFillComplete(req: Request, svc = paymentService()) {
+  try {
+    const body = await readJson(req);
+    return json(200, await svc.completeFormFill(typeof body.entitlementId === "string" ? body.entitlementId : undefined, String(body.reservationId ?? ""), body.success === true));
   } catch (e) {
     return fail(e);
   }

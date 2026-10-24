@@ -23,7 +23,7 @@ describe("server configuration (TRIAL_MODE)", () => {
     const cfg = configFromEnv({});
     assert.equal(cfg.trialMode, true);
     assert.equal(cfg.live, null);
-    assert.equal(cfg.priceMinor, 2900);
+    assert.equal(cfg.priceMinor, 2000);
   });
   it("disables the simulator in production: paid exports report unavailable", () => {
     const svc = svcFor({ TRIAL_MODE: "true", NODE_ENV: "production" });
@@ -38,7 +38,7 @@ describe("server configuration (TRIAL_MODE)", () => {
     const res = await handleStatus(new Request("http://x"), svcFor(TRIAL_DEV));
     const body = await res.json();
     assert.equal(body.mode, "test");
-    assert.equal(body.priceLabel, "₹29");
+    assert.equal(body.priceLabel, "₹20");
     assert.match(body.message, /TEST MODE/);
   });
 });
@@ -120,8 +120,8 @@ describe("idempotency: duplicate orders and webhooks", () => {
   it("concurrent verify + webhook for one order issue exactly one entitlement", async () => {
     const svc = svcFor(TRIAL_DEV);
     const { order } = await svc.createOrder(doc(), "idem_race0001");
-    const pid = "sim_pay:ok:2900:INR:race";
-    const raw = JSON.stringify({ id: "evt_race", event: "payment.captured", payment: { providerOrderId: order.providerOrderId, paymentId: pid, amountMinor: 2900, currency: "INR", status: "captured" } });
+    const pid = "sim_pay:ok:2000:INR:race";
+    const raw = JSON.stringify({ id: "evt_race", event: "payment.captured", payment: { providerOrderId: order.providerOrderId, paymentId: pid, amountMinor: 2000, currency: "INR", status: "captured" } });
     await Promise.all([
       svc.verifyPayment(order.orderId, pid, svc.cfg.simulated!.sign(order.providerOrderId, pid)),
       svc.handleWebhook("simulated", raw, hmacHex("test-secret", raw)),
@@ -132,7 +132,7 @@ describe("idempotency: duplicate orders and webhooks", () => {
   it("repeated signed webhooks are processed once; unsigned ones are rejected", async () => {
     const svc = svcFor(TRIAL_DEV);
     const { order } = await svc.createOrder(doc(), "idem_hook0001");
-    const raw = JSON.stringify({ id: "evt_1", event: "payment.captured", payment: { providerOrderId: order.providerOrderId, paymentId: "p1", amountMinor: 2900, currency: "INR", status: "captured" } });
+    const raw = JSON.stringify({ id: "evt_1", event: "payment.captured", payment: { providerOrderId: order.providerOrderId, paymentId: "p1", amountMinor: 2000, currency: "INR", status: "captured" } });
     const sig = hmacHex("test-secret", raw);
     const mk = (s: string | null) => new Request("http://x", { method: "POST", body: raw, headers: s ? { "x-simulated-signature": s } : {} });
     assert.equal((await handleWebhook(mk(null), "simulated", svc)).status, 401);
@@ -216,5 +216,58 @@ describe("Razorpay provider (offline, fake secrets — no network)", () => {
     const raw = JSON.stringify({ event: "payment.captured", payload: { payment: { entity: { id: "pay_1", order_id: "order_1", amount: 2900, currency: "INR", status: "captured" } } } });
     assert.equal(p.parseWebhook(raw, hmacHex("hook-secret", raw)).type, "payment.captured");
     assert.throws(() => p.parseWebhook(raw, hmacHex("key-secret", raw)));
+  });
+});
+
+describe("plans and form-fill credits (simulated)", () => {
+  async function planEnt(svc: PaymentService, planId: string, key: string) {
+    const { order } = await svc.createOrder(doc(), key, planId);
+    const paid = await svc.simulate(order.orderId, "success");
+    return paid.entitlementId!;
+  }
+  it("charges plan price from central config", async () => {
+    const svc = svcFor(TRIAL_DEV);
+    assert.equal((await svc.createOrder(doc(), "idem_plan0001", "career_starter")).order.amountMinor, 100000);
+    const g = await svc.createOrder(doc(), "idem_plan0002", "global_pro");
+    assert.equal(g.order.amountMinor, 2900);
+    assert.equal(g.order.currency, "USD");
+    await assert.rejects(svc.createOrder(doc(), "idem_plan0003", "nope"), /Unknown plan/);
+  });
+  it("career starter: 100 CV / 100 fills; fill deducted only on success, refunded on failure", async () => {
+    const svc = svcFor(TRIAL_DEV);
+    const id = await planEnt(svc, "career_starter", "idem_plan0010");
+    let c = await svc.getCredits(id);
+    assert.equal(c.cvGenerationsLeft, 100);
+    assert.equal(c.formFillsLeft, 100);
+    const a = await svc.startFormFill(id, "Acme");
+    assert.equal(a.credits.formFillsLeft, 99);
+    const failed = await svc.completeFormFill(id, a.reservationId, false);
+    assert.equal(failed.credits.formFillsLeft, 100);
+    assert.equal(failed.credits.companiesUsed, 0);
+    const b = await svc.startFormFill(id, "Acme");
+    const ok = await svc.completeFormFill(id, b.reservationId, true);
+    assert.equal(ok.credits.formFillsLeft, 99);
+    assert.equal(ok.credits.companiesUsed, 1);
+    // CV generation: edits allowed on packages; each new version costs one credit, repeat downloads free
+    await svc.authorizeCleanExport(id, doc());
+    await svc.authorizeCleanExport(id, doc());
+    const edited = sampleProfile();
+    edited.personal.givenName = "Changed";
+    await svc.authorizeCleanExport(id, doc(edited));
+    c = await svc.getCredits(id);
+    assert.equal(c.cvGenerationsLeft, 98);
+  });
+  it("single use: one CV OR one form fill", async () => {
+    const svc = svcFor(TRIAL_DEV);
+    const id = await planEnt(svc, "single_inr", "idem_plan0020");
+    const r = await svc.startFormFill(id, "Globex");
+    assert.equal(r.credits.cvGenerationsLeft, 0);
+    await svc.completeFormFill(id, r.reservationId, false); // refund restores both
+    await svc.authorizeCleanExport(id, doc());
+    await assert.rejects(svc.startFormFill(id, "Globex"), /No form-fill credits/);
+  });
+  it("no plan → no credits", async () => {
+    const svc = svcFor(TRIAL_DEV);
+    await assert.rejects(svc.getCredits("ent_missing"), /No active plan/);
   });
 });

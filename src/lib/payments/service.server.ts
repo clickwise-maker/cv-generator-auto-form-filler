@@ -2,6 +2,9 @@ import { randomBytes } from "node:crypto";
 import type { Profile, Settings } from "../cv/model.ts";
 import { cvKey as makeCvKey, versionHash as makeVersionHash } from "./canonical.ts";
 import {
+  DEFAULT_PLAN_ID,
+  getPlan,
+  type Credits,
   DEFAULT_ENTITLEMENT_POLICY,
   DEFAULT_MAX_DOWNLOADS,
   EXPORT_CURRENCY,
@@ -89,7 +92,9 @@ export class PaymentService {
   }
 
   /** Create (or idempotently reuse) an order for this CV. Amount/currency come from server config only. */
-  async createOrder(doc: DocInput, idempotencyKey: string) {
+  async createOrder(doc: DocInput, idempotencyKey: string, planId: string = DEFAULT_PLAN_ID) {
+    const plan = getPlan(planId);
+    if (!plan) throw new PaymentError(400, "bad_plan", "Unknown plan.");
     const provider = this.provider();
     if (!provider) throw new PaymentError(503, "payments_unavailable", "Paid exports are not yet available.");
     if (!/^[A-Za-z0-9_-]{8,80}$/.test(idempotencyKey)) throw new PaymentError(400, "bad_idempotency_key", "Missing idempotency key.");
@@ -103,14 +108,15 @@ export class PaymentService {
       return { order: existing, reused: true };
     }
     const orderId = newId("ord");
-    const created = await provider.createOrder({ receipt: orderId.slice(0, 40), amountMinor: this.cfg.priceMinor, currency: this.cfg.currency });
+    const created = await provider.createOrder({ receipt: orderId.slice(0, 40), amountMinor: plan.priceMinor, currency: plan.currency });
     const order: OrderRecord = {
       orderId,
       providerOrderId: created.providerOrderId,
       provider: provider.name,
       test: provider.test,
-      amountMinor: this.cfg.priceMinor,
-      currency: this.cfg.currency,
+      amountMinor: plan.priceMinor,
+      currency: plan.currency,
+      planId: plan.id,
       status: "created",
       docId: doc.docId,
       versionHash,
@@ -157,6 +163,7 @@ export class PaymentService {
       maxDownloads: this.cfg.maxDownloads,
       downloads: 0,
       createdAt: this.now(),
+      ...this.initialCredits(order),
     };
     await this.store.putEntitlement(ent);
     const paid: OrderRecord = { ...order, status: "paid", paidAt: this.now(), paymentId: payment.paymentId, entitlementId: ent.entitlementId };
@@ -229,7 +236,7 @@ export class PaymentService {
     // Test unlocks are only honoured while the simulated/test provider is active (never as real purchases).
     if (ent.test && !(this.cfg.simulated || this.cfg.live?.test)) throw new PaymentError(402, "test_entitlement", "Test unlocks are not valid for real exports.");
     if (!ent.test && !this.cfg.live) throw new PaymentError(503, "payments_unavailable", "Paid exports are not available right now.");
-    const matches = ent.policy === "version" ? ent.versionHash === makeVersionHash(doc.profile, doc.settings) : ent.cvKey === makeCvKey(doc.docId, doc.profile);
+    const matches = this.isPackage(ent) || (ent.policy === "version" ? ent.versionHash === makeVersionHash(doc.profile, doc.settings) : ent.cvKey === makeCvKey(doc.docId, doc.profile));
     if (!matches) {
       throw new PaymentError(
         402,
@@ -237,10 +244,116 @@ export class PaymentService {
         ent.policy === "version" ? "This CV changed after it was unlocked. The edited version needs a new unlock." : "This unlock belongs to a different CV.",
       );
     }
-    if (ent.maxDownloads > 0 && ent.downloads >= ent.maxDownloads) throw new PaymentError(429, "download_limit", "Download limit for this unlock reached.");
-    const updated = { ...ent, downloads: ent.downloads + 1 };
+    if (ent.maxDownloads > 0 && ent.downloads >= ent.maxDownloads && !this.isPackage(ent)) throw new PaymentError(429, "download_limit", "Download limit for this unlock reached.");
+    let updated = { ...ent, downloads: ent.downloads + 1 };
+    if (ent.planId) {
+      this.checkActive(ent);
+      const vh = makeVersionHash(doc.profile, doc.settings);
+      const charged = ent.chargedVersions ?? [];
+      if (!charged.includes(vh)) {
+        if ((ent.cvGenerationsLeft ?? 0) <= 0) throw new PaymentError(402, "no_credits", "No CV credits left on this plan.");
+        const plan = getPlan(ent.planId);
+        updated = { ...updated, cvGenerationsLeft: (ent.cvGenerationsLeft ?? 0) - 1, chargedVersions: [...charged, vh] };
+        if (plan?.singleUse) updated.formFillsLeft = 0; // one CV OR one form fill
+      }
+    }
     await this.store.putEntitlement(updated);
     return updated;
+  }
+
+  private initialCredits(order: OrderRecord): Partial<EntitlementRecord> {
+    const plan = getPlan(order.planId);
+    if (!plan) return {};
+    return {
+      planId: plan.id,
+      expiresAt: plan.period === "year" ? this.now() + 365 * 24 * 3600 * 1000 : null,
+      cvGenerationsLeft: plan.cvGenerations,
+      formFillsLeft: plan.formFills,
+      companies: [],
+      chargedVersions: [],
+      pendingFills: {},
+    };
+  }
+
+  /** Multi-use packages are not bound to one CV version. Single-use plans keep the version policy. */
+  private isPackage(ent: EntitlementRecord) {
+    const plan = getPlan(ent.planId);
+    return Boolean(plan && !plan.singleUse);
+  }
+
+  private checkActive(ent: EntitlementRecord) {
+    if (ent.expiresAt && this.now() > ent.expiresAt) throw new PaymentError(402, "plan_expired", "This plan has expired.");
+  }
+
+  private async paidEntitlement(entitlementId: string | undefined): Promise<EntitlementRecord> {
+    const ent = entitlementId ? await this.store.getEntitlement(entitlementId) : undefined;
+    if (!ent || !ent.planId) throw new PaymentError(402, "no_entitlement", "No active plan.");
+    const order = await this.store.getOrder(ent.orderId);
+    if (!order || order.status !== "paid") throw new PaymentError(402, "no_entitlement", "No active plan.");
+    if (ent.test && !(this.cfg.simulated || this.cfg.live?.test)) throw new PaymentError(402, "test_entitlement", "Test unlocks are not valid.");
+    return ent;
+  }
+
+  credits(ent: EntitlementRecord): Credits {
+    const plan = getPlan(ent.planId)!;
+    return {
+      planId: plan.id,
+      planName: plan.name,
+      test: ent.test,
+      expiresAt: ent.expiresAt ?? null,
+      profilesMax: plan.profiles,
+      cvGenerationsLeft: ent.cvGenerationsLeft ?? 0,
+      cvGenerationsMax: plan.cvGenerations,
+      formFillsLeft: ent.formFillsLeft ?? 0,
+      formFillsMax: plan.formFills,
+      companiesUsed: (ent.companies ?? []).length,
+      companyLimit: plan.companyLimit,
+      singleUse: plan.singleUse,
+    };
+  }
+
+  async getCredits(entitlementId: string | undefined) {
+    return this.credits(await this.paidEntitlement(entitlementId));
+  }
+
+  /** Reserve (deduct) one form-fill credit. Kept only if completeFormFill(success=true); refunded otherwise. */
+  async startFormFill(entitlementId: string | undefined, company: string) {
+    const ent = await this.paidEntitlement(entitlementId);
+    this.checkActive(ent);
+    const name = company.trim().toLowerCase().slice(0, 200);
+    if (!name) throw new PaymentError(400, "bad_company", "Company name required.");
+    const plan = getPlan(ent.planId)!;
+    if ((ent.formFillsLeft ?? 0) <= 0) throw new PaymentError(402, "no_credits", "No form-fill credits left on this plan.");
+    const companies = ent.companies ?? [];
+    const pending = ent.pendingFills ?? {};
+    const known = companies.includes(name) || Object.values(pending).includes(name);
+    if (plan.companyLimit > 0 && !known && companies.length + new Set(Object.values(pending)).size >= plan.companyLimit) {
+      throw new PaymentError(402, "company_limit", `Company limit (${plan.companyLimit}) reached for this plan.`);
+    }
+    const reservationId = newId("fill");
+    const updated: EntitlementRecord = { ...ent, formFillsLeft: (ent.formFillsLeft ?? 0) - 1, pendingFills: { ...pending, [reservationId]: name } };
+    if (plan.singleUse) updated.cvGenerationsLeft = 0;
+    await this.store.putEntitlement(updated);
+    return { reservationId, credits: this.credits(updated) };
+  }
+
+  async completeFormFill(entitlementId: string | undefined, reservationId: string, success: boolean) {
+    const ent = await this.paidEntitlement(entitlementId);
+    const pending = { ...(ent.pendingFills ?? {}) };
+    const company = pending[reservationId];
+    if (!company) throw new PaymentError(404, "no_reservation", "Unknown form-fill reservation.");
+    delete pending[reservationId];
+    const plan = getPlan(ent.planId)!;
+    let updated: EntitlementRecord = { ...ent, pendingFills: pending };
+    if (success) {
+      const companies = ent.companies ?? [];
+      updated.companies = companies.includes(company) ? companies : [...companies, company];
+    } else {
+      updated.formFillsLeft = (ent.formFillsLeft ?? 0) + 1; // refund on failure
+      if (plan.singleUse && (ent.chargedVersions ?? []).length === 0) updated.cvGenerationsLeft = plan.cvGenerations;
+    }
+    await this.store.putEntitlement(updated);
+    return { success, refunded: !success, credits: this.credits(updated) };
   }
 
   /** TEST ONLY: simulate the provider completing (or not) a payment for an order. */

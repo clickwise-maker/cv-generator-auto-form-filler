@@ -1,6 +1,7 @@
 import { ProfileForm } from "@/components/studio/profile-form";
 import { PreviewColumn } from "@/components/studio/preview-doc";
 import { ScanCard } from "@/components/studio/scan-card";
+import { Dashboard } from "@/components/studio/dashboard";
 import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
 import { cn } from "@/lib/utils";
@@ -23,7 +24,7 @@ export function Studio() {
             </span>
             <div className="min-w-0 flex-1">
               <p className="font-serif text-lg leading-none">Meridian</p>
-              <p className="truncate text-xs text-muted">Email code ki zaroorat nahi</p>
+              <p className="truncate text-xs text-muted">Guest mode — no email, phone or OTP needed</p>
             </div>
             {undo ? (
               <button type="button" className="h-11 px-2 text-sm font-medium text-forest" onClick={undoProfile}>
@@ -51,6 +52,7 @@ export function Studio() {
 
       <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 pb-28 lg:grid-cols-2 lg:items-start lg:pb-10">
         <div className={cn("flex min-w-0 flex-col gap-4", tab !== "compose" && "hidden lg:flex")}>
+          <Dashboard />
           <ScanCard />
           <ProfileForm />
         </div>

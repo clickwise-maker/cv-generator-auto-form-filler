@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/studio/ui";
-import type { ExportFormat, PaywallStatus } from "@/lib/payments/config";
+import { DEFAULT_PLAN_ID, LAUNCH_NOTE, PLANS, getPlan, planPriceLabel, type ExportFormat, type PaywallStatus, type PlanId } from "@/lib/payments/config";
 import {
   ApiError,
   cancelOrder,
@@ -8,7 +8,9 @@ import {
   downloadClean,
   newIdempotencyKey,
   openRazorpay,
+  readGuest,
   readLocal,
+  writeGuest,
   simulatePayment,
   verifyPayment,
   writeLocal,
@@ -32,6 +34,9 @@ type Phase =
  */
 export function UnlockDialog({ open, format, status, onClose }: { open: boolean; format: ExportFormat; status: PaywallStatus | null; onClose: () => void }) {
   const [phase, setPhase] = useState<Phase>({ kind: "confirm" });
+  const [planId, setPlanId] = useState<PlanId>(DEFAULT_PLAN_ID);
+  const plan = getPlan(planId)!;
+  const planLabel = planPriceLabel(plan);
   const idem = useRef<string>("");
   const closeRef = useRef<HTMLButtonElement>(null);
   const label = format === "docx" ? "Word (DOCX)" : "PDF";
@@ -65,13 +70,27 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
 
   async function settled(order: PublicOrder) {
     if (order.status === "paid" && order.entitlementId) {
-      writeLocal({ ...readLocal(), entitlementId: order.entitlementId, orderId: order.orderId, test: order.test });
+      if (plan.singleUse) writeLocal({ ...readLocal(), entitlementId: order.entitlementId, orderId: order.orderId, test: order.test });
+      writeGuest({ ...readGuest(), planEntitlementId: order.entitlementId, planTest: order.test });
       await fetchFile(order.entitlementId, order.test);
     } else if (order.status === "cancelled") setPhase({ kind: "cancelled" });
     else setPhase({ kind: "failed", message: "The payment did not go through. You were not charged for a clean file." });
   }
 
   async function start() {
+    const guest = readGuest();
+    // Active multi-use package? Use its CV credits — never charge twice.
+    if (guest.planEntitlementId && guest.planEntitlementId !== readLocal().entitlementId) {
+      const { profile, settings } = useStudio.getState();
+      setPhase({ kind: "loading", label: "Using your plan credits…" });
+      try {
+        await downloadClean(format, guest.planEntitlementId, profile, settings);
+        setPhase({ kind: "success", test: Boolean(guest.planTest) });
+        return;
+      } catch {
+        // no credits / expired / not a package: continue to the normal flow
+      }
+    }
     const local = readLocal();
     // Already unlocked? Try the existing entitlement first — never charge twice.
     if (local.entitlementId) {
@@ -98,7 +117,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
     setPhase({ kind: "loading", label: "Creating your order…" });
     try {
       const { profile, settings } = useStudio.getState();
-      const order = await createOrder(profile, settings, idem.current);
+      const order = await createOrder(profile, settings, idem.current, planId);
       if (order.status !== "created") return settled(order);
       if (order.provider === "simulated") setPhase({ kind: "paying", order });
       else {
@@ -166,20 +185,29 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                     {phase.message}
                   </p>
                 ) : null}
-                <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
-                  <dt className="text-muted">Price</dt>
-                  <dd className="font-semibold">
-                    {status.priceLabel} one-time{isTest ? " (TEST — not charged)" : ""}
-                  </dd>
-                  <dt className="text-muted">You get</dt>
-                  <dd>Watermark-free PDF and Word of this CV, generated from your CV data.</dd>
-                  <dt className="text-muted">Edits</dt>
-                  <dd>{status.policyText}</dd>
-                </dl>
+                <fieldset className="mt-3" data-testid="plan-picker">
+                  <legend className="text-sm font-semibold">Choose a plan</legend>
+                  <div className="mt-2 grid gap-2">
+                    {PLANS.map((p) => (
+                      <label key={p.id} className={`flex cursor-pointer gap-3 rounded-xl border p-3 text-sm ${p.id === planId ? "border-forest bg-paper" : "border-line"}`}>
+                        <input type="radio" name="plan" value={p.id} checked={p.id === planId} onChange={() => setPlanId(p.id)} className="mt-1" />
+                        <span className="flex-1">
+                          <span className="flex justify-between gap-2 font-semibold">
+                            <span>{p.name}</span>
+                            <span>{planPriceLabel(p)}</span>
+                          </span>
+                          <span className="block text-xs text-muted">{p.bullets.join(" · ")}</span>
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-xs text-muted">{LAUNCH_NOTE}</p>
+                  {plan.singleUse ? <p className="mt-1 text-xs text-muted">{status.policyText}</p> : null}
+                </fieldset>
                 <p className="mt-3 text-xs text-muted">{status.message} Card/UPI details are entered only on the payment provider's page, never here.</p>
                 <div className="mt-5 flex flex-col gap-2">
                   <Button type="button" onClick={() => void start()}>
-                    {isTest ? `Continue to TEST payment (${status.priceLabel})` : `Pay ${status.priceLabel} and unlock`}
+                    {isTest ? `Continue to TEST payment (${planLabel})` : `Pay ${planLabel} and unlock`}
                   </Button>
                   <Button type="button" tone="quiet" onClick={onClose}>
                     Not now
@@ -199,7 +227,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
               <div className="mt-3 rounded-xl border-2 border-dashed border-amber-400 p-3">
                 <p className="text-sm font-semibold">Simulated payment — TEST ONLY</p>
                 <p className="mt-1 text-xs text-muted">
-                  Order {phase.order.orderId.slice(0, 16)}… · {status.priceLabel}. These buttons ask the server to simulate an outcome. Nothing is charged, and test unlocks never count as real purchases.
+                  Order {phase.order.orderId.slice(0, 16)}… · {plan.name} {planLabel}. These buttons ask the server to simulate an outcome. Nothing is charged, and test unlocks never count as real purchases.
                 </p>
                 <div className="mt-3 grid gap-2">
                   <Button type="button" onClick={() => void simulate(phase.order, "success")}>

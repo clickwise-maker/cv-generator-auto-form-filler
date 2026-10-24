@@ -1,3 +1,4 @@
+import type { Credits, PlanId } from "./config";
 import type { Profile, Settings } from "@/lib/cv/model";
 import type { ExportFormat, PaywallStatus } from "@/lib/payments/config";
 
@@ -96,9 +97,9 @@ export async function fetchStatus(): Promise<PaywallStatus> {
   }
 }
 
-export function createOrder(profile: Profile, settings: Settings, idempotencyKey: string) {
+export function createOrder(profile: Profile, settings: Settings, idempotencyKey: string, planId?: PlanId) {
   const { docId } = readLocal();
-  return call<PublicOrder>("order", { method: "POST", body: JSON.stringify({ docId, profile, settings, idempotencyKey }) });
+  return call<PublicOrder>("order", { method: "POST", body: JSON.stringify({ docId, profile, settings, idempotencyKey, planId }) });
 }
 
 export function simulatePayment(orderId: string, outcome: "success" | "failure" | "cancel") {
@@ -128,6 +129,7 @@ export async function downloadClean(format: ExportFormat, entitlementId: string,
   link.download = name;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+  recordExport(profile, settings);
 }
 
 /** Razorpay hosted Checkout (card/UPI details are entered on Razorpay, never here). Only used when live is configured. */
@@ -154,4 +156,79 @@ export async function openRazorpay(order: PublicOrder, description: string): Pro
       modal: { ondismiss: () => resolve("dismissed") },
     }).open();
   });
+}
+
+// ---------------------------------------------------------------------------
+// Guest session (local storage only — no email, phone, OTP or account).
+// ---------------------------------------------------------------------------
+const GUEST_KEY = "meridian.guest.v1";
+export type GuestState = {
+  guestId: string;
+  createdAt: number;
+  /** Entitlement of a multi-use package (Career Starter / Global Pro) or last single-use unlock. */
+  planEntitlementId?: string;
+  planTest?: boolean;
+  /** Content fingerprints of CVs that were exported clean. */
+  exported: string[];
+  formFillsUsed: number;
+  companies: string[];
+};
+
+export function readGuest(): GuestState {
+  try {
+    const raw = JSON.parse(localStorage.getItem(GUEST_KEY) || "null") as GuestState | null;
+    if (raw && typeof raw.guestId === "string") return { ...raw, exported: raw.exported ?? [], formFillsUsed: raw.formFillsUsed ?? 0, companies: raw.companies ?? [] };
+  } catch {
+    // ignore
+  }
+  const fresh: GuestState = { guestId: randomId("guest"), createdAt: Date.now(), exported: [], formFillsUsed: 0, companies: [] };
+  writeGuest(fresh);
+  return fresh;
+}
+
+export function writeGuest(next: GuestState) {
+  try {
+    localStorage.setItem(GUEST_KEY, JSON.stringify(next));
+    window.dispatchEvent(new Event("meridian-guest"));
+  } catch {
+    // ignore
+  }
+}
+
+export function fingerprint(profile: Profile, settings?: Settings): string {
+  const str = JSON.stringify([profile, settings ?? null]);
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+  return (h >>> 0).toString(36);
+}
+
+function recordExport(profile: Profile, settings: Settings) {
+  const g = readGuest();
+  const fp = fingerprint(profile, settings);
+  if (!g.exported.includes(fp)) writeGuest({ ...g, exported: [...g.exported, fp] });
+}
+
+export function fetchCredits(entitlementId: string) {
+  return call<Credits>("credits", { method: "POST", body: JSON.stringify({ entitlementId }) });
+}
+
+/**
+ * Form-filler credit lifecycle: a credit is reserved (deducted) before the fill
+ * and only kept when the fill succeeds; a failed fill refunds it.
+ */
+export async function runFormFill<T>(company: string, fill: () => Promise<T>): Promise<T> {
+  const g = readGuest();
+  if (!g.planEntitlementId) throw new ApiError(402, "no_entitlement", "Choose a plan to use the form filler.");
+  const { reservationId } = await call<{ reservationId: string; credits: Credits }>("formfill/start", { method: "POST", body: JSON.stringify({ entitlementId: g.planEntitlementId, company }) });
+  try {
+    const result = await fill();
+    await call("formfill/complete", { method: "POST", body: JSON.stringify({ entitlementId: g.planEntitlementId, reservationId, success: true }) });
+    const now = readGuest();
+    const c = company.trim().toLowerCase();
+    writeGuest({ ...now, formFillsUsed: now.formFillsUsed + 1, companies: now.companies.includes(c) ? now.companies : [...now.companies, c] });
+    return result;
+  } catch (e) {
+    await call("formfill/complete", { method: "POST", body: JSON.stringify({ entitlementId: g.planEntitlementId, reservationId, success: false }) }).catch(() => undefined);
+    throw e;
+  }
 }

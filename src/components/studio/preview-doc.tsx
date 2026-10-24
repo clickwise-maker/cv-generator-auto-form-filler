@@ -33,6 +33,12 @@ export function PreviewColumn() {
 
   useEffect(() => {
     void fetchStatus().then(setStatus);
+    const open = () => {
+      void fetchStatus().then(setStatus);
+      setUnlockFor("pdf");
+    };
+    window.addEventListener("meridian-open-plans", open);
+    return () => window.removeEventListener("meridian-open-plans", open);
   }, []);
 
   function previewPdf() {
@@ -94,7 +100,7 @@ export function PreviewColumn() {
             FREE PREVIEW
           </span>
           {status?.mode === "test" ? <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900">TEST MODE</span> : null}
-          <p className="min-w-0 flex-1 text-xs text-muted">Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock{status?.priceLabel && status.mode !== "unavailable" ? ` (${status.priceLabel} one-time)` : ""}.</p>
+          <p className="min-w-0 flex-1 text-xs text-muted">Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock — options appear when you download.</p>
         </div>
         <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
           <Button type="button" onClick={() => void unlock("pdf")} disabled={busy}>

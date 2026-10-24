@@ -3,6 +3,9 @@ import {
   handleCancel,
   handleCleanExport,
   handleCreateOrder,
+  handleCredits,
+  handleFormFillComplete,
+  handleFormFillStart,
   handleSimulate,
   handleStatus,
   handleVerify,
@@ -25,6 +28,9 @@ export const Route = createFileRoute("/api/paid-export/$")({
         if (path === "verify") return handleVerify(request);
         if (path === "cancel") return handleCancel(request);
         if (path === "simulate") return handleSimulate(request);
+        if (path === "credits") return handleCredits(request);
+        if (path === "formfill/start") return handleFormFillStart(request);
+        if (path === "formfill/complete") return handleFormFillComplete(request);
         if (path === "download") return handleCleanExport(request);
         if (path === "webhook/razorpay") return handleWebhook(request, "razorpay");
         if (path === "webhook/simulated") return handleWebhook(request, "simulated");

@@ -19,6 +19,13 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   await page.getByRole("button", { name: "Fill the sample dossier" }).click();
   if (viewport.width < 1024) await page.getByRole("button", { name: "Preview", exact: true }).click();
   await page.getByText("FREE PREVIEW", { exact: true }).waitFor();
+  assert.equal(await page.getByText(/Career Starter|₹1000|\$29/).count(), 0, "home must not show plans");
+  if (viewport.width < 1024) await page.getByRole("button", { name: "Compose", exact: true }).click();
+  assert.equal(await page.getByTestId("dash-cv-credits").textContent(), "0");
+  assert.equal(await page.getByTestId("dash-drafts").textContent(), "1");
+  await page.getByRole("button", { name: "See download plans" }).waitFor();
+  if (viewport.width < 1024) await page.getByRole("button", { name: "Preview", exact: true }).click();
+  step(`${viewport.width}px: guest dashboard (0 credits, 1 draft, plans link), no plans on home`);
   step(`${viewport.width}px: no login needed, sample CV created, Free Preview label shown`);
   const wm = page.getByTestId("cv-watermark");
   const box = await wm.boundingBox();
@@ -44,7 +51,9 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   await page.getByRole("button", { name: /Unlock Clean Download · PDF/ }).click();
   const dialog = page.getByRole("dialog");
   await dialog.getByText("TEST MODE — no real payment").waitFor();
-  await dialog.getByText("₹29 one-time (TEST — not charged)").waitFor();
+  await dialog.getByTestId("plan-picker").waitFor();
+  for (const t of ["Single Use", "₹20", "Career Starter", "₹1000/year", "Global Single Use", "$1", "Global Pro", "$29/year", "Launch offer, future plans may change; purchased package terms stay as bought."]) await dialog.getByText(t, { exact: true }).first().waitFor();
+  step(`${viewport.width}px: plans shown only in the download paywall`);
   await dialog.screenshot({ path: `${out}/confirm-${viewport.width}.png` });
   await dialog.getByRole("button", { name: /Continue to TEST payment/ }).click();
   await dialog.getByRole("button", { name: "Simulate cancel" }).click();
@@ -60,6 +69,11 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   await dialog.getByText(/TEST unlock verified by the server/).waitFor();
   step(`${viewport.width}px: clean PDF after server-verified TEST payment`);
   await dialog.getByRole("button", { name: "Done" }).click();
+  if (viewport.width < 1024) await page.getByRole("button", { name: "Compose", exact: true }).click();
+  await page.getByTestId("dash-completed").filter({ hasText: "1" }).waitFor();
+  assert.equal(await page.getByTestId("dash-drafts").textContent(), "0");
+  if (viewport.width < 1024) await page.getByRole("button", { name: "Preview", exact: true }).click();
+  step(`${viewport.width}px: dashboard counts the completed CV`);
 
   // DOCX reuses the entitlement: no second order
   await page.getByRole("button", { name: /Unlock Clean Download · Word/ }).click();

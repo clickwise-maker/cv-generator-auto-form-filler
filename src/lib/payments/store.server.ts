@@ -21,6 +21,7 @@ export type OrderRecord = {
   versionHash: string;
   cvKey: string;
   idempotencyKey: string;
+  planId?: string;
   createdAt: number;
   paidAt?: number;
   paymentId?: string;
@@ -37,6 +38,16 @@ export type EntitlementRecord = {
   maxDownloads: number;
   downloads: number;
   createdAt: number;
+  // Package credits (see PLANS in config.ts). Optional for backward compatibility.
+  planId?: string;
+  expiresAt?: number | null;
+  cvGenerationsLeft?: number;
+  formFillsLeft?: number;
+  companies?: string[];
+  /** version hashes already charged a CV generation (repeat downloads of a version are free). */
+  chargedVersions?: string[];
+  /** Pending form-fill reservations: id -> company. Credit is held, refunded on failure. */
+  pendingFills?: Record<string, string>;
 };
 
 export interface PaymentStore {

@@ -6,8 +6,8 @@
  * decided exclusively on the server (see service.server.ts).
  */
 
-/** Price of one clean export, in the smallest currency unit (paise). ₹29 = 2900. */
-export const EXPORT_PRICE_MINOR = 2900;
+/** Price of one clean export, in the smallest currency unit (paise). ₹20 = 2000 (matches the Single Use plan below). */
+export const EXPORT_PRICE_MINOR = 2000;
 export const EXPORT_CURRENCY = "INR" as const;
 
 export function formatPrice(minor: number = EXPORT_PRICE_MINOR, currency: string = EXPORT_CURRENCY): string {
@@ -50,4 +50,112 @@ export type PaywallStatus = {
   policyText: string;
   provider: "simulated" | "razorpay" | null;
   message: string;
+};
+
+// ---------------------------------------------------------------------------
+// PLANS — the single central place for every package shown in the paywall.
+// Plans are ONLY shown inside the download paywall (never on the home page).
+// ---------------------------------------------------------------------------
+export type PlanId = "single_inr" | "career_starter" | "global_single" | "global_pro";
+
+export type Plan = {
+  id: PlanId;
+  name: string;
+  priceMinor: number; // smallest unit (paise / cents)
+  currency: "INR" | "USD";
+  period: "one-time" | "year";
+  /** 0 = not included. */
+  profiles: number;
+  cvGenerations: number;
+  formFills: number;
+  /** Distinct companies allowed; counted WITHIN formFills (0 = no separate cap). */
+  companyLimit: number;
+  /** Single-use plans: one CV OR one form fill (shared pool of 1). */
+  singleUse: boolean;
+  bullets: string[];
+};
+
+export const PLANS: readonly Plan[] = [
+  {
+    id: "single_inr",
+    name: "Single Use",
+    priceMinor: 2000,
+    currency: "INR",
+    period: "one-time",
+    profiles: 1,
+    cvGenerations: 1,
+    formFills: 1,
+    companyLimit: 0,
+    singleUse: true,
+    bullets: ["One clean CV export or one form fill", "PDF and Word"],
+  },
+  {
+    id: "career_starter",
+    name: "Career Starter",
+    priceMinor: 100000,
+    currency: "INR",
+    period: "year",
+    profiles: 2,
+    cvGenerations: 100,
+    formFills: 100,
+    companyLimit: 100,
+    singleUse: false,
+    bullets: ["1 year", "2 profiles", "100 CV generations", "100 form-filler uses (up to 100 companies, counted within those 100 fills)"],
+  },
+  {
+    id: "global_single",
+    name: "Global Single Use",
+    priceMinor: 100,
+    currency: "USD",
+    period: "one-time",
+    profiles: 1,
+    cvGenerations: 1,
+    formFills: 1,
+    companyLimit: 0,
+    singleUse: true,
+    bullets: ["One clean CV export or one form fill", "PDF and Word"],
+  },
+  {
+    id: "global_pro",
+    name: "Global Pro",
+    priceMinor: 2900,
+    currency: "USD",
+    period: "year",
+    profiles: 1,
+    cvGenerations: 300,
+    formFills: 300,
+    companyLimit: 0,
+    singleUse: false,
+    bullets: ["1 year", "300 form-filler uses", "Remaining credits always shown"],
+  },
+];
+
+export const DEFAULT_PLAN_ID: PlanId = "single_inr";
+export const LAUNCH_NOTE = "Launch offer, future plans may change; purchased package terms stay as bought.";
+
+export function getPlan(id: unknown): Plan | undefined {
+  return PLANS.find((p) => p.id === id);
+}
+
+export function planPriceLabel(p: Plan): string {
+  const v = p.priceMinor / 100;
+  const amt = Number.isInteger(v) ? String(v) : v.toFixed(2);
+  const sym = p.currency === "INR" ? "₹" : "$";
+  return `${sym}${amt}${p.period === "year" ? "/year" : ""}`;
+}
+
+/** Remaining credits on an entitlement, as reported by the server. */
+export type Credits = {
+  planId: PlanId;
+  planName: string;
+  test: boolean;
+  expiresAt: number | null;
+  profilesMax: number;
+  cvGenerationsLeft: number;
+  cvGenerationsMax: number;
+  formFillsLeft: number;
+  formFillsMax: number;
+  companiesUsed: number;
+  companyLimit: number;
+  singleUse: boolean;
 };
