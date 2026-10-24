@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ApiPaidExportSplatRouteImport } from './routes/api/paid-export/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const RefundPolicyRoute = RefundPolicyRouteImport.update({
   path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
   id: '/api/paid-export/$',
   path: '/api/paid-export/$',
@@ -32,30 +38,34 @@ const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/services': typeof ServicesRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/services': typeof ServicesRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/services': typeof ServicesRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/refund-policy' | '/api/paid-export/$'
+  fullPaths: '/' | '/refund-policy' | '/services' | '/api/paid-export/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/refund-policy' | '/api/paid-export/$'
-  id: '__root__' | '/' | '/refund-policy' | '/api/paid-export/$'
+  to: '/' | '/refund-policy' | '/services' | '/api/paid-export/$'
+  id: '__root__' | '/' | '/refund-policy' | '/services' | '/api/paid-export/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
+  ServicesRoute: typeof ServicesRoute
   ApiPaidExportSplatRoute: typeof ApiPaidExportSplatRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/paid-export/$': {
       id: '/api/paid-export/$'
       path: '/api/paid-export/$'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   RefundPolicyRoute: RefundPolicyRoute,
+  ServicesRoute: ServicesRoute,
   ApiPaidExportSplatRoute: ApiPaidExportSplatRoute,
 }
 export const routeTree = rootRouteImport
