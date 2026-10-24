@@ -139,7 +139,7 @@ export function getPlan(id: unknown): Plan | undefined {
 
 export function planPriceLabel(p: Plan): string {
   const v = p.priceMinor / 100;
-  const amt = Number.isInteger(v) ? String(v) : v.toFixed(2);
+  const amt = Number.isInteger(v) ? v.toLocaleString("en-IN") : v.toFixed(2);
   const sym = p.currency === "INR" ? "₹" : "$";
   return `${sym}${amt}${p.period === "year" ? "/year" : ""}`;
 }

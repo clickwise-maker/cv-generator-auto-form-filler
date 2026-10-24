@@ -190,6 +190,15 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                 <fieldset className="mt-3" data-testid="plan-picker">
                   <legend className="text-sm font-semibold">Choose a plan</legend>
                   <div className="mt-2 grid gap-2">
+                    <div className="flex gap-3 rounded-xl border border-dashed border-line p-3 text-sm" data-testid="plan-free">
+                      <span className="flex-1">
+                        <span className="flex justify-between gap-2 font-semibold">
+                          <span>Free preview</span>
+                          <span>Free</span>
+                        </span>
+                        <span className="block text-xs text-muted">Watermarked PDF · unlimited · no sign-in</span>
+                      </span>
+                    </div>
                     {PLANS.map((p) => (
                       <label key={p.id} className={`flex cursor-pointer gap-3 rounded-xl border p-3 text-sm ${p.id === planId ? "border-forest bg-paper" : "border-line"}`}>
                         <input type="radio" name="plan" value={p.id} checked={p.id === planId} onChange={() => setPlanId(p.id)} className="mt-1" />

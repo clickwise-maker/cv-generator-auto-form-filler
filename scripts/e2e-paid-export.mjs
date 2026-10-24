@@ -52,7 +52,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
   const dialog = page.getByRole("dialog");
   await dialog.getByText("TEST MODE — no real payment").waitFor();
   await dialog.getByTestId("plan-picker").waitFor();
-  for (const t of ["Single Use", "₹20", "Career Starter", "₹1000/year", "Global Single Use", "$1", "Global Pro", "$29/year", "Launch offer, future plans may change; purchased package terms stay as bought."]) await dialog.getByText(t, { exact: true }).first().waitFor();
+  for (const t of ["Single Use", "₹20", "Career Starter", "₹1,000/year", "Free preview", "Global Single Use", "$1", "Global Pro", "$29/year", "Launch offer, future plans may change; purchased package terms stay as bought."]) await dialog.getByText(t, { exact: true }).first().waitFor();
   const [freeDl] = await Promise.all([page.waitForEvent("download"), dialog.getByRole("button", { name: "Download FREE watermarked PDF" }).click()]);
   assert.ok(readFileSync(await freeDl.path(), "latin1").includes("UNPAID PREVIEW"));
   step(`${viewport.width}px: plans + free watermarked option shown only in the download paywall`);
