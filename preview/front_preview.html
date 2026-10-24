@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CV Studio — Start your CV</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.svg" type="image/svg+xml"><title>CV Studio — Start your CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -45,6 +45,9 @@ select option{background:#111;color:#fff}
 @media(min-width:761px){.hero::before{display:block}.hero video{object-fit:contain}}
 footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-transform:uppercase;padding:40px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.start{grid-template-columns:1fr;gap:28px}.sec{padding:52px 16px}.f{padding:32px 24px 28px}.card{padding:26px 18px}.ph select{flex-basis:7.2em}}
+html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{scroll-margin-top:calc(min(32vh,56.25vw) + 24px)}
+@media(max-width:760px){html{scroll-padding-top:240px}#startCard,#startCard h2{scroll-margin-top:240px}}
+#ferr{color:#ff8a80;font-size:13px;margin-top:12px;min-height:1em}
 </style></head><body>
 <header class="hero" id="hero">
 <video id="vid" src="assets/cvstudio_promo.mp4" poster="assets/cvstudio_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
@@ -65,7 +68,7 @@ footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-tran
 <label>Email <i>*</i></label><input id="email" type="email" placeholder="you@example.com">
 <label>Country <i>*</i></label><input id="country" placeholder="e.g. India">
 <label>Mobile <i>*</i></label><div class="ph" id="phRow"><select id="phCountry" aria-label="Country for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number"></div>
-<div class="acts"><button class="go" type="button">Generate my CV</button><button class="go alt" type="button">Auto-fill a form</button></div></section></section>
+<div class="acts"><button class="go" id="goCv" type="button">Generate my CV</button><button class="go alt" id="goFill" type="button">Auto-fill a form</button></div><p id="ferr" role="alert"></p></section></section>
 </main>
 <footer>CV Studio</footer>
 <script>
@@ -95,5 +98,18 @@ phSel.onchange=phSync;
 document.getElementById('country').addEventListener('input',e=>{const k=ckey(e.target.value);if(k){phSel.value=k;phSync()}});
 const q=new URLSearchParams(location.search).get('c');if(q){const k=ckey(q);if(k){phSel.value=k;document.getElementById('country').value=LABEL[k];phSync()}}
 const n=new URLSearchParams(location.search).get('n');if(n)document.getElementById('phLocal').value=national(n);
+
+/* Carry name/email/country/phone into the CV profile flow (localStorage cv_profile + query string) */
+function handoff(dest){const $=i=>document.getElementById(i),name=$('name').value.trim(),email=$('email').value.trim(),country=$('country').value.trim(),nat=national($('phLocal').value);
+ const miss=[!name&&'Full name',!email&&'Email',!country&&'Country',!nat&&'Mobile'].filter(Boolean);
+ if(miss.length){$('ferr').textContent='Please fill: '+miss.join(', ');document.getElementById('startCard').scrollIntoView({block:'start'});return}
+ const parts=name.split(/\s+/),first=parts.shift(),last=parts.join(' '),mobile=DIAL[phSel.value]+' '+nat;
+ let p={};try{p=JSON.parse(localStorage.getItem('cv_profile')||'{}')||{}}catch(e){}
+ Object.assign(p,{first_name:first,last_name:last,email,mobile});p.address=Object.assign({},p.address,{country});
+ try{localStorage.setItem('cv_profile',JSON.stringify(p))}catch(e){}
+ const qs=new URLSearchParams({first_name:first,last_name:last,email,country,mobile,phone_country:phSel.value});
+ location.href=dest+'?'+qs}
+document.getElementById('goCv').onclick=()=>handoff('cv_profile/profile_form.html');
+document.getElementById('goFill').onclick=()=>handoff('autofill/index.html');
 </script>
 </body></html>

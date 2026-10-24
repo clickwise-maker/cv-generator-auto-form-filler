@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CV Generator — Complete your profile</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><title>CV Generator — Complete your profile</title>
 <script src="cv_profile_validate.js"></script>
 <style>
 *{box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;margin:0;background:#e8eef4;color:#1f2933}
@@ -111,5 +111,8 @@ const _fill=fill;fill=function(p){_fill(p);phLoad((p||{}).mobile,((p||{}).addres
 const _read=read;read=function(){phSync();return _read()};
 window.setPhoneCountry=v=>{const k=ckey(v);if(!k)return false;phSel.value=k;phSync();refresh();return true};
 </script><script>(async()=>{let p=JSON.parse(localStorage.getItem('cv_profile')||'null');const q=new URLSearchParams(location.search).get('profile');
- if(q){try{p=await (await fetch(q)).json()}catch(e){}}fill(p||{});refresh()})();
+ if(q){try{p=await (await fetch(q)).json()}catch(e){}}
+ const u=new URLSearchParams(location.search);if(u.has('email')||u.has('first_name')){p=p||{};p.address=p.address||{};
+  for(const k of ['first_name','last_name','email','mobile'])if(u.get(k))p[k]=u.get(k);if(u.get('country'))p.address.country=u.get('country');}
+ fill(p||{});if(u.get('phone_country'))window.setPhoneCountry(u.get('phone_country'));refresh()})();
 </script></body></html>

@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"><title>CV Studio — Auto-fill a form (static preview)</title><style>
+*{box-sizing:border-box}body{font:14px system-ui,sans-serif;margin:0;background:#f4f6fb;color:#111}header{background:#0b3d91;color:#fff;padding:12px 18px;font-size:17px;font-weight:600}
+main{max-width:860px;margin:auto;padding:14px}.card{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 1px 3px #0002}h3{margin:0 0 8px;color:#0b3d91;font-size:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}@media(max-width:600px){.grid{grid-template-columns:1fr}}label{display:block;font-weight:600;font-size:12.5px;margin-bottom:2px}
+input,select{width:100%;padding:8px;border:1px solid #bbb;border-radius:7px;font-size:14px}input.filled{background:#e3f6e8;border-color:#3a9b55}button{border:0;border-radius:8px;padding:10px 16px;font-size:14px;cursor:pointer;background:#0b3d91;color:#fff}
+.note{font-size:12.5px;color:#555}#status{margin-top:8px;font-size:13px}</style></head><body>
+<header>Auto Form Filler · Sample form (English) <small style="font-weight:400">· static preview, runs in your browser, nothing is submitted</small></header><main>
+<div class="card"><h3>My form profile</h3><p class="note">Loaded from the details you entered on the CV Studio front page (saved in this browser only). <a href="../cv_profile/profile_form.html">Edit full profile</a></p>
+<div class="grid"><div><label for="p_first_name">First name</label><input id="p_first_name" data-k="first_name"></div><div><label for="p_last_name">Last name</label><input id="p_last_name" data-k="last_name"></div>
+<div><label for="p_email">Email</label><input id="p_email" data-k="email"></div><div><label for="p_country">Country</label><input id="p_country" data-k="country"></div>
+<div><label for="p_mobile">Mobile (national number)</label><input id="p_mobile" data-k="mobile"></div></div></div>
+<div class="card"><label for="formCountry"><b>Form country</b> (sets the phone prefix used on the form)</label><select id="formCountry" style="width:auto"></select>
+<br><br><button id="fill" type="button">Auto-fill sample form</button><div id="status" role="status"></div></div>
+<div class="card"><h3>Sample form: Account opening request (English) — demo only</h3>
+<form id="sample" onsubmit="return false" novalidate><div class="grid">
+<div><label for="f_full_name">Applicant full name</label><input id="f_full_name" name="full_name"></div>
+<div><label for="f_email">Email address</label><input id="f_email" name="email" type="email"></div>
+<div><label for="f_country">Country of residence</label><input id="f_country" name="country"></div>
+<div><label for="f_dial">Country code</label><input id="f_dial" name="dial_code"></div>
+<div><label for="f_mobile">Mobile number</label><input id="f_mobile" name="mobile" type="tel"></div>
+<div><label for="f_mobile_full">Mobile (with country code)</label><input id="f_mobile_full" name="mobile_full"></div>
+</div><p class="note">This preview has no submit button: values are never sent anywhere.</p></form></div>
+<p class="note">The full engine (file upload / detection, SBI PDF+DOCX output) is <code>form_filler.html</code> + <code>form_filler_server.py</code>; it needs its Python API (/api/state, /api/save, /api/extract, /api/fill) and is not deployed on this static site.</p>
+</main><script>
+/* Phone prefix — mirrors formfill_test/candidates/engine/phone_prefix.py */
+const DIAL={'india':'+91','japan':'+81','uae':'+971','dubai':'+971','abu dhabi':'+971','qatar':'+974','usa':'+1','canada':'+1','china':'+86','hong kong':'+852','uk':'+44','saudi arabia':'+966','oman':'+968','kuwait':'+965','bahrain':'+973','singapore':'+65','korea':'+82','germany':'+49','france':'+33','australia':'+61'};
+const ALIAS={'jp':'japan','ja':'japan','japanese':'japan','in':'india','hi':'india','hindi':'india','english (india)':'india','ae':'uae','united arab emirates':'uae','ar-ae':'uae','qa':'qatar','ar-qa':'qatar','us':'usa','united states':'usa','en-us':'usa','cn':'china','zh':'china','zh-cn':'china','chinese':'china','mandarin':'china','hk':'hong kong','zh-hk':'hong kong','yue':'hong kong','cantonese':'hong kong','gb':'uk','united kingdom':'uk','sa':'saudi arabia','ko':'korea','kr':'korea','de':'germany','fr':'france','sg':'singapore','au':'australia'};
+const LABEL={'india':'India','japan':'Japan','uae':'UAE','dubai':'Dubai (UAE)','abu dhabi':'Abu Dhabi (UAE)','qatar':'Qatar','usa':'USA','canada':'Canada','china':'China','hong kong':'Hong Kong','uk':'UK','saudi arabia':'Saudi Arabia','oman':'Oman','kuwait':'Kuwait','bahrain':'Bahrain','singapore':'Singapore','korea':'Korea','germany':'Germany','france':'France','australia':'Australia'};
+const CODES=[...new Set(Object.values(DIAL).map(c=>c.slice(1)))].sort((a,b)=>b.length-a.length);
+const ckey=v=>{const k=(v||'').trim().toLowerCase();const r=ALIAS[k]||k;return DIAL[r]?r:null};
+function national(n){let s=String(n||'').replace(/[^\d+]/g,'');if(!s)return'';
+ while(s.startsWith('+')||s.startsWith('00')){s=s.startsWith('+')?s.slice(1):s.slice(2);for(const c of CODES)if(s.startsWith(c)&&s.length-c.length>=6){s=s.slice(c.length);break}}
+ return s.length>10?s.replace(/^0+/,''):s}
+const $=i=>document.getElementById(i),U=new URLSearchParams(location.search);
+let P={};try{P=JSON.parse(localStorage.getItem('cv_profile')||'{}')||{}}catch(e){}
+const prof={first_name:U.get('first_name')||P.first_name||'',last_name:U.get('last_name')||P.last_name||'',email:U.get('email')||P.email||'',country:U.get('country')||(P.address||{}).country||'',mobile:national(U.get('mobile')||P.mobile||'')};
+for(const k in prof)$('p_'+k).value=prof[k];
+const fc=$('formCountry');fc.innerHTML=Object.keys(DIAL).map(k=>`<option value="${k}">${LABEL[k]} (${DIAL[k]})</option>`).join('');
+fc.value=ckey(U.get('phone_country'))||ckey(prof.country)||'india';
+$('p_country').addEventListener('input',e=>{const k=ckey(e.target.value);if(k)fc.value=k});
+$('fill').onclick=()=>{const v=k=>$('p_'+k).value.trim(),code=DIAL[fc.value],nat=national(v('mobile'));
+ const out={full_name:[v('first_name'),v('last_name')].filter(Boolean).join(' '),email:v('email'),country:v('country'),dial_code:code,mobile:nat,mobile_full:nat?code+' '+nat:''};
+ const miss=[];for(const[n,val]of Object.entries(out)){const e=document.querySelector('#sample [name="'+n+'"]');e.value=val;e.classList.toggle('filled',!!val);if(!val)miss.push(e.labels[0].textContent)}
+ $('status').textContent=miss.length?'Filled with gaps — missing: '+miss.join(', '):'All fields filled from your profile (not submitted).'};
+</script></body></html>
