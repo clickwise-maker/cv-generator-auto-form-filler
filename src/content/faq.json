@@ -1,0 +1,218 @@
+{
+ "slug": "faq",
+ "title": "FAQ",
+ "hi_title": "अक्सर पूछे जाने वाले सवाल",
+ "desc": "CV Studio frequently asked questions in English and Hindi: pricing, login, downloads, storage, refunds.",
+ "lead": "Short answers to common questions.",
+ "en": [
+  [
+   "Is CV Studio free?",
+   [
+    "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
+   ]
+  ],
+  [
+   "Do I need to sign up?",
+   [
+    "No login is needed — you can use CV Studio as a guest."
+   ]
+  ],
+  [
+   "Where is my CV saved?",
+   [
+    "In your browser's local storage on your own device. Clearing browser data or switching device can remove it, so download a copy."
+   ]
+  ],
+  [
+   "Which formats can I download?",
+   [
+    "PDF and DOCX (Word)."
+   ]
+  ],
+  [
+   "What does the free download include?",
+   [
+    "The full CV with a watermark, so you can see exactly what you get before paying."
+   ]
+  ],
+  [
+   "What is the Auto Form Filler?",
+   [
+    "It fills job application forms from your CV. A form-fill credit is used only when the fill succeeds, and is refunded if it fails. Always check the form before submitting."
+   ]
+  ],
+  [
+   "Is there a monthly plan?",
+   [
+    "No. There are single-use payments and yearly plans only."
+   ]
+  ],
+  [
+   "Are payments live?",
+   [
+    "Not yet. CV Studio is in trial mode and no real payments are taken."
+   ]
+  ],
+  [
+   "How do refunds work?",
+   [
+    "See the Refund Policy. In short: ₹20 single use is refunded if the download fails because of our technical error; yearly plans are refundable within 7 days if unused."
+   ]
+  ],
+  [
+   "How do I contact you?",
+   [
+    "mail"
+   ]
+  ]
+ ],
+ "hi": [
+  [
+   "क्या CV Studio मुफ़्त है?",
+   [
+    "हाँ। CV बनाना, एडिट करना, सेव करना और टेम्पलेट चुनना मुफ़्त है, और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकते हैं। क्लीन डाउनलोड या एक फ़ॉर्म फ़िल ₹20 / $1 का है, या आप सालाना प्लान ले सकते हैं (Services & Plans देखें)।"
+   ]
+  ],
+  [
+   "क्या साइन-अप ज़रूरी है?",
+   [
+    "कोई लॉगिन ज़रूरी नहीं — आप गेस्ट के रूप में इस्तेमाल कर सकते हैं।"
+   ]
+  ],
+  [
+   "मेरा CV कहाँ सेव होता है?",
+   [
+    "आपके अपने डिवाइस पर ब्राउज़र के local storage में। ब्राउज़र डेटा साफ़ करने या डिवाइस बदलने पर यह हट सकता है, इसलिए कॉपी डाउनलोड कर लें।"
+   ]
+  ],
+  [
+   "किन फ़ॉर्मेट में डाउनलोड कर सकते हैं?",
+   [
+    "PDF और DOCX (Word)।"
+   ]
+  ],
+  [
+   "मुफ़्त डाउनलोड में क्या मिलता है?",
+   [
+    "वॉटरमार्क के साथ पूरा CV, ताकि भुगतान से पहले आप देख सकें कि क्या मिलेगा।"
+   ]
+  ],
+  [
+   "ऑटो फ़ॉर्म फ़िलर क्या है?",
+   [
+    "यह आपके CV से नौकरी के आवेदन फ़ॉर्म भरता है। क्रेडिट सिर्फ़ सफल फ़िल पर लगता है और असफल होने पर वापस होता है। भेजने से पहले फ़ॉर्म ज़रूर जाँचें।"
+   ]
+  ],
+  [
+   "क्या कोई मासिक प्लान है?",
+   [
+    "नहीं। सिर्फ़ सिंगल-यूज़ भुगतान और सालाना प्लान हैं।"
+   ]
+  ],
+  [
+   "क्या भुगतान चालू है?",
+   [
+    "अभी नहीं। CV Studio ट्रायल मोड में है और कोई असली भुगतान नहीं लिया जा रहा है।"
+   ]
+  ],
+  [
+   "रिफंड कैसे मिलता है?",
+   [
+    "रिफंड नीति देखें। संक्षेप में: हमारी तकनीकी गड़बड़ी से डाउनलोड न होने पर ₹20 वापस; सालाना प्लान 7 दिनों में, अगर इस्तेमाल नहीं हुआ, तो रिफंड।"
+   ]
+  ],
+  [
+   "आपसे संपर्क कैसे करें?",
+   [
+    "mail"
+   ]
+  ]
+ ],
+ "faq": true,
+ "faqld": {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is CV Studio free?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need to sign up?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No login is needed — you can use CV Studio as a guest."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Where is my CV saved?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In your browser's local storage on your own device. Clearing browser data or switching device can remove it, so download a copy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which formats can I download?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "PDF and DOCX (Word)."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does the free download include?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The full CV with a watermark, so you can see exactly what you get before paying."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the Auto Form Filler?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It fills job application forms from your CV. A form-fill credit is used only when the fill succeeds, and is refunded if it fails. Always check the form before submitting."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is there a monthly plan?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. There are single-use payments and yearly plans only."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are payments live?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not yet. CV Studio is in trial mode and no real payments are taken."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do refunds work?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "See the Refund Policy. In short: ₹20 single use is refunded if the download fails because of our technical error; yearly plans are refundable within 7 days if unused."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I contact you?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "clickwisewholesalebazar@gmail.com"
+    }
+   }
+  ]
+ }
+}

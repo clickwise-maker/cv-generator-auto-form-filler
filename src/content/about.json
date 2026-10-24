@@ -1,0 +1,68 @@
+{
+ "slug": "about",
+ "title": "About & Contact",
+ "hi_title": "हमारे बारे में और संपर्क",
+ "desc": "About CV Studio and how to contact support, in English and Hindi.",
+ "lead": "Who we are and how to reach us.",
+ "en": [
+  [
+   "What CV Studio is",
+   [
+    "CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications.",
+    "You can create a CV with plain or designed templates, download it as PDF or DOCX, and use your CV to fill job application forms."
+   ]
+  ],
+  [
+   "How it works",
+   [
+    "Free: create, edit, save and choose templates, with no login. Download a watermarked copy free.",
+    "Paid: clean (no watermark) downloads and form fills with single-use credits or a yearly plan.",
+    "Your CV is saved in your own browser."
+   ]
+  ],
+  [
+   "Status",
+   [
+    "CV Studio is currently in trial mode. No real payments are taken yet."
+   ]
+  ],
+  [
+   "Contact",
+   [
+    "mail",
+    "Support is by email only. We review requests within 2 working days."
+   ]
+  ]
+ ],
+ "hi": [
+  [
+   "CV Studio क्या है",
+   [
+    "CV Studio एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदनों के लिए ऑटो फ़ॉर्म फ़िलर है।",
+    "आप सादे या डिज़ाइन वाले टेम्पलेट से CV बना सकते हैं, PDF या DOCX में डाउनलोड कर सकते हैं, और अपने CV से नौकरी के फ़ॉर्म भर सकते हैं।"
+   ]
+  ],
+  [
+   "कैसे काम करता है",
+   [
+    "मुफ़्त: CV बनाएँ, एडिट करें, सेव करें और टेम्पलेट चुनें, बिना लॉगिन। वॉटरमार्क वाली कॉपी मुफ़्त डाउनलोड करें।",
+    "पेड: क्लीन (बिना वॉटरमार्क) डाउनलोड और फ़ॉर्म फ़िल, सिंगल-यूज़ क्रेडिट या सालाना प्लान से।",
+    "आपका CV आपके अपने ब्राउज़र में सेव होता है।"
+   ]
+  ],
+  [
+   "स्थिति",
+   [
+    "CV Studio अभी ट्रायल मोड में है। अभी कोई असली भुगतान नहीं लिया जा रहा है।"
+   ]
+  ],
+  [
+   "संपर्क",
+   [
+    "mail",
+    "सहायता सिर्फ़ ईमेल से। हम 2 कार्य-दिवसों में अनुरोध देखते हैं।"
+   ]
+  ]
+ ],
+ "faqld": null
+}

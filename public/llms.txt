@@ -29,3 +29,10 @@
 - [Home](https://cvstudio-app.onrender.com/)
 - [Services & Plans (English + Hindi)](https://cvstudio-app.onrender.com/services)
 - [Refund Policy (English + Hindi)](https://cvstudio-app.onrender.com/refund-policy)
+- [Privacy Policy (English + Hindi)](https://cvstudio-app.onrender.com/privacy-policy)
+- [Terms & Conditions (English + Hindi)](https://cvstudio-app.onrender.com/terms)
+- [FAQ (English + Hindi)](https://cvstudio-app.onrender.com/faq)
+- [About & Contact (English + Hindi)](https://cvstudio-app.onrender.com/about)
+
+## Privacy
+- The CV you type is saved in your browser's local storage on your device. For a clean (paid) download, CV content is sent to the server only to create the file; order records keep a hash of the CV, not its text.

@@ -10,6 +10,22 @@ export function SiteFooter() {
       <Link to="/services" className="underline-offset-2 hover:text-ink hover:underline">
         Services &amp; Plans
       </Link>
+      <span className="mx-2">·</span>
+      <Link to="/privacy-policy" className="underline-offset-2 hover:text-ink hover:underline">
+        Privacy Policy
+      </Link>
+      <span className="mx-2">·</span>
+      <Link to="/terms" className="underline-offset-2 hover:text-ink hover:underline">
+        Terms
+      </Link>
+      <span className="mx-2">·</span>
+      <Link to="/faq" className="underline-offset-2 hover:text-ink hover:underline">
+        FAQ
+      </Link>
+      <span className="mx-2">·</span>
+      <Link to="/about" className="underline-offset-2 hover:text-ink hover:underline">
+        About &amp; Contact
+      </Link>
     </footer>
   );
 }
