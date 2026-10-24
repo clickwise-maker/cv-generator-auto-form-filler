@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ApiPaidExportSplatRouteImport } from './routes/api/paid-export/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
@@ -25,27 +31,31 @@ const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/paid-export/$'
+  fullPaths: '/' | '/refund-policy' | '/api/paid-export/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/paid-export/$'
-  id: '__root__' | '/' | '/api/paid-export/$'
+  to: '/' | '/refund-policy' | '/api/paid-export/$'
+  id: '__root__' | '/' | '/refund-policy' | '/api/paid-export/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   ApiPaidExportSplatRoute: typeof ApiPaidExportSplatRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/paid-export/$': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   ApiPaidExportSplatRoute: ApiPaidExportSplatRoute,
 }
 export const routeTree = rootRouteImport
