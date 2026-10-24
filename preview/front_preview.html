@@ -60,7 +60,7 @@ html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{
 <div class="grid">
 <article class="f"><span class="num">0 1</span><h3>Auto form filler</h3><p>Photo, PDF, or a letter. The fields fill themselves.</p><i></i></article>
 <article class="f"><span class="num">0 2</span><h3>CV generator</h3><p>A finished page, then PDF or Word.</p><i></i></article>
-<article class="f"><span class="num">0 3</span><h3>Login</h3><p>Open your account.</p><i></i></article>
+<article class="f" id="loginCard" role="link" tabindex="0" data-href="login.html" style="cursor:pointer"><span class="num">0 3</span><h3>Login</h3><p id="loginTxt">Open your account.</p><i></i></article>
 </div></section>
 <section class="sec start"><div><p class="kicker">Begin</p><h2>One profile. Two jobs done.</h2><p class="lead">Enter your details once. Use them for a finished CV, or to fill any form.</p></div>
 <section class="card" id="startCard"><h2>Start your profile</h2><p>One profile. Your CV, and every form filled for you.</p>
@@ -108,8 +108,14 @@ function handoff(dest){const $=i=>document.getElementById(i),name=$('name').valu
  Object.assign(p,{first_name:first,last_name:last,email,mobile});p.address=Object.assign({},p.address,{country});
  try{localStorage.setItem('cv_profile',JSON.stringify(p))}catch(e){}
  const qs=new URLSearchParams({first_name:first,last_name:last,email,country,mobile,phone_country:phSel.value});
- location.href=dest+'?'+qs}
+ const to=dest+'?'+qs;if(AUTH.on&&!AUTH.user){location.href='login.html?next='+encodeURIComponent('/'+to);return}location.href=to}
+/* Auth (Supabase): 03 Login card opens login.html, or signs out when signed in; CTA buttons send signed-out visitors to login first. */
+const AUTH={on:false,user:null},lc=document.getElementById('loginCard'),lt=document.getElementById('loginTxt');
+const goLogin=()=>{if(AUTH.user){AUTH.sb.auth.signOut().then(()=>location.reload())}else location.href=lc.dataset.href};
+lc.onclick=goLogin;lc.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goLogin()}};
+window.addEventListener('load',()=>{try{const C=window.CVS_SUPABASE;AUTH.sb=supabase.createClient(C.url,C.anonKey);AUTH.sb.auth.getSession().then(({data})=>{AUTH.on=true;AUTH.user=data.session&&data.session.user;if(AUTH.user){lt.textContent='Signed in as '+AUTH.user.email+' · Sign out';lc.setAttribute('aria-label','Sign out')}})}catch(e){}});
 document.getElementById('goCv').onclick=()=>handoff('cv_profile/profile_form.html');
 document.getElementById('goFill').onclick=()=>handoff('autofill/index.html');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script>
 </body></html>

@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="auth.css"><title>CV Studio — Reset password</title></head><body><div class="wrap"><a class="kicker" href="/">CV Studio</a>
+<form class="card" id="f"><h2>Reset password</h2><p>We'll send a reset link to your email.</p>
+<label>Email</label><input id="email" type="email" autocomplete="email" required placeholder="you@example.com">
+<button class="go" id="submit">Send reset link</button><p id="msg" role="alert"></p><div class="links"><a href="login.html">Back to log in</a></div></form></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="auth.js"></script><script>
+$('f').onsubmit=async e=>{e.preventDefault();say('');const {error}=await sb.auth.resetPasswordForEmail($('email').value.trim(),{redirectTo:base+'/reset.html'});if(error)return say(error.message);say('If that email has an account, a reset link is on its way.',1)};
+</script></body></html>
