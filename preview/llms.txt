@@ -1,0 +1,32 @@
+# CV Studio
+
+> CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications, run by Clickwise. Free CV builder with no login, PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
+
+## Key facts
+- A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.
+- Plain and designed CV templates.
+- Download as PDF or DOCX (Word).
+- Free watermarked download, so you can see exactly what you get before paying.
+- Auto Form Filler: fills job application forms from your CV. A form-fill credit is used only when a fill succeeds, and is refunded if the fill fails.
+- Dashboard: CVs made, CVs in progress, remaining balance, form fills used and companies applied to.
+
+## Plans (launch offer; future plans may change, purchased package terms stay as bought)
+- Free: create, edit, save, choose templates; watermarked PDF/DOCX download.
+- Single Use: ₹20 one-time — one clean CV download OR one form fill.
+- Career Starter: ₹1,000/year (≈ ₹83/month) — 2 profiles, 100 CV generations, 100 form fills (up to 100 companies within those fills). Same usage at ₹20 each = ₹4,000, so it saves ₹3,000 (75%).
+- Global Single Use: $1 one-time — one clean CV download OR one form fill (form-fill credit used only on success).
+- Global Pro: $29/year (≈ $2.42/month) — 300 CV generations, 300 form fills. 300 fills at $1 = $300, so it saves $271 (≈ 90%).
+- No monthly plan.
+
+## Support
+- Email: clickwisewholesalebazar@gmail.com. Requests are reviewed within 2 working days. (Email only.)
+
+## Refunds
+- ₹20 single use: full refund if the download fails because of a technical error on our side.
+- Yearly plans: full refund within 7 days of purchase if unused; no refund once credits are used.
+
+## Pages
+- [Home](https://cvstudio-preview.onrender.com/)
+- [Pricing](https://cvstudio-preview.onrender.com/pricing.html)
+- [Services & Plans (English + Hindi)](https://cvstudio-preview.onrender.com/services.html)
+- [Refund Policy (English + Hindi)](https://cvstudio-preview.onrender.com/refund-policy.html)
