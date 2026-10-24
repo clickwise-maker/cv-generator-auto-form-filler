@@ -13,7 +13,10 @@
 main{position:relative;z-index:6;background:var(--bg)}
 .sec{max-width:1120px;margin:0 auto;padding:72px 22px}
 .kicker{font:600 11px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
-h1{font:600 clamp(36px,6vw,68px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 44px;max-width:14ch}
+h1{font:600 clamp(36px,6vw,68px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 16px;max-width:14ch}
+.tagline{color:var(--mute);font-size:17px;line-height:1.6;margin:0 0 44px;max-width:44ch}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}.acts .go{margin-top:0;padding:15px 8px}
+.go.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}.go.alt:hover{border-color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 .f{background:var(--card);padding:40px 32px 34px;border-radius:0;transition:background .3s}
 .f:hover{background:#161616}
@@ -46,19 +49,19 @@ footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-tran
 <button class="mute" id="mute" type="button" aria-label="Unmute video">🔇 Sound</button>
 </header>
 <main>
-<section class="sec"><p class="kicker">CV Studio</p><h1>Enter. Fill every form. Then rest.</h1>
+<section class="sec"><p class="kicker">CV Studio</p><h1>Enter. Fill every form. Then rest.</h1><p class="tagline">Generate a finished CV, and let your forms fill themselves, from one profile.</p>
 <div class="grid">
 <article class="f"><span class="num">0 1</span><h3>Auto form filler</h3><p>Photo, PDF, or a letter. The fields fill themselves.</p><i></i></article>
 <article class="f"><span class="num">0 2</span><h3>CV generator</h3><p>A finished page, then PDF or Word.</p><i></i></article>
 <article class="f"><span class="num">0 3</span><h3>Login</h3><p>Open your account.</p><i></i></article>
 </div></section>
-<section class="sec start"><div><p class="kicker">Begin</p><h2>Start with the basics.</h2><p class="lead">Your name, email, country and mobile number.</p></div>
-<section class="card" id="startCard"><h2>Start your CV</h2><p>Begin with your basic details.</p>
+<section class="sec start"><div><p class="kicker">Begin</p><h2>One profile. Two jobs done.</h2><p class="lead">Enter your details once. Use them for a finished CV, or to fill any form.</p></div>
+<section class="card" id="startCard"><h2>Start your profile</h2><p>One profile. Your CV, and every form filled for you.</p>
 <label>Full name <i>*</i></label><input id="name" placeholder="e.g. Asha Menon">
 <label>Email <i>*</i></label><input id="email" type="email" placeholder="you@example.com">
 <label>Country <i>*</i></label><input id="country" placeholder="e.g. India">
 <label>Mobile <i>*</i></label><div class="ph" id="phRow"><select id="phCountry" aria-label="Country for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number"></div>
-<button class="go" type="button">Start your CV</button></section></section>
+<div class="acts"><button class="go" type="button">Generate my CV</button><button class="go alt" type="button">Auto-fill a form</button></div></section></section>
 </main>
 <footer>CV Studio</footer>
 <script>
