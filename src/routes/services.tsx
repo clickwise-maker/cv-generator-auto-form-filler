@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteFooter } from "@/components/site-footer";
 
 const BASE = "https://cvstudio-app.onrender.com";
 const EMAIL = "clickwisewholesalebazar@gmail.com";
@@ -406,77 +407,82 @@ function Table({ hdr, rows, best }: { hdr: string[]; rows: Row[]; best: string }
 
 function Services() {
   return (
-    <main className="min-h-screen bg-paper px-4 py-10 text-ink">
-      <div className="mx-auto max-w-3xl">
-        <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-          CV Studio
-        </Link>
-        <h1 className="mt-4 font-serif text-4xl">Services &amp; Plans</h1>
-        <p className="mt-2 text-sm text-ink/70">
-          What CV Studio does, support, and plans.{" "}
-          <a href="#hi" lang="hi" className="underline">
-            हिंदी में पढ़ें
-          </a>
-        </p>
-        {(["en", "hi"] as const).map((lg) => {
-          const c = D.L[lg];
-          const ul = (xs: string[]) => (
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
-              {xs.map((i) => (
-                <li key={i}>{i}</li>
-              ))}
-            </ul>
-          );
-          const h3 = (t: string) => <h3 className="mt-6 font-semibold">{t}</h3>;
-          return (
-            <section
-              key={lg}
-              id={lg}
-              lang={lg}
-              className="mt-8 rounded-lg border border-line bg-sheet p-6"
-              style={
-                lg === "hi" ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' } : undefined
-              }
-            >
-              <h2 className="text-2xl font-semibold">{c.heading}</h2>
-              <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.trial}</p>
-              {h3(c.s1)}
-              {ul(c.i1)}
-              <p className="mt-3 border-l-4 border-ink bg-ink/5 px-3 py-2 text-sm font-medium">
-                {c.ff}
-              </p>
-              {h3(c.s2)}
-              <p className="mt-2 text-sm">
-                {c.i2pre}
-                <a className="underline" href={`mailto:${EMAIL}`}>
-                  {EMAIL}
-                </a>
-              </p>
-              {ul(c.i2)}
-              {h3(c.s3)}
-              <Table hdr={D.PLANS_HDR[lg]} rows={D.PLANS[lg]} best={c.best} />
-              <p className="mt-2 text-sm">{c.note3}</p>
-              <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.launch}</p>
-              {h3(c.s4)}
-              <Table hdr={D.SAV_HDR[lg]} rows={D.SAV[lg]} best={c.best} />
-              <p className="mt-2 text-sm leading-relaxed">{c.note4}</p>
-              <p className="mt-2 text-sm leading-relaxed">{c.comp}</p>
-              {h3(c.s5)}
-              {ul(c.about)}
-              <p className="mt-6 text-sm">
-                <Link to="/refund-policy" className="underline">
-                  {c.refund}
-                </Link>
-              </p>
-            </section>
-          );
-        })}
-        <p className="mt-8 text-sm">
-          <Link to="/" className="underline">
-            ← Back to CV Studio
+    <>
+      <main className="min-h-screen bg-paper px-4 py-10 text-ink">
+        <div className="mx-auto max-w-3xl">
+          <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
+            CV Studio
           </Link>
-        </p>
-      </div>
-    </main>
+          <h1 className="mt-4 font-serif text-4xl">Services &amp; Plans</h1>
+          <p className="mt-2 text-sm text-ink/70">
+            What CV Studio does, support, and plans.{" "}
+            <a href="#hi" lang="hi" className="underline">
+              हिंदी में पढ़ें
+            </a>
+          </p>
+          {(["en", "hi"] as const).map((lg) => {
+            const c = D.L[lg];
+            const ul = (xs: string[]) => (
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
+                {xs.map((i) => (
+                  <li key={i}>{i}</li>
+                ))}
+              </ul>
+            );
+            const h3 = (t: string) => <h3 className="mt-6 font-semibold">{t}</h3>;
+            return (
+              <section
+                key={lg}
+                id={lg}
+                lang={lg}
+                className="mt-8 rounded-lg border border-line bg-sheet p-6"
+                style={
+                  lg === "hi"
+                    ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' }
+                    : undefined
+                }
+              >
+                <h2 className="text-2xl font-semibold">{c.heading}</h2>
+                <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.trial}</p>
+                {h3(c.s1)}
+                {ul(c.i1)}
+                <p className="mt-3 border-l-4 border-ink bg-ink/5 px-3 py-2 text-sm font-medium">
+                  {c.ff}
+                </p>
+                {h3(c.s2)}
+                <p className="mt-2 text-sm">
+                  {c.i2pre}
+                  <a className="underline" href={`mailto:${EMAIL}`}>
+                    {EMAIL}
+                  </a>
+                </p>
+                {ul(c.i2)}
+                {h3(c.s3)}
+                <Table hdr={D.PLANS_HDR[lg]} rows={D.PLANS[lg]} best={c.best} />
+                <p className="mt-2 text-sm">{c.note3}</p>
+                <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.launch}</p>
+                {h3(c.s4)}
+                <Table hdr={D.SAV_HDR[lg]} rows={D.SAV[lg]} best={c.best} />
+                <p className="mt-2 text-sm leading-relaxed">{c.note4}</p>
+                <p className="mt-2 text-sm leading-relaxed">{c.comp}</p>
+                {h3(c.s5)}
+                {ul(c.about)}
+                <p className="mt-6 text-sm">
+                  <Link to="/refund-policy" className="underline">
+                    {c.refund}
+                  </Link>
+                </p>
+              </section>
+            );
+          })}
+          <p className="mt-8 text-sm">
+            <Link to="/" className="underline">
+              ← Back to CV Studio
+            </Link>
+          </p>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

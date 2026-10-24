@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteFooter } from "@/components/site-footer";
 
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
@@ -46,7 +47,12 @@ const CONTENT: Lang[] = [
         title: "3. How to request a refund",
         intro: "Email us with:",
         mail: true,
-        items: ["Payment / order ID", "Date of payment", "Email address used for the purchase", "Reason for the refund"],
+        items: [
+          "Payment / order ID",
+          "Date of payment",
+          "Email address used for the purchase",
+          "Reason for the refund",
+        ],
       },
       {
         title: "4. Processing time",
@@ -81,7 +87,12 @@ const CONTENT: Lang[] = [
         title: "3. रिफंड कैसे माँगें",
         intro: "ईमेल करें और ये जानकारी दें:",
         mail: true,
-        items: ["पेमेंट / ऑर्डर ID", "भुगतान की तारीख", "खरीद में इस्तेमाल किया गया ईमेल", "रिफंड का कारण"],
+        items: [
+          "पेमेंट / ऑर्डर ID",
+          "भुगतान की तारीख",
+          "खरीद में इस्तेमाल किया गया ईमेल",
+          "रिफंड का कारण",
+        ],
       },
       {
         title: "4. प्रक्रिया का समय",
@@ -96,59 +107,69 @@ const CONTENT: Lang[] = [
 
 function RefundPolicy() {
   return (
-    <main className="min-h-screen bg-paper px-4 py-10 text-ink">
-      <div className="mx-auto max-w-3xl">
-        <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-          CV Studio
-        </Link>
-        <h1 className="mt-4 font-serif text-4xl">Refund Policy</h1>
-        <p className="mt-2 text-sm text-ink/70">
-          Plain and simple.{" "}
-          <a href="#hi" lang="hi" className="underline">
-            हिंदी में पढ़ें
-          </a>
-        </p>
-        {CONTENT.map((c) => (
-          <section
-            key={c.id}
-            id={c.id}
-            lang={c.lang}
-            className="mt-8 rounded-lg border border-line bg-sheet p-6"
-            style={c.lang === "hi" ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' } : undefined}
-          >
-            <h2 className="text-2xl font-semibold">{c.heading}</h2>
-            <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.trial}</p>
-            {c.sections.map((s) => (
-              <div key={s.title} className="mt-6">
-                <h3 className="font-semibold">{s.title}</h3>
-                {s.intro && (
-                  <p className="mt-2 text-sm leading-relaxed">
-                    {s.mail && (
-                      <>
-                        <a className="underline" href={`mailto:${EMAIL}?subject=Refund%20request`}>
-                          {EMAIL}
-                        </a>{" "}
-                        —{" "}
-                      </>
-                    )}
-                    {s.intro}
-                  </p>
-                )}
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
-                  {s.items?.map((i) => (
-                    <li key={i}>{i}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-        ))}
-        <p className="mt-8 text-sm">
-          <Link to="/" className="underline">
-            ← Back to CV Studio
+    <>
+      <main className="min-h-screen bg-paper px-4 py-10 text-ink">
+        <div className="mx-auto max-w-3xl">
+          <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
+            CV Studio
           </Link>
-        </p>
-      </div>
-    </main>
+          <h1 className="mt-4 font-serif text-4xl">Refund Policy</h1>
+          <p className="mt-2 text-sm text-ink/70">
+            Plain and simple.{" "}
+            <a href="#hi" lang="hi" className="underline">
+              हिंदी में पढ़ें
+            </a>
+          </p>
+          {CONTENT.map((c) => (
+            <section
+              key={c.id}
+              id={c.id}
+              lang={c.lang}
+              className="mt-8 rounded-lg border border-line bg-sheet p-6"
+              style={
+                c.lang === "hi"
+                  ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' }
+                  : undefined
+              }
+            >
+              <h2 className="text-2xl font-semibold">{c.heading}</h2>
+              <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.trial}</p>
+              {c.sections.map((s) => (
+                <div key={s.title} className="mt-6">
+                  <h3 className="font-semibold">{s.title}</h3>
+                  {s.intro && (
+                    <p className="mt-2 text-sm leading-relaxed">
+                      {s.mail && (
+                        <>
+                          <a
+                            className="underline"
+                            href={`mailto:${EMAIL}?subject=Refund%20request`}
+                          >
+                            {EMAIL}
+                          </a>{" "}
+                          —{" "}
+                        </>
+                      )}
+                      {s.intro}
+                    </p>
+                  )}
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
+                    {s.items?.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </section>
+          ))}
+          <p className="mt-8 text-sm">
+            <Link to="/" className="underline">
+              ← Back to CV Studio
+            </Link>
+          </p>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
