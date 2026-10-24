@@ -1,35 +1,74 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CV Studio — Start your CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0f2a4a;--navy-2:#1d3d63;--teal:#0f9d9a;--teal-soft:#e3f3f2;--side:#eef3f7;--ink:#1f2933;--muted:#5b6b7b;--rule:#d5dee7}
-*{box-sizing:border-box}body{margin:0;font-family:"Inter","Noto Sans",system-ui,Arial,sans-serif;color:var(--ink);background:var(--side)}
-header{background:var(--navy);color:#fff;padding:14px 28px;display:flex;align-items:center;gap:10px}
-.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}.logo b{color:var(--teal)}
-.wrap{max-width:1040px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-h1{font-size:40px;line-height:1.1;margin:0 0 14px;color:var(--navy);font-weight:800;letter-spacing:-.6px}
-h1 span{color:var(--teal)}.tag{font-size:17px;color:var(--muted);line-height:1.5;margin:0 0 22px}
-.steps{display:flex;gap:10px;flex-wrap:wrap}.steps div{background:var(--teal-soft);color:#0b5f5d;border-radius:20px;padding:6px 14px;font-size:14px;font-weight:600}
-.card{background:#fff;border:1px solid var(--rule);border-radius:12px;box-shadow:0 8px 28px rgba(15,42,74,.12);padding:24px}
-.card h2{margin:0 0 4px;color:var(--navy);font-size:21px}.card p{margin:0 0 16px;color:var(--muted);font-size:14px}
-label{display:block;font-size:13px;color:var(--muted);margin:12px 0 4px}label i{color:#c0392b;font-style:normal}
-input,select{width:100%;padding:9px 10px;border:1px solid #c3cfda;border-radius:6px;font:inherit;font-size:15px;background:#fff}
-.ph{display:flex;align-items:stretch}.ph select{width:auto;flex:0 0 8.5em;border-radius:6px 0 0 6px;border-right:0}
-.phchip{display:inline-flex;align-items:center;padding:0 12px;background:#e6f2f5;border:1px solid #9fb3c2;color:#0b5c6b;font-weight:700;white-space:nowrap}
-.ph input{flex:1;min-width:6em;border-radius:0 6px 6px 0;border-left:0}
-.go{margin-top:18px;width:100%;background:var(--teal);color:#fff;border:0;border-radius:6px;padding:12px;font-size:16px;font-weight:700;cursor:pointer}
-footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
-@media(max-width:760px){.wrap{grid-template-columns:1fr;padding:28px 16px;gap:24px}h1{font-size:30px}}
+:root{--bg:#000;--card:#111;--ink:#fff;--mute:#9a9a9a;--line:rgba(255,255,255,.12);--serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.hero{position:sticky;top:0;z-index:5;height:80vh;overflow:hidden;background:#000}
+.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.langs{position:absolute;top:12px;left:0;right:0;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 10px}
+.langs button,.mute{font:500 12px var(--sans);color:#fff;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer}
+.langs button[aria-pressed=true]{background:rgba(255,255,255,.88);color:#000}
+.mute{position:absolute;right:12px;bottom:12px}
+main{position:relative;z-index:6;background:var(--bg)}
+.sec{max-width:1120px;margin:0 auto;padding:72px 22px}
+.kicker{font:600 11px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
+h1{font:600 clamp(36px,6vw,68px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 44px;max-width:14ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.f{background:var(--card);padding:40px 32px 34px;border-radius:0;transition:background .3s}
+.f:hover{background:#161616}
+.num{font:500 12px var(--sans);letter-spacing:.35em;color:var(--mute)}
+.f h3{font:600 26px/1.2 var(--serif);margin:28px 0 10px}
+.f p{color:var(--mute);font-size:15px;line-height:1.6;margin:0 0 30px}
+.f i{display:block;width:30px;height:1px;background:#fff;opacity:.6}
+.start{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.start h2{font:600 clamp(30px,4vw,46px)/1.1 var(--serif);margin:0 0 14px}
+.start .lead{color:var(--mute);line-height:1.6;margin:0}
+.card{background:var(--card);border:1px solid var(--line);padding:34px 30px;transition:box-shadow .4s,border-color .4s}
+.card:hover{border-color:rgba(255,255,255,.22);box-shadow:0 0 0 1px rgba(255,255,255,.04),0 24px 60px rgba(255,255,255,.06)}
+.card h2{font:600 26px var(--serif);margin:0 0 6px}.card p{color:var(--mute);font-size:14px;margin:0 0 18px}
+label{display:block;font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin:18px 0 8px}label i{color:#d9a46b;font-style:normal}
+input,select{width:100%;padding:12px 14px;background:#0a0a0a;color:#fff;border:1px solid var(--line);border-radius:0;font:15px var(--sans);outline:none;transition:border-color .2s}
+input::placeholder{color:#5c5c5c}input:focus,select:focus{border-color:rgba(255,255,255,.5)}
+select option{background:#111;color:#fff}
+.ph{display:flex;align-items:stretch}.ph select{width:auto;flex:0 0 8.5em;border-right:0}
+.phchip{display:inline-flex;align-items:center;padding:0 12px;background:#1a1a1a;border:1px solid var(--line);color:#fff;font-weight:600;white-space:nowrap;letter-spacing:.03em}
+.ph input{flex:1;min-width:6em;border-left:0}
+.go{margin-top:26px;width:100%;background:linear-gradient(180deg,#fff,#d8d8d8);color:#000;border:0;border-radius:0;padding:15px;font:600 13px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:box-shadow .3s}
+.go:hover{box-shadow:0 0 30px rgba(255,255,255,.22)}
+footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-transform:uppercase;padding:40px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.start{grid-template-columns:1fr;gap:28px}.sec{padding:52px 16px}.f{padding:32px 24px 28px}.card{padding:26px 18px}.ph select{flex-basis:7.2em}}
 </style></head><body>
-<header><div class="logo">CV<b>Studio</b></div></header>
-<main class="wrap"><section><h1>Build a clear, professional <span>CV</span></h1>
-<p class="tag">Fill in your profile once, choose a template and download your CV.</p>
-<div class="steps"><div>1 · Profile</div><div>2 · Template</div><div>3 · Download</div></div></section>
+<header class="hero" id="hero">
+<video id="vid" src="assets/cvstudio_promo.mp4" poster="assets/cvstudio_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+<nav class="langs" aria-label="Language">
+<button aria-pressed="true" data-l="en">English</button><button aria-pressed="false" data-l="hi">हिंदी</button><button aria-pressed="false" data-l="ja">日本語</button><button aria-pressed="false" data-l="ko">한국어</button><button aria-pressed="false" data-l="zh">中文</button></nav>
+<button class="mute" id="mute" type="button" aria-label="Unmute video">🔇 Sound</button>
+</header>
+<main>
+<section class="sec"><p class="kicker">CV Studio</p><h1>Enter. Fill every form. Then rest.</h1>
+<div class="grid">
+<article class="f"><span class="num">0 1</span><h3>Auto form filler</h3><p>Photo, PDF, or a letter. The fields fill themselves.</p><i></i></article>
+<article class="f"><span class="num">0 2</span><h3>CV generator</h3><p>A finished page, then PDF or Word.</p><i></i></article>
+<article class="f"><span class="num">0 3</span><h3>Login</h3><p>Open your account.</p><i></i></article>
+</div></section>
+<section class="sec start"><div><p class="kicker">Begin</p><h2>Start with the basics.</h2><p class="lead">Your name, email, country and mobile number.</p></div>
 <section class="card" id="startCard"><h2>Start your CV</h2><p>Begin with your basic details.</p>
 <label>Full name <i>*</i></label><input id="name" placeholder="e.g. Asha Menon">
 <label>Email <i>*</i></label><input id="email" type="email" placeholder="you@example.com">
 <label>Country <i>*</i></label><input id="country" placeholder="e.g. India">
 <label>Mobile <i>*</i></label><div class="ph" id="phRow"><select id="phCountry" aria-label="Country for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number"></div>
-<button class="go" type="button">Start your CV</button></section></main>
+<button class="go" type="button">Start your CV</button></section></section>
+</main>
 <footer>CV Studio</footer>
+<script>
+(function(){const h=document.getElementById('hero'),v=document.getElementById('vid'),m=document.getElementById('mute');
+function sz(){const vh=innerHeight,max=vh*.8,min=Math.max(160,Math.min(innerWidth*.5625,vh*.32))*(innerWidth>760?1.2:1);const t=Math.min(1,scrollY/(max-min||1));h.style.height=(max-(max-min)*t)+'px'}
+addEventListener('scroll',sz,{passive:true});addEventListener('resize',sz);sz();
+m.onclick=()=>{v.muted=!v.muted;if(!v.muted)v.play();m.textContent=v.muted?'🔇 Sound':'🔊 Mute';m.setAttribute('aria-label',v.muted?'Unmute video':'Mute video')};
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.langs button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.documentElement.lang=b.dataset.l});
+})();
+</script>
 <script>
 const DIAL={'india':'+91','japan':'+81','uae':'+971','dubai':'+971','abu dhabi':'+971','qatar':'+974','usa':'+1','canada':'+1','china':'+86','hong kong':'+852','uk':'+44','saudi arabia':'+966','oman':'+968','kuwait':'+965','bahrain':'+973','singapore':'+65','korea':'+82','germany':'+49','france':'+33','australia':'+61'};
 const ALIAS={'jp':'japan','ja':'japan','japanese':'japan','in':'india','hi':'india','hindi':'india','english (india)':'india','ae':'uae','united arab emirates':'uae','ar-ae':'uae','qa':'qatar','ar-qa':'qatar','us':'usa','united states':'usa','en-us':'usa','cn':'china','zh':'china','zh-cn':'china','chinese':'china','mandarin':'china','hk':'hong kong','zh-hk':'hong kong','yue':'hong kong','cantonese':'hong kong','gb':'uk','united kingdom':'uk','sa':'saudi arabia','ko':'korea','kr':'korea','de':'germany','fr':'france','sg':'singapore','au':'australia'};
@@ -47,4 +86,5 @@ phSel.onchange=phSync;
 document.getElementById('country').addEventListener('input',e=>{const k=ckey(e.target.value);if(k){phSel.value=k;phSync()}});
 const q=new URLSearchParams(location.search).get('c');if(q){const k=ckey(q);if(k){phSel.value=k;document.getElementById('country').value=LABEL[k];phSync()}}
 const n=new URLSearchParams(location.search).get('n');if(n)document.getElementById('phLocal').value=national(n);
-</script></body></html>
+</script>
+</body></html>
