@@ -1,9 +1,9 @@
 # CV Studio
 
-> CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications. Free CV builder with no login, PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
+> CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications. Free CV builder (sign-in with email/password or Google needed to open the builder), PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
 
 ## Key facts
-- A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.
+- A free CV builder: creating, editing, saving and choosing templates are all free; you sign in with email/password or Google to open the builder.
 - Plain and designed CV templates.
 - Download as PDF or DOCX (Word).
 - Free watermarked download, so you can see exactly what you get before paying.
