@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CV Generator — Complete your profile</title>
+<script src="cv_profile_validate.js"></script>
+<style>
+*{box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;margin:0;background:#e8eef4;color:#1f2933}
+.app{padding:24px}.app h1{color:#0f2a4a;margin:0 0 8px}
+#genBtn{background:#0f9d9a;color:#fff;border:0;padding:10px 18px;border-radius:6px;font-weight:600;cursor:pointer}#genBtn:disabled{background:#9fb3c2;cursor:not-allowed}
+.ov{position:fixed;inset:0;background:rgba(15,42,74,.55);display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow:auto}
+.modal{background:#fff;width:880px;max-width:100%;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.mh{padding:16px 22px;border-bottom:1px solid #d5dee7;display:flex;justify-content:space-between;align-items:center}.mh h2{margin:0;color:#0f2a4a;font-size:19px}
+.banner{margin:14px 22px 0;padding:12px 14px;border-radius:6px;background:#fff4e5;border:1px solid #f0b35b;color:#7a4b00;font-size:14px}
+.banner.ok{background:#e3f3f2;border-color:#0f9d9a;color:#0b5f5d}.banner a{color:#b45309;font-weight:700;margin-right:10px;cursor:pointer;text-decoration:underline}
+.mb{padding:6px 22px 18px;max-height:62vh;overflow:auto}fieldset{border:1px solid #d5dee7;border-radius:8px;margin:14px 0 0;padding:10px 14px}
+legend{font-weight:700;color:#0f2a4a;padding:0 6px}.g{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 12px}.w{grid-column:1/-1}.h{grid-column:span 2}
+label{font-size:12px;color:#5b6b7b;display:block}label i{color:#c0392b;font-style:normal}
+input,select,textarea{width:100%;padding:7px 8px;border:1px solid #c3cfda;border-radius:5px;font:inherit;font-size:14px}textarea{min-height:60px}
+.miss{border-color:#e67e22!important;background:#fffaf2}.flash{animation:fl 1.2s}@keyframes fl{0%,60%{box-shadow:0 0 0 4px #f0b35b}}
+.row{border:1px dashed #c3cfda;border-radius:6px;padding:8px;margin-bottom:8px;position:relative}.rm{position:absolute;right:6px;top:4px;border:0;background:none;color:#c0392b;cursor:pointer}
+.add{background:#eef3f7;border:1px solid #c3cfda;border-radius:5px;padding:5px 10px;cursor:pointer}
+.mf{padding:12px 22px;border-top:1px solid #d5dee7;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.mf button{padding:9px 16px;border-radius:6px;border:1px solid #0f2a4a;background:#0f2a4a;color:#fff;cursor:pointer}
+.mf button:disabled{background:#9fb3c2;border-color:#9fb3c2;cursor:not-allowed}.ph{display:flex;align-items:stretch;gap:0}.ph select{width:6.5em;flex:0 0 6.5em;padding-left:4px;padding-right:2px;border-radius:6px 0 0 6px;border-right:0}
+.phchip{display:inline-flex;align-items:center;padding:0 10px;background:#e6f2f5;border:1px solid #9fb3c2;color:#0b5c6b;font-weight:700;white-space:nowrap}
+.ph #phLocal{flex:1;min-width:7.5em;border-radius:0 6px 6px 0;border-left:0}.ph.missw #phLocal{outline:2px solid #d9534f}</style></head><body>
+<div class="app"><h1>CV Generator</h1><p>Template: 3-page visa-form CV. Your profile is saved separately as <code>cv_profile</code>.</p>
+<button id="genBtn" disabled>Generate CV</button> <button id="openBtn">Edit profile</button> <span id="genState"></span></div>
+
+<div class="ov" id="ov"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+<div class="mh"><h2 id="mt">Complete your profile before generating a CV</h2><button onclick="closeM()" aria-label="Close">✕</button></div>
+<div class="banner" id="banner" role="alert"></div>
+<form class="mb" id="f" onsubmit="return false">
+<fieldset id="sec-name"><legend>Name</legend><div class="g">
+ <div><label>First name <i>*</i></label><input name="first_name"></div><div><label>Middle name</label><input name="middle_name"></div><div><label>Last name <i>*</i></label><input name="last_name"></div></div></fieldset>
+<fieldset id="sec-personal"><legend>Personal details</legend><div class="g">
+ <div><label>Date of birth <i>*</i></label><input type="date" name="dob"></div>
+ <div><label>Gender <i>*</i></label><select name="gender"><option value=""></option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select></div>
+ <div><label>Marital status <i>*</i></label><select name="marital_status"><option value=""></option><option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option><option>Prefer not to say</option></select></div>
+ <div><label>Nationality</label><input name="nationality"></div><div><label>Job title <i>*</i></label><input name="title"></div>
+ <div><label>Photo (optional)</label><input type="file" name="photo" accept="image/*"></div></div></fieldset>
+<fieldset id="sec-contact"><legend>Contact</legend><div class="g">
+ <div><label>Mobile <i>*</i></label><div class="ph"><select id="phCountry" aria-label="Country / language for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number" aria-label="Mobile number without country code"><input name="mobile" type="hidden"></div></div><div class="h"><label>Email <i>*</i></label><input name="email" type="email"></div></div></fieldset>
+<fieldset id="sec-address"><legend>Full address</legend><div class="g">
+ <div class="h"><label>Address line 1 <i>*</i></label><input name="address.line1"></div><div><label>Address line 2</label><input name="address.line2"></div>
+ <div><label>Area / locality</label><input name="address.area"></div><div><label>City <i>*</i></label><input name="address.city"></div><div><label>District</label><input name="address.district"></div>
+ <div><label>State <i>*</i></label><input name="address.state"></div><div><label>PIN / postal code <i>*</i></label><input name="address.postal_code"></div><div><label>Country <i>*</i></label><input name="address.country"></div></div></fieldset>
+<fieldset id="sec-summary"><legend>Professional summary <i style="color:#c0392b">*</i></legend><textarea name="summary" placeholder="At least 40 characters"></textarea></fieldset>
+<fieldset id="sec-experience"><legend>Work experience <i style="color:#c0392b">*</i></legend><div id="L-experience"></div><button type="button" class="add" onclick="addRow('experience')">+ Add job</button></fieldset>
+<fieldset id="sec-education"><legend>Education <i style="color:#c0392b">*</i></legend><div id="L-education"></div><button type="button" class="add" onclick="addRow('education')">+ Add education</button></fieldset>
+<fieldset id="sec-skills"><legend>Skills <i style="color:#c0392b">*</i></legend><div id="L-skills"></div><button type="button" class="add" onclick="addRow('skills')">+ Add skill</button></fieldset>
+<fieldset id="sec-languages"><legend>Languages <i style="color:#c0392b">*</i></legend><div id="L-languages"></div><button type="button" class="add" onclick="addRow('languages')">+ Add language</button></fieldset>
+<fieldset id="sec-certifications"><legend>Certifications</legend><div id="L-certifications"></div><button type="button" class="add" onclick="addRow('certifications')">+ Add certification</button></fieldset>
+<fieldset id="sec-projects"><legend>Projects</legend><div id="L-projects"></div><button type="button" class="add" onclick="addRow('projects')">+ Add project</button></fieldset>
+<fieldset id="sec-links"><legend>Links (LinkedIn, portfolio…)</legend><div id="L-links"></div><button type="button" class="add" onclick="addRow('links')">+ Add link</button></fieldset>
+</form>
+<div class="mf"><label style="display:flex;gap:6px;align-items:center;font-size:13px;color:#1f2933"><input type="checkbox" id="confirm" style="width:auto"> Generate anyway with missing fields (I confirm)</label>
+<span><button type="button" onclick="save()">Save profile</button> <button type="button" id="mGen" onclick="gen()">Generate CV</button></span></div>
+</div></div>
+<script>
+const ROWS={experience:[['role','Role *'],['company','Company *'],['location','Location'],['start','Start'],['end','End'],['description','Key achievements','w']],
+ education:[['degree','Degree *'],['institution','Institution *'],['location','Location'],['start','Start'],['end','End'],['grade','Grade / note']],
+ skills:[['name','Skill *'],['level','Level']],languages:[['name','Language *'],['level','Level (e.g. C1, Native)']],
+ certifications:[['name','Name'],['issuer','Issuer'],['year','Year']],projects:[['name','Name'],['role','Role'],['tech','Tech'],['description','Description','w'],['link','Link','w']],links:[['label','Label'],['url','URL','h']]};
+const SEC={first_name:'sec-name',last_name:'sec-name',dob:'sec-personal',gender:'sec-personal',marital_status:'sec-personal',title:'sec-personal',mobile:'sec-contact',email:'sec-contact',address:'sec-address',summary:'sec-summary',experience:'sec-experience',education:'sec-education',skills:'sec-skills',languages:'sec-languages'};
+const F=document.getElementById('f');
+function addRow(k,v={}){const d=document.createElement('div');d.className='row g';d.dataset.list=k;
+ d.innerHTML=ROWS[k].map(([n,l,c])=>`<div class="${c||''}"><label>${l.replace(' *',' <i>*</i>')}</label><input data-f="${n}" value="${(v[n]||'').toString().replace(/"/g,'&quot;')}"></div>`).join('')+'<button type="button" class="rm" title="Remove">✕</button>';
+ d.querySelector('.rm').onclick=()=>{d.remove();refresh()};document.getElementById('L-'+k).appendChild(d);}
+function read(){const p={address:{}};for(const e of F.querySelectorAll('[name]')){if(e.type==='file'){p.photo=e.files[0]?e.files[0].name:null;continue}
+ const[a,b]=e.name.split('.');if(b)p[a][b]=e.value.trim();else p[a]=e.value.trim()}
+ for(const k in ROWS)p[k]=[...document.querySelectorAll(`#L-${k} .row`)].map(r=>Object.fromEntries([...r.querySelectorAll('[data-f]')].map(i=>[i.dataset.f,i.value.trim()]))).filter(o=>Object.values(o).some(Boolean));
+ p.confirmed_incomplete=document.getElementById('confirm').checked;return p}
+function fill(p){for(const e of F.querySelectorAll('[name]')){if(e.type==='file')continue;const[a,b]=e.name.split('.');e.value=(b?(p[a]||{})[b]:p[a])||''}
+ for(const k in ROWS){document.getElementById('L-'+k).innerHTML='';(p[k]&&p[k].length?p[k]:[{}]).forEach(v=>addRow(k,v))}}
+function jump(key){const s=document.getElementById(SEC[key]);s.scrollIntoView({behavior:'smooth',block:'center'});s.classList.remove('flash');void s.offsetWidth;s.classList.add('flash');
+ const t=s.querySelector('.miss')||s.querySelector('input,select,textarea');t&&t.focus({preventScroll:true})}
+function refresh(){const p=read(),m=CvProfile.missing(p),b=document.getElementById('banner');
+ F.querySelectorAll('.miss').forEach(e=>e.classList.remove('miss'));
+ m.forEach(x=>{const s=document.getElementById(SEC[x.key]);const sel={first_name:'[name=first_name]',last_name:'[name=last_name]',dob:'[name=dob]',gender:'[name=gender]',marital_status:'[name=marital_status]',title:'[name=title]',mobile:'#phLocal',email:'[name=email]',summary:'[name=summary]'}[x.key];
+  (sel?[s.querySelector(sel)]:[...s.querySelectorAll('input')].filter(i=>!i.value)).forEach(i=>i&&i.classList.add('miss'))});
+ if(m.length){b.className='banner';b.innerHTML=`<div style="margin-bottom:6px"><b>⚠ ${CvProfile.message(m)}</b></div>Jump to: `+m.map(x=>`<a data-k="${x.key}">${x.label}</a>`).join('');
+  b.querySelectorAll('a').forEach(a=>a.onclick=()=>jump(a.dataset.k))}else{b.className='banner ok';b.textContent='✓ Profile complete — you can generate your CV.'}
+ const ok=!m.length||document.getElementById('confirm').checked;document.getElementById('genBtn').disabled=!ok;document.getElementById('mGen').disabled=!ok;
+ document.getElementById('genState').textContent=ok?'':'Locked: complete your profile first ('+m.map(x=>x.label).join(', ')+')';return m}
+function save(){const p=read();localStorage.setItem('cv_profile',JSON.stringify(p));refresh();
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(p,null,1)],{type:'application/json'}));a.download='cv_profile.json';a.click()}
+function gen(){const m=refresh();if(m.length&&!document.getElementById('confirm').checked)return jump(m[0].key);save();
+ alert('cv_profile saved. Run: node generate_cv.js cv_profile.json'+(m.length?' --confirm-incomplete':''))}
+function closeM(){document.getElementById('ov').style.display='none'}
+document.getElementById('openBtn').onclick=()=>{document.getElementById('ov').style.display='flex'};
+document.getElementById('genBtn').onclick=()=>{refresh().length&&!document.getElementById('confirm').checked?document.getElementById('ov').style.display='flex':gen()};
+F.addEventListener('input',refresh);F.addEventListener('change',refresh);document.getElementById('confirm').onchange=refresh;
+</script><script>
+/* Phone prefix — mirrors formfill_test/candidates/engine/phone_prefix.py (DIAL/ALIAS/national) */
+const DIAL={'india':'+91','japan':'+81','uae':'+971','dubai':'+971','abu dhabi':'+971','qatar':'+974','usa':'+1','canada':'+1','china':'+86','hong kong':'+852','uk':'+44','saudi arabia':'+966','oman':'+968','kuwait':'+965','bahrain':'+973','singapore':'+65','korea':'+82','germany':'+49','france':'+33','australia':'+61'};
+const ALIAS={'jp':'japan','ja':'japan','japanese':'japan','in':'india','hi':'india','hindi':'india','english (india)':'india','ae':'uae','united arab emirates':'uae','ar-ae':'uae','qa':'qatar','ar-qa':'qatar','us':'usa','united states':'usa','en-us':'usa','cn':'china','zh':'china','zh-cn':'china','chinese':'china','mandarin':'china','hk':'hong kong','zh-hk':'hong kong','yue':'hong kong','cantonese':'hong kong','gb':'uk','united kingdom':'uk','sa':'saudi arabia','ko':'korea','kr':'korea','de':'germany','fr':'france','sg':'singapore','au':'australia'};
+const LABEL={'india':'India','japan':'Japan','uae':'UAE','dubai':'Dubai (UAE)','abu dhabi':'Abu Dhabi (UAE)','qatar':'Qatar','usa':'USA','canada':'Canada','china':'China','hong kong':'Hong Kong','uk':'UK','saudi arabia':'Saudi Arabia','oman':'Oman','kuwait':'Kuwait','bahrain':'Bahrain','singapore':'Singapore','korea':'Korea','germany':'Germany','france':'France','australia':'Australia'};
+const CODES=[...new Set(Object.values(DIAL).map(c=>c.slice(1)))].sort((a,b)=>b.length-a.length);
+const ckey=v=>{const k=(v||'').trim().toLowerCase();const r=ALIAS[k]||k;return DIAL[r]?r:null};
+function national(n){let s=String(n||'').replace(/[^\d+]/g,'');if(!s)return'';
+ while(s.startsWith('+')||s.startsWith('00')){s=s.startsWith('+')?s.slice(1):s.slice(2);for(const c of CODES)if(s.startsWith(c)&&s.length-c.length>=6){s=s.slice(c.length);break}}
+ return s.length>10?s.replace(/^0+/,''):s}
+const phSel=document.getElementById('phCountry'),phChip=document.getElementById('phChip'),phLocal=document.getElementById('phLocal'),phHidden=F.querySelector('[name=mobile]');
+phSel.innerHTML=Object.keys(DIAL).map(k=>`<option value="${k}">${LABEL[k]}</option>`).join('');
+function phSync(){const code=DIAL[phSel.value];phChip.textContent=code;const n=national(phLocal.value);phHidden.value=n?code+' '+n:'';}
+function phLoad(full,country){const k=ckey(country);if(k)phSel.value=k;else if(full){const d=String(full).replace(/[^\d+]/g,'').replace(/^00/,'+');const m=Object.keys(DIAL).find(x=>d.startsWith(DIAL[x]+'')&&DIAL[x].length>2)||Object.keys(DIAL).find(x=>d.startsWith(DIAL[x]));if(m)phSel.value=m}
+ phLocal.value=national(full);phSync()}
+phSel.addEventListener('change',()=>{phSync();refresh()});
+phLocal.addEventListener('input',phSync);
+phLocal.addEventListener('blur',()=>{phLocal.value=national(phLocal.value);phSync();refresh()});
+F.querySelector('[name="address.country"]').addEventListener('input',e=>{const k=ckey(e.target.value);if(k){phSel.value=k;phSync();refresh()}});
+const _fill=fill;fill=function(p){_fill(p);phLoad((p||{}).mobile,((p||{}).address||{}).country)};
+const _read=read;read=function(){phSync();return _read()};
+window.setPhoneCountry=v=>{const k=ckey(v);if(!k)return false;phSel.value=k;phSync();refresh();return true};
+</script><script>(async()=>{let p=JSON.parse(localStorage.getItem('cv_profile')||'null');const q=new URLSearchParams(location.search).get('profile');
+ if(q){try{p=await (await fetch(q)).json()}catch(e){}}fill(p||{});refresh()})();
+</script></body></html>

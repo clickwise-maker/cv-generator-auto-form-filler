@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CV Studio — Start your CV</title>
+<style>
+:root{--navy:#0f2a4a;--navy-2:#1d3d63;--teal:#0f9d9a;--teal-soft:#e3f3f2;--side:#eef3f7;--ink:#1f2933;--muted:#5b6b7b;--rule:#d5dee7}
+*{box-sizing:border-box}body{margin:0;font-family:"Inter","Noto Sans",system-ui,Arial,sans-serif;color:var(--ink);background:var(--side)}
+header{background:var(--navy);color:#fff;padding:14px 28px;display:flex;align-items:center;gap:10px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}.logo b{color:var(--teal)}
+.wrap{max-width:1040px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+h1{font-size:40px;line-height:1.1;margin:0 0 14px;color:var(--navy);font-weight:800;letter-spacing:-.6px}
+h1 span{color:var(--teal)}.tag{font-size:17px;color:var(--muted);line-height:1.5;margin:0 0 22px}
+.steps{display:flex;gap:10px;flex-wrap:wrap}.steps div{background:var(--teal-soft);color:#0b5f5d;border-radius:20px;padding:6px 14px;font-size:14px;font-weight:600}
+.card{background:#fff;border:1px solid var(--rule);border-radius:12px;box-shadow:0 8px 28px rgba(15,42,74,.12);padding:24px}
+.card h2{margin:0 0 4px;color:var(--navy);font-size:21px}.card p{margin:0 0 16px;color:var(--muted);font-size:14px}
+label{display:block;font-size:13px;color:var(--muted);margin:12px 0 4px}label i{color:#c0392b;font-style:normal}
+input,select{width:100%;padding:9px 10px;border:1px solid #c3cfda;border-radius:6px;font:inherit;font-size:15px;background:#fff}
+.ph{display:flex;align-items:stretch}.ph select{width:auto;flex:0 0 8.5em;border-radius:6px 0 0 6px;border-right:0}
+.phchip{display:inline-flex;align-items:center;padding:0 12px;background:#e6f2f5;border:1px solid #9fb3c2;color:#0b5c6b;font-weight:700;white-space:nowrap}
+.ph input{flex:1;min-width:6em;border-radius:0 6px 6px 0;border-left:0}
+.go{margin-top:18px;width:100%;background:var(--teal);color:#fff;border:0;border-radius:6px;padding:12px;font-size:16px;font-weight:700;cursor:pointer}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;padding:28px 16px;gap:24px}h1{font-size:30px}}
+</style></head><body>
+<header><div class="logo">CV<b>Studio</b></div></header>
+<main class="wrap"><section><h1>Build a clear, professional <span>CV</span></h1>
+<p class="tag">Fill in your profile once, choose a template and download your CV.</p>
+<div class="steps"><div>1 · Profile</div><div>2 · Template</div><div>3 · Download</div></div></section>
+<section class="card" id="startCard"><h2>Start your CV</h2><p>Begin with your basic details.</p>
+<label>Full name <i>*</i></label><input id="name" placeholder="e.g. Asha Menon">
+<label>Email <i>*</i></label><input id="email" type="email" placeholder="you@example.com">
+<label>Country <i>*</i></label><input id="country" placeholder="e.g. India">
+<label>Mobile <i>*</i></label><div class="ph" id="phRow"><select id="phCountry" aria-label="Country for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number"></div>
+<button class="go" type="button">Start your CV</button></section></main>
+<footer>CV Studio</footer>
+<script>
+const DIAL={'india':'+91','japan':'+81','uae':'+971','dubai':'+971','abu dhabi':'+971','qatar':'+974','usa':'+1','canada':'+1','china':'+86','hong kong':'+852','uk':'+44','saudi arabia':'+966','oman':'+968','kuwait':'+965','bahrain':'+973','singapore':'+65','korea':'+82','germany':'+49','france':'+33','australia':'+61'};
+const ALIAS={'jp':'japan','ja':'japan','japanese':'japan','in':'india','hi':'india','hindi':'india','english (india)':'india','ae':'uae','united arab emirates':'uae','ar-ae':'uae','qa':'qatar','ar-qa':'qatar','us':'usa','united states':'usa','en-us':'usa','cn':'china','zh':'china','zh-cn':'china','chinese':'china','mandarin':'china','hk':'hong kong','zh-hk':'hong kong','yue':'hong kong','cantonese':'hong kong','gb':'uk','united kingdom':'uk','sa':'saudi arabia','ko':'korea','kr':'korea','de':'germany','fr':'france','sg':'singapore','au':'australia'};
+const LABEL={'india':'India','japan':'Japan','uae':'UAE','dubai':'Dubai (UAE)','abu dhabi':'Abu Dhabi (UAE)','qatar':'Qatar','usa':'USA','canada':'Canada','china':'China','hong kong':'Hong Kong','uk':'UK','saudi arabia':'Saudi Arabia','oman':'Oman','kuwait':'Kuwait','bahrain':'Bahrain','singapore':'Singapore','korea':'Korea','germany':'Germany','france':'France','australia':'Australia'};
+const CODES=[...new Set(Object.values(DIAL).map(c=>c.slice(1)))].sort((a,b)=>b.length-a.length);
+const ckey=v=>{const k=(v||'').trim().toLowerCase();const r=ALIAS[k]||k;return DIAL[r]?r:null};
+function national(n){let s=String(n||'').replace(/[^\d+]/g,'');if(!s)return'';
+ while(s.startsWith('+')||s.startsWith('00')){s=s.startsWith('+')?s.slice(1):s.slice(2);for(const c of CODES)if(s.startsWith(c)&&s.length-c.length>=6){s=s.slice(c.length);break}}
+ return s.length>10?s.replace(/^0+/,''):s}
+const phSel=document.getElementById('phCountry'),phChip=document.getElementById('phChip');
+for(const k in LABEL){const o=document.createElement('option');o.value=k;o.textContent=LABEL[k];phSel.appendChild(o)}
+phSel.value='india';
+function phSync(){phChip.textContent=DIAL[phSel.value]}
+phSel.onchange=phSync;
+document.getElementById('country').addEventListener('input',e=>{const k=ckey(e.target.value);if(k){phSel.value=k;phSync()}});
+const q=new URLSearchParams(location.search).get('c');if(q){const k=ckey(q);if(k){phSel.value=k;document.getElementById('country').value=LABEL[k];phSync()}}
+const n=new URLSearchParams(location.search).get('n');if(n)document.getElementById('phLocal').value=national(n);
+</script></body></html>
