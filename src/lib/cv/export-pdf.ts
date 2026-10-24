@@ -348,6 +348,46 @@ export function buildPdf(profile: Profile, settings: Settings): jsPDF {
   return doc;
 }
 
-export function downloadPdf(profile: Profile, settings: Settings) {
-  buildPdf(profile, settings).save(`${fileBase(profile, settings)}.pdf`);
+/**
+ * Two diagonal, semi-transparent lines across EVERY page. Drawn last (on top)
+ * at low opacity so the CV text underneath stays readable.
+ */
+export function stampWatermark(doc: jsPDF, lines: readonly string[]) {
+  const pages = doc.getNumberOfPages();
+  const w = doc.internal.pageSize.getWidth();
+  const h = doc.internal.pageSize.getHeight();
+  const angle = (Math.atan2(h, w) * 180) / Math.PI;
+  for (let page = 1; page <= pages; page += 1) {
+    doc.setPage(page);
+    doc.saveGraphicsState();
+    doc.setGState(doc.GState({ opacity: 0.18 }));
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(150, 30, 30);
+    lines.forEach((line, index) => {
+      const size = index === 0 ? 30 : 40;
+      doc.setFontSize(size);
+      const text = pdfText(line);
+      const len = doc.getTextWidth(text);
+      // Centre each line on the diagonal, offset perpendicular to it.
+      const cx = w / 2 + (index === 0 ? -1 : 1) * 22 * Math.sin((angle * Math.PI) / 180);
+      const cy = h / 2 + (index === 0 ? -1 : 1) * 22 * Math.cos((angle * Math.PI) / 180);
+      const rad = (angle * Math.PI) / 180;
+      const x = cx - (len / 2) * Math.cos(rad);
+      const y = cy + (len / 2) * Math.sin(rad);
+      doc.text(text, x, y, { angle });
+    });
+    doc.restoreGraphicsState();
+  }
+}
+
+/** Free, watermarked preview PDF. This is the ONLY PDF the browser builds. */
+export function buildPreviewPdf(profile: Profile, settings: Settings, lines: readonly string[]): jsPDF {
+  const doc = buildPdf(profile, settings);
+  stampWatermark(doc, lines);
+  doc.setProperties({ title: "UNPAID PREVIEW - Meridian", subject: lines.join(" / "), creator: "Meridian" });
+  return doc;
+}
+
+export function downloadPreviewPdf(profile: Profile, settings: Settings, lines: readonly string[]) {
+  buildPreviewPdf(profile, settings, lines).save(`${fileBase(profile, settings)}-PREVIEW.pdf`);
 }

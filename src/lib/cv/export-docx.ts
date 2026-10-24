@@ -14,7 +14,6 @@ import {
   degreeLine,
   displayName,
   dossierCode,
-  fileBase,
   formatSpan,
   formatWhen,
   lifeLines,
@@ -209,17 +208,4 @@ export async function buildDocxBuffer(profile: Profile, settings: Settings) {
     ],
   });
   return Packer.toBuffer(doc);
-}
-
-export async function downloadDocx(profile: Profile, settings: Settings) {
-  const buffer = await buildDocxBuffer(profile, settings);
-  const blob = new Blob([new Uint8Array(buffer)], {
-    type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `${fileBase(profile, settings)}.docx`;
-  link.click();
-  URL.revokeObjectURL(url);
 }
