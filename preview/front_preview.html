@@ -15,7 +15,8 @@ main{position:relative;z-index:6;background:var(--bg)}
 .kicker{font:600 11px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
 h1{font:600 clamp(36px,6vw,68px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 16px;max-width:14ch}
 .tagline{color:var(--mute);font-size:17px;line-height:1.6;margin:0 0 44px;max-width:44ch}
-.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}.acts .go{margin-top:0;padding:15px 8px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}.acts .go{margin-top:0;padding:15px 8px;white-space:nowrap}
+@media(max-width:760px){.acts .go{letter-spacing:.08em;font-size:12px}}
 .go.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}.go.alt:hover{border-color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 .f{background:var(--card);padding:40px 32px 34px;border-radius:0;transition:background .3s}
@@ -39,6 +40,9 @@ select option{background:#111;color:#fff}
 .ph input{flex:1;min-width:6em;border-left:0}
 .go{margin-top:26px;width:100%;background:linear-gradient(180deg,#fff,#d8d8d8);color:#000;border:0;border-radius:0;padding:15px;font:600 13px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:box-shadow .3s}
 .go:hover{box-shadow:0 0 30px rgba(255,255,255,.22)}
+.hero::before{content:"";position:absolute;inset:-40px;background:url(assets/cvstudio_poster.jpg) center/cover;filter:blur(36px) brightness(.45);display:none}
+.hero video{position:relative}
+@media(min-width:761px){.hero::before{display:block}.hero video{object-fit:contain}}
 footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-transform:uppercase;padding:40px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.start{grid-template-columns:1fr;gap:28px}.sec{padding:52px 16px}.f{padding:32px 24px 28px}.card{padding:26px 18px}.ph select{flex-basis:7.2em}}
 </style></head><body>
