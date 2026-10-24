@@ -2,18 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/site-footer";
 
 const BASE = "https://cvstudio-app.onrender.com";
-const EMAIL = "clickwisewholesalebazar@gmail.com";
+const EMAIL = "team@clickwisewe24in.we24.in";
 const JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "CV Studio",
     url: "https://cvstudio-app.onrender.com/",
-    email: "clickwisewholesalebazar@gmail.com",
+    email: "team@clickwisewe24in.we24.in",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "clickwisewholesalebazar@gmail.com",
+      email: "team@clickwisewe24in.we24.in",
       availableLanguage: ["English", "Hindi"],
     },
   },
@@ -113,7 +113,7 @@ const JSONLD = [
         name: "How do I contact support?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Email clickwisewholesalebazar@gmail.com. Requests are reviewed within 2 working days.",
+          text: "Email team@clickwisewe24in.we24.in. Requests are reviewed within 2 working days.",
         },
       },
       {
@@ -210,7 +210,7 @@ const D: {
         "CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications.",
         "Anyone can create, edit, save and choose CV templates for free without logging in, and download a watermarked PDF/DOCX for free.",
         "Paid options remove the watermark and add form fills: Single Use ₹20 (India) or $1 (global) for one clean CV download or one form fill; Career Starter ₹1,000/year (2 profiles, 100 CV generations, 100 form fills); Global Pro $29/year (300 CV generations, 300 form fills).",
-        "Support is by email at clickwisewholesalebazar@gmail.com; requests are reviewed within 2 working days.",
+        "Support is by email at team@clickwisewe24in.we24.in; requests are reviewed within 2 working days.",
         "CV Studio is currently in trial mode and is not taking real payments yet.",
       ],
       refund: "Refund Policy",
@@ -246,7 +246,7 @@ const D: {
         "CV Studio एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
         "कोई भी बिना लॉगिन के मुफ़्त में CV बना, बदल, सेव कर सकता है, टेम्पलेट चुन सकता है और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकता है।",
         "पेड विकल्प वॉटरमार्क हटाते हैं और फ़ॉर्म फ़िल देते हैं: Single Use ₹20 (भारत) या $1 (ग्लोबल) — एक क्लीन CV डाउनलोड या एक फ़ॉर्म फ़िल; Career Starter ₹1,000/साल (2 प्रोफ़ाइल, 100 CV जनरेशन, 100 फ़ॉर्म फ़िल); Global Pro $29/साल (300 CV जनरेशन, 300 फ़ॉर्म फ़िल)।",
-        "सहायता ईमेल से: clickwisewholesalebazar@gmail.com; अनुरोधों की जाँच 2 कार्य-दिवसों में होती है।",
+        "सहायता ईमेल से: team@clickwisewe24in.we24.in; अनुरोधों की जाँच 2 कार्य-दिवसों में होती है।",
         "CV Studio अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
       ],
       refund: "रिफंड नीति",

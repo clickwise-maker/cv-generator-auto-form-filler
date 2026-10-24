@@ -47,7 +47,7 @@ export const Route = createRootRoute({
           <p>
             CV Studio: free CV builder (no login), plain and designed templates, PDF/DOCX download, free watermarked
             download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year,
-            Global Pro $29/year. Support: clickwisewholesalebazar@gmail.com (reviewed within 2 working days).{" "}
+            Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days).{" "}
             <a href="/services">Services &amp; Plans</a> · <a href="/refund-policy">Refund Policy</a>
           </p>
         </noscript>

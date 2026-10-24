@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { SiteFooter } from "./site-footer";
 
-export const EMAIL = "clickwisewholesalebazar@gmail.com";
+export const EMAIL = "team@clickwisewe24in.we24.in";
 
 type Sec = [string, string[]];
 export type InfoContent = {
