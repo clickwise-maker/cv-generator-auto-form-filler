@@ -5,7 +5,7 @@
 :root{--bg:#000;--card:#111;--ink:#fff;--mute:#9a9a9a;--line:rgba(255,255,255,.12);--serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,Arial,sans-serif}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
 .hero{position:sticky;top:0;z-index:7;height:80vh;overflow:hidden;background:#000}
-.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.hero video{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(0);backface-visibility:hidden;background:#000}
 .langs{position:absolute;top:12px;left:0;right:0;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 10px}
 .langs button,.mute{font:500 12px var(--sans);color:#fff;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer}
 .langs button[aria-pressed=true]{background:rgba(255,255,255,.88);color:#000}
@@ -40,7 +40,7 @@ select option{background:#111;color:#fff}
 .ph input{flex:1;min-width:6em;border-left:0}
 .go{margin-top:26px;width:100%;background:linear-gradient(180deg,#fff,#d8d8d8);color:#000;border:0;border-radius:0;padding:15px;font:600 13px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:box-shadow .3s}
 .go:hover{box-shadow:0 0 30px rgba(255,255,255,.22)}
-.hero::before{content:"";position:absolute;inset:-40px;background:url(assets/cvstudio_poster.jpg) center/cover;filter:blur(36px) brightness(.45);display:none}
+.hero::before{content:"";position:absolute;inset:-40px;transform:translateZ(0);will-change:transform;background:url(assets/cvstudio_poster.jpg) center/cover;filter:blur(36px) brightness(.45);display:none}
 .hero video{position:relative}
 @media(min-width:761px){.hero::before{display:block}.hero video{object-fit:contain}}
 footer{text-align:center;color:#555;font-size:12px;letter-spacing:.3em;text-transform:uppercase;padding:40px}
@@ -54,7 +54,7 @@ html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{
 <meta property="og:type" content="website"><meta property="og:title" content="CV Studio"><meta property="og:url" content="https://cvstudio-preview.onrender.com/front_preview.html"><meta property="og:description" content="CV Studio: free CV builder (no login needed), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.">
 </head><body>
 <header class="hero" id="hero">
-<video id="vid" src="assets/cvstudio_promo.mp4" poster="assets/cvstudio_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+<video id="vid" src="assets/cvstudio_promo.mp4" poster="assets/cvstudio_poster.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture></video>
 <nav class="langs" aria-label="Language">
 <button aria-pressed="true" data-l="en">English</button><button aria-pressed="false" data-l="hi">हिंदी</button><button aria-pressed="false" data-l="ja">日本語</button><button aria-pressed="false" data-l="ko">한국어</button><button aria-pressed="false" data-l="zh">中文</button></nav>
 <button class="mute" id="mute" type="button" aria-label="Unmute video">🔇 Sound</button>
@@ -66,9 +66,9 @@ html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{
 <footer>CV Studio<br><a href="refund-policy.html" style="color:#666;font-size:11px;letter-spacing:.2em">Refund Policy</a> · <a href="services.html" style="color:#666;font-size:11px;letter-spacing:.2em">Services &amp; Plans</a> · <a href="privacy-policy.html" style="color:#666;font-size:11px;letter-spacing:.2em">Privacy Policy</a> · <a href="terms.html" style="color:#666;font-size:11px;letter-spacing:.2em">Terms</a> · <a href="faq.html" style="color:#666;font-size:11px;letter-spacing:.2em">FAQ</a> · <a href="about.html" style="color:#666;font-size:11px;letter-spacing:.2em">About &amp; Contact</a></footer>
 <script>
 (function(){const h=document.getElementById('hero'),v=document.getElementById('vid'),m=document.getElementById('mute');
-function sz(){const vh=innerHeight,max=vh*.8,min=Math.max(160,Math.min(innerWidth*.5625,vh*.32))*(innerWidth>760?1.2:1);const t=Math.min(1,scrollY/(max-min||1));h.style.height=(max-(max-min)*t)+'px'}
-addEventListener('scroll',sz,{passive:true});
-const pl=()=>{const r=v.play();r&&r.catch(()=>{})};v.addEventListener('ended',()=>{v.currentTime=0;pl()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)pl()});if('IntersectionObserver'in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)pl()})).observe(v);pl();
+function sz(){const vh=innerHeight,max=vh*.8,min=Math.max(160,Math.min(innerWidth*.5625,vh*.32))*(innerWidth>760?1.2:1);const t=Math.min(1,scrollY/(max-min||1));const nh=Math.round(max-(max-min)*t);if(nh!==lh){lh=nh;h.style.height=nh+'px'}}
+let rq=0,lh=0;addEventListener('scroll',()=>{if(!rq)rq=requestAnimationFrame(()=>{rq=0;sz()})},{passive:true});
+const pl=()=>{const r=v.play();r&&r.catch(()=>{})};document.addEventListener('visibilitychange',()=>{if(!document.hidden)pl()});if('IntersectionObserver'in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&v.paused)pl()})).observe(v);pl();
 addEventListener('resize',sz);sz();
 m.onclick=()=>{v.muted=!v.muted;if(!v.muted)v.play();m.textContent=v.muted?'🔇 Sound':'🔊 Mute';m.setAttribute('aria-label',v.muted?'Unmute video':'Mute video')};
 document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.langs button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.documentElement.lang=b.dataset.l;const L=b.dataset.l==='hi'?'hi':'en';document.querySelectorAll('[data-en]').forEach(e=>e.textContent=e.dataset[L])});
