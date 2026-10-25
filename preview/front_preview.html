@@ -15,7 +15,7 @@ main{position:relative;z-index:6;background:var(--bg)}
 .kicker{font:600 11px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
 h1{font:600 clamp(36px,6vw,68px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 16px;max-width:14ch}
 .tagline{color:var(--mute);font-size:17px;line-height:1.6;margin:0 0 44px;max-width:44ch}
-.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}.acts .go{margin-top:0;padding:15px 8px;white-space:nowrap}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}.acts .go{margin-top:0;padding:15px 8px;white-space:nowrap;display:block;text-align:center;text-decoration:none}.cta{text-align:center}.cta h1,.cta .tagline{margin-left:auto;margin-right:auto}.cta .acts{max-width:560px;margin:26px auto 0}
 @media(max-width:760px){.acts .go{letter-spacing:.08em;font-size:12px}}
 .go.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}.go.alt:hover{border-color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
@@ -49,9 +49,9 @@ html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{
 @media(max-width:760px){html{scroll-padding-top:240px}#startCard,#startCard h2{scroll-margin-top:240px}}
 #ferr{color:#ff8a80;font-size:13px;margin-top:12px;min-height:1em}
 </style>  <script defer src="analytics.js"></script>
-<meta name="description" content="CV Studio: free CV builder (sign-in with email/password or Google needed to open the builder), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.">
+<meta name="description" content="CV Studio: free CV builder (no login needed), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.">
 <link rel="canonical" href="https://cvstudio-preview.onrender.com/front_preview.html">
-<meta property="og:type" content="website"><meta property="og:title" content="CV Studio"><meta property="og:url" content="https://cvstudio-preview.onrender.com/front_preview.html"><meta property="og:description" content="CV Studio: free CV builder (sign-in with email/password or Google needed to open the builder), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.">
+<meta property="og:type" content="website"><meta property="og:title" content="CV Studio"><meta property="og:url" content="https://cvstudio-preview.onrender.com/front_preview.html"><meta property="og:description" content="CV Studio: free CV builder (no login needed), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.">
 </head><body>
 <header class="hero" id="hero">
 <video id="vid" src="assets/cvstudio_promo.mp4" poster="assets/cvstudio_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
@@ -60,19 +60,8 @@ html{scroll-padding-top:calc(min(32vh,56.25vw) + 24px)}#startCard,#startCard h2{
 <button class="mute" id="mute" type="button" aria-label="Unmute video">🔇 Sound</button>
 </header>
 <main>
-<section class="sec"><p class="kicker">CV Studio</p><h1>Enter. Fill every form. Then rest.</h1><p class="tagline">Generate a finished CV, and let your forms fill themselves, from one profile.</p>
-<div class="grid">
-<article class="f"><span class="num">0 1</span><h3>Auto form filler</h3><p>Photo, PDF, or a letter. The fields fill themselves.</p><i></i></article>
-<article class="f"><span class="num">0 2</span><h3>CV generator</h3><p>A finished page, then PDF or Word.</p><i></i></article>
-<article class="f" id="loginCard" role="link" tabindex="0" data-href="login.html" style="cursor:pointer"><span class="num">0 3</span><h3>Login</h3><p id="loginTxt">Open your account.</p><i></i></article>
-</div></section>
-<section class="sec start"><div><p class="kicker">Begin</p><h2>One profile. Two jobs done.</h2><p class="lead">Enter your details once. Use them for a finished CV, or to fill any form.</p></div>
-<section class="card" id="startCard"><h2>Start your profile</h2><p>One profile. Your CV, and every form filled for you.</p>
-<label>Full name <i>*</i></label><input id="name" placeholder="e.g. Asha Menon">
-<label>Email <i>*</i></label><input id="email" type="email" placeholder="you@example.com">
-<label>Country <i>*</i></label><input id="country" placeholder="e.g. India">
-<label>Mobile <i>*</i></label><div class="ph" id="phRow"><select id="phCountry" aria-label="Country for phone prefix"></select><span id="phChip" class="phchip">+91</span><input id="phLocal" type="tel" placeholder="National number"></div>
-<div class="acts"><button class="go" id="goCv" type="button">Generate my CV</button><button class="go alt" id="goFill" type="button">Auto-fill a form</button></div><p id="ferr" role="alert"></p></section></section>
+<section class="sec cta"><h1 data-en="Your CV and every form, ready." data-hi="आपका CV और हर फ़ॉर्म, तैयार।">Your CV and every form, ready.</h1><p class="tagline" data-en="Free to start, no login needed. Plans show only when you download." data-hi="शुरू करना मुफ़्त है, लॉगिन की ज़रूरत नहीं। प्लान सिर्फ़ डाउनलोड के समय दिखेंगे।">Free to start, no login needed. Plans show only when you download.</p>
+<div class="acts"><a class="go" id="goCv" href="https://cvstudio-app.onrender.com/" data-en="Build your first CV" data-hi="अपना पहला CV बनाएँ">Build your first CV</a><a class="go alt" id="goFill" href="https://cvstudio-app.onrender.com/#document-file" data-en="Fill your form" data-hi="अपना फ़ॉर्म भरें">Fill your form</a></div></section>
 </main>
 <footer>CV Studio<br><a href="refund-policy.html" style="color:#666;font-size:11px;letter-spacing:.2em">Refund Policy</a> · <a href="services.html" style="color:#666;font-size:11px;letter-spacing:.2em">Services &amp; Plans</a> · <a href="privacy-policy.html" style="color:#666;font-size:11px;letter-spacing:.2em">Privacy Policy</a> · <a href="terms.html" style="color:#666;font-size:11px;letter-spacing:.2em">Terms</a> · <a href="faq.html" style="color:#666;font-size:11px;letter-spacing:.2em">FAQ</a> · <a href="about.html" style="color:#666;font-size:11px;letter-spacing:.2em">About &amp; Contact</a></footer>
 <script>
@@ -82,45 +71,10 @@ addEventListener('scroll',sz,{passive:true});
 const pl=()=>{const r=v.play();r&&r.catch(()=>{})};v.addEventListener('ended',()=>{v.currentTime=0;pl()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)pl()});if('IntersectionObserver'in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)pl()})).observe(v);pl();
 addEventListener('resize',sz);sz();
 m.onclick=()=>{v.muted=!v.muted;if(!v.muted)v.play();m.textContent=v.muted?'🔇 Sound':'🔊 Mute';m.setAttribute('aria-label',v.muted?'Unmute video':'Mute video')};
-document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.langs button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.documentElement.lang=b.dataset.l});
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.langs button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.documentElement.lang=b.dataset.l;const L=b.dataset.l==='hi'?'hi':'en';document.querySelectorAll('[data-en]').forEach(e=>e.textContent=e.dataset[L])});
 })();
 </script>
-<script>
-const DIAL={'india':'+91','japan':'+81','uae':'+971','dubai':'+971','abu dhabi':'+971','qatar':'+974','usa':'+1','canada':'+1','china':'+86','hong kong':'+852','uk':'+44','saudi arabia':'+966','oman':'+968','kuwait':'+965','bahrain':'+973','singapore':'+65','korea':'+82','germany':'+49','france':'+33','australia':'+61'};
-const ALIAS={'jp':'japan','ja':'japan','japanese':'japan','in':'india','hi':'india','hindi':'india','english (india)':'india','ae':'uae','united arab emirates':'uae','ar-ae':'uae','qa':'qatar','ar-qa':'qatar','us':'usa','united states':'usa','en-us':'usa','cn':'china','zh':'china','zh-cn':'china','chinese':'china','mandarin':'china','hk':'hong kong','zh-hk':'hong kong','yue':'hong kong','cantonese':'hong kong','gb':'uk','united kingdom':'uk','sa':'saudi arabia','ko':'korea','kr':'korea','de':'germany','fr':'france','sg':'singapore','au':'australia'};
-const LABEL={'india':'India','japan':'Japan','uae':'UAE','dubai':'Dubai (UAE)','abu dhabi':'Abu Dhabi (UAE)','qatar':'Qatar','usa':'USA','canada':'Canada','china':'China','hong kong':'Hong Kong','uk':'UK','saudi arabia':'Saudi Arabia','oman':'Oman','kuwait':'Kuwait','bahrain':'Bahrain','singapore':'Singapore','korea':'Korea','germany':'Germany','france':'France','australia':'Australia'};
-const CODES=[...new Set(Object.values(DIAL).map(c=>c.slice(1)))].sort((a,b)=>b.length-a.length);
-const ckey=v=>{const k=(v||'').trim().toLowerCase();const r=ALIAS[k]||k;return DIAL[r]?r:null};
-function national(n){let s=String(n||'').replace(/[^\d+]/g,'');if(!s)return'';
- while(s.startsWith('+')||s.startsWith('00')){s=s.startsWith('+')?s.slice(1):s.slice(2);for(const c of CODES)if(s.startsWith(c)&&s.length-c.length>=6){s=s.slice(c.length);break}}
- return s.length>10?s.replace(/^0+/,''):s}
-const phSel=document.getElementById('phCountry'),phChip=document.getElementById('phChip');
-for(const k in LABEL){const o=document.createElement('option');o.value=k;o.textContent=LABEL[k];phSel.appendChild(o)}
-phSel.value='india';
-function phSync(){phChip.textContent=DIAL[phSel.value]}
-phSel.onchange=phSync;
-document.getElementById('country').addEventListener('input',e=>{const k=ckey(e.target.value);if(k){phSel.value=k;phSync()}});
-const q=new URLSearchParams(location.search).get('c');if(q){const k=ckey(q);if(k){phSel.value=k;document.getElementById('country').value=LABEL[k];phSync()}}
-const n=new URLSearchParams(location.search).get('n');if(n)document.getElementById('phLocal').value=national(n);
 
-/* Carry name/email/country/phone into the CV profile flow (localStorage cv_profile + query string) */
-function handoff(dest){const $=i=>document.getElementById(i),name=$('name').value.trim(),email=$('email').value.trim(),country=$('country').value.trim(),nat=national($('phLocal').value);
- const miss=[!name&&'Full name',!email&&'Email',!country&&'Country',!nat&&'Mobile'].filter(Boolean);
- if(miss.length){$('ferr').textContent='Please fill: '+miss.join(', ');document.getElementById('startCard').scrollIntoView({block:'start'});return}
- const parts=name.split(/\s+/),first=parts.shift(),last=parts.join(' '),mobile=DIAL[phSel.value]+' '+nat;
- let p={};try{p=JSON.parse(localStorage.getItem('cv_profile')||'{}')||{}}catch(e){}
- Object.assign(p,{first_name:first,last_name:last,email,mobile});p.address=Object.assign({},p.address,{country});
- try{localStorage.setItem('cv_profile',JSON.stringify(p))}catch(e){}
- const qs=new URLSearchParams({first_name:first,last_name:last,email,country,mobile,phone_country:phSel.value});
- const to=dest+'?'+qs;if(AUTH.on&&!AUTH.user){location.href='login.html?next='+encodeURIComponent('/'+to);return}location.href=to}
-/* Auth (Supabase): 03 Login card opens login.html, or signs out when signed in; CTA buttons send signed-out visitors to login first. */
-const AUTH={on:false,user:null},lc=document.getElementById('loginCard'),lt=document.getElementById('loginTxt');
-const goLogin=()=>{if(AUTH.user){AUTH.sb.auth.signOut().then(()=>location.reload())}else location.href=lc.dataset.href};
-lc.onclick=goLogin;lc.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goLogin()}};
-window.addEventListener('load',()=>{try{const C=window.CVS_SUPABASE;AUTH.sb=supabase.createClient(C.url,C.anonKey);AUTH.sb.auth.getSession().then(({data})=>{AUTH.on=true;AUTH.user=data.session&&data.session.user;if(AUTH.user){lt.textContent='Signed in as '+AUTH.user.email+' · Sign out';lc.setAttribute('aria-label','Sign out')}})}catch(e){}});
-document.getElementById('goCv').onclick=()=>handoff('cv_profile/profile_form.html');
-document.getElementById('goFill').onclick=()=>handoff('autofill/index.html');
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script>
-<noscript><p>CV Studio: free CV builder (sign-in with email/password or Google needed to open the builder), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days). <a href="services.html">Services &amp; Plans</a> · <a href="pricing.html">Pricing</a> · <a href="refund-policy.html">Refund Policy</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="faq.html">FAQ</a> · <a href="about.html">About &amp; Contact</a></p></noscript>
+
+<noscript><p>CV Studio: free CV builder (no login needed), plain and designed templates, PDF/DOCX download, free watermarked download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days). <a href="services.html">Services &amp; Plans</a> · <a href="pricing.html">Pricing</a> · <a href="refund-policy.html">Refund Policy</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="faq.html">FAQ</a> · <a href="about.html">About &amp; Contact</a></p></noscript>
 </body></html>
