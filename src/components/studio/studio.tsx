@@ -19,13 +19,16 @@ export function Studio() {
       <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
           <div className="flex items-center gap-3">
-            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-forest font-serif text-lg text-sheet" aria-hidden>
-              M
+            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-forest font-serif text-sm text-sheet" aria-hidden>
+              CV
             </span>
             <div className="min-w-0 flex-1">
-              <p className="font-serif text-lg leading-none">Meridian</p>
+              <p className="font-serif text-lg leading-none">CV Studio</p>
               <p className="truncate text-xs text-muted">Guest mode — no email, phone or OTP needed</p>
             </div>
+            <a href="/dashboard" className="h-11 content-center px-2 text-sm font-medium text-forest">
+              Dashboard
+            </a>
             {undo ? (
               <button type="button" className="h-11 px-2 text-sm font-medium text-forest" onClick={undoProfile}>
                 Undo

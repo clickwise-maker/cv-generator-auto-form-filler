@@ -214,7 +214,7 @@ export const COPY: Record<Locale, Copy> = {
 export const TEMPLATES: { id: TemplateId; label: string; hint: string }[] = [
   {
     id: "meridian",
-    label: "Meridian CV",
+    label: "International CV",
     hint: "International two-column curriculum vitae",
   },
   {
@@ -619,7 +619,7 @@ export function fileBase(profile: Profile, settings: Settings): string {
     .replace(/^-|-$/g, "");
   const kind =
     settings.template === "consulate" ? "particulars" : settings.template === "atlas" ? "resume" : "cv";
-  return `${name || "Meridian"}-${kind}`;
+  return `${name || "CV-Studio"}-${kind}`;
 }
 
 export function summaryLines(summary: string): string[] {
