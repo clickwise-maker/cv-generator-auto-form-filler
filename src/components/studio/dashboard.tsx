@@ -1,9 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Briefcase, CheckCircle2, ClipboardList, CreditCard, FilePlus2, FileText, PenLine, Upload, Wallet } from "lucide-react";
+import { Copy, Share2, Users, Briefcase, CheckCircle2, ClipboardList, CreditCard, FilePlus2, FileText, PenLine, Upload, Wallet } from "lucide-react";
 import type { Credits } from "@/lib/payments/config";
 import { fetchCredits, fingerprint, readGuest, type GuestState } from "@/lib/payments/client";
 import { useStudio } from "@/lib/cv/store";
 import { emptyProfile, TEMPLATES } from "@/lib/cv/model";
+import { createClientLink, getClient, listClients, type ClientSummary } from "@/lib/clients/client";
 
 /** All dashboard copy in one place so it can be translated later. */
 export const DASH_TEXT = {
@@ -36,6 +37,18 @@ export const DASH_TEXT = {
   noCvs: "No CVs yet. Start building your first CV — it only takes a few minutes.",
   companiesTitle: "Companies applied",
   noCompanies: "No applications yet. Use “Fill a form” to apply to a company.",
+  clientsTitle: "Clients",
+  clientsHint: "Share this link with a client. They fill their details once; you can then fill any form for them.",
+  businessName: "Your business name (shown to clients)",
+  createLink: "Create share link",
+  copy: "Copy link",
+  copied: "Copied!",
+  whatsapp: "Share on WhatsApp",
+  noClients: "No client details yet. Share the link above.",
+  submitted: "Submitted",
+  fillForClient: "Fill form for this client",
+  refresh: "Refresh",
+  shareMsg: "Please fill your details here so we can fill your form:",
 } as const;
 
 /** Opens the download paywall (where plans live). Plans are never shown elsewhere. */
@@ -199,6 +212,8 @@ export function Dashboard() {
         </div>
       </div>
 
+      {credits?.clients && guest.planEntitlementId ? <ClientsCard entitlementId={guest.planEntitlementId} guestId={guest.guestId} /> : null}
+
       <div className="mt-4 grid gap-3 lg:grid-cols-2">
         <Panel title={T.recentCvs} testId="dash-recent">
           {hasContent || pastExports.length ? (
@@ -247,5 +262,127 @@ export function Dashboard() {
         </Panel>
       </div>
     </section>
+  );
+}
+
+const BACKUP_KEY = "meridian.dossier.backup.v1";
+
+/** Commercial plan only: share an intake link and fill forms with a client's saved details. */
+function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestId: string }) {
+  const T = DASH_TEXT;
+  const commitProfile = useStudio((s) => s.commitProfile);
+  const [biz, setBiz] = useState("");
+  const [url, setUrl] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [clients, setClients] = useState<ClientSummary[]>([]);
+  const [err, setErr] = useState("");
+
+  const refresh = () => listClients(entitlementId).then((r) => setClients(r.clients), (e: Error) => setErr(e.message));
+  useEffect(() => {
+    void refresh();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [entitlementId]);
+
+  async function makeLink() {
+    setErr("");
+    try {
+      const r = await createClientLink(entitlementId, guestId, biz);
+      setBiz(r.businessName);
+      setUrl(`${window.location.origin}${r.path}`);
+    } catch (e) {
+      setErr((e as Error).message);
+    }
+  }
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // clipboard blocked; the link is still visible to select
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+  async function fillFor(c: ClientSummary) {
+    setErr("");
+    try {
+      const full = await getClient(entitlementId, c.clientId);
+      const base = emptyProfile();
+      try {
+        const own = localStorage.getItem("meridian.dossier.v1");
+        if (own && !localStorage.getItem(BACKUP_KEY)) localStorage.setItem(BACKUP_KEY, own);
+      } catch {
+        // ignore
+      }
+      commitProfile({ ...base, ...full.profile, personal: { ...base.personal, ...full.profile.personal } });
+      window.location.href = "/#document-file";
+    } catch (e) {
+      setErr((e as Error).message);
+    }
+  }
+
+  return (
+    <div className="mt-4">
+      <Panel title={T.clientsTitle} testId="dash-clients">
+        <p className="text-sm text-muted">{T.clientsHint}</p>
+        <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+          <input
+            className="h-11 flex-1 rounded-lg border border-line bg-paper px-3 text-sm"
+            placeholder={T.businessName}
+            aria-label={T.businessName}
+            value={biz}
+            onChange={(e) => setBiz(e.target.value)}
+            data-testid="clients-biz"
+          />
+          <button type="button" className="flex h-11 items-center justify-center gap-2 rounded-full bg-forest px-4 text-sm font-medium text-sheet" onClick={() => void makeLink()} data-testid="clients-create-link">
+            <Users className="size-4" aria-hidden /> {T.createLink}
+          </button>
+        </div>
+        {url ? (
+          <div className="mt-3 rounded-lg border border-line bg-sheet p-3">
+            <p className="break-all font-mono text-xs" data-testid="clients-link">{url}</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button type="button" className="flex h-10 items-center gap-1 rounded-full border border-forest px-3 text-sm text-forest" onClick={() => void copy()} data-testid="clients-copy">
+                <Copy className="size-4" aria-hidden /> {copied ? T.copied : T.copy}
+              </button>
+              <a
+                className="flex h-10 items-center gap-1 rounded-full border border-forest px-3 text-sm text-forest"
+                href={`https://wa.me/?text=${encodeURIComponent(`${T.shareMsg} ${url}`)}`}
+                target="_blank"
+                rel="noreferrer"
+                data-testid="clients-whatsapp"
+              >
+                <Share2 className="size-4" aria-hidden /> {T.whatsapp}
+              </a>
+            </div>
+          </div>
+        ) : null}
+        {err ? <p className="mt-2 text-sm text-red-700" role="alert">{err}</p> : null}
+        <div className="mt-4 flex items-center justify-between">
+          <p className="text-sm font-medium">{T.clientsTitle} ({clients.length})</p>
+          <button type="button" className="h-10 text-sm text-forest underline" onClick={() => void refresh()} data-testid="clients-refresh">
+            {T.refresh}
+          </button>
+        </div>
+        {clients.length ? (
+          <ul className="mt-2 divide-y divide-line text-sm" data-testid="clients-list">
+            {clients.map((c) => (
+              <li key={c.clientId} className="flex flex-col gap-2 py-2 sm:flex-row sm:items-center">
+                <div className="flex-1">
+                  <p className="font-medium">{c.name}</p>
+                  <p className="text-xs text-muted">
+                    {T.submitted} {new Date(c.submittedAt).toLocaleString()}
+                  </p>
+                </div>
+                <button type="button" className="h-10 rounded-full bg-forest px-4 text-sm font-medium text-sheet" onClick={() => void fillFor(c)} data-testid="clients-fill">
+                  {T.fillForClient}
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-2 text-sm text-muted">{T.noClients}</p>
+        )}
+      </Panel>
+    </div>
   );
 }

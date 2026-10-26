@@ -17,6 +17,8 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as CTokenRouteImport } from './routes/c.$token'
+import { Route as ApiClientsSplatRouteImport } from './routes/api/clients/$'
 import { Route as ApiPaidExportSplatRouteImport } from './routes/api/paid-export/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +61,16 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CTokenRoute = CTokenRouteImport.update({
+  id: '/c/$token',
+  path: '/c/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiClientsSplatRoute = ApiClientsSplatRouteImport.update({
+  id: '/api/clients/$',
+  path: '/api/clients/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
   id: '/api/paid-export/$',
   path: '/api/paid-export/$',
@@ -74,6 +86,8 @@ export interface FileRoutesByFullPath {
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
+  '/c/$token': typeof CTokenRoute
+  '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +99,8 @@ export interface FileRoutesByTo {
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
+  '/c/$token': typeof CTokenRoute
+  '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRoutesById {
@@ -97,6 +113,8 @@ export interface FileRoutesById {
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
+  '/c/$token': typeof CTokenRoute
+  '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +128,8 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/services'
     | '/terms'
+    | '/c/$token'
+    | '/api/clients/$'
     | '/api/paid-export/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +141,8 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/services'
     | '/terms'
+    | '/c/$token'
+    | '/api/clients/$'
     | '/api/paid-export/$'
   id:
     | '__root__'
@@ -132,6 +154,8 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/services'
     | '/terms'
+    | '/c/$token'
+    | '/api/clients/$'
     | '/api/paid-export/$'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +168,8 @@ export interface RootRouteChildren {
   RefundPolicyRoute: typeof RefundPolicyRoute
   ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
+  CTokenRoute: typeof CTokenRoute
+  ApiClientsSplatRoute: typeof ApiClientsSplatRoute
   ApiPaidExportSplatRoute: typeof ApiPaidExportSplatRoute
 }
 
@@ -205,6 +231,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/c/$token': {
+      id: '/c/$token'
+      path: '/c/$token'
+      fullPath: '/c/$token'
+      preLoaderRoute: typeof CTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/clients/$': {
+      id: '/api/clients/$'
+      path: '/api/clients/$'
+      fullPath: '/api/clients/$'
+      preLoaderRoute: typeof ApiClientsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/paid-export/$': {
       id: '/api/paid-export/$'
       path: '/api/paid-export/$'
@@ -224,6 +264,8 @@ const rootRouteChildren: RootRouteChildren = {
   RefundPolicyRoute: RefundPolicyRoute,
   ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
+  CTokenRoute: CTokenRoute,
+  ApiClientsSplatRoute: ApiClientsSplatRoute,
   ApiPaidExportSplatRoute: ApiPaidExportSplatRoute,
 }
 export const routeTree = rootRouteImport

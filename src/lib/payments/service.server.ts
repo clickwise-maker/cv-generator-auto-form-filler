@@ -97,6 +97,7 @@ export class PaymentService {
     if (!plan) throw new PaymentError(400, "bad_plan", "Unknown plan.");
     const provider = this.provider();
     if (!provider) throw new PaymentError(503, "payments_unavailable", "Paid exports are not yet available.");
+    if (plan.testOnly && !provider.test) throw new PaymentError(400, "bad_plan", "This plan is not available yet.");
     if (!/^[A-Za-z0-9_-]{8,80}$/.test(idempotencyKey)) throw new PaymentError(400, "bad_idempotency_key", "Missing idempotency key.");
     if (!/^[A-Za-z0-9_-]{8,80}$/.test(doc.docId)) throw new PaymentError(400, "bad_doc", "Missing document id.");
     const versionHash = makeVersionHash(doc.profile, doc.settings);
@@ -309,7 +310,22 @@ export class PaymentService {
       companiesUsed: (ent.companies ?? []).length,
       companyLimit: plan.companyLimit,
       singleUse: plan.singleUse,
+      clients: Boolean(plan.clients),
     };
+  }
+
+  /** Commercial owner check: a paid, active entitlement whose plan includes the Clients feature. */
+  async commercialOwner(entitlementId: string | undefined) {
+    let ent: EntitlementRecord;
+    try {
+      ent = await this.paidEntitlement(entitlementId);
+    } catch {
+      throw new PaymentError(403, "not_commercial", "Clients are available only on an active Commercial plan.");
+    }
+    const plan = getPlan(ent.planId);
+    if (!plan?.clients) throw new PaymentError(403, "not_commercial", "Clients are available only on an active Commercial plan.");
+    this.checkActive(ent);
+    return ent;
   }
 
   async getCredits(entitlementId: string | undefined) {

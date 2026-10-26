@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/studio/ui";
-import { DEFAULT_PLAN_ID, LAUNCH_NOTE, PLANS, getPlan, planPriceLabel, type ExportFormat, type PaywallStatus, type PlanId } from "@/lib/payments/config";
+import { DEFAULT_PLAN_ID, LAUNCH_NOTE, visiblePlans, getPlan, planPriceLabel, type ExportFormat, type PaywallStatus, type PlanId } from "@/lib/payments/config";
 import {
   ApiError,
   cancelOrder,
@@ -199,7 +199,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                         <span className="block text-xs text-muted">Watermarked PDF · unlimited · no sign-in</span>
                       </span>
                     </div>
-                    {PLANS.map((p) => (
+                    {visiblePlans(status.mode === "test").map((p) => (
                       <label key={p.id} className={`flex cursor-pointer gap-3 rounded-xl border p-3 text-sm ${p.id === planId ? "border-forest bg-paper" : "border-line"}`}>
                         <input type="radio" name="plan" value={p.id} checked={p.id === planId} onChange={() => setPlanId(p.id)} className="mt-1" />
                         <span className="flex-1">

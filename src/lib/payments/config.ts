@@ -56,7 +56,7 @@ export type PaywallStatus = {
 // PLANS — the single central place for every package shown in the paywall.
 // Plans are ONLY shown inside the download paywall (never on the home page).
 // ---------------------------------------------------------------------------
-export type PlanId = "single_inr" | "career_starter" | "global_single" | "global_pro";
+export type PlanId = "single_inr" | "career_starter" | "global_single" | "global_pro" | "commercial_test";
 
 export type Plan = {
   id: PlanId;
@@ -73,6 +73,11 @@ export type Plan = {
   /** Single-use plans: one CV OR one form fill (shared pool of 1). */
   singleUse: boolean;
   bullets: string[];
+  /** Hidden plans never appear in public pricing; testOnly ones are only offered in TEST mode. */
+  hidden?: boolean;
+  testOnly?: boolean;
+  /** Commercial feature: share an intake link with clients and fill forms for them. */
+  clients?: boolean;
 };
 
 export const PLANS: readonly Plan[] = [
@@ -128,7 +133,31 @@ export const PLANS: readonly Plan[] = [
     singleUse: false,
     bullets: ["1 year", "300 form-filler uses", "Remaining credits always shown"],
   },
+  {
+    // COMMERCIAL (business/agency) — TEST ONLY. Price is TBD; the ₹1 below is a
+    // placeholder for the simulated checkout and is never charged. Hidden from
+    // public pricing and only offered by the paywall while in TEST mode.
+    id: "commercial_test",
+    name: "Commercial (TEST)",
+    priceMinor: 100,
+    currency: "INR",
+    period: "year",
+    profiles: 1,
+    cvGenerations: 100,
+    formFills: 300,
+    companyLimit: 0,
+    singleUse: false,
+    hidden: true,
+    testOnly: true,
+    clients: true,
+    bullets: ["TEST ONLY — price TBD", "Share link with clients", "Clients list + fill forms for each client"],
+  },
 ];
+
+/** Plans offered in the paywall. Hidden test-only plans appear only in TEST mode. */
+export function visiblePlans(testMode: boolean): Plan[] {
+  return PLANS.filter((p) => !p.hidden || (p.testOnly && testMode));
+}
 
 export const DEFAULT_PLAN_ID: PlanId = "single_inr";
 export const LAUNCH_NOTE = "Launch offer, future plans may change; purchased package terms stay as bought.";
@@ -138,6 +167,7 @@ export function getPlan(id: unknown): Plan | undefined {
 }
 
 export function planPriceLabel(p: Plan): string {
+  if (p.testOnly) return "Price TBD (TEST)";
   const v = p.priceMinor / 100;
   const amt = Number.isInteger(v) ? v.toLocaleString("en-IN") : v.toFixed(2);
   const sym = p.currency === "INR" ? "₹" : "$";
@@ -158,4 +188,6 @@ export type Credits = {
   companiesUsed: number;
   companyLimit: number;
   singleUse: boolean;
+  /** Commercial "Clients" feature unlocked on this entitlement. */
+  clients: boolean;
 };
