@@ -22,6 +22,7 @@ import {
   summaryLines,
 } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
+import { signatureLine, templateSigns } from "@/lib/cv/signature";
 
 export function PreviewColumn() {
   const settings = useStudio((state) => state.settings);
@@ -247,6 +248,9 @@ function MeridianPage() {
           <LifeLines mode="cv" />
         </aside>
       </div>
+      <div className="px-5 pb-6 sm:px-8">
+        <SignatureLine />
+      </div>
     </div>
   );
 }
@@ -392,6 +396,7 @@ function ConsulatePage() {
       <Ink multiline value={personal.summary} placeholder="Statement" onChange={(value) => patch({ summary: value })} className="text-sm" />
       <p className="mt-6 text-xs italic text-muted">{copy.declaration}</p>
       <LifeLines mode="full" />
+      <SignatureLine />
     </div>
   );
 }
@@ -411,6 +416,22 @@ function LifeLines({ mode }: { mode: "cv" | "full" }) {
         </p>
       ))}
     </>
+  );
+}
+
+function SignatureLine() {
+  const personal = useStudio((state) => state.profile.personal);
+  const settings = useStudio((state) => state.settings);
+  const line = templateSigns(settings) ? signatureLine(personal, settings) : null;
+  if (!line) return null;
+  return (
+    <div className="mt-8 flex items-end justify-between gap-4" data-testid="cv-signature">
+      <p className="text-sm">{line.text}</p>
+      <div className="w-48 text-center">
+        <img src={line.image} alt={line.label} className="mx-auto h-14 max-w-full object-contain" />
+        <div className="border-t border-ink pt-1 text-xs text-muted">{line.label}</div>
+      </div>
+    </div>
   );
 }
 

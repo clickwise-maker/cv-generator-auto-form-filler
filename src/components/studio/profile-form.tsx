@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
 import { CALLING_CODES, COUNTRIES } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
+import { CustomDetails } from "@/components/studio/custom-details";
+import { SignatureSection } from "@/components/studio/signature-pad";
+import { useT } from "@/lib/i18n/i18n";
 import { Area, Button, Field, Panel, Select, TextInput } from "@/components/studio/ui";
 
 const LEVELS = ["Native", "C2", "C1", "B2", "B1", "A2", "A1"];
@@ -41,6 +44,7 @@ function readPhoto(file: File): Promise<string> {
 }
 
 export function ProfileForm() {
+  const t = useT();
   const personal = useStudio((state) => state.profile.personal);
   const experience = useStudio((state) => state.profile.experience);
   const education = useStudio((state) => state.profile.education);
@@ -577,6 +581,16 @@ export function ProfileForm() {
             <Plus className="size-4" aria-hidden /> Add certificate
           </Button>
         </div>
+      </Panel>
+
+      <Panel title={t("More details")}>
+        <p className="-mt-2 mb-3 text-xs text-muted">{t("Anything else your CV or forms need. Add as many as you like.")}</p>
+        <CustomDetails />
+      </Panel>
+
+      <Panel title={t("Signature")}>
+        <p className="-mt-2 mb-3 text-xs text-muted">{t("Draw or upload your signature. It appears on the signature line of the CV and on form declarations.")}</p>
+        <SignatureSection />
       </Panel>
 
       <div className="flex justify-end">

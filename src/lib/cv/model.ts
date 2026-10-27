@@ -61,7 +61,17 @@ export type Personal = {
   accommodation: string;
   sponsor: string;
   previousVisa: string;
+  /** Signature as a PNG data URL (drawn or uploaded), "" when none. */
+  signature: string;
+  /** Place written next to the signature line ("" = use the city). */
+  signaturePlace: string;
+  /** Date written next to the signature line (YYYY-MM-DD, "" = today on export). */
+  signatureDate: string;
+  /** Unlimited "Add more details" rows, shared by the CV Generator and the Form Filler. */
+  customDetails: CustomDetail[];
 };
+
+export type CustomDetail = { id: string; label: string; value: string };
 
 export type Child = {
   id: string;
@@ -146,6 +156,10 @@ export type Copy = {
   passport: string;
   place: string;
   declaration: string;
+  signature: string;
+  signPlace: string;
+  signDate: string;
+  more: string;
 };
 
 export const COPY: Record<Locale, Copy> = {
@@ -163,6 +177,10 @@ export const COPY: Record<Locale, Copy> = {
     passport: "Passport",
     place: "Place of birth",
     declaration: "Review every line before you file this.",
+    signature: "Signature",
+    signPlace: "Place",
+    signDate: "Date",
+    more: "More details",
   },
   fr: {
     profile: "Profil",
@@ -178,6 +196,10 @@ export const COPY: Record<Locale, Copy> = {
     passport: "Passeport",
     place: "Lieu de naissance",
     declaration: "Relisez chaque ligne avant de déposer ce dossier.",
+    signature: "Signature",
+    signPlace: "Lieu",
+    signDate: "Date",
+    more: "Informations complémentaires",
   },
   de: {
     profile: "Profil",
@@ -193,6 +215,10 @@ export const COPY: Record<Locale, Copy> = {
     passport: "Reisepass",
     place: "Geburtsort",
     declaration: "Prüfen Sie jede Zeile, bevor Sie das Formular einreichen.",
+    signature: "Unterschrift",
+    signPlace: "Ort",
+    signDate: "Datum",
+    more: "Weitere Angaben",
   },
   es: {
     profile: "Perfil",
@@ -208,6 +234,10 @@ export const COPY: Record<Locale, Copy> = {
     passport: "Pasaporte",
     place: "Lugar de nacimiento",
     declaration: "Revise cada línea antes de presentar este formulario.",
+    signature: "Firma",
+    signPlace: "Lugar",
+    signDate: "Fecha",
+    more: "Más datos",
   },
 };
 
@@ -403,6 +433,10 @@ export function emptyPersonal(): Personal {
     accommodation: "",
     sponsor: "",
     previousVisa: "",
+    signature: "",
+    signaturePlace: "",
+    signatureDate: "",
+    customDetails: [],
   };
 }
 
@@ -508,7 +542,20 @@ export function lifeLines(profile: Profile, settings: Settings, mode: "cv" | "fu
       if (value) rows.push(["Past travel", value]);
     }
   }
+  for (const item of cleanCustomDetails(personal.customDetails)) rows.push([item.label, item.value]);
   return rows.filter(([, value]) => value.trim());
+}
+
+/** Untrusted-safe view of custom details: only rows with a label and a value. */
+export function cleanCustomDetails(raw: unknown): CustomDetail[] {
+  if (!Array.isArray(raw)) return [];
+  return raw.flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const { id, label, value } = item as Record<string, unknown>;
+    if (typeof label !== "string" || typeof value !== "string") return [];
+    if (!label.trim() || !value.trim()) return [];
+    return [{ id: typeof id === "string" ? id : uid(), label: label.trim().slice(0, 120), value: value.trim().slice(0, 2000) }];
+  });
 }
 
 export function emptyEducation(): Education {
@@ -688,6 +735,10 @@ export const sampleProfile = (): Profile => ({
     accommodation: "",
     sponsor: "",
     previousVisa: "",
+    signature: "",
+    signaturePlace: "",
+    signatureDate: "",
+    customDetails: [],
   },
   experience: [
     {

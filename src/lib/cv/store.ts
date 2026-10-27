@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { readConsent } from "../privacy/consent.ts";
+import { mergeCustom } from "./missing.ts";
 import {
   defaultSettings,
   emptyChild,
@@ -17,6 +18,7 @@ import {
   type Language,
   type Certification,
   type Personal,
+  type CustomDetail,
   type Profile,
   type Settings,
 } from "@/lib/cv/model";
@@ -59,6 +61,11 @@ type StudioState = {
   addTrip: () => void;
   updateTrip: (id: string, patch: Partial<Trip>) => void;
   removeTrip: (id: string) => void;
+  addCustomDetail: (label?: string, value?: string) => string;
+  updateCustomDetail: (id: string, patch: Partial<CustomDetail>) => void;
+  removeCustomDetail: (id: string) => void;
+  /** Save answers from the form filler's missing-fields pop-up back to the profile. */
+  saveAnswers: (fields: Partial<Personal>, custom: { label: string; value: string }[]) => void;
   loadSample: () => void;
   clearDossier: () => void;
 };
@@ -80,7 +87,11 @@ function mergeProfile(raw: unknown): Profile {
   if (!raw || typeof raw !== "object") return base;
   const data = raw as Partial<Profile>;
   return {
-    personal: { ...emptyPersonal(), ...(data.personal ?? {}) },
+    personal: {
+      ...emptyPersonal(),
+      ...(data.personal ?? {}),
+      customDetails: Array.isArray(data.personal?.customDetails) ? data.personal.customDetails : [],
+    },
     experience: Array.isArray(data.experience) ? data.experience : [],
     education: Array.isArray(data.education) ? data.education : [],
     skills: Array.isArray(data.skills) ? data.skills.filter((item) => typeof item === "string") : [],
@@ -239,6 +250,31 @@ export const useStudio = create<StudioState>((set, get) => {
       }),
     removeTrip: (id) =>
       write({ profile: { ...get().profile, travel: get().profile.travel.filter((item) => item.id !== id) } }),
+    addCustomDetail: (label = "", value = "") => {
+      const id = uid();
+      const personal = get().profile.personal;
+      write({ profile: { ...get().profile, personal: { ...personal, customDetails: [...personal.customDetails, { id, label, value }] } } });
+      return id;
+    },
+    updateCustomDetail: (id, patch) => {
+      const personal = get().profile.personal;
+      write({
+        profile: {
+          ...get().profile,
+          personal: { ...personal, customDetails: personal.customDetails.map((item) => (item.id === id ? { ...item, ...patch } : item)) },
+        },
+      });
+    },
+    removeCustomDetail: (id) => {
+      const personal = get().profile.personal;
+      write({
+        profile: { ...get().profile, personal: { ...personal, customDetails: personal.customDetails.filter((item) => item.id !== id) } },
+      });
+    },
+    saveAnswers: (fields, custom) => {
+      const personal = get().profile.personal;
+      write({ profile: { ...get().profile, personal: { ...personal, ...fields, customDetails: mergeCustom(personal.customDetails, custom) } } });
+    },
     loadSample: () => write({ profile: sampleProfile(), undo: get().profile }),
     clearDossier: () => {
       const email = get().profile.personal.email || get().verifiedEmail || "";

@@ -16,7 +16,7 @@
     "preview:stop": "node scripts/preview.mjs stop",
     "typecheck": "tsc --noEmit",
     "check:auth": "node scripts/check-auth-invariant.mjs",
-    "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/app-data/app-data.test.ts src/lib/app-data/readiness-schedule.test.ts src/lib/auth/gate-identity.test.ts src/lib/auth/sign-in-gate.test.ts src/lib/preview-path-prefix.test.ts src/lib/clients/local-drafts.test.ts src/lib/protect/rate-limit.test.ts",
+    "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/app-data/app-data.test.ts src/lib/app-data/readiness-schedule.test.ts src/lib/auth/gate-identity.test.ts src/lib/auth/sign-in-gate.test.ts src/lib/preview-path-prefix.test.ts src/lib/clients/local-drafts.test.ts src/lib/protect/rate-limit.test.ts src/lib/cv/signature-missing.test.ts src/lib/i18n/i18n.test.ts",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test:paid-export": "node --experimental-transform-types --no-warnings --import ./scripts/ts-ext-loader.mjs --test src/lib/cv/export.test.ts src/lib/payments/payments.test.ts",

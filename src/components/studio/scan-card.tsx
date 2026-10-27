@@ -8,7 +8,8 @@ import { readDocument } from "@/lib/cv/read-document";
 import { useStudio } from "@/lib/cv/store";
 import { cn } from "@/lib/utils";
 import { detectFormFields } from "@/lib/cv/form-fields";
-import { MODE_TEXT, useMode } from "@/lib/cv/mode";
+import { useMode } from "@/lib/cv/mode";
+import { useT } from "@/lib/i18n/i18n";
 
 export function ScanCard() {
   const profile = useStudio((state) => state.profile);
@@ -26,7 +27,7 @@ export function ScanCard() {
   const setMode = useMode((state) => state.setMode);
   const mode = useMode((state) => state.mode);
   const detected = useMode((state) => state.detected);
-  const lang = useMode((state) => state.lang);
+  const t = useT();
 
   function show(text: string, how: string) {
     const next = proposeFromText(text);
@@ -34,7 +35,7 @@ export function ScanCard() {
     setMethod(how);
     setProposals(next);
     const asked = detectFormFields(text);
-    setDetected(asked.length ? asked : null, how);
+    setDetected(asked.length ? asked : null, how, text);
     // Arrived via the form-filler entry point (/#document-file): go straight to Form Filler mode.
     if (asked.length && typeof window !== "undefined" && window.location.hash === "#document-file") setMode("filler");
     setError(next.length ? "" : "Nothing recognizable was mapped. The extracted text is below if you want to copy from it.");
@@ -143,7 +144,7 @@ export function ScanCard() {
 
       {detected?.length && mode !== "filler" ? (
         <button type="button" data-testid="use-filler" className="mt-3 h-11 rounded-full border border-forest px-4 text-sm font-medium text-forest" onClick={() => setMode("filler")}>
-          {MODE_TEXT[lang].useFiller} ({detected.length})
+          {t("Fill only this form's fields")} ({detected.length})
         </button>
       ) : null}
 

@@ -12,7 +12,7 @@ import type { Personal } from "@/lib/cv/model";
  * fields it actually asks for.
  */
 export type FormUsage = "used" | "extra" | "unused";
-export type FieldInput = "text" | "date" | "email" | "tel" | "area";
+export type FieldInput = "text" | "date" | "email" | "tel" | "area" | "signature";
 
 export type FormFieldDef = {
   key: keyof Personal;
@@ -46,6 +46,8 @@ export const FORM_FIELDS: FormFieldDef[] = [
   { key: "website", usage: "used", en: "Website", hi: "वेबसाइट", detect: L("website|site|web|url|portfolio") },
   { key: "summary", usage: "used", en: "Profile / summary", hi: "प्रोफ़ाइल सारांश", input: "area", detect: L("summary|profile|profil|about|résumé|resumen") },
 
+  { key: "signature", usage: "used", en: "Signature", hi: "हस्ताक्षर", input: "signature", detect: L("(?:applicant'?s |candidate'?s )?signature(?: of (?:the )?applicant)?|sign(?:ed)?(?: here)?|unterschrift|firma|हस्ताक्षर") },
+
   // extra — "International options" panel (profile-form.tsx 356-518), never auto-mapped
   { key: "sex", usage: "extra", en: "Sex", hi: "लिंग", detect: L("sex|gender") },
   { key: "maritalStatus", usage: "extra", en: "Marital status", hi: "वैवाहिक स्थिति", detect: L("marital status|civil status") },
@@ -75,6 +77,8 @@ export const FORM_FIELDS: FormFieldDef[] = [
   { key: "exitDate", usage: "extra", en: "Exit date", hi: "प्रस्थान तिथि", input: "date", detect: L("(?:date of )?exit(?: date)?|departure date") },
   { key: "accommodation", usage: "extra", en: "Accommodation", hi: "आवास", detect: L("accommodation|address in destination") },
   { key: "sponsor", usage: "extra", en: "Costs paid by", hi: "खर्च कौन देगा", detect: L("sponsor|costs paid by") },
+  { key: "signaturePlace", usage: "extra", en: "Place (signature)", hi: "स्थान (हस्ताक्षर)", detect: L("place|ort|lieu|lugar|स्थान") },
+  { key: "signatureDate", usage: "extra", en: "Date (signature)", hi: "दिनांक (हस्ताक्षर)", input: "date", detect: L("date|datum|fecha|दिनांक|तारीख") },
   { key: "previousVisa", usage: "extra", en: "Previous visa", hi: "पिछला वीज़ा", detect: L("previous visa") },
 
   // unused — editor only (Identity photo + Passport panel book details); form filler never reads them

@@ -23,6 +23,7 @@ import {
   type Profile,
   type Settings,
 } from "./model";
+import { signatureLine, templateSigns } from "./signature.ts";
 
 const INK = "1C1915";
 const FOREST = "1B4D3E";
@@ -52,6 +53,24 @@ function photoBlock(dataUrl: string): Paragraph | null {
     spacing: { after: 120 },
     children: [new ImageRun({ type: "jpg", data: bytes, transformation: { width: 84, height: 104 } })],
   });
+}
+
+function signatureBlocks(profile: Profile, settings: Settings): FileChild[] {
+  const line = templateSigns(settings) ? signatureLine(profile.personal, settings) : null;
+  if (!line) return [];
+  const bytes = Uint8Array.from(atob(line.image.split(",")[1] ?? ""), (char) => char.charCodeAt(0));
+  return [
+    new Paragraph({
+      alignment: AlignmentType.RIGHT,
+      spacing: { before: 360 },
+      children: [new ImageRun({ type: "png", data: bytes, transformation: { width: 160, height: 54 } })],
+    }),
+    new Paragraph({
+      alignment: AlignmentType.RIGHT,
+      border: { top: { style: BorderStyle.SINGLE, size: 6, color: INK, space: 2 } },
+      children: [run(`${line.text ? `${line.text} · ` : ""}${line.label}`, { size: 18, color: MUTED, font: "Calibri" })],
+    }),
+  ];
 }
 
 function para(children: TextRun[], after = 80): Paragraph {
@@ -160,6 +179,7 @@ function childrenFor(profile: Profile, settings: Settings): FileChild[] {
       ...educationBlocks(profile, settings),
       ...skillBlocks(profile, settings, true),
       para([run(copy.declaration, { italics: true, size: 18, color: MUTED })], 0),
+      ...signatureBlocks(profile, settings),
     ];
   }
 
@@ -185,6 +205,7 @@ function childrenFor(profile: Profile, settings: Settings): FileChild[] {
   for (const [label, value] of lifeLines(profile, settings, "cv")) {
     blocks.push(body(`${label}: ${value}`));
   }
+  blocks.push(...signatureBlocks(profile, settings));
   return blocks;
 }
 

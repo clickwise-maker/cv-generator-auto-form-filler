@@ -15,6 +15,7 @@ import {
   type Profile,
   type Settings,
 } from "./model";
+import { signatureLine, templateSigns } from "./signature.ts";
 
 const INK: [number, number, number] = [28, 25, 21];
 const FOREST: [number, number, number] = [27, 77, 62];
@@ -336,12 +337,39 @@ function drawLife(pen: Pen, profile: Profile, settings: Settings, mode: "cv" | "
   for (const [label, value] of lines) pen.write(`${label}: ${value}`, { size: 10.5, gap: 1 });
 }
 
+function drawSignature(pen: Pen, profile: Profile, settings: Settings) {
+  const line = templateSigns(settings) ? signatureLine(profile.personal, settings) : null;
+  if (!line) return;
+  pen.ensure(30);
+  pen.y += 6;
+  const top = pen.y;
+  const x = pen.pageW - pen.margin - 70;
+  try {
+    const props = pen.doc.getImageProperties(line.image);
+    const h = 16;
+    const w = Math.min(60, (props.width / Math.max(1, props.height)) * h);
+    pen.doc.addImage(line.image, "PNG", x + 2, top, w, h);
+  } catch {
+    // A broken image never blocks the export.
+  }
+  pen.doc.setDrawColor(...INK);
+  pen.doc.setLineWidth(0.3);
+  pen.doc.line(x, top + 18, x + 70, top + 18);
+  pen.doc.setFont("helvetica", "normal");
+  pen.doc.setFontSize(8.5);
+  pen.doc.setTextColor(...MUTED);
+  pen.doc.text(pdfText(line.label), x, top + 22);
+  if (line.text) pen.doc.text(pdfText(line.text), pen.margin, top + 18);
+  pen.y = top + 26;
+}
+
 export function buildPdf(profile: Profile, settings: Settings): jsPDF {
   const doc = new jsPDF({ unit: "mm", format: settings.paper });
   const pen = new Pen(doc);
   if (settings.template === "consulate") drawConsulate(pen, profile, settings);
   else if (settings.template === "atlas") drawAtlas(pen, profile, settings);
   else drawMeridian(pen, profile, settings);
+  drawSignature(pen, profile, settings);
   const name = displayName(profile.personal, settings.nameOrder) || "Meridian";
   pen.footer(name);
   doc.setProperties({ title: `${name} - Meridian`, creator: "Meridian" });

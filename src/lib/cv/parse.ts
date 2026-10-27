@@ -537,7 +537,7 @@ function readKv(lines: string[]): Partial<Personal> & { fullName?: string } {
         if (phone.phoneCode) found.phoneCode = phone.phoneCode;
         found.phone = phone.phone;
       } else if (field.key === "linkedin" || field.key === "website") found[field.key] = cleanUrl(value);
-      else found[field.key] = value;
+      else (found as Record<string, unknown>)[field.key] = value;
     }
   }
   return found;
@@ -565,7 +565,8 @@ function personalProposals(personal: Partial<Personal>): Proposal[] {
     { key: "summary", label: "Profile" },
   ];
   return labels.flatMap(({ key, label }) => {
-    const value = personal[key]?.trim();
+    const raw = personal[key];
+    const value = typeof raw === "string" ? raw.trim() : "";
     if (!value) return [];
     return [
       {
