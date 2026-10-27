@@ -2,6 +2,8 @@ import { ProfileForm } from "@/components/studio/profile-form";
 import { PreviewColumn } from "@/components/studio/preview-doc";
 import { ScanCard } from "@/components/studio/scan-card";
 import { Dashboard } from "@/components/studio/dashboard";
+import { FormFiller, ModeSwitch } from "@/components/studio/form-filler";
+import { useMode } from "@/lib/cv/mode";
 import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
 import { cn } from "@/lib/utils";
@@ -13,6 +15,7 @@ export function Studio() {
   const setSettings = useStudio((state) => state.setSettings);
   const undo = useStudio((state) => state.undo);
   const undoProfile = useStudio((state) => state.undoProfile);
+  const mode = useMode((state) => state.mode);
 
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -50,6 +53,7 @@ export function Studio() {
               ))}
             </select>
           </label>
+          <ModeSwitch />
         </div>
       </header>
 
@@ -57,7 +61,7 @@ export function Studio() {
         <div className={cn("flex min-w-0 flex-col gap-4", tab !== "compose" && "hidden lg:flex")}>
           <Dashboard />
           <ScanCard />
-          <ProfileForm />
+          {mode === "filler" ? <FormFiller /> : <ProfileForm />}
         </div>
         <div className={cn("min-w-0", tab !== "preview" && "hidden lg:block")}>
           <PreviewColumn />
