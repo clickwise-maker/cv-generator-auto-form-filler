@@ -4,6 +4,7 @@ import type { Credits } from "@/lib/payments/config";
 import { fetchCredits, fingerprint, readGuest, type GuestState } from "@/lib/payments/client";
 import { useStudio } from "@/lib/cv/store";
 import { emptyProfile, TEMPLATES } from "@/lib/cv/model";
+import { purgeOrphanClientDrafts, tagClientDraft } from "@/lib/clients/local-drafts";
 import { createClientLink, deleteClient, getClient, listClients, revokeClientLinks, type ClientSummary } from "@/lib/clients/client";
 import { WithdrawButton } from "@/components/privacy/consent-ui";
 import { readConsent, RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
@@ -277,7 +278,6 @@ export function Dashboard() {
   );
 }
 
-const BACKUP_KEY = "meridian.dossier.backup.v1";
 
 function PrivacyCard() {
   const T = DASH_TEXT;
@@ -312,7 +312,25 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
   const [clients, setClients] = useState<ClientSummary[]>([]);
   const [err, setErr] = useState("");
 
-  const refresh = () => listClients(entitlementId).then((r) => setClients(r.clients), (e: Error) => setErr(e.message));
+  const purge = (live: string[] | null, removedId?: string) => {
+    try {
+      if (purgeOrphanClientDrafts(localStorage, live, removedId)) {
+        // Reload the working draft from storage (own draft restored or empty).
+        useStudio.setState({ hydrated: false });
+        useStudio.getState().hydrate();
+      }
+    } catch {
+      // storage unavailable
+    }
+  };
+  const refresh = () =>
+    listClients(entitlementId).then(
+      (r) => {
+        setClients(r.clients);
+        purge(r.clients.map((c) => c.clientId));
+      },
+      (e: Error) => setErr(e.message),
+    );
   useEffect(() => {
     void refresh();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -342,6 +360,7 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
     setErr("");
     try {
       await deleteClient(entitlementId, c.clientId);
+      purge(null, c.clientId);
       await refresh();
     } catch (e) {
       setErr((e as Error).message);
@@ -354,6 +373,7 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
       await revokeClientLinks(entitlementId);
       setUrl("");
       setErr(T.revoked);
+      await refresh();
     } catch (e) {
       setErr((e as Error).message);
     }
@@ -364,8 +384,7 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
       const full = await getClient(entitlementId, c.clientId);
       const base = emptyProfile();
       try {
-        const own = localStorage.getItem("meridian.dossier.v1");
-        if (own && !localStorage.getItem(BACKUP_KEY)) localStorage.setItem(BACKUP_KEY, own);
+        tagClientDraft(localStorage, c.clientId);
       } catch {
         // ignore
       }
