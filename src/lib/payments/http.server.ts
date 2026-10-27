@@ -1,6 +1,8 @@
 import { buildDocxBuffer } from "../cv/export-docx.ts";
 import { buildPdf } from "../cv/export-pdf.ts";
 import { defaultSettings, emptyPersonal, fileBase, type Profile, type Settings } from "../cv/model.ts";
+import { supabaseFromEnv, SupabaseRest } from "../db/supabase-rest.server.ts";
+import { SupabasePaymentStore } from "./store.supabase.server.ts";
 import { configFromEnv, PaymentError, PaymentService, type DocInput } from "./service.server.ts";
 
 /**
@@ -10,7 +12,10 @@ import { configFromEnv, PaymentError, PaymentService, type DocInput } from "./se
  */
 let singleton: PaymentService | null = null;
 export function paymentService(): PaymentService {
-  singleton ??= new PaymentService(configFromEnv(process.env));
+  if (!singleton) {
+    const sb = supabaseFromEnv();
+    singleton = new PaymentService(configFromEnv(process.env), sb ? new SupabasePaymentStore(new SupabaseRest(sb)) : undefined);
+  }
   return singleton;
 }
 

@@ -4,6 +4,8 @@ import { join } from "node:path";
 import { emptyEducation, emptyPersonal, type Education, type Personal, type Profile } from "../cv/model.ts";
 import { paymentService } from "../payments/http.server.ts";
 import { PaymentError, type PaymentService } from "../payments/service.server.ts";
+import { supabaseFromEnv, SupabaseRest } from "../db/supabase-rest.server.ts";
+import { SupabaseClientStore } from "./store.supabase.server.ts";
 import { FileClientStore, type ClientStore } from "./store.server.ts";
 
 /** Fields a client may submit — existing Personal model fields used by the form filler. No new semantics. */
@@ -33,7 +35,10 @@ const EDU_FIELDS = ["institution", "qualification", "field", "start", "end", "de
 
 let store: ClientStore | null = null;
 export function clientStore(): ClientStore {
-  store ??= new FileClientStore(process.env.CLIENTS_STORE_FILE || join(tmpdir(), "cvstudio-clients.json"));
+  if (!store) {
+    const sb = supabaseFromEnv();
+    store = sb ? new SupabaseClientStore(new SupabaseRest(sb)) : new FileClientStore(process.env.CLIENTS_STORE_FILE || join(tmpdir(), "cvstudio-clients.json"));
+  }
   return store;
 }
 
