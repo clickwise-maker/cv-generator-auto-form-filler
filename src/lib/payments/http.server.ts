@@ -1,3 +1,4 @@
+import { busyResponse, exportGuard } from "@/lib/protect/rate-limit";
 import { buildDocxBuffer } from "../cv/export-docx.ts";
 import { buildPdf } from "../cv/export-pdf.ts";
 import { defaultSettings, emptyPersonal, fileBase, type Profile, type Settings } from "../cv/model.ts";
@@ -161,11 +162,13 @@ export async function handleCleanExport(req: Request, svc = paymentService()) {
     const ent = await svc.authorizeCleanExport(typeof body.entitlementId === "string" ? body.entitlementId : undefined, doc);
     const name = fileBase(doc.profile, doc.settings);
     const headers: Record<string, string> = { "cache-control": "no-store", "x-entitlement-test": String(ent.test), "x-downloads-used": String(ent.downloads) };
+    const out = await exportGuard.run(async () => (format === "pdf" ? buildPdf(doc.profile, doc.settings).output("arraybuffer") : await buildDocxBuffer(doc.profile, doc.settings)));
+    if (out === null) return busyResponse();
     if (format === "pdf") {
-      const bytes = buildPdf(doc.profile, doc.settings).output("arraybuffer");
+      const bytes = out as ArrayBuffer;
       return new Response(bytes, { status: 200, headers: { ...headers, "content-type": "application/pdf", "content-disposition": `attachment; filename="${name}.pdf"` } });
     }
-    const buf = await buildDocxBuffer(doc.profile, doc.settings);
+    const buf = out as Uint8Array;
     return new Response(new Uint8Array(buf), {
       status: 200,
       headers: { ...headers, "content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "content-disposition": `attachment; filename="${name}.docx"` },
