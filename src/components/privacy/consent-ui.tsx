@@ -61,7 +61,7 @@ export function ConsentNotice({
 }
 
 /** Editor/dashboard gate: blocks the CV editor until the user chooses. */
-export function ConsentGate() {
+export function ConsentGate({ floating = true }: { floating?: boolean } = {}) {
   const [state, setState] = useState<"unknown" | "ok" | "ask" | "declined">("unknown");
   useEffect(() => {
     const sync = () => setState((s) => (readConsent() ? "ok" : s === "declined" ? "declined" : "ask"));
@@ -69,7 +69,7 @@ export function ConsentGate() {
     window.addEventListener("cvstudio-consent", sync);
     return () => window.removeEventListener("cvstudio-consent", sync);
   }, []);
-  if (state === "ok" || state === "unknown") return <WithdrawFloating />;
+  if (state === "ok" || state === "unknown") return floating ? <WithdrawFloating /> : null;
   if (state === "declined")
     return (
       <div className="fixed inset-0 z-[100] grid place-items-center bg-black/50 p-3" data-testid="consent-declined">
@@ -99,8 +99,8 @@ export function ConsentGate() {
 /** Always-visible withdraw control in the editor. */
 export function WithdrawFloating() {
   return (
-    <div className="fixed bottom-3 left-3 z-40 print:hidden">
-      <WithdrawButton className="rounded-full border border-line bg-sheet/95 px-3 py-2 text-xs text-ink shadow" />
+    <div className="fixed bottom-24 left-2 z-40 print:hidden sm:bottom-3 sm:left-3">
+      <WithdrawButton className="rounded-full border border-line bg-sheet/95 px-3 py-1.5 text-[11px] text-ink shadow" label="Withdraw consent / सहमति वापस लें" />
     </div>
   );
 }

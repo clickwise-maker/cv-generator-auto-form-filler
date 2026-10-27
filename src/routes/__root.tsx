@@ -10,6 +10,12 @@ const DESCRIPTION =
 const KEYWORDS =
   "auto CB generator, international CB generator, auto form filler, free auto form filler, free CV generator, auto populate, CV generator";
 
+const SITE = "https://cvstudio-app.onrender.com";
+const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
+/** Privacy-friendly analytics (Plausible-compatible). OFF unless VITE_ANALYTICS_DOMAIN is set at build time. No cookies. */
+const ANALYTICS_DOMAIN = (import.meta.env.VITE_ANALYTICS_DOMAIN as string | undefined) || "";
+const ANALYTICS_SRC = (import.meta.env.VITE_ANALYTICS_SRC as string | undefined) || "https://plausible.io/js/script.js";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -22,8 +28,18 @@ export const Route = createRootRoute({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CV Studio" },
+      { property: "og:image", content: `${SITE}/og.jpg` },
+      { property: "og:url", content: SITE },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: APP_NAME },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: `${SITE}/og.jpg` },
       { name: "theme-color", content: "#1b4d3e" },
+      // Search Console: set VITE_GOOGLE_SITE_VERIFICATION at build time (off when unset).
+      ...(GSC ? [{ name: "google-site-verification", content: GSC }] : []),
     ],
+    scripts: ANALYTICS_DOMAIN ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }] : [],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },

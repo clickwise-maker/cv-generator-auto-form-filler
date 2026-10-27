@@ -36,7 +36,7 @@ function DashboardPage() {
         <Dashboard />
       </main>
       <SiteFooter />
-      <ConsentGate />
+      <ConsentGate floating={false} />
     </div>
   );
 }

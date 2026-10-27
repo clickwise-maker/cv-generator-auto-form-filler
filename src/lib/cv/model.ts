@@ -351,7 +351,7 @@ export function emptyPersonal(): Personal {
     familyName: "",
     headline: "",
     email: "",
-    phoneCode: "+41",
+    phoneCode: "+91",
     phone: "",
     street: "",
     postalCode: "",

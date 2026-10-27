@@ -75,9 +75,9 @@ export function PreviewColumn() {
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
           Dates
           <Select value={settings.dateStyle} onChange={(event) => setSettings({ dateStyle: event.target.value as typeof settings.dateStyle })}>
-            <option value="dmy">17 Apr 1991</option>
-            <option value="mdy">Apr 17, 1991</option>
-            <option value="iso">1991-04-17</option>
+            <option value="dmy">DD Mon YYYY</option>
+            <option value="mdy">Mon DD, YYYY</option>
+            <option value="iso">YYYY-MM-DD</option>
           </Select>
         </label>
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
