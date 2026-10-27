@@ -21,6 +21,7 @@ const SENSITIVE_PATHS = [
   "/api/clients/submit",
   "/api/clients/link",
   "/api/auth/",
+  "/api/ad-unlock/",
 ];
 
 /** Which rule applies to a path; null = not limited (static, health, webhooks, pages). */

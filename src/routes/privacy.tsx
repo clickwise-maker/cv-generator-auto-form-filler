@@ -14,7 +14,7 @@ const EN: Sec[] = [
     "Business (Commercial) clients: details a client submits through a share link, the time of consent and submission.",
     "Payments are processed by the payment provider; we do not store card numbers.",
   ]],
-  ["Purpose", ["Only to build your CV and fill your forms, and to count plan usage. We do not sell your data, show ads, or use it for profiling. CV Studio has no interest in your data beyond this purpose."]],
+  ["Purpose", ["Only to build your CV and fill your forms, and to count plan usage. We do not sell your data or use your CV data for profiling. Ads, if switched on, appear only on content pages and may use Google advertising cookies (see the full privacy policy). CV Studio has no interest in your data beyond this purpose."]],
   ["Consent", ["We ask before storing your data, with an unticked box. You can withdraw consent at any time with “Withdraw consent & delete my data” (editor and dashboard) or “Withdraw consent” on a client link page. Withdrawing is as easy as giving consent."]],
   ["Where it is stored", [
     "Your CVs and drafts are stored in your own browser (localStorage) on your device. They are not uploaded unless you use a feature that needs the server (e.g. reading a document, checkout).",

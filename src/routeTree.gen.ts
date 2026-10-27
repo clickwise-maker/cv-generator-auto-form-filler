@@ -13,12 +13,17 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as NextStepsRouteImport } from './routes/next-steps'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CTokenRouteImport } from './routes/c.$token'
+import { Route as GuidesIndexRouteImport } from './routes/guides.index'
+import { Route as GuidesSlugRouteImport } from './routes/guides.$slug'
+import { Route as ApiAdUnlockSplatRouteImport } from './routes/api/ad-unlock/$'
 import { Route as ApiClientsSplatRouteImport } from './routes/api/clients/$'
 import { Route as ApiPaidExportSplatRouteImport } from './routes/api/paid-export/$'
 
@@ -42,6 +47,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NextStepsRoute = NextStepsRouteImport.update({
+  id: '/next-steps',
+  path: '/next-steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -62,6 +72,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TemplatesRoute = TemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -70,6 +85,21 @@ const TermsRoute = TermsRouteImport.update({
 const CTokenRoute = CTokenRouteImport.update({
   id: '/c/$token',
   path: '/c/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesSlugRoute = GuidesSlugRouteImport.update({
+  id: '/guides/$slug',
+  path: '/guides/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdUnlockSplatRoute = ApiAdUnlockSplatRouteImport.update({
+  id: '/api/ad-unlock/$',
+  path: '/api/ad-unlock/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiClientsSplatRoute = ApiClientsSplatRouteImport.update({
@@ -88,12 +118,17 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
+  '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/c/$token': typeof CTokenRoute
+  '/guides/$slug': typeof GuidesSlugRoute
+  '/guides/': typeof GuidesIndexRoute
+  '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
@@ -102,12 +137,17 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
+  '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/c/$token': typeof CTokenRoute
+  '/guides/$slug': typeof GuidesSlugRoute
+  '/guides': typeof GuidesIndexRoute
+  '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
@@ -117,12 +157,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
+  '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/c/$token': typeof CTokenRoute
+  '/guides/$slug': typeof GuidesSlugRoute
+  '/guides/': typeof GuidesIndexRoute
+  '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
   '/api/paid-export/$': typeof ApiPaidExportSplatRoute
 }
@@ -133,12 +178,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/dashboard'
     | '/faq'
+    | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
+    | '/templates'
     | '/terms'
     | '/c/$token'
+    | '/guides/$slug'
+    | '/guides/'
+    | '/api/ad-unlock/$'
     | '/api/clients/$'
     | '/api/paid-export/$'
   fileRoutesByTo: FileRoutesByTo
@@ -147,12 +197,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/dashboard'
     | '/faq'
+    | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
+    | '/templates'
     | '/terms'
     | '/c/$token'
+    | '/guides/$slug'
+    | '/guides'
+    | '/api/ad-unlock/$'
     | '/api/clients/$'
     | '/api/paid-export/$'
   id:
@@ -161,12 +216,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/dashboard'
     | '/faq'
+    | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
+    | '/templates'
     | '/terms'
     | '/c/$token'
+    | '/guides/$slug'
+    | '/guides/'
+    | '/api/ad-unlock/$'
     | '/api/clients/$'
     | '/api/paid-export/$'
   fileRoutesById: FileRoutesById
@@ -176,12 +236,17 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   DashboardRoute: typeof DashboardRoute
   FaqRoute: typeof FaqRoute
+  NextStepsRoute: typeof NextStepsRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ServicesRoute: typeof ServicesRoute
+  TemplatesRoute: typeof TemplatesRoute
   TermsRoute: typeof TermsRoute
   CTokenRoute: typeof CTokenRoute
+  GuidesSlugRoute: typeof GuidesSlugRoute
+  GuidesIndexRoute: typeof GuidesIndexRoute
+  ApiAdUnlockSplatRoute: typeof ApiAdUnlockSplatRoute
   ApiClientsSplatRoute: typeof ApiClientsSplatRoute
   ApiPaidExportSplatRoute: typeof ApiPaidExportSplatRoute
 }
@@ -216,6 +281,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/next-steps': {
+      id: '/next-steps'
+      path: '/next-steps'
+      fullPath: '/next-steps'
+      preLoaderRoute: typeof NextStepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -244,6 +316,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/templates': {
+      id: '/templates'
+      path: '/templates'
+      fullPath: '/templates'
+      preLoaderRoute: typeof TemplatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -256,6 +335,27 @@ declare module '@tanstack/react-router' {
       path: '/c/$token'
       fullPath: '/c/$token'
       preLoaderRoute: typeof CTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/': {
+      id: '/guides/'
+      path: '/guides'
+      fullPath: '/guides/'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/$slug': {
+      id: '/guides/$slug'
+      path: '/guides/$slug'
+      fullPath: '/guides/$slug'
+      preLoaderRoute: typeof GuidesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ad-unlock/$': {
+      id: '/api/ad-unlock/$'
+      path: '/api/ad-unlock/$'
+      fullPath: '/api/ad-unlock/$'
+      preLoaderRoute: typeof ApiAdUnlockSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/clients/$': {
@@ -280,12 +380,17 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   DashboardRoute: DashboardRoute,
   FaqRoute: FaqRoute,
+  NextStepsRoute: NextStepsRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ServicesRoute: ServicesRoute,
+  TemplatesRoute: TemplatesRoute,
   TermsRoute: TermsRoute,
   CTokenRoute: CTokenRoute,
+  GuidesSlugRoute: GuidesSlugRoute,
+  GuidesIndexRoute: GuidesIndexRoute,
+  ApiAdUnlockSplatRoute: ApiAdUnlockSplatRoute,
   ApiClientsSplatRoute: ApiClientsSplatRoute,
   ApiPaidExportSplatRoute: ApiPaidExportSplatRoute,
 }

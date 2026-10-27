@@ -62,5 +62,10 @@ export function collectKeys(src: string): Set<string> {
       items.filter((i) => i !== "mail").forEach(add);
     }
   }
+  const guides = JSON.parse(fs.readFileSync(path.join(src, "content", "guides", "en.json"), "utf8")) as { title: string; desc: string; lead: string; sections: [string, string[]][] }[];
+  for (const g of guides) {
+    [g.title, g.desc, g.lead].forEach(add);
+    for (const [h, items] of g.sections) [h, ...items].forEach(add);
+  }
   return keys;
 }

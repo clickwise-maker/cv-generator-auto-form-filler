@@ -5,6 +5,7 @@ import { Dashboard } from "@/components/studio/dashboard";
 import { useStudio } from "@/lib/cv/store";
 import { SiteFooter } from "@/components/site-footer";
 import { ConsentGate } from "@/components/privacy/consent-ui";
+import { AdSlot } from "@/components/ads/ad-slot";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({ meta: [{ title: "Dashboard · CV Studio" }] }),
@@ -33,8 +34,11 @@ function DashboardPage() {
           </a>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl px-4 py-6">
+      <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 lg:grid-cols-[1fr_300px]">
         <Dashboard />
+        <div className="lg:pt-2">
+          <AdSlot placement="dashboard" className="lg:sticky lg:top-24 lg:my-0" />
+        </div>
       </main>
       <SiteFooter />
       <ConsentGate floating={false} />

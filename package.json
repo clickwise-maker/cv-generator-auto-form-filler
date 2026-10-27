@@ -21,7 +21,8 @@
     "format": "prettier --write .",
     "test:paid-export": "node --experimental-transform-types --no-warnings --import ./scripts/ts-ext-loader.mjs --test src/lib/cv/export.test.ts src/lib/payments/payments.test.ts",
     "build:render": "NITRO_PRESET=node-server node scripts/with-app-env.mjs vite build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "test:ads": "node --experimental-transform-types --no-warnings --import ./scripts/ts-ext-loader.mjs --test src/lib/ads/ads.test.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",

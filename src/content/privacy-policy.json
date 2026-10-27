@@ -8,7 +8,7 @@
   [
    "1. Summary",
    [
-    "We collect as little as possible. We do not sell your data and we do not show ads.",
+    "We collect as little as possible and we do not sell your data. Ads are currently switched off; if we turn them on, they appear only on content pages such as guides, never in the editor or form filler.",
     "No account is needed. There is no login on this site — you can use it as a guest."
    ]
   ],
@@ -44,7 +44,8 @@
    "6. Cookies and local storage",
    [
     "We use browser local/session storage to keep your CV, settings and download receipts on your device.",
-    "We do not use advertising cookies."
+    "Advertising cookies: when ads are switched on, Google AdSense and its partners may use cookies or similar technologies to show and measure ads, including personalised ads where the law allows. You can opt out of personalised ads at adssettings.google.com. Visitors from the EEA, UK and Switzerland are asked for consent first.",
+    "Affiliate links: some links on the page shown after a download are affiliate links marked as sponsored. If you use them, the partner may set its own cookies."
    ]
   ],
   [

@@ -1,4 +1,5 @@
 import { tr } from "@/lib/i18n/i18n";
+import { AdSlot } from "@/components/ads/ad-slot";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Ink } from "@/components/studio/ink";
@@ -133,6 +134,8 @@ export function PreviewColumn() {
       <p id="preview-watermark-note" className="cv-print-note mt-2 text-xs text-muted">
         {tr("Preview carries a “{mark}” watermark on every page. Use “Unlock Clean Download” for a clean file. (The watermark deters casual reuse; screenshots cannot be prevented.)", { mark: WATERMARK_LINES[1] ?? "" })}
       </p>
+      {/* Below the preview only; download/pay buttons are above the preview, well away from this unit. */}
+      <AdSlot placement="belowPreview" className="mt-16" />
     </div>
   );
 }

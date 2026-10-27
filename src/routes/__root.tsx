@@ -5,6 +5,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
+import { ADS, adsenseScriptSrc } from "@/config/ads";
 
 const APP_NAME = "Free CV generator and auto form filler";
 const DESCRIPTION =
@@ -53,7 +54,11 @@ export const Route = createRootRoute({
       // Search Console: set VITE_GOOGLE_SITE_VERIFICATION at build time (off when unset).
       ...(GSC ? [{ name: "google-site-verification", content: GSC }] : []),
     ],
-    scripts: ANALYTICS_DOMAIN ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }] : [],
+    scripts: [
+      ...(ANALYTICS_DOMAIN ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }] : []),
+      // AdSense loads ONLY when ADS.enabled (src/config/ads.ts). Off by default.
+      ...(ADS.enabled ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }] : []),
+    ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },

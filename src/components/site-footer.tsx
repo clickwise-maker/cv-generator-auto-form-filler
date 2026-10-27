@@ -5,6 +5,14 @@ import { LanguageSelect } from "@/components/language-select";
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-paper py-4 text-center text-xs text-ink/60">
+      <a href="/guides" className="underline-offset-2 hover:text-ink hover:underline">
+        {tr("Guides")}
+      </a>
+      <span className="mx-2">·</span>
+      <a href="/templates" className="underline-offset-2 hover:text-ink hover:underline">
+        {tr("Templates")}
+      </a>
+      <span className="mx-2">·</span>
       <Link to="/refund-policy" className="underline-offset-2 hover:text-ink hover:underline">
         {tr("Refund Policy")}
       </Link>

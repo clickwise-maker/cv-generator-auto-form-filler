@@ -20,6 +20,7 @@ import {
 import { layeredProfile, useStudio } from "@/lib/cv/store";
 import { downloadPreviewPdf } from "@/lib/cv/export-pdf";
 import { WATERMARK_LINES } from "@/lib/payments/config";
+import { WatchAdOption } from "@/components/ads/watch-ad-unlock";
 
 type Phase =
   | { kind: "confirm" }
@@ -169,7 +170,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
           </button>
         </div>
         <h2 id="unlock-title" className="mt-2 font-serif text-2xl">
-          Clean {label}
+          {tr("Clean {label}", { label })}
         </h2>
 
         {status.mode === "unavailable" ? (
@@ -220,10 +221,10 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                   <p className="mt-2 text-xs text-muted">{LAUNCH_NOTE}</p>
                   {plan.singleUse ? <p className="mt-1 text-xs text-muted">{status.policyText}</p> : null}
                 </fieldset>
-                <p className="mt-3 text-xs text-muted">{status.message} Card/UPI details are entered only on the payment provider's page, never here.</p>
+                <p className="mt-3 text-xs text-muted">{tr(status.message)} {tr("Card/UPI details are entered only on the payment provider's page, never here.")}</p>
                 <div className="mt-5 flex flex-col gap-2">
                   <Button type="button" onClick={() => void start()}>
-                    {isTest ? `Continue to TEST payment (${planLabel})` : `Pay ${planLabel} and unlock`}
+                    {isTest ? tr("Continue to TEST payment ({price})", { price: planLabel }) : tr("Pay {price} and unlock", { price: planLabel })}
                   </Button>
                   <Button
                     type="button"
@@ -236,6 +237,8 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                   >
                     {tr("Download FREE watermarked PDF")}
                   </Button>
+                  {/* Opt-in rewarded-ad unlock: renders nothing unless WATCH_AD_UNLOCK.enabled (default off). */}
+                  <WatchAdOption format={format} />
                   <Button type="button" tone="quiet" onClick={onClose}>
                     {tr("Not now")}
                   </Button>
@@ -254,7 +257,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
               <div className="mt-3 rounded-xl border-2 border-dashed border-amber-400 p-3">
                 <p className="text-sm font-semibold">{tr("Simulated payment — TEST ONLY")}</p>
                 <p className="mt-1 text-xs text-muted">
-                  Order {phase.order.orderId.slice(0, 16)}… · {plan.name} {planLabel}. These buttons ask the server to simulate an outcome. Nothing is charged, and test unlocks never count as real purchases.
+                  {tr("Order {id}… · {plan} {price}. These buttons ask the server to simulate an outcome. Nothing is charged, and test unlocks never count as real purchases.", { id: phase.order.orderId.slice(0, 16), plan: plan.name, price: planLabel })}
                 </p>
                 <div className="mt-3 grid gap-2">
                   <Button type="button" onClick={() => void simulate(phase.order, "success")}>
@@ -295,6 +298,9 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                   <Button type="button" onClick={onClose}>
                     {tr("Done")}
                   </Button>
+                  <a href="/next-steps" className="ms-3 text-sm underline" data-testid="next-steps-link">
+                    {tr("Next steps: tips and guides")}
+                  </a>
                 </div>
               </>
             ) : null}

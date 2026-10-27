@@ -31,6 +31,9 @@ export function Studio() {
               <p className="font-serif text-lg leading-none">{tr("CV Studio")}</p>
               <p className="truncate text-xs text-muted">{tr("Guest mode — no email, phone or OTP needed")}</p>
             </div>
+            <a href="/guides" className="hidden h-11 content-center px-2 text-sm font-medium text-forest sm:block">
+              {tr("Guides")}
+            </a>
             <a href="/dashboard" className="h-11 content-center px-2 text-sm font-medium text-forest">
               {tr("Dashboard")}
             </a>
