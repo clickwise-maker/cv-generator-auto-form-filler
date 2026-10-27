@@ -1,3 +1,4 @@
+import { tr, trObj } from "@/lib/i18n/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -174,6 +175,7 @@ type Lang = {
   refund: string;
   back: string;
 };
+// i18n-data:start
 const D: {
   L: Record<string, Lang>;
   PLANS_HDR: Record<string, string[]>;
@@ -364,6 +366,7 @@ const D: {
     ],
   },
 };
+// i18n-data:end
 
 function Table({ hdr, rows, best }: { hdr: string[]; rows: Row[]; best: string }) {
   return (
@@ -372,8 +375,8 @@ function Table({ hdr, rows, best }: { hdr: string[]; rows: Row[]; best: string }
         <thead>
           <tr>
             {hdr.map((h) => (
-              <th key={h} className="border border-line px-2 py-2 text-left font-semibold">
-                {h}
+              <th key={h} className="border border-line px-2 py-2 text-start font-semibold">
+                {tr(h)}
               </th>
             ))}
           </tr>
@@ -388,9 +391,9 @@ function Table({ hdr, rows, best }: { hdr: string[]; rows: Row[]; best: string }
                     key={i}
                     className={`border px-2 py-2 align-top ${hl ? "border-ink" : "border-line"}`}
                   >
-                    {String(c)}
+                    {tr(String(c))}
                     {i === 0 && hl && (
-                      <span className="ml-2 inline-block rounded border border-ink px-1 text-[10px] uppercase tracking-wider">
+                      <span className="ms-2 inline-block rounded border border-ink px-1 text-[10px] uppercase tracking-wider">
                         {best}
                       </span>
                     )}
@@ -411,21 +414,19 @@ function Services() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            CV Studio
+            {tr("CV Studio")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">Services &amp; Plans</h1>
+          <h1 className="mt-4 font-serif text-4xl">{tr("Services & Plans")}</h1>
           <p className="mt-2 text-sm text-ink/70">
-            What CV Studio does, support, and plans.{" "}
-            <a href="#hi" lang="hi" className="underline">
-              हिंदी में पढ़ें
-            </a>
+            {tr("What CV Studio does, support, and plans.")}
           </p>
-          {(["en", "hi"] as const).map((lg) => {
-            const c = D.L[lg];
+          {(["en"] as const).map((lg) => {
+            const c = trObj(D.L[lg] as unknown as Record<string, string>) as unknown as typeof D.L.en;
+            const raw = D.L[lg];
             const ul = (xs: string[]) => (
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
+              <ul className="mt-2 list-disc space-y-1 ps-5 text-sm leading-relaxed">
                 {xs.map((i) => (
-                  <li key={i}>{i}</li>
+                  <li key={i}>{tr(i)}</li>
                 ))}
               </ul>
             );
@@ -434,19 +435,13 @@ function Services() {
               <section
                 key={lg}
                 id={lg}
-                lang={lg}
                 className="mt-8 rounded-lg border border-line bg-sheet p-6"
-                style={
-                  lg === "hi"
-                    ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' }
-                    : undefined
-                }
               >
                 <h2 className="text-2xl font-semibold">{c.heading}</h2>
                 <p className="mt-3 rounded border border-line px-3 py-2 text-sm">{c.trial}</p>
                 {h3(c.s1)}
-                {ul(c.i1)}
-                <p className="mt-3 border-l-4 border-ink bg-ink/5 px-3 py-2 text-sm font-medium">
+                {ul(raw.i1)}
+                <p className="mt-3 border-s-4 border-ink bg-ink/5 px-3 py-2 text-sm font-medium">
                   {c.ff}
                 </p>
                 {h3(c.s2)}
@@ -456,7 +451,7 @@ function Services() {
                     {EMAIL}
                   </a>
                 </p>
-                {ul(c.i2)}
+                {ul(raw.i2)}
                 {h3(c.s3)}
                 <Table hdr={D.PLANS_HDR[lg]} rows={D.PLANS[lg]} best={c.best} />
                 <p className="mt-2 text-sm">{c.note3}</p>
@@ -466,7 +461,7 @@ function Services() {
                 <p className="mt-2 text-sm leading-relaxed">{c.note4}</p>
                 <p className="mt-2 text-sm leading-relaxed">{c.comp}</p>
                 {h3(c.s5)}
-                {ul(c.about)}
+                {ul(raw.about)}
                 <p className="mt-6 text-sm">
                   <Link to="/refund-policy" className="underline">
                     {c.refund}
@@ -477,7 +472,7 @@ function Services() {
           })}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              ← Back to CV Studio
+              {tr("← Back to CV Studio")}
             </Link>
           </p>
         </div>

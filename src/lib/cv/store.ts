@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { readConsent } from "../privacy/consent.ts";
 import { mergeCustom } from "./missing.ts";
+import { applyTarget, emptyTarget, parseTarget, TARGET_STORAGE, type Target } from "./target.ts";
 import {
   defaultSettings,
   emptyChild,
@@ -33,6 +34,9 @@ type StudioState = {
   settings: Settings;
   undo: Profile | null;
   tab: "compose" | "preview";
+  /** Optional "tailor for a company" layer, stored apart from the base profile. */
+  target: Target;
+  setTarget: (patch: Partial<Target>) => void;
   hydrate: () => void;
   verify: (email: string) => void;
   signOut: () => void;
@@ -116,6 +120,16 @@ export const useStudio = create<StudioState>((set, get) => {
     settings: defaultSettings(),
     undo: null,
     tab: "compose",
+    target: emptyTarget(),
+    setTarget: (patch) => {
+      const target = { ...get().target, ...patch };
+      try {
+        if (readConsent()) localStorage.setItem(TARGET_STORAGE, JSON.stringify(target));
+      } catch {
+        // storage blocked: keep in memory
+      }
+      set({ target });
+    },
     hydrate: () => {
       if (get().hydrated) return;
       try {
@@ -127,6 +141,7 @@ export const useStudio = create<StudioState>((set, get) => {
           verifiedEmail: get().verifiedEmail || email,
           profile: mergeProfile(parsed?.profile),
           settings: { ...defaultSettings(), ...(parsed?.settings ?? {}) },
+          target: parseTarget(JSON.parse(localStorage.getItem(TARGET_STORAGE) || "null")),
         });
       } catch {
         set({ hydrated: true });
@@ -285,3 +300,15 @@ export const useStudio = create<StudioState>((set, get) => {
     },
   };
 });
+
+/** Base profile with the optional target-company layer applied (for preview and export). */
+export function layeredProfile(): Profile {
+  const { profile, target } = useStudio.getState();
+  return applyTarget(profile, target);
+}
+
+export function useLayeredProfile(): Profile {
+  const profile = useStudio((s) => s.profile);
+  const target = useStudio((s) => s.target);
+  return applyTarget(profile, target);
+}

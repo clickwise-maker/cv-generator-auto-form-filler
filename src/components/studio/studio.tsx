@@ -1,5 +1,7 @@
+import { tr } from "@/lib/i18n/i18n";
 import { ProfileForm } from "@/components/studio/profile-form";
 import { PreviewColumn } from "@/components/studio/preview-doc";
+import { TargetCompanyToggle } from "@/components/studio/target-company";
 import { ScanCard } from "@/components/studio/scan-card";
 import { Dashboard } from "@/components/studio/dashboard";
 import { FormFiller, ModeSwitch } from "@/components/studio/form-filler";
@@ -23,23 +25,23 @@ export function Studio() {
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
           <div className="flex items-center gap-3">
             <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-forest font-serif text-sm text-sheet" aria-hidden>
-              CV
+              {tr("CV")}
             </span>
             <div className="min-w-0 flex-1">
-              <p className="font-serif text-lg leading-none">CV Studio</p>
-              <p className="truncate text-xs text-muted">Guest mode — no email, phone or OTP needed</p>
+              <p className="font-serif text-lg leading-none">{tr("CV Studio")}</p>
+              <p className="truncate text-xs text-muted">{tr("Guest mode — no email, phone or OTP needed")}</p>
             </div>
             <a href="/dashboard" className="h-11 content-center px-2 text-sm font-medium text-forest">
-              Dashboard
+              {tr("Dashboard")}
             </a>
             {undo ? (
               <button type="button" className="h-11 px-2 text-sm font-medium text-forest" onClick={undoProfile}>
-                Undo
+                {tr("Undo")}
               </button>
             ) : null}
           </div>
           <label className="flex items-center gap-3 text-sm" htmlFor="document-kind">
-            <span className="kicker shrink-0 text-muted">Document</span>
+            <span className="kicker shrink-0 text-muted">{tr("Document")}</span>
             <select
               id="document-kind"
               value={settings.template}
@@ -48,7 +50,7 @@ export function Studio() {
             >
               {TEMPLATES.map((template) => (
                 <option key={template.id} value={template.id}>
-                  {template.label} — {template.hint}
+                  {tr(template.label)} — {tr(template.hint)}
                 </option>
               ))}
             </select>
@@ -61,6 +63,7 @@ export function Studio() {
         <div className={cn("flex min-w-0 flex-col gap-4", tab !== "compose" && "hidden lg:flex")}>
           <Dashboard />
           <ScanCard />
+          {mode === "filler" ? null : <TargetCompanyToggle />}
           {mode === "filler" ? <FormFiller /> : <ProfileForm />}
         </div>
         <div className={cn("min-w-0", tab !== "preview" && "hidden lg:block")}>
@@ -74,14 +77,14 @@ export function Studio() {
           className={cn("text-sm font-medium", tab === "compose" ? "text-forest" : "text-muted")}
           onClick={() => setTab("compose")}
         >
-          Compose
+          {tr("Compose")}
         </button>
         <button
           type="button"
           className={cn("text-sm font-medium", tab === "preview" ? "text-forest" : "text-muted")}
           onClick={() => setTab("preview")}
         >
-          Preview
+          {tr("Preview")}
         </button>
       </nav>
     </div>

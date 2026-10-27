@@ -22,9 +22,15 @@ export function mergeCustom(existing: CustomDetail[], incoming: { label: string;
 export type MissingReport = {
   /** Known profile fields the form asks for that are still empty. */
   fields: FormFieldDef[];
+  /** The form asks which company you are applying to and no target company is set. */
+  targetCompany: boolean;
   /** Form labels we have no profile field for and no saved custom detail with a value. */
   custom: string[];
 };
+
+/** Form labels asking which company/organisation the application is for. */
+export const TARGET_COMPANY =
+  /^\s*(?:company(?: name)?|company applying (?:to|for)|name of (?:the )?(?:company|employer|organi[sz]ation)|organi[sz]ation(?: name)?|employer(?: name)?|applying to|entreprise|unternehmen|empresa|कंपनी(?: का नाम)?|応募先(?:企業)?|会社名|应聘公司|公司名称|اسم الشركة|الشركة المتقدم إليها)\s*(?:[:\-–]|_{3,}|$)/im;
 
 const norm = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
 
@@ -49,14 +55,16 @@ const filled = (personal: Personal, key: keyof Personal) => {
  * Which fields does this form need that the profile cannot answer yet?
  * Nothing is guessed: a field is "missing" only when the profile value is empty.
  */
-export function findMissing(text: string, personal: Personal, detected?: Array<keyof Personal> | null): MissingReport {
+export function findMissing(text: string, personal: Personal, detected?: Array<keyof Personal> | null, targetCompany = ""): MissingReport {
   const keys = detected ?? FORM_FIELDS.filter((f) => f.usage !== "unused" && f.detect?.test(text)).map((f) => f.key);
   const fields = FORM_FIELDS.filter((f) => keys.includes(f.key) && f.usage !== "unused" && !filled(personal, f.key));
   const saved = new Map((personal.customDetails ?? []).map((c) => [norm(c.label), c.value.trim()]));
+  const asksCompany = TARGET_COMPANY.test(text);
   const custom = formLabels(text).filter((label) => {
+    if (TARGET_COMPANY.test(`${label}:`)) return false;
     const known = FORM_FIELDS.some((f) => f.detect && f.detect.test(`${label}:`));
     if (known) return false;
     return !saved.get(norm(label));
   });
-  return { fields, custom };
+  return { fields, custom, targetCompany: asksCompany && !targetCompany.trim() };
 }

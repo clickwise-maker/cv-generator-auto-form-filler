@@ -1,3 +1,4 @@
+import { tr } from "@/lib/i18n/i18n";
 import { useRef, useState } from "react";
 import { FileUp, ScanLine } from "lucide-react";
 import { toast } from "sonner";
@@ -38,21 +39,21 @@ export function ScanCard() {
     setDetected(asked.length ? asked : null, how, text);
     // Arrived via the form-filler entry point (/#document-file): go straight to Form Filler mode.
     if (asked.length && typeof window !== "undefined" && window.location.hash === "#document-file") setMode("filler");
-    setError(next.length ? "" : "Nothing recognizable was mapped. The extracted text is below if you want to copy from it.");
+    setError(next.length ? "" : tr("Nothing recognizable was mapped. The extracted text is below if you want to copy from it."));
   }
 
   async function onFile(file: File) {
     setBusy(true);
     setError("");
     setProposals([]);
-    setStatus("Opening the file…");
+    setStatus(tr("Opening the file…"));
     try {
       const result = await readDocument(file, setStatus);
       setStatus("");
       show(result.text, result.method);
     } catch (err) {
       setStatus("");
-      setError(err instanceof Error ? err.message : "Could not read that file.");
+      setError(err instanceof Error ? err.message : tr("Could not read that file."));
     } finally {
       setBusy(false);
     }
@@ -73,12 +74,12 @@ export function ScanCard() {
           <ScanLine className="size-5" aria-hidden />
         </span>
         <div>
-          <h2 className="font-serif text-xl">Read a document</h2>
+          <h2 className="font-serif text-xl">{tr("Read a document")}</h2>
           <p className="mt-1 text-sm text-muted">
-            PDF, photo, or image. The reader autofills the form on this device.
+            {tr("PDF, photo, or image. The reader autofills the form on this device.")}
           </p>
           <p className="mt-1 text-xs text-muted">
-            Free CV generator · auto form filler · international CB generator
+            {tr("Free CV generator · auto form filler · international CB generator")}
           </p>
         </div>
       </div>
@@ -101,9 +102,9 @@ export function ScanCard() {
         }}
       >
         <FileUp className="size-5 text-forest" aria-hidden />
-        <p className="text-sm">Drop a file here, or choose one from this device.</p>
+        <p className="text-sm">{tr("Drop a file here, or choose one from this device.")}</p>
         <Button type="button" tone="quiet" className="h-11" onClick={() => inputRef.current?.click()} disabled={busy}>
-          {busy ? "Reading…" : "Choose a file"}
+          {busy ? tr("Reading…") : tr("Choose a file")}
         </Button>
         <input
           id="document-file"
@@ -131,14 +132,14 @@ export function ScanCard() {
       ) : null}
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-        <Button type="button" tone="ghost" className="h-11 px-4" onClick={() => show(SAMPLE_CV, "Sample CV")}>
-          Read a sample CV
+        <Button type="button" tone="ghost" className="h-11 px-4" onClick={() => show(SAMPLE_CV, tr("Sample CV"))}>
+          {tr("Read a sample CV")}
         </Button>
-        <Button type="button" tone="ghost" className="h-11 px-4" onClick={() => show(SAMPLE_FORM, "Sample form")}>
-          Read a sample form
+        <Button type="button" tone="ghost" className="h-11 px-4" onClick={() => show(SAMPLE_FORM, tr("Sample form"))}>
+          {tr("Read a sample form")}
         </Button>
         <Button type="button" tone="quiet" className="h-11 px-4" onClick={loadSample}>
-          Fill the sample dossier
+          {tr("Fill the sample dossier")}
         </Button>
       </div>
 
@@ -156,7 +157,7 @@ export function ScanCard() {
               {proposals.length} mapped fields
             </h3>
             <button type="button" className="text-sm text-muted" onClick={() => setProposals([])}>
-              Dismiss
+              {tr("Dismiss")}
             </button>
           </div>
           <ul className="mt-3 flex max-h-80 flex-col gap-2 overflow-auto">
@@ -182,14 +183,14 @@ export function ScanCard() {
             ))}
           </ul>
           <Button type="button" className="mt-3" onClick={apply} disabled={!proposals.some((item) => item.selected)}>
-            Apply to the form
+            {tr("Apply to the form")}
           </Button>
         </div>
       ) : null}
 
       {raw ? (
         <details className="mt-4 text-sm">
-          <summary className="cursor-pointer text-forest">Show extracted text</summary>
+          <summary className="cursor-pointer text-forest">{tr("Show extracted text")}</summary>
           <pre className="mt-2 max-h-48 overflow-auto whitespace-pre-wrap rounded-xl bg-paper p-3 text-xs text-ink">
             {raw}
           </pre>

@@ -1,3 +1,4 @@
+import { tr } from "@/lib/i18n/i18n";
 import { useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
 import { CALLING_CODES, COUNTRIES } from "@/lib/cv/model";
@@ -7,12 +8,14 @@ import { SignatureSection } from "@/components/studio/signature-pad";
 import { useT } from "@/lib/i18n/i18n";
 import { Area, Button, Field, Panel, Select, TextInput } from "@/components/studio/ui";
 
+// i18n-data:start
 const LEVELS = ["Native", "C2", "C1", "B2", "B1", "A2", "A1"];
 const SEXES = ["Female", "Male", "Unspecified"];
 const MARITAL = ["Single", "Married", "Registered partnership", "Separated", "Divorced", "Widow(er)", "Other"];
 const PASSPORTS = ["Ordinary", "Diplomatic", "Service", "Official", "Special", "Laissez-passer", "Refugee travel document", "Other"];
 const ENDORSEMENTS = ["ECNR", "ECR", "Not applicable"];
 const YES_NO = ["No", "Yes"];
+// i18n-data:end
 
 function readPhoto(file: File): Promise<string> {
   const url = URL.createObjectURL(file);
@@ -27,7 +30,7 @@ function readPhoto(file: File): Promise<string> {
       const context = canvas.getContext("2d");
       if (!context) {
         URL.revokeObjectURL(url);
-        reject(new Error("photo"));
+        reject(new Error(tr("photo")));
         return;
       }
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -37,7 +40,7 @@ function readPhoto(file: File): Promise<string> {
     };
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error("photo"));
+      reject(new Error(tr("photo")));
     };
     image.src = url;
   });
@@ -84,50 +87,50 @@ export function ProfileForm() {
     <div className="flex flex-col gap-4">
       {empty ? (
         <p className="rounded-2xl border border-dashed border-brass bg-brass-soft px-4 py-3 text-sm">
-          The desk is empty. Read a document above, or fill the sample dossier to see a finished page.
+          {tr("The desk is empty. Read a document above, or fill the sample dossier to see a finished page.")}
         </p>
       ) : null}
 
-      <Panel title="Identity">
+      <Panel title={tr("Identity")}>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Given name">
+          <Field label={tr("Given name")}>
             <TextInput value={personal.givenName} onChange={(event) => patch({ givenName: event.target.value })} />
           </Field>
-          <Field label="Family name">
+          <Field label={tr("Family name")}>
             <TextInput value={personal.familyName} onChange={(event) => patch({ familyName: event.target.value })} />
           </Field>
           <div className="sm:col-span-2">
-            <Field label="Headline" hint="Occupation or target role. Shown under your name.">
+            <Field label={tr("Headline")} hint={tr("Occupation or target role. Shown under your name.")}>
               <TextInput
                 value={personal.headline}
                 onChange={(event) => patch({ headline: event.target.value })}
               />
             </Field>
           </div>
-          <Field label="Date of birth">
+          <Field label={tr("Date of birth")}>
             <TextInput type="date" value={personal.dateOfBirth} onChange={(event) => patch({ dateOfBirth: event.target.value })} />
           </Field>
-          <Field label="Place of birth">
+          <Field label={tr("Place of birth")}>
             <TextInput value={personal.placeOfBirth} onChange={(event) => patch({ placeOfBirth: event.target.value })} />
           </Field>
-          <Field label="Nationality">
+          <Field label={tr("Nationality")}>
             <TextInput value={personal.nationality} onChange={(event) => patch({ nationality: event.target.value })} />
           </Field>
         </div>
         <div className="mt-3">
-          <Field label="Photo" hint="Optional. Zaroori nahi. Germany aur Gulf aksar maangte hain. US, UK, aur Canada par mat lagayein.">
+          <Field label={tr("Photo")} hint={tr("Optional. Zaroori nahi. Germany aur Gulf aksar maangte hain. US, UK, aur Canada par mat lagayein.")}>
             <div className="flex items-center gap-3">
               {personal.photo ? (
                 <img src={personal.photo} alt="" className="size-16 rounded-lg object-cover" />
               ) : (
-                <span className="grid size-16 place-items-center rounded-lg border border-dashed border-line text-xs text-muted">None</span>
+                <span className="grid size-16 place-items-center rounded-lg border border-dashed border-line text-xs text-muted">{tr("None")}</span>
               )}
               <div className="flex min-w-0 flex-1 flex-col gap-2">
                 <input
                   type="file"
                   accept="image/jpeg,image/png,image/webp"
-                  aria-label="Optional photo"
-                  className="block w-full text-sm file:mr-3 file:h-11 file:rounded-full file:border-0 file:bg-forest file:px-4 file:text-sm file:text-sheet"
+                  aria-label={tr("Optional photo")}
+                  className="block w-full text-sm file:me-3 file:h-11 file:rounded-full file:border-0 file:bg-forest file:px-4 file:text-sm file:text-sheet"
                   onChange={(event) => {
                     const file = event.target.files?.[0];
                     event.target.value = "";
@@ -137,7 +140,7 @@ export function ProfileForm() {
                 />
                 {personal.photo ? (
                   <button type="button" className="h-11 self-start text-sm text-muted" onClick={() => patch({ photo: "" })}>
-                    Remove photo
+                    {tr("Remove photo")}
                   </button>
                 ) : null}
               </div>
@@ -145,73 +148,73 @@ export function ProfileForm() {
           </Field>
         </div>
         <div className="mt-3">
-          <Field label="Profile">
+          <Field label={tr("Profile")}>
             <Area value={personal.summary} onChange={(event) => patch({ summary: event.target.value })} />
           </Field>
         </div>
       </Panel>
 
-      <Panel title="Passport">
-        <p className="mb-3 text-sm text-muted">Schengen aur visa forms yahi options maangte hain. Indian passport par ECNR ya ECR bhi hota hai.</p>
+      <Panel title={tr("Passport")}>
+        <p className="mb-3 text-sm text-muted">{tr("Schengen aur visa forms yahi options maangte hain. Indian passport par ECNR ya ECR bhi hota hai.")}</p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Type">
+          <Field label={tr("Type")}>
             <Select value={personal.passportType} onChange={(event) => patch({ passportType: event.target.value })}>
-              <option value="">Choose</option>
+              <option value="">{tr("Choose")}</option>
               {PASSPORTS.map((item) => (
-                <option key={item}>{item}</option>
+                <option key={item} value={item}>{tr(item)}</option>
               ))}
             </Select>
           </Field>
-          <Field label="Number">
+          <Field label={tr("Number")}>
             <TextInput value={personal.passportNumber} autoComplete="off" onChange={(event) => patch({ passportNumber: event.target.value })} />
           </Field>
-          <Field label="Issued">
+          <Field label={tr("Issued")}>
             <TextInput type="date" value={personal.passportIssuedOn} onChange={(event) => patch({ passportIssuedOn: event.target.value })} />
           </Field>
-          <Field label="Expires">
+          <Field label={tr("Expires")}>
             <TextInput type="date" value={personal.passportExpires} onChange={(event) => patch({ passportExpires: event.target.value })} />
           </Field>
-          <Field label="Issuing country">
+          <Field label={tr("Issuing country")}>
             <Select value={personal.passportIssuedBy} onChange={(event) => patch({ passportIssuedBy: event.target.value })}>
-              <option value="">Choose</option>
+              <option value="">{tr("Choose")}</option>
               {COUNTRIES.map((country) => (
                 <option key={country}>{country}</option>
               ))}
             </Select>
           </Field>
-          <Field label="Issuing city">
-            <TextInput value={personal.passportIssuedCity} placeholder="Mumbai" onChange={(event) => patch({ passportIssuedCity: event.target.value })} />
+          <Field label={tr("Issuing city")}>
+            <TextInput value={personal.passportIssuedCity} placeholder={tr("Mumbai")} onChange={(event) => patch({ passportIssuedCity: event.target.value })} />
           </Field>
-          <Field label="Endorsement">
+          <Field label={tr("Endorsement")}>
             <Select value={personal.passportEndorsement} onChange={(event) => patch({ passportEndorsement: event.target.value })}>
-              <option value="">Choose</option>
+              <option value="">{tr("Choose")}</option>
               {ENDORSEMENTS.map((item) => (
-                <option key={item}>{item}</option>
+                <option key={item} value={item}>{tr(item)}</option>
               ))}
             </Select>
           </Field>
-          <Field label="Lost or stolen">
+          <Field label={tr("Lost or stolen")}>
             <Select value={personal.passportLost} onChange={(event) => patch({ passportLost: event.target.value })}>
-              <option value="">Choose</option>
+              <option value="">{tr("Choose")}</option>
               {YES_NO.map((item) => (
-                <option key={item}>{item}</option>
+                <option key={item} value={item}>{tr(item)}</option>
               ))}
             </Select>
           </Field>
           <div className="sm:col-span-2">
-            <Field label="Previous passport number">
+            <Field label={tr("Previous passport number")}>
               <TextInput value={personal.oldPassport} onChange={(event) => patch({ oldPassport: event.target.value })} />
             </Field>
           </div>
         </div>
       </Panel>
 
-      <Panel title="Contact">
+      <Panel title={tr("Contact")}>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Email">
+          <Field label={tr("Email")}>
             <TextInput type="email" value={personal.email} onChange={(event) => patch({ email: event.target.value })} />
           </Field>
-          <Field label="Calling code">
+          <Field label={tr("Calling code")}>
             <Select value={personal.phoneCode} onChange={(event) => patch({ phoneCode: event.target.value })}>
               {CALLING_CODES.map((entry) => (
                 <option key={entry.code} value={entry.code}>
@@ -220,22 +223,22 @@ export function ProfileForm() {
               ))}
             </Select>
           </Field>
-          <Field label="Phone">
+          <Field label={tr("Phone")}>
             <TextInput value={personal.phone} inputMode="tel" onChange={(event) => patch({ phone: event.target.value })} />
           </Field>
-          <Field label="Street">
+          <Field label={tr("Street")}>
             <TextInput value={personal.street} onChange={(event) => patch({ street: event.target.value })} />
           </Field>
-          <Field label="Postal code">
+          <Field label={tr("Postal code")}>
             <TextInput value={personal.postalCode} onChange={(event) => patch({ postalCode: event.target.value })} />
           </Field>
-          <Field label="City">
+          <Field label={tr("City")}>
             <TextInput value={personal.city} onChange={(event) => patch({ city: event.target.value })} />
           </Field>
-          <Field label="Region">
+          <Field label={tr("Region")}>
             <TextInput value={personal.region} onChange={(event) => patch({ region: event.target.value })} />
           </Field>
-          <Field label="Country">
+          <Field label={tr("Country")}>
             <TextInput
               list="meridian-countries"
               value={personal.country}
@@ -247,24 +250,24 @@ export function ProfileForm() {
               <option key={country} value={country} />
             ))}
           </datalist>
-          <Field label="LinkedIn">
+          <Field label={tr("LinkedIn")}>
             <TextInput value={personal.linkedin} onChange={(event) => patch({ linkedin: event.target.value })} />
           </Field>
-          <Field label="Website">
+          <Field label={tr("Website")}>
             <TextInput value={personal.website} onChange={(event) => patch({ website: event.target.value })} />
           </Field>
         </div>
       </Panel>
 
       <Panel
-        title="Work"
+        title={tr("Work")}
         action={
           <Button type="button" tone="quiet" className="h-10 px-4" onClick={addExperience}>
-            <Plus className="size-4" aria-hidden /> Add role
+            <Plus className="size-4" aria-hidden /> {tr("Add role")}
           </Button>
         }
       >
-        {experience.length === 0 ? <p className="text-sm text-muted">No roles yet.</p> : null}
+        {experience.length === 0 ? <p className="text-sm text-muted">{tr("No roles yet.")}</p> : null}
         <div className="flex flex-col gap-4">
           {experience.map((role, index) => (
             <article key={role.id} className="rounded-xl border border-line p-3">
@@ -275,19 +278,19 @@ export function ProfileForm() {
                 </button>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Title">
+                <Field label={tr("Title")}>
                   <TextInput value={role.title} onChange={(event) => updateExperience(role.id, { title: event.target.value })} />
                 </Field>
-                <Field label="Organization">
+                <Field label={tr("Organization")}>
                   <TextInput value={role.organization} onChange={(event) => updateExperience(role.id, { organization: event.target.value })} />
                 </Field>
-                <Field label="Location">
+                <Field label={tr("Location")}>
                   <TextInput value={role.location} onChange={(event) => updateExperience(role.id, { location: event.target.value })} />
                 </Field>
-                <Field label="Start">
+                <Field label={tr("Start")}>
                   <TextInput type="month" value={role.start} onChange={(event) => updateExperience(role.id, { start: event.target.value })} />
                 </Field>
-                <Field label="End">
+                <Field label={tr("End")}>
                   <TextInput type="month" value={role.end} disabled={role.current} onChange={(event) => updateExperience(role.id, { end: event.target.value })} />
                 </Field>
                 <label className="flex h-11 items-center gap-2 self-end text-sm">
@@ -296,11 +299,11 @@ export function ProfileForm() {
                     checked={role.current}
                     onChange={(event) => updateExperience(role.id, { current: event.target.checked, end: event.target.checked ? "" : role.end })}
                   />
-                  Current role
+                  {tr("Current role")}
                 </label>
               </div>
               <div className="mt-3">
-                <Field label="What changed" hint="One point per line.">
+                <Field label={tr("What changed")} hint={tr("One point per line.")}>
                   <Area value={role.summary} onChange={(event) => updateExperience(role.id, { summary: event.target.value })} />
                 </Field>
               </div>
@@ -310,14 +313,14 @@ export function ProfileForm() {
       </Panel>
 
       <Panel
-        title="Education"
+        title={tr("Education")}
         action={
           <Button type="button" tone="quiet" className="h-10 px-4" onClick={addEducation}>
-            <Plus className="size-4" aria-hidden /> Add study
+            <Plus className="size-4" aria-hidden /> {tr("Add study")}
           </Button>
         }
       >
-        {education.length === 0 ? <p className="text-sm text-muted">No study yet.</p> : null}
+        {education.length === 0 ? <p className="text-sm text-muted">{tr("No study yet.")}</p> : null}
         <div className="flex flex-col gap-4">
           {education.map((item, index) => (
             <article key={item.id} className="rounded-xl border border-line p-3">
@@ -328,27 +331,27 @@ export function ProfileForm() {
                 </button>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Qualification">
+                <Field label={tr("Qualification")}>
                   <TextInput value={item.qualification} onChange={(event) => updateEducation(item.id, { qualification: event.target.value })} />
                 </Field>
-                <Field label="Field">
+                <Field label={tr("Field")}>
                   <TextInput value={item.field} onChange={(event) => updateEducation(item.id, { field: event.target.value })} />
                 </Field>
-                <Field label="Institution">
+                <Field label={tr("Institution")}>
                   <TextInput value={item.institution} onChange={(event) => updateEducation(item.id, { institution: event.target.value })} />
                 </Field>
-                <Field label="Location">
+                <Field label={tr("Location")}>
                   <TextInput value={item.location} onChange={(event) => updateEducation(item.id, { location: event.target.value })} />
                 </Field>
-                <Field label="Start year">
+                <Field label={tr("Start year")}>
                   <TextInput value={item.start} onChange={(event) => updateEducation(item.id, { start: event.target.value })} />
                 </Field>
-                <Field label="End year">
+                <Field label={tr("End year")}>
                   <TextInput value={item.end} onChange={(event) => updateEducation(item.id, { end: event.target.value })} />
                 </Field>
               </div>
               <div className="mt-3">
-                <Field label="Notes">
+                <Field label={tr("Notes")}>
                   <Area value={item.details} onChange={(event) => updateEducation(item.id, { details: event.target.value })} />
                 </Field>
               </div>
@@ -357,113 +360,113 @@ export function ProfileForm() {
         </div>
       </Panel>
 
-      <Panel title="International options">
+      <Panel title={tr("International options")}>
         <p className="mb-3 text-sm text-muted">
-          Yeh list Europass CV aur Schengen / visa particulars se hai. Sirf wahi bharein jo us form ne maanga ho. Khali line file mein nahi chhapi jaati.
+          {tr("Yeh list Europass CV aur Schengen / visa particulars se hai. Sirf wahi bharein jo us form ne maanga ho. Khali line file mein nahi chhapi jaati.")}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Sex">
+          <Field label={tr("Sex")}>
             <Select value={personal.sex} onChange={(event) => patch({ sex: event.target.value })}>
-              <option value="">Not stated</option>
+              <option value="">{tr("Not stated")}</option>
               {SEXES.map((item) => (
-                <option key={item}>{item}</option>
+                <option key={item} value={item}>{tr(item)}</option>
               ))}
             </Select>
           </Field>
-          <Field label="Marital status">
+          <Field label={tr("Marital status")}>
             <Select value={personal.maritalStatus} onChange={(event) => patch({ maritalStatus: event.target.value })}>
-              <option value="">Not stated</option>
+              <option value="">{tr("Not stated")}</option>
               {MARITAL.map((item) => (
-                <option key={item}>{item}</option>
+                <option key={item} value={item}>{tr(item)}</option>
               ))}
             </Select>
           </Field>
-          <Field label="Surname at birth">
+          <Field label={tr("Surname at birth")}>
             <TextInput value={personal.surnameAtBirth} onChange={(event) => patch({ surnameAtBirth: event.target.value })} />
           </Field>
-          <Field label="Nationality at birth">
+          <Field label={tr("Nationality at birth")}>
             <TextInput value={personal.nationalityAtBirth} onChange={(event) => patch({ nationalityAtBirth: event.target.value })} />
           </Field>
-          <Field label="Other nationalities">
+          <Field label={tr("Other nationalities")}>
             <TextInput value={personal.otherNationalities} onChange={(event) => patch({ otherNationalities: event.target.value })} />
           </Field>
-          <Field label="National ID number">
+          <Field label={tr("National ID number")}>
             <TextInput value={personal.nationalId} onChange={(event) => patch({ nationalId: event.target.value })} />
           </Field>
-          <Field label="Position applied for" hint="Europass header. The job title on the advert.">
+          <Field label={tr("Position applied for")} hint={tr("Europass header. The job title on the advert.")}>
             <TextInput value={personal.positionApplied} onChange={(event) => patch({ positionApplied: event.target.value })} />
           </Field>
-          <Field label="Driving licence">
-            <TextInput value={personal.drivingLicence} placeholder="B" onChange={(event) => patch({ drivingLicence: event.target.value })} />
+          <Field label={tr("Driving licence")}>
+            <TextInput value={personal.drivingLicence} placeholder={tr("B")} onChange={(event) => patch({ drivingLicence: event.target.value })} />
           </Field>
-          <Field label="Father">
+          <Field label={tr("Father")}>
             <TextInput value={personal.fatherName} onChange={(event) => patch({ fatherName: event.target.value })} />
           </Field>
-          <Field label="Mother">
+          <Field label={tr("Mother")}>
             <TextInput value={personal.motherName} onChange={(event) => patch({ motherName: event.target.value })} />
           </Field>
-          <Field label="Spouse">
+          <Field label={tr("Spouse")}>
             <TextInput value={personal.spouseName} onChange={(event) => patch({ spouseName: event.target.value })} />
           </Field>
-          <Field label="Guardian" hint="For a minor: name, phone, nationality.">
+          <Field label={tr("Guardian")} hint={tr("For a minor: name, phone, nationality.")}>
             <TextInput value={personal.guardian} onChange={(event) => patch({ guardian: event.target.value })} />
           </Field>
-          <Field label="Eye colour">
-            <TextInput value={personal.eyeColour} placeholder="Brown" onChange={(event) => patch({ eyeColour: event.target.value })} />
+          <Field label={tr("Eye colour")}>
+            <TextInput value={personal.eyeColour} placeholder={tr("Brown")} onChange={(event) => patch({ eyeColour: event.target.value })} />
           </Field>
-          <Field label="Hair colour">
-            <TextInput value={personal.hairColour} placeholder="Black" onChange={(event) => patch({ hairColour: event.target.value })} />
+          <Field label={tr("Hair colour")}>
+            <TextInput value={personal.hairColour} placeholder={tr("Black")} onChange={(event) => patch({ hairColour: event.target.value })} />
           </Field>
         </div>
         <div className="mt-3 grid gap-3">
-          <Field label="Digital skills">
+          <Field label={tr("Digital skills")}>
             <Area value={personal.digitalSkills} onChange={(event) => patch({ digitalSkills: event.target.value })} />
           </Field>
-          <Field label="Projects">
+          <Field label={tr("Projects")}>
             <Area value={personal.projects} onChange={(event) => patch({ projects: event.target.value })} />
           </Field>
-          <Field label="Publications">
+          <Field label={tr("Publications")}>
             <Area value={personal.publications} onChange={(event) => patch({ publications: event.target.value })} />
           </Field>
-          <Field label="Volunteering">
+          <Field label={tr("Volunteering")}>
             <Area value={personal.volunteering} onChange={(event) => patch({ volunteering: event.target.value })} />
           </Field>
-          <Field label="Memberships">
+          <Field label={tr("Memberships")}>
             <Area value={personal.memberships} onChange={(event) => patch({ memberships: event.target.value })} />
           </Field>
-          <Field label="References">
-            <Area value={personal.referencesNote} placeholder="Available on request" onChange={(event) => patch({ referencesNote: event.target.value })} />
+          <Field label={tr("References")}>
+            <Area value={personal.referencesNote} placeholder={tr("Available on request")} onChange={(event) => patch({ referencesNote: event.target.value })} />
           </Field>
-          <Field label="Merit" hint="Distinction, rank, or award.">
+          <Field label={tr("Merit")} hint={tr("Distinction, rank, or award.")}>
             <Area value={personal.merit} onChange={(event) => patch({ merit: event.target.value })} />
           </Field>
-          <Field label="Hobbies">
+          <Field label={tr("Hobbies")}>
             <Area value={personal.hobbies} onChange={(event) => patch({ hobbies: event.target.value })} />
           </Field>
         </div>
-        <p className="mb-3 mt-4 text-sm font-medium">This trip</p>
+        <p className="mb-3 mt-4 text-sm font-medium">{tr("This trip")}</p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Purpose of travel">
-            <TextInput value={personal.visaPurpose} placeholder="Tourism, work, study" onChange={(event) => patch({ visaPurpose: event.target.value })} />
+          <Field label={tr("Purpose of travel")}>
+            <TextInput value={personal.visaPurpose} placeholder={tr("Tourism, work, study")} onChange={(event) => patch({ visaPurpose: event.target.value })} />
           </Field>
-          <Field label="Destination">
+          <Field label={tr("Destination")}>
             <TextInput value={personal.destination} onChange={(event) => patch({ destination: event.target.value })} />
           </Field>
-          <Field label="Entry">
+          <Field label={tr("Entry")}>
             <TextInput type="date" value={personal.entryDate} onChange={(event) => patch({ entryDate: event.target.value })} />
           </Field>
-          <Field label="Exit">
+          <Field label={tr("Exit")}>
             <TextInput type="date" value={personal.exitDate} onChange={(event) => patch({ exitDate: event.target.value })} />
           </Field>
-          <Field label="Accommodation">
+          <Field label={tr("Accommodation")}>
             <TextInput value={personal.accommodation} onChange={(event) => patch({ accommodation: event.target.value })} />
           </Field>
-          <Field label="Costs paid by">
-            <TextInput value={personal.sponsor} placeholder="Yourself, employer, host" onChange={(event) => patch({ sponsor: event.target.value })} />
+          <Field label={tr("Costs paid by")}>
+            <TextInput value={personal.sponsor} placeholder={tr("Yourself, employer, host")} onChange={(event) => patch({ sponsor: event.target.value })} />
           </Field>
           <div className="sm:col-span-2">
-            <Field label="Previous visa">
-              <TextInput value={personal.previousVisa} placeholder="No, or the sticker number" onChange={(event) => patch({ previousVisa: event.target.value })} />
+            <Field label={tr("Previous visa")}>
+              <TextInput value={personal.previousVisa} placeholder={tr("No, or the sticker number")} onChange={(event) => patch({ previousVisa: event.target.value })} />
             </Field>
           </div>
         </div>
@@ -477,20 +480,20 @@ export function ProfileForm() {
                 </button>
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
-                <Field label="Name">
+                <Field label={tr("Name")}>
                   <TextInput value={child.name} onChange={(event) => updateChild(child.id, { name: event.target.value })} />
                 </Field>
-                <Field label="Date of birth">
+                <Field label={tr("Date of birth")}>
                   <TextInput type="date" value={child.dateOfBirth} onChange={(event) => updateChild(child.id, { dateOfBirth: event.target.value })} />
                 </Field>
-                <Field label="Gender">
-                  <TextInput value={child.gender} placeholder="Daughter" onChange={(event) => updateChild(child.id, { gender: event.target.value })} />
+                <Field label={tr("Gender")}>
+                  <TextInput value={child.gender} placeholder={tr("Daughter")} onChange={(event) => updateChild(child.id, { gender: event.target.value })} />
                 </Field>
               </div>
             </article>
           ))}
           <Button type="button" tone="quiet" className="h-11 self-start px-4" onClick={addChild}>
-            <Plus className="size-4" aria-hidden /> Add child
+            <Plus className="size-4" aria-hidden /> {tr("Add child")}
           </Button>
           {travel.map((trip, index) => (
             <article key={trip.id} className="rounded-xl border border-line p-3">
@@ -501,28 +504,28 @@ export function ProfileForm() {
                 </button>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Country">
+                <Field label={tr("Country")}>
                   <TextInput value={trip.country} onChange={(event) => updateTrip(trip.id, { country: event.target.value })} />
                 </Field>
-                <Field label="Purpose">
-                  <TextInput value={trip.purpose} placeholder="Work or visit" onChange={(event) => updateTrip(trip.id, { purpose: event.target.value })} />
+                <Field label={tr("Purpose")}>
+                  <TextInput value={trip.purpose} placeholder={tr("Work or visit")} onChange={(event) => updateTrip(trip.id, { purpose: event.target.value })} />
                 </Field>
-                <Field label="From">
+                <Field label={tr("From")}>
                   <TextInput value={trip.from} placeholder="2019" onChange={(event) => updateTrip(trip.id, { from: event.target.value })} />
                 </Field>
-                <Field label="To">
+                <Field label={tr("To")}>
                   <TextInput value={trip.to} placeholder="2019" onChange={(event) => updateTrip(trip.id, { to: event.target.value })} />
                 </Field>
               </div>
             </article>
           ))}
           <Button type="button" tone="quiet" className="h-11 self-start px-4" onClick={addTrip}>
-            <Plus className="size-4" aria-hidden /> Add travel
+            <Plus className="size-4" aria-hidden /> {tr("Add travel")}
           </Button>
         </div>
       </Panel>
 
-      <Panel title="Languages and skills">
+      <Panel title={tr("Languages and skills")}>
         <div className="flex flex-col gap-4">
           {languages.map((item, index) => (
             <div key={item.id} className="grid gap-2 sm:grid-cols-2">
@@ -530,7 +533,7 @@ export function ProfileForm() {
               <div className="flex gap-2">
                 <Select aria-label={`Level ${index + 1}`} className="min-w-0 flex-1" value={item.level} onChange={(event) => updateLanguage(item.id, { level: event.target.value })}>
                   {LEVELS.map((level) => (
-                    <option key={level}>{level}</option>
+                    <option key={level} value={level}>{tr(level)}</option>
                   ))}
                 </Select>
                 <button type="button" className="grid size-11 shrink-0 place-items-center text-muted" onClick={() => removeLanguage(item.id)} aria-label={`Remove language ${index + 1}`}>
@@ -540,13 +543,13 @@ export function ProfileForm() {
             </div>
           ))}
           <Button type="button" tone="quiet" className="h-11 self-start px-4" onClick={addLanguage}>
-            <Plus className="size-4" aria-hidden /> Add language
+            <Plus className="size-4" aria-hidden /> {tr("Add language")}
           </Button>
 
-          <Field label="Skills" hint="Press Enter to add each skill.">
+          <Field label={tr("Skills")} hint={tr("Press Enter to add each skill.")}>
             <TextInput
               value={skill}
-              placeholder="Tariff design"
+              placeholder={tr("Tariff design")}
               onChange={(event) => setSkill(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key !== "Enter") return;
@@ -569,16 +572,16 @@ export function ProfileForm() {
 
           {certifications.map((item, index) => (
             <div key={item.id} className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_6rem_2.75rem]">
-              <TextInput aria-label={`Certificate ${index + 1}`} placeholder="Certificate" value={item.name} onChange={(event) => updateCertification(item.id, { name: event.target.value })} />
-              <TextInput aria-label={`Issuer ${index + 1}`} placeholder="Issuer" value={item.issuer} onChange={(event) => updateCertification(item.id, { issuer: event.target.value })} />
-              <TextInput aria-label={`Year ${index + 1}`} placeholder="Year" value={item.year} onChange={(event) => updateCertification(item.id, { year: event.target.value })} />
+              <TextInput aria-label={`Certificate ${index + 1}`} placeholder={tr("Certificate")} value={item.name} onChange={(event) => updateCertification(item.id, { name: event.target.value })} />
+              <TextInput aria-label={`Issuer ${index + 1}`} placeholder={tr("Issuer")} value={item.issuer} onChange={(event) => updateCertification(item.id, { issuer: event.target.value })} />
+              <TextInput aria-label={`Year ${index + 1}`} placeholder={tr("Year")} value={item.year} onChange={(event) => updateCertification(item.id, { year: event.target.value })} />
               <button type="button" className="grid size-11 place-items-center text-muted" onClick={() => removeCertification(item.id)} aria-label={`Remove certificate ${index + 1}`}>
                 <Trash2 className="size-4" />
               </button>
             </div>
           ))}
           <Button type="button" tone="quiet" className="h-11 self-start px-4" onClick={addCertification}>
-            <Plus className="size-4" aria-hidden /> Add certificate
+            <Plus className="size-4" aria-hidden /> {tr("Add certificate")}
           </Button>
         </div>
       </Panel>
@@ -597,7 +600,7 @@ export function ProfileForm() {
         {armed ? (
           <div className="flex gap-2">
             <Button type="button" tone="quiet" className="h-11" onClick={() => setArmed(false)}>
-              Keep it
+              {tr("Keep it")}
             </Button>
             <Button
               type="button"
@@ -607,12 +610,12 @@ export function ProfileForm() {
                 setArmed(false);
               }}
             >
-              Clear the dossier
+              {tr("Clear the dossier")}
             </Button>
           </div>
         ) : (
           <Button type="button" tone="ghost" className="h-11" onClick={() => setArmed(true)}>
-            Clear the dossier
+            {tr("Clear the dossier")}
           </Button>
         )}
       </div>

@@ -16,6 +16,7 @@ import {
   dossierCode,
   formatSpan,
   formatWhen,
+  preparedLine,
   lifeLines,
   phoneLine,
   placeLine,
@@ -170,6 +171,7 @@ function childrenFor(profile: Profile, settings: Settings): FileChild[] {
       para([run(`MERIDIAN  ${dossierCode(profile)}`, { bold: true, size: 16, color: FOREST, font: "Calibri" })], 40),
       ...(photoBlock(personal.photo) ? [photoBlock(personal.photo)!] : []),
       para([run(copy.particulars.toUpperCase(), { bold: true, size: 32 })], 160),
+      ...(preparedLine(personal, settings.locale) ? [para([run(preparedLine(personal, settings.locale), { italics: true, size: 20, color: "A68456" })], 120)] : []),
       ...fields.flatMap(([label, value]) => [
         para([run(label.toUpperCase(), { bold: true, size: 16, color: MUTED, font: "Calibri" })], 20),
         para([run(value, { size: 22 })], 120),
@@ -194,6 +196,7 @@ function childrenFor(profile: Profile, settings: Settings): FileChild[] {
     }),
   );
   if (personal.headline) blocks.push(para([run(personal.headline, { italics: true, size: 24, color: FOREST })], 60));
+  if (preparedLine(personal, settings.locale)) blocks.push(para([run(preparedLine(personal, settings.locale), { italics: true, size: 20, color: "A68456" })], 60));
   blocks.push(para([run(contact || "Add contact details", { size: 18, color: MUTED, font: "Calibri" })], 160));
   if (settings.template === "meridian" && personal.nationality) {
     blocks.push(para([run(`${copy.nationality}: ${personal.nationality}`, { italics: true, size: 20, color: MUTED })]));

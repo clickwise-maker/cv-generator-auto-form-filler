@@ -1,3 +1,4 @@
+import { tr } from "@/lib/i18n/i18n";
 import { Link } from "@tanstack/react-router";
 import { SiteFooter } from "./site-footer";
 
@@ -40,7 +41,7 @@ export function infoHead(c: InfoContent) {
 function Items({ items, plain }: { items: string[]; plain: boolean }) {
   const mail = (
     <p className="mt-2 text-sm leading-relaxed">
-      Email / ईमेल:{" "}
+      {tr("Email")}:{" "}
       <a className="underline" href={`mailto:${EMAIL}`}>
         {EMAIL}
       </a>
@@ -53,13 +54,13 @@ function Items({ items, plain }: { items: string[]; plain: boolean }) {
       {plain || rest.length === 1 ? (
         rest.map((i) => (
           <p key={i} className="mt-2 text-sm leading-relaxed">
-            {i}
+            {tr(i)}
           </p>
         ))
       ) : (
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed">
+        <ul className="mt-2 list-disc space-y-1 ps-5 text-sm leading-relaxed">
           {rest.map((i) => (
-            <li key={i}>{i}</li>
+            <li key={i}>{tr(i)}</li>
           ))}
         </ul>
       )}
@@ -68,44 +69,28 @@ function Items({ items, plain }: { items: string[]; plain: boolean }) {
 }
 
 export function InfoPage({ c }: { c: InfoContent }) {
-  const langs = [
-    { id: "en", heading: c.title, secs: c.en },
-    { id: "hi", heading: c.hi_title, secs: c.hi },
-  ];
   return (
     <>
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            CV Studio
+            {tr("CV Studio")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">{c.title}</h1>
+          <h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
           <p className="mt-2 text-sm text-ink/70">
-            {c.lead}{" "}
-            <a href="#hi" lang="hi" className="underline">
-              हिंदी में पढ़ें
-            </a>
+            {tr(c.lead)}
           </p>
-          {langs.map((l) => (
-            <section
-              key={l.id}
-              id={l.id}
-              lang={l.id}
-              className="mt-8 rounded-lg border border-line bg-sheet p-6"
-              style={l.id === "hi" ? { fontFamily: '"Noto Sans Devanagari", var(--font-sans)' } : undefined}
-            >
-              <h2 className="text-2xl font-semibold">{l.heading}</h2>
-              {l.secs.map(([t, items]) => (
-                <div key={t} className="mt-6">
-                  <h3 className="font-semibold">{t}</h3>
-                  <Items items={items} plain={!!c.faq} />
-                </div>
-              ))}
-            </section>
-          ))}
+          <section className="mt-8 rounded-lg border border-line bg-sheet p-6">
+            {c.en.map(([t, items]) => (
+              <div key={t} className="mt-6 first:mt-0">
+                <h3 className="font-semibold">{tr(t)}</h3>
+                <Items items={items} plain={!!c.faq} />
+              </div>
+            ))}
+          </section>
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              ← Back to CV Studio
+              {tr("← Back to CV Studio")}
             </Link>
           </p>
         </div>

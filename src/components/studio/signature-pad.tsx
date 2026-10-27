@@ -1,3 +1,4 @@
+import { tr } from "@/lib/i18n/i18n";
 import { useEffect, useRef, useState } from "react";
 import { Eraser, PenLine, Trash2, Undo2, Upload } from "lucide-react";
 import { Button, Field, TextInput } from "@/components/studio/ui";
@@ -12,7 +13,7 @@ function loadImage(src: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error("image"));
+    img.onerror = () => reject(new Error(tr("image")));
     img.src = src;
   });
 }

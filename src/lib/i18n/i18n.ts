@@ -91,3 +91,16 @@ export const LANG_BOOT = `try{var l=localStorage.getItem(${JSON.stringify(LANG_K
 export function tr(en: string, vars?: Vars): string {
   return translate(useLang.getState().lang, en, vars);
 }
+
+/** Translate every string value of a copy object (keys stay the same). */
+export function trObj<O extends Record<string, string>>(obj: O, vars?: Vars): { [K in keyof O]: string } {
+  const out = {} as { [K in keyof O]: string };
+  for (const k of Object.keys(obj) as (keyof O)[]) out[k] = tr(obj[k]!, vars);
+  return out;
+}
+
+/** BCP-47 tag for Intl date/number formatting in the UI. */
+export function uiLocale(): string {
+  const lang = useLang.getState().lang;
+  return lang === "en" ? "en-IN" : lang;
+}

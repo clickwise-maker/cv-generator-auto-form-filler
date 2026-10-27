@@ -8,6 +8,7 @@ import {
   fileBase,
   formatSpan,
   formatWhen,
+  preparedLine,
   lifeLines,
   phoneLine,
   placeLine,
@@ -221,6 +222,7 @@ function drawMeridian(pen: Pen, profile: Profile, settings: Settings) {
   });
   if (personalPhoto(profile)) pen.doc.addImage(profile.personal.photo, "JPEG", pen.pageW - pen.margin - 22, 5, 22, 26);
   pen.y = 44;
+  { const prepared = preparedLine(profile.personal, settings.locale); if (prepared) pen.write(prepared, { size: 10, style: "italic", color: BRASS, gap: 2 }); }
   if (profile.personal.nationality) {
     pen.write(`${copy.nationality}: ${profile.personal.nationality}`, {
       size: 10,
@@ -243,6 +245,7 @@ function drawAtlas(pen: Pen, profile: Profile, settings: Settings) {
   const name = displayName(profile.personal, settings.nameOrder) || "Your name";
   pen.write(name, { size: 22, style: "bold", gap: 1 });
   if (profile.personal.headline) pen.write(profile.personal.headline, { size: 12, style: "italic", gap: 1 });
+  { const prepared = preparedLine(profile.personal, settings.locale); if (prepared) pen.write(prepared, { size: 10, style: "italic", color: BRASS, gap: 2 }); }
   pen.write(contactBits(profile, false).join("  |  ") || "City, email, phone", {
     size: 9,
     font: "helvetica",
@@ -275,6 +278,7 @@ function drawConsulate(pen: Pen, profile: Profile, settings: Settings) {
   pen.y = personalPhoto(profile) ? 46 : 26;
   pen.rule(BRASS, pen.width);
   pen.y += 2;
+  { const prepared = preparedLine(profile.personal, settings.locale); if (prepared) pen.write(prepared, { size: 10, style: "italic", color: BRASS, gap: 2 }); }
 
   const rows: [string, string][] = [
     ["Full name", name],

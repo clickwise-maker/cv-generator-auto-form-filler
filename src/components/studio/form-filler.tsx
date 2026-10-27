@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Plus, X } from "lucide-react";
 import { FORM_FIELDS, fieldsByUsage, type FormFieldDef } from "@/lib/cv/form-fields";
-import { findMissing } from "@/lib/cv/missing";
+import { findMissing, TARGET_COMPANY } from "@/lib/cv/missing";
+import { activeCompany } from "@/lib/cv/target";
 import { useMode } from "@/lib/cv/mode";
 import type { Personal } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
-import { LANGS, useLang, useT } from "@/lib/i18n/i18n";
+import { useT } from "@/lib/i18n/i18n";
+import { LanguageSelect } from "@/components/language-select";
 import { Area, Button, Field, Panel, TextInput } from "@/components/studio/ui";
 import { CustomDetails } from "@/components/studio/custom-details";
 import { SignatureSection } from "@/components/studio/signature-pad";
@@ -45,15 +47,18 @@ function FieldInput({ def, compact }: { def: FormFieldDef; compact?: boolean }) 
  * profile (known fields) or to "More details" (custom rows) so they are reused next time.
  * Nothing is pre-filled or guessed.
  */
-export function MissingFieldsDialog({ open, onClose, fields, custom }: { open: boolean; onClose: () => void; fields: FormFieldDef[]; custom: string[] }) {
+export function MissingFieldsDialog({ open, onClose, fields, custom, askCompany = false }: { open: boolean; onClose: () => void; fields: FormFieldDef[]; custom: string[]; askCompany?: boolean }) {
   const t = useT();
   const saveAnswers = useStudio((s) => s.saveAnswers);
+  const setTarget = useStudio((s) => s.setTarget);
+  const [company, setCompany] = useState("");
   const [values, setValues] = useState<Record<string, string>>({});
   const [extra, setExtra] = useState<{ label: string; value: string }[]>([]);
 
   useEffect(() => {
     if (!open) return;
     setValues({});
+    setCompany("");
     setExtra(custom.map((label) => ({ label, value: "" })));
   }, [open, custom]);
 
@@ -66,6 +71,7 @@ export function MissingFieldsDialog({ open, onClose, fields, custom }: { open: b
       if (v && def.input !== "signature") known[def.key] = v;
     }
     saveAnswers(known as Partial<Personal>, extra);
+    if (company.trim()) setTarget({ on: true, company: company.trim() });
     onClose();
   };
 
@@ -81,7 +87,7 @@ export function MissingFieldsDialog({ open, onClose, fields, custom }: { open: b
       >
         <div className="mb-3 flex items-start gap-2">
           <h2 id="missing-title" className="flex-1 font-serif text-xl">
-            {fields.length || custom.length ? t("This form needs a few more details") : t("Add more details")}
+            {fields.length || custom.length || askCompany ? t("This form needs a few more details") : t("Add more details")}
           </h2>
           <button type="button" className="grid size-9 place-items-center text-muted" aria-label={t("Close")} onClick={onClose}>
             <X className="size-4" aria-hidden />
@@ -94,6 +100,11 @@ export function MissingFieldsDialog({ open, onClose, fields, custom }: { open: b
               <Control def={def} value={values[def.key] ?? ""} onChange={(v) => setValues((s) => ({ ...s, [def.key]: v }))} />
             </Field>
           ))}
+          {askCompany ? (
+            <Field label={t("Company you are applying to")}>
+              <TextInput dir="auto" data-testid="missing-company" value={company} onChange={(e) => setCompany(e.target.value)} />
+            </Field>
+          ) : null}
           {extra.map((row, index) => (
             <div key={index} className="grid grid-cols-[1fr_1.4fr] gap-2" data-testid="missing-custom">
               <TextInput dir="auto" aria-label={t("Detail name")} placeholder={t("Detail name")} value={row.label} onChange={(e) => setExtra((rows) => rows.map((r, i) => (i === index ? { ...r, label: e.target.value } : r)))} />
@@ -123,6 +134,8 @@ export function FormFiller() {
   const source = useMode((s) => s.source);
   const formText = useMode((s) => s.formText);
   const personal = useStudio((s) => s.profile.personal);
+  const target = useStudio((s) => s.target);
+  const setTarget = useStudio((s) => s.setTarget);
   const [dialog, setDialog] = useState(false);
   const [askedFor, setAskedFor] = useState("");
 
@@ -136,13 +149,13 @@ export function FormFiller() {
     return typeof v === "string" && v.trim() !== "";
   };
   const filledCount = main.filter(isFilled).length;
-  const report = useMemo(() => (formText ? findMissing(formText, personal, detected) : { fields: [], custom: [] }), [formText, personal, detected]);
+  const report = useMemo(() => (formText ? findMissing(formText, personal, detected, activeCompany(target)) : { fields: [], custom: [], targetCompany: false }), [formText, personal, detected, target]);
 
   // Pop up once per newly read form when something is missing.
   useEffect(() => {
     if (!formText || formText === askedFor) return;
     setAskedFor(formText);
-    if (report.fields.length || report.custom.length) setDialog(true);
+    if (report.fields.length || report.custom.length || report.targetCompany) setDialog(true);
   }, [formText, askedFor, report]);
 
   return (
@@ -169,9 +182,16 @@ export function FormFiller() {
             </div>
           ))}
         </div>
-        {report.fields.length || report.custom.length ? (
+        {formText && TARGET_COMPANY.test(formText) ? (
+          <div className="mt-3">
+            <Field label={t("Company you are applying to")}>
+              <TextInput dir="auto" data-testid="filler-company" value={target.company} onChange={(e) => setTarget({ on: true, company: e.target.value })} />
+            </Field>
+          </div>
+        ) : null}
+        {report.fields.length || report.custom.length || report.targetCompany ? (
           <button type="button" className="mt-3 w-full rounded-xl bg-brass-soft px-3 py-2 text-start text-xs" data-testid="filler-missing" onClick={() => setDialog(true)}>
-            {t("Still missing")} ({report.fields.length + report.custom.length}): {[...report.fields.map((f) => t(f.en)), ...report.custom].join(", ")}
+            {t("Still missing")} ({report.fields.length + report.custom.length + (report.targetCompany ? 1 : 0)}): {[...report.fields.map((f) => t(f.en)), ...(report.targetCompany ? [t("Company you are applying to")] : []), ...report.custom].join(", ")}
           </button>
         ) : null}
         <p className="mt-3 text-xs text-muted">{t("Work history, education, skills and languages are shared with the CV Generator.")}</p>
@@ -210,29 +230,8 @@ export function FormFiller() {
         </details>
       ) : null}
 
-      <MissingFieldsDialog open={dialog} onClose={() => setDialog(false)} fields={report.fields} custom={report.custom} />
+      <MissingFieldsDialog open={dialog} onClose={() => setDialog(false)} fields={report.fields} custom={report.custom} askCompany={report.targetCompany} />
     </div>
-  );
-}
-
-export function LanguageSelect({ className }: { className?: string }) {
-  const t = useT();
-  const lang = useLang((s) => s.lang);
-  const setLang = useLang((s) => s.setLang);
-  return (
-    <select
-      data-testid="lang-toggle"
-      aria-label={t("Language")}
-      value={lang}
-      onChange={(e) => setLang(e.target.value as (typeof LANGS)[number]["id"])}
-      className={cn("h-11 shrink-0 rounded-full border border-line bg-sheet px-3 text-sm font-medium text-forest", className)}
-    >
-      {LANGS.map((l) => (
-        <option key={l.id} value={l.id} lang={l.id}>
-          {l.label}
-        </option>
-      ))}
-    </select>
   );
 }
 

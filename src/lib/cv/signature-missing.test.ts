@@ -72,3 +72,39 @@ test("form labels and custom cleaning", () => {
   assert.deepEqual(formLabels("Name: x\nNo label here\nPIN ......"), ["Name", "PIN"]);
   assert.deepEqual(cleanCustomDetails([{ label: "A", value: "1" }, { label: "", value: "x" }, 5]).map((c) => c.label), ["A"]);
 });
+
+test("target company OFF: base CV unchanged, no Prepared-for line, generic filename", async () => {
+  const { applyTarget, emptyTarget } = await import("./target.ts");
+  const { emptyProfile, preparedLine, fileBase } = await import("./model.ts");
+  const base = emptyProfile();
+  base.personal.givenName = "Asha";
+  const off = applyTarget(base, emptyTarget());
+  assert.equal(off.personal.preparedFor, undefined);
+  assert.equal(preparedLine(off.personal, "en"), "");
+  assert.equal(fileBase(off, defaultSettings()), "Asha-cv");
+  // A typed company with the toggle off is ignored.
+  assert.equal(applyTarget(base, { on: false, company: "Acme" }).personal.preparedFor, undefined);
+});
+
+test("target company ON: Prepared-for layer in header + filename, base untouched, toggling off removes it", async () => {
+  const { applyTarget } = await import("./target.ts");
+  const { emptyProfile, preparedLine, fileBase } = await import("./model.ts");
+  const base = emptyProfile();
+  base.personal.givenName = "Asha";
+  const on = applyTarget(base, { on: true, company: "Acme Corp" });
+  assert.equal(on.personal.preparedFor, "Acme Corp");
+  assert.equal(base.personal.preparedFor, undefined);
+  assert.equal(preparedLine(on.personal, "en"), "Prepared for Acme Corp");
+  assert.equal(preparedLine(on.personal, "de"), "Erstellt für Acme Corp");
+  assert.equal(fileBase(on, defaultSettings()), "Asha-cv-for-Acme-Corp");
+  const offAgain = applyTarget(on, { on: false, company: "Acme Corp" });
+  assert.equal(offAgain.personal.preparedFor, undefined);
+});
+
+test("form filler: company-applying-to field uses the target company when set", () => {
+  const form = "Company applying to: ____\nEmail: ____";
+  const p = { ...emptyPersonal(), email: "a@b.c" };
+  assert.equal(findMissing(form, p).targetCompany, true);
+  assert.equal(findMissing(form, p, null, "Acme").targetCompany, false);
+  assert.deepEqual(findMissing(form, p).custom, []);
+});

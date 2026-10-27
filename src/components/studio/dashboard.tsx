@@ -1,3 +1,5 @@
+import { uiLocale } from "@/lib/i18n/i18n";
+import { tr, trObj } from "@/lib/i18n/i18n";
 import { useEffect, useState, type ReactNode } from "react";
 import { Copy, Share2, Users, Briefcase, CheckCircle2, ClipboardList, CreditCard, FilePlus2, FileText, PenLine, Upload, Wallet } from "lucide-react";
 import type { Credits } from "@/lib/payments/config";
@@ -10,6 +12,7 @@ import { WithdrawButton } from "@/components/privacy/consent-ui";
 import { readConsent, RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
 /** All dashboard copy in one place so it can be translated later. */
+// i18n-data:start
 export const DASH_TEXT = {
   title: "Your dashboard",
   subtitle: "Everything you have created with CV Studio, saved in this browser.",
@@ -60,8 +63,9 @@ export const DASH_TEXT = {
   revokeLink: "Revoke share link",
   confirmRevoke: "Revoke the share link? Clients will no longer be able to open it. You can create a new link later.",
   revoked: "Link revoked.",
-  retention: `Client details are auto-deleted after ${RETENTION_DAYS} days, or earlier on request.`,
+  retention: "Client details are auto-deleted after {days} days, or earlier on request.",
 } as const;
+// i18n-data:end
 
 /** Opens the download paywall (where plans live). Plans are never shown elsewhere. */
 export function openPlans() {
@@ -118,7 +122,7 @@ function Panel({ title, children, testId }: { title: string; children: ReactNode
 
 /** Guest dashboard — local storage only, no account needed. */
 export function Dashboard() {
-  const T = DASH_TEXT;
+  const T = trObj(DASH_TEXT, { days: RETENTION_DAYS });
   const profile = useStudio((s) => s.profile);
   const settings = useStudio((s) => s.settings);
   const [guest, setGuest] = useState<GuestState | null>(null);
@@ -197,7 +201,7 @@ export function Dashboard() {
                     {credits.test && !credits.planName.includes(`(${T.test})`) ? ` (${T.test})` : ""}
                   </p>
                   <p className="text-xs text-muted">
-                    {credits.expiresAt ? `${T.validUntil} ${new Date(credits.expiresAt).toLocaleDateString()}` : T.noExpiry}
+                    {credits.expiresAt ? `${T.validUntil} ${new Date(credits.expiresAt).toLocaleDateString(uiLocale())}` : T.noExpiry}
                   </p>
                   {credits.companyLimit ? (
                     <p className="text-xs text-muted">
@@ -280,7 +284,7 @@ export function Dashboard() {
 
 
 function PrivacyCard() {
-  const T = DASH_TEXT;
+  const T = trObj(DASH_TEXT, { days: RETENTION_DAYS });
   const [at, setAt] = useState<number | null>(null);
   useEffect(() => setAt(readConsent()?.at ?? null), []);
   return (
@@ -289,12 +293,12 @@ function PrivacyCard() {
         <p className="text-sm text-muted">{T.privacyHint}</p>
         {at ? (
           <p className="mt-1 text-xs text-muted" data-testid="consent-at">
-            {T.consentGiven}: {new Date(at).toLocaleString()}
+            {T.consentGiven}: {new Date(at).toLocaleString(uiLocale())}
           </p>
         ) : null}
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <WithdrawButton className="h-11 rounded-full border-2 border-red-700 px-4 text-sm font-medium text-red-700" label="Withdraw consent & delete my data" />
-          <a href="/privacy" className="text-sm text-forest underline">Privacy notice</a>
+          <WithdrawButton className="h-11 rounded-full border-2 border-red-700 px-4 text-sm font-medium text-red-700" label={tr("Withdraw consent & delete my data")} />
+          <a href="/privacy" className="text-sm text-forest underline">{tr("Privacy notice")}</a>
           <a href={`mailto:${SUPPORT_EMAIL}`} className="text-sm text-forest underline">{SUPPORT_EMAIL}</a>
         </div>
       </Panel>
@@ -304,7 +308,7 @@ function PrivacyCard() {
 
 /** Commercial plan only: share an intake link and fill forms with a client's saved details. */
 function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestId: string }) {
-  const T = DASH_TEXT;
+  const T = trObj(DASH_TEXT, { days: RETENTION_DAYS });
   const commitProfile = useStudio((s) => s.commitProfile);
   const [biz, setBiz] = useState("");
   const [url, setUrl] = useState("");
@@ -451,7 +455,7 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
                 <div className="flex-1">
                   <p className="font-medium">{c.name}</p>
                   <p className="text-xs text-muted">
-                    {T.submitted} {new Date(c.submittedAt).toLocaleString()}
+                    {T.submitted} {new Date(c.submittedAt).toLocaleString(uiLocale())}
                   </p>
                 </div>
                 <button type="button" className="h-10 rounded-full bg-forest px-4 text-sm font-medium text-sheet" onClick={() => void fillFor(c)} data-testid="clients-fill">

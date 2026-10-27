@@ -62,6 +62,11 @@ export type Personal = {
   sponsor: string;
   previousVisa: string;
   /** Signature as a PNG data URL (drawn or uploaded), "" when none. */
+  /**
+   * Export-time layer only ("Prepared for [Company]"). Never stored in the base profile;
+   * set by applyTarget() from the separate target-company toggle.
+   */
+  preparedFor?: string;
   signature: string;
   /** Place written next to the signature line ("" = use the city). */
   signaturePlace: string;
@@ -160,6 +165,7 @@ export type Copy = {
   signPlace: string;
   signDate: string;
   more: string;
+  preparedFor: string;
 };
 
 export const COPY: Record<Locale, Copy> = {
@@ -181,6 +187,7 @@ export const COPY: Record<Locale, Copy> = {
     signPlace: "Place",
     signDate: "Date",
     more: "More details",
+    preparedFor: "Prepared for",
   },
   fr: {
     profile: "Profil",
@@ -200,6 +207,7 @@ export const COPY: Record<Locale, Copy> = {
     signPlace: "Lieu",
     signDate: "Date",
     more: "Informations complémentaires",
+    preparedFor: "Préparé pour",
   },
   de: {
     profile: "Profil",
@@ -219,6 +227,7 @@ export const COPY: Record<Locale, Copy> = {
     signPlace: "Ort",
     signDate: "Datum",
     more: "Weitere Angaben",
+    preparedFor: "Erstellt für",
   },
   es: {
     profile: "Perfil",
@@ -238,6 +247,7 @@ export const COPY: Record<Locale, Copy> = {
     signPlace: "Lugar",
     signDate: "Fecha",
     more: "Más datos",
+    preparedFor: "Preparado para",
   },
 };
 
@@ -595,6 +605,12 @@ export function displayName(personal: Personal, order: NameOrder): string {
   return parts.filter(Boolean).join(" ");
 }
 
+/** "Prepared for Acme" when the target-company layer is on, else "". */
+export function preparedLine(personal: Personal, locale: Locale): string {
+  const company = (personal.preparedFor ?? "").trim();
+  return company ? `${COPY[locale].preparedFor} ${company}` : "";
+}
+
 export function phoneLine(personal: Personal): string {
   return [personal.phoneCode, personal.phone].filter(Boolean).join(" ").trim();
 }
@@ -666,7 +682,8 @@ export function fileBase(profile: Profile, settings: Settings): string {
     .replace(/^-|-$/g, "");
   const kind =
     settings.template === "consulate" ? "particulars" : settings.template === "atlas" ? "resume" : "cv";
-  return `${name || "CV-Studio"}-${kind}`;
+  const target = (profile.personal.preparedFor ?? "").replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+  return `${name || "CV-Studio"}-${kind}${target ? `-for-${target}` : ""}`;
 }
 
 export function summaryLines(summary: string): string[] {

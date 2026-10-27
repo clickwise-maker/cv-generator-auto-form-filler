@@ -1,3 +1,5 @@
+import { Fragment, useEffect } from "react";
+import { LANG_BOOT, useLang } from "@/lib/i18n/i18n";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
@@ -15,6 +17,18 @@ const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined
 /** Privacy-friendly analytics (Plausible-compatible). OFF unless VITE_ANALYTICS_DOMAIN is set at build time. No cookies. */
 const ANALYTICS_DOMAIN = (import.meta.env.VITE_ANALYTICS_DOMAIN as string | undefined) || "";
 const ANALYTICS_SRC = (import.meta.env.VITE_ANALYTICS_SRC as string | undefined) || "https://plausible.io/js/script.js";
+
+/** Loads the saved UI language and remounts the page tree when it changes, so every string re-translates. */
+function LangRoot() {
+  const lang = useLang((s) => s.lang);
+  const load = useLang((s) => s.load);
+  useEffect(() => load(), [load]);
+  return (
+    <Fragment key={lang}>
+      <Outlet />
+    </Fragment>
+  );
+}
 
 export const Route = createRootRoute({
   head: () => ({
@@ -57,6 +71,7 @@ export const Route = createRootRoute({
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />
       </head>
       <body>
         <noscript>
@@ -69,7 +84,7 @@ export const Route = createRootRoute({
         </noscript>
         <PreviewHostBridge />
         <AuthProvider>
-          <Outlet />
+          <LangRoot />
         </AuthProvider>
         <Toaster
           theme="light"

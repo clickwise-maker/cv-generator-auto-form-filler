@@ -1,3 +1,4 @@
+import { tr } from "@/lib/i18n/i18n";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Ink } from "@/components/studio/ink";
@@ -21,7 +22,8 @@ import {
   splitDisplayName,
   summaryLines,
 } from "@/lib/cv/model";
-import { useStudio } from "@/lib/cv/store";
+import { layeredProfile, useStudio } from "@/lib/cv/store";
+import { PreparedFor } from "@/components/studio/target-company";
 import { signatureLine, templateSigns } from "@/lib/cv/signature";
 
 export function PreviewColumn() {
@@ -44,13 +46,14 @@ export function PreviewColumn() {
   }, []);
 
   function previewPdf() {
-    const { profile, settings: current } = useStudio.getState();
+    const { settings: current } = useStudio.getState();
+    const profile = layeredProfile();
     setBusy(true);
     try {
       downloadPreviewPdf(profile, current, WATERMARK_LINES);
-      toast.success("Watermarked preview PDF downloaded.");
+      toast.success(tr("Watermarked preview PDF downloaded."));
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Could not build that file.");
+      toast.error(error instanceof Error ? error.message : tr("Could not build that file."));
     } finally {
       setBusy(false);
     }
@@ -65,59 +68,59 @@ export function PreviewColumn() {
     <div className="lg:sticky lg:top-32">
       <div className="mb-3 grid grid-cols-2 gap-2">
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
-          Headings
+          {tr("Headings")}
           <Select value={settings.locale} onChange={(event) => setSettings({ locale: event.target.value as typeof settings.locale })}>
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
+            <option value="en">{tr("English")}</option>
+            <option value="fr">{tr("Français")}</option>
+            <option value="de">{tr("Deutsch")}</option>
+            <option value="es">{tr("Español")}</option>
           </Select>
         </label>
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
-          Dates
+          {tr("Dates")}
           <Select value={settings.dateStyle} onChange={(event) => setSettings({ dateStyle: event.target.value as typeof settings.dateStyle })}>
-            <option value="dmy">DD Mon YYYY</option>
-            <option value="mdy">Mon DD, YYYY</option>
-            <option value="iso">YYYY-MM-DD</option>
+            <option value="dmy">{tr("DD Mon YYYY")}</option>
+            <option value="mdy">{tr("Mon DD, YYYY")}</option>
+            <option value="iso">{tr("YYYY-MM-DD")}</option>
           </Select>
         </label>
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
-          Name order
+          {tr("Name order")}
           <Select value={settings.nameOrder} onChange={(event) => setSettings({ nameOrder: event.target.value as typeof settings.nameOrder })}>
-            <option value="given-family">Given name first</option>
-            <option value="family-given">Family name first</option>
+            <option value="given-family">{tr("Given name first")}</option>
+            <option value="family-given">{tr("Family name first")}</option>
           </Select>
         </label>
         <label className="flex flex-col gap-1 text-xs font-medium text-muted">
-          Paper
+          {tr("Paper")}
           <Select value={settings.paper} onChange={(event) => setSettings({ paper: event.target.value as typeof settings.paper })}>
             <option value="a4">A4</option>
-            <option value="letter">US Letter</option>
+            <option value="letter">{tr("US Letter")}</option>
           </Select>
         </label>
       </div>
       <div className="mb-3 rounded-2xl border border-line bg-sheet p-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold tracking-wide text-forest" aria-label="Free preview">
-            FREE PREVIEW
+          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold tracking-wide text-forest" aria-label={tr("Free preview")}>
+            {tr("FREE PREVIEW")}
           </span>
-          {status?.mode === "test" ? <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900">TEST MODE</span> : null}
-          <p className="min-w-0 flex-1 text-xs text-muted">Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock — options appear when you download.</p>
+          {status?.mode === "test" ? <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900">{tr("TEST MODE")}</span> : null}
+          <p className="min-w-0 flex-1 text-xs text-muted">{tr("Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock — options appear when you download.")}</p>
         </div>
         <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
           <Button type="button" onClick={() => void unlock("pdf")} disabled={busy}>
-            Unlock Clean Download · PDF
+            {tr("Unlock Clean Download · PDF")}
           </Button>
           <Button type="button" tone="quiet" onClick={() => void unlock("docx")} disabled={busy}>
-            Unlock Clean Download · Word
+            {tr("Unlock Clean Download · Word")}
           </Button>
           <Button type="button" tone="quiet" onClick={previewPdf} disabled={busy}>
-            {busy ? "Building…" : "Preview PDF (watermarked)"}
+            {busy ? tr("Building…") : tr("Preview PDF (watermarked)")}
           </Button>
         </div>
       </div>
       <UnlockDialog open={unlockFor !== null} format={unlockFor ?? "pdf"} status={status} onClose={closeUnlock} />
-      <p className="mb-3 text-xs text-muted">Click any line on the page to edit it. The form stays in step.</p>
+      <p className="mb-3 text-xs text-muted">{tr("Click any line on the page to edit it. The form stays in step.")}</p>
       <article key={settings.template} className="cv-preview sheet-shadow rise relative overflow-hidden rounded-2xl border border-line bg-sheet" aria-describedby="preview-watermark-note">
         {settings.template === "consulate" ? <ConsulatePage /> : settings.template === "atlas" ? <AtlasPage /> : <MeridianPage />}
         <div
@@ -154,17 +157,18 @@ function MeridianPage() {
         <div className="min-w-0 flex-1">
         <Ink
           value={name}
-          placeholder="Your name"
+          placeholder={tr(tr("Your name"))}
           onChange={(value) => patch(splitDisplayName(value, settings.nameOrder))}
           className="on-forest block font-serif text-3xl text-sheet"
         />
         <Ink
           value={personal.headline}
-          placeholder="Headline"
+          placeholder={tr("Headline")}
           onChange={(value) => patch({ headline: value })}
           className="on-forest mt-1 block text-sm italic text-mist"
         />
-        <p className="mt-3 text-xs break-words text-mist">{[placeLine(personal), personal.email, phoneLine(personal)].filter(Boolean).join("  ·  ") || "City, email, phone"}</p>
+        <PreparedFor className="mt-1 text-brass-soft" />
+        <p className="mt-3 text-xs break-words text-mist">{[placeLine(personal), personal.email, phoneLine(personal)].filter(Boolean).join("  ·  ") || tr("City, email, phone")}</p>
         </div>
         {personal.photo ? <img src={personal.photo} alt="" className="size-16 shrink-0 rounded-md object-cover" /> : null}
       </header>
@@ -172,7 +176,7 @@ function MeridianPage() {
       <div className="grid gap-6 px-5 py-6 sm:grid-cols-[minmax(0,1fr)_11rem] sm:px-8">
         <div className="min-w-0">
           <Section label={copy.profile} />
-          <Ink multiline value={personal.summary} placeholder="A short profile" onChange={(value) => patch({ summary: value })} className="text-sm" />
+          <Ink multiline value={personal.summary} placeholder={tr("A short profile")} onChange={(value) => patch({ summary: value })} className="text-sm" />
           {experience.length ? (
             <>
               <Section label={copy.experience} />
@@ -180,17 +184,17 @@ function MeridianPage() {
                 {experience.map((role) => (
                   <div key={role.id}>
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <Ink value={role.title} placeholder="Role" onChange={(value) => updateExperience(role.id, { title: value })} className="font-serif text-base" />
+                      <Ink value={role.title} placeholder={tr("Role")} onChange={(value) => updateExperience(role.id, { title: value })} className="font-serif text-base" />
                       <span className="text-xs italic text-muted">{formatSpan(role.start, role.end, role.current, settings)}</span>
                     </div>
                     <p className="text-sm italic text-muted">{[role.organization, role.location].filter(Boolean).join(" · ")}</p>
-                    <Ink multiline value={role.summary} placeholder="What changed in this role" onChange={(value) => updateExperience(role.id, { summary: value })} className="mt-1 text-sm" />
+                    <Ink multiline value={role.summary} placeholder={tr("What changed in this role")} onChange={(value) => updateExperience(role.id, { summary: value })} className="mt-1 text-sm" />
                   </div>
                 ))}
               </div>
             </>
           ) : (
-            <p className="mt-6 text-sm italic text-muted">Roles you add show up here.</p>
+            <p className="mt-6 text-sm italic text-muted">{tr("Roles you add show up here.")}</p>
           )}
           {education.length ? (
             <>
@@ -198,8 +202,8 @@ function MeridianPage() {
               <div className="flex flex-col gap-3">
                 {education.map((item) => (
                   <div key={item.id}>
-                    <p className="font-serif text-base">{degreeLine(item) || "Study"}</p>
-                    <Ink value={item.institution} placeholder="Institution" onChange={(value) => updateEducation(item.id, { institution: value })} className="text-sm italic text-muted" />
+                    <p className="font-serif text-base">{degreeLine(item) || tr("Study")}</p>
+                    <Ink value={item.institution} placeholder={tr("Institution")} onChange={(value) => updateEducation(item.id, { institution: value })} className="text-sm italic text-muted" />
                     <p className="text-xs text-muted">{[item.location, formatSpan(item.start, item.end, false, settings)].filter(Boolean).join(" · ")}</p>
                   </div>
                 ))}
@@ -269,24 +273,25 @@ function AtlasPage() {
     <div className="px-5 py-6 sm:px-8">
       <Ink
         value={displayName(personal, settings.nameOrder)}
-        placeholder="Your name"
+        placeholder={tr(tr("Your name"))}
         onChange={(value) => patch(splitDisplayName(value, settings.nameOrder))}
         className="block font-serif text-3xl"
       />
-      <Ink value={personal.headline} placeholder="Headline" onChange={(value) => patch({ headline: value })} className="mt-1 block text-sm text-forest" />
+      <Ink value={personal.headline} placeholder={tr("Headline")} onChange={(value) => patch({ headline: value })} className="mt-1 block text-sm text-forest" />
+      <PreparedFor className="mt-1 text-muted" />
       <p className="mt-2 text-xs break-words text-muted">{[placeLine(personal), personal.email, phoneLine(personal), personal.linkedin].filter(Boolean).join("  |  ")}</p>
       <div className="mt-3 h-px bg-forest" />
-      <p className="mt-4 text-xs text-muted">Date of birth, nationality, and passport stay off this résumé.</p>
+      <p className="mt-4 text-xs text-muted">{tr("Date of birth, nationality, and passport stay off this résumé.")}</p>
       <Section label={copy.profile} />
-      <Ink multiline value={personal.summary} placeholder="A short profile" onChange={(value) => patch({ summary: value })} className="text-sm" />
+      <Ink multiline value={personal.summary} placeholder={tr("A short profile")} onChange={(value) => patch({ summary: value })} className="text-sm" />
       {experience.map((role) => (
         <div key={role.id} className="mt-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <Ink value={role.title} placeholder="Role" onChange={(value) => updateExperience(role.id, { title: value })} className="font-medium" />
+            <Ink value={role.title} placeholder={tr("Role")} onChange={(value) => updateExperience(role.id, { title: value })} className="font-medium" />
             <span className="text-xs text-muted">{formatSpan(role.start, role.end, role.current, settings)}</span>
           </div>
           <p className="text-sm text-muted">{[role.organization, role.location].filter(Boolean).join(", ")}</p>
-          <ul className="mt-1 list-disc pl-4 text-sm">
+          <ul className="mt-1 list-disc ps-4 text-sm">
             {summaryLines(role.summary).map((line) => (
               <li key={line}>{line}</li>
             ))}
@@ -323,55 +328,55 @@ function ConsulatePage() {
   const copy = COPY[settings.locale];
   const fields: { label: string; value: string; onChange?: (value: string) => void; placeholder: string }[] = [
     {
-      label: "Full name",
+      label: tr("Full name"),
       value: displayName(personal, settings.nameOrder),
-      placeholder: "Your name",
+      placeholder: tr("Your name"),
       onChange: (value) => patch(splitDisplayName(value, settings.nameOrder)),
     },
     {
       label: copy.born,
       value: formatWhen(personal.dateOfBirth, settings.dateStyle),
-      placeholder: "Date of birth",
+      placeholder: tr("Date of birth"),
     },
     {
       label: copy.place,
       value: personal.placeOfBirth,
-      placeholder: "Place of birth",
+      placeholder: tr("Place of birth"),
       onChange: (value) => patch({ placeOfBirth: value }),
     },
     {
       label: copy.nationality,
       value: personal.nationality,
-      placeholder: "Nationality",
+      placeholder: tr("Nationality"),
       onChange: (value) => patch({ nationality: value }),
     },
     {
       label: copy.passport,
       value: personal.passportNumber,
-      placeholder: "Passport number",
+      placeholder: tr("Passport number"),
       onChange: (value) => patch({ passportNumber: value }),
     },
     {
-      label: "Occupation",
+      label: tr("Occupation"),
       value: personal.headline,
-      placeholder: "Occupation",
+      placeholder: tr("Occupation"),
       onChange: (value) => patch({ headline: value }),
     },
     {
-      label: "Email",
+      label: tr("Email"),
       value: personal.email,
-      placeholder: "Email",
+      placeholder: tr("Email"),
       onChange: (value) => patch({ email: value }),
     },
     {
-      label: "Telephone",
+      label: tr("Telephone"),
       value: phoneLine(personal),
-      placeholder: "Telephone",
+      placeholder: tr("Telephone"),
     },
     {
-      label: "Address",
+      label: tr("Address"),
       value: addressLines(personal).join(", "),
-      placeholder: "Address",
+      placeholder: tr("Address"),
     },
   ];
 
@@ -380,6 +385,7 @@ function ConsulatePage() {
       <p className="kicker text-forest">CV Studio {dossierCode(profile)}</p>
       {personal.photo ? <img src={personal.photo} alt="" className="mt-3 size-20 rounded-md object-cover" /> : null}
       <h3 className="mt-2 font-serif text-2xl">{copy.particulars}</h3>
+      <PreparedFor className="mt-1 text-muted" />
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {fields.map((field) => (
           <div key={field.label} className="border-b border-line pb-2">
@@ -393,7 +399,7 @@ function ConsulatePage() {
         ))}
       </div>
       <Section label={copy.profile} />
-      <Ink multiline value={personal.summary} placeholder="Statement" onChange={(value) => patch({ summary: value })} className="text-sm" />
+      <Ink multiline value={personal.summary} placeholder={tr("Statement")} onChange={(value) => patch({ summary: value })} className="text-sm" />
       <p className="mt-6 text-xs italic text-muted">{copy.declaration}</p>
       <LifeLines mode="full" />
       <SignatureLine />
@@ -408,7 +414,7 @@ function LifeLines({ mode }: { mode: "cv" | "full" }) {
   if (!lines.length) return null;
   return (
     <>
-      <Section label={mode === "full" ? "Family and travel" : "More"} />
+      <Section label={mode === "full" ? tr("Family and travel") : tr("More")} />
       {lines.map(([label, value], index) => (
         <p key={`${label}-${index}`} className="text-sm">
           <span className="text-muted">{label}. </span>
