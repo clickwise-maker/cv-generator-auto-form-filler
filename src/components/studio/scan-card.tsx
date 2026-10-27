@@ -154,7 +154,7 @@ export function ScanCard() {
           <div className="flex items-baseline justify-between gap-3">
             <h3 className="font-medium">
               {method ? `${method} · ` : ""}
-              {proposals.length} mapped fields
+              {tr("{n} mapped fields", { n: proposals.length })}
             </h3>
             <button type="button" className="text-sm text-muted" onClick={() => setProposals([])}>
               {tr("Dismiss")}
@@ -175,7 +175,7 @@ export function ScanCard() {
                     }
                   />
                   <span className="min-w-0">
-                    <span className="block text-sm font-medium">{item.label}</span>
+                    <span className="block text-sm font-medium">{tr(item.label)}</span>
                     <span className="block text-sm break-words text-muted">{item.detail}</span>
                   </span>
                 </label>

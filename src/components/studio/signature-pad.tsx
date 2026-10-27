@@ -78,9 +78,10 @@ function DrawPad({ onSave }: { onSave: (dataUrl: string) => void }) {
         className="h-36 w-full touch-none rounded-xl border border-dashed border-line bg-paper"
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
-          drawing.current = [at(e)];
+          const stroke = [at(e)];
+          drawing.current = stroke;
           setUndone([]);
-          setStrokes((s) => [...s, drawing.current!]);
+          setStrokes((s) => [...s, stroke]);
         }}
         onPointerMove={(e) => {
           if (!drawing.current) return;
@@ -88,8 +89,9 @@ function DrawPad({ onSave }: { onSave: (dataUrl: string) => void }) {
           paint([...strokes.slice(0, -1), drawing.current]);
         }}
         onPointerUp={() => {
-          if (drawing.current) setStrokes((s) => [...s.slice(0, -1), [...drawing.current!]]);
+          const stroke = drawing.current;
           drawing.current = null;
+          if (stroke) setStrokes((s) => [...s.slice(0, -1), [...stroke]]);
         }}
         onPointerCancel={() => (drawing.current = null)}
       />

@@ -55,7 +55,7 @@ export const DASH_TEXT = {
   fillForClient: "Fill form for this client",
   refresh: "Refresh",
   shareMsg: "Please fill your details here so we can fill your form:",
-  privacyTitle: "Privacy & data / गोपनीयता व डेटा",
+  privacyTitle: "Privacy & data",
   privacyHint: "Your CVs, drafts and plan key are stored only in this browser. You can withdraw consent and delete them at any time.",
   consentGiven: "Consent given",
   deleteClient: "Delete client data",

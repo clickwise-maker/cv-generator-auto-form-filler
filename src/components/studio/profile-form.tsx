@@ -118,7 +118,7 @@ export function ProfileForm() {
           </Field>
         </div>
         <div className="mt-3">
-          <Field label={tr("Photo")} hint={tr("Optional. Zaroori nahi. Germany aur Gulf aksar maangte hain. US, UK, aur Canada par mat lagayein.")}>
+          <Field label={tr("Photo")} hint={tr("Optional. Germany and the Gulf often expect a photo; leave it off for the US, UK and Canada.")}>
             <div className="flex items-center gap-3">
               {personal.photo ? (
                 <img src={personal.photo} alt="" className="size-16 rounded-lg object-cover" />
@@ -155,7 +155,7 @@ export function ProfileForm() {
       </Panel>
 
       <Panel title={tr("Passport")}>
-        <p className="mb-3 text-sm text-muted">{tr("Schengen aur visa forms yahi options maangte hain. Indian passport par ECNR ya ECR bhi hota hai.")}</p>
+        <p className="mb-3 text-sm text-muted">{tr("Schengen and visa forms ask for these options. Indian passports may also carry ECNR or ECR.")}</p>
         <div className="grid gap-3 sm:grid-cols-2">
           <Field label={tr("Type")}>
             <Select value={personal.passportType} onChange={(event) => patch({ passportType: event.target.value })}>
@@ -362,7 +362,7 @@ export function ProfileForm() {
 
       <Panel title={tr("International options")}>
         <p className="mb-3 text-sm text-muted">
-          {tr("Yeh list Europass CV aur Schengen / visa particulars se hai. Sirf wahi bharein jo us form ne maanga ho. Khali line file mein nahi chhapi jaati.")}
+          {tr("This list follows the Europass CV and Schengen / visa particulars. Fill only what your form asks for. Empty lines are not printed.")}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           <Field label={tr("Sex")}>

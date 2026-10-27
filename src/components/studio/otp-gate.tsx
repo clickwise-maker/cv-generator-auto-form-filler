@@ -12,7 +12,7 @@ function validDeskKey(value: string) {
 
 // i18n-data:start
 const steps = [
-  { n: "01", title: "Email se desk khulega", body: "Code inbox mein nahi aata. Yahi button andar le jaata hai." },
+  { n: "01", title: "Open the desk with your email", body: "No code is sent to your inbox. This button takes you straight in." },
   { n: "02", title: "One international profile", body: "Identity, work, study, languages, and contact." },
   { n: "03", title: "Read a PDF, photo, or text file", body: "The reader maps what it finds onto the form." },
   { n: "04", title: "Edit the page, then download", body: "CV, résumé, or consular particulars as PDF or Word." },
@@ -27,7 +27,7 @@ export function OtpGate() {
   function openDesk() {
     const key = email.trim();
     if (!validDeskKey(key)) {
-      setError(tr("Email ya mobile likhein. Jaise you@studio.org ya 9876543210."));
+      setError(tr("Enter your email or mobile, e.g. you@studio.org or 9876543210."));
       return;
     }
     setError("");
@@ -64,7 +64,7 @@ export function OtpGate() {
         <p className="kicker text-mist">{tr("Sign in")}</p>
         <h2 className="mt-3 font-serif text-3xl">{tr("Open the desk")}</h2>
         <p className="mt-2 max-w-sm text-sm text-mist">
-          {tr("Verification code email par nahi aayega. Is desk ka mailbox nahi hai. Email likhte hi andar chale jayenge.")}
+          {tr("No verification code will be emailed; this desk has no mailbox. Enter your email and you go straight in.")}
         </p>
 
         <form

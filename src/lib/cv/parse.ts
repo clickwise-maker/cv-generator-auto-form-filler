@@ -544,6 +544,7 @@ function readKv(lines: string[]): Partial<Personal> & { fullName?: string } {
 }
 
 function personalProposals(personal: Partial<Personal>): Proposal[] {
+  // i18n-data:start
   const labels: { key: keyof Personal; label: string }[] = [
     { key: "givenName", label: "Given name" },
     { key: "familyName", label: "Family name" },
@@ -564,6 +565,7 @@ function personalProposals(personal: Partial<Personal>): Proposal[] {
     { key: "website", label: "Website" },
     { key: "summary", label: "Profile" },
   ];
+  // i18n-data:end
   return labels.flatMap(({ key, label }) => {
     const raw = personal[key];
     const value = typeof raw === "string" ? raw.trim() : "";

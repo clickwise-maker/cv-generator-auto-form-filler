@@ -131,7 +131,7 @@ export function PreviewColumn() {
         />
       </article>
       <p id="preview-watermark-note" className="cv-print-note mt-2 text-xs text-muted">
-        Preview carries a “{WATERMARK_LINES[1]}” watermark on every page. Use “Unlock Clean Download” for a clean file. (The watermark deters casual reuse; screenshots cannot be prevented.)
+        {tr("Preview carries a “{mark}” watermark on every page. Use “Unlock Clean Download” for a clean file. (The watermark deters casual reuse; screenshots cannot be prevented.)", { mark: WATERMARK_LINES[1] ?? "" })}
       </p>
     </div>
   );
