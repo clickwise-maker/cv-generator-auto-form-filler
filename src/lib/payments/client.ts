@@ -1,3 +1,4 @@
+import { readConsent } from "../privacy/consent.ts";
 import type { Credits, PlanId } from "./config";
 import type { Profile, Settings } from "@/lib/cv/model";
 import type { ExportFormat, PaywallStatus } from "@/lib/payments/config";
@@ -174,6 +175,7 @@ export type GuestState = {
   companies: string[];
 };
 
+let memGuest: GuestState | null = null;
 export function readGuest(): GuestState {
   try {
     const raw = JSON.parse(localStorage.getItem(GUEST_KEY) || "null") as GuestState | null;
@@ -181,13 +183,20 @@ export function readGuest(): GuestState {
   } catch {
     // ignore
   }
-  const fresh: GuestState = { guestId: randomId("guest"), createdAt: Date.now(), exported: [], formFillsUsed: 0, companies: [] };
-  writeGuest(fresh);
+  const fresh: GuestState = memGuest ?? { guestId: randomId("guest"), createdAt: Date.now(), exported: [], formFillsUsed: 0, companies: [] };
+  // DPDP: until the user consents, keep the anonymous guest id in memory only.
+  if (readConsent()) writeGuest(fresh);
+  else memGuest = fresh;
   return fresh;
 }
 
 export function writeGuest(next: GuestState) {
+  memGuest = next;
   try {
+    if (!readConsent()) {
+      window.dispatchEvent(new Event("meridian-guest"));
+      return;
+    }
     localStorage.setItem(GUEST_KEY, JSON.stringify(next));
     window.dispatchEvent(new Event("meridian-guest"));
   } catch {

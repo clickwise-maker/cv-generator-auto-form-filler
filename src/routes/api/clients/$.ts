@@ -7,6 +7,7 @@ export const Route = createFileRoute("/api/clients/$")({
     handlers: {
       GET: async ({ request, params }) => handleClients(request, params._splat ?? ""),
       POST: async ({ request, params }) => handleClients(request, params._splat ?? ""),
+      DELETE: async ({ request, params }) => handleClients(request, params._splat ?? ""),
     },
   },
 });

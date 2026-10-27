@@ -4,7 +4,9 @@ import type { Credits } from "@/lib/payments/config";
 import { fetchCredits, fingerprint, readGuest, type GuestState } from "@/lib/payments/client";
 import { useStudio } from "@/lib/cv/store";
 import { emptyProfile, TEMPLATES } from "@/lib/cv/model";
-import { createClientLink, getClient, listClients, type ClientSummary } from "@/lib/clients/client";
+import { createClientLink, deleteClient, getClient, listClients, revokeClientLinks, type ClientSummary } from "@/lib/clients/client";
+import { WithdrawButton } from "@/components/privacy/consent-ui";
+import { readConsent, RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
 /** All dashboard copy in one place so it can be translated later. */
 export const DASH_TEXT = {
@@ -49,6 +51,15 @@ export const DASH_TEXT = {
   fillForClient: "Fill form for this client",
   refresh: "Refresh",
   shareMsg: "Please fill your details here so we can fill your form:",
+  privacyTitle: "Privacy & data / गोपनीयता व डेटा",
+  privacyHint: "Your CVs, drafts and plan key are stored only in this browser. You can withdraw consent and delete them at any time.",
+  consentGiven: "Consent given",
+  deleteClient: "Delete client data",
+  confirmDeleteClient: "Permanently delete this client's details from CV Studio?",
+  revokeLink: "Revoke share link",
+  confirmRevoke: "Revoke the share link? Clients will no longer be able to open it. You can create a new link later.",
+  revoked: "Link revoked.",
+  retention: `Client details are auto-deleted after ${RETENTION_DAYS} days, or earlier on request.`,
 } as const;
 
 /** Opens the download paywall (where plans live). Plans are never shown elsewhere. */
@@ -182,7 +193,7 @@ export function Dashboard() {
                 <div className="text-sm">
                   <p className="font-medium" data-testid="dash-plan-name">
                     {credits.planName}
-                    {credits.test ? ` (${T.test})` : ""}
+                    {credits.test && !credits.planName.includes(`(${T.test})`) ? ` (${T.test})` : ""}
                   </p>
                   <p className="text-xs text-muted">
                     {credits.expiresAt ? `${T.validUntil} ${new Date(credits.expiresAt).toLocaleDateString()}` : T.noExpiry}
@@ -212,6 +223,7 @@ export function Dashboard() {
         </div>
       </div>
 
+      <PrivacyCard />
       {credits?.clients && guest.planEntitlementId ? <ClientsCard entitlementId={guest.planEntitlementId} guestId={guest.guestId} /> : null}
 
       <div className="mt-4 grid gap-3 lg:grid-cols-2">
@@ -267,6 +279,29 @@ export function Dashboard() {
 
 const BACKUP_KEY = "meridian.dossier.backup.v1";
 
+function PrivacyCard() {
+  const T = DASH_TEXT;
+  const [at, setAt] = useState<number | null>(null);
+  useEffect(() => setAt(readConsent()?.at ?? null), []);
+  return (
+    <div className="mt-4">
+      <Panel title={T.privacyTitle} testId="dash-privacy">
+        <p className="text-sm text-muted">{T.privacyHint}</p>
+        {at ? (
+          <p className="mt-1 text-xs text-muted" data-testid="consent-at">
+            {T.consentGiven}: {new Date(at).toLocaleString()}
+          </p>
+        ) : null}
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          <WithdrawButton className="h-11 rounded-full border-2 border-red-700 px-4 text-sm font-medium text-red-700" label="Withdraw consent & delete my data" />
+          <a href="/privacy" className="text-sm text-forest underline">Privacy notice</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="text-sm text-forest underline">{SUPPORT_EMAIL}</a>
+        </div>
+      </Panel>
+    </div>
+  );
+}
+
 /** Commercial plan only: share an intake link and fill forms with a client's saved details. */
 function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestId: string }) {
   const T = DASH_TEXT;
@@ -301,6 +336,27 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+  }
+  async function remove(c: ClientSummary) {
+    if (!window.confirm(`${T.confirmDeleteClient}\n\n${c.name}`)) return;
+    setErr("");
+    try {
+      await deleteClient(entitlementId, c.clientId);
+      await refresh();
+    } catch (e) {
+      setErr((e as Error).message);
+    }
+  }
+  async function revoke() {
+    if (!window.confirm(T.confirmRevoke)) return;
+    setErr("");
+    try {
+      await revokeClientLinks(entitlementId);
+      setUrl("");
+      setErr(T.revoked);
+    } catch (e) {
+      setErr((e as Error).message);
+    }
   }
   async function fillFor(c: ClientSummary) {
     setErr("");
@@ -356,6 +412,12 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
             </div>
           </div>
         ) : null}
+        <div className="mt-2 flex flex-wrap items-center gap-3">
+          <button type="button" className="h-10 text-sm text-red-700 underline" onClick={() => void revoke()} data-testid="clients-revoke">
+            {T.revokeLink}
+          </button>
+          <span className="text-xs text-muted">{T.retention}</span>
+        </div>
         {err ? <p className="mt-2 text-sm text-red-700" role="alert">{err}</p> : null}
         <div className="mt-4 flex items-center justify-between">
           <p className="text-sm font-medium">{T.clientsTitle} ({clients.length})</p>
@@ -375,6 +437,9 @@ function ClientsCard({ entitlementId, guestId }: { entitlementId: string; guestI
                 </div>
                 <button type="button" className="h-10 rounded-full bg-forest px-4 text-sm font-medium text-sheet" onClick={() => void fillFor(c)} data-testid="clients-fill">
                   {T.fillForClient}
+                </button>
+                <button type="button" className="h-10 rounded-full border border-red-700 px-4 text-sm font-medium text-red-700" onClick={() => void remove(c)} data-testid="clients-delete">
+                  {T.deleteClient}
                 </button>
               </li>
             ))}

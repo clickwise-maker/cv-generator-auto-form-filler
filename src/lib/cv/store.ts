@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { readConsent } from "../privacy/consent.ts";
 import {
   defaultSettings,
   emptyChild,
@@ -64,6 +65,8 @@ type StudioState = {
 
 function persist(profile: Profile, settings: Settings, verifiedEmail: string | null) {
   try {
+    // DPDP: nothing personal is written to this browser until the user has consented.
+    if (!readConsent()) return;
     localStorage.setItem(STORAGE, JSON.stringify({ profile, settings }));
     if (verifiedEmail) sessionStorage.setItem(SESSION, verifiedEmail);
     else sessionStorage.removeItem(SESSION);

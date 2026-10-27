@@ -11,9 +11,9 @@ export function SiteFooter() {
         Services &amp; Plans
       </Link>
       <span className="mx-2">·</span>
-      <Link to="/privacy-policy" className="underline-offset-2 hover:text-ink hover:underline">
-        Privacy Policy
-      </Link>
+      <a href="/privacy" className="underline-offset-2 hover:text-ink hover:underline">
+        Privacy &amp; DPDP / गोपनीयता
+      </a>
       <span className="mx-2">·</span>
       <Link to="/terms" className="underline-offset-2 hover:text-ink hover:underline">
         Terms

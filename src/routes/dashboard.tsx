@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Dashboard } from "@/components/studio/dashboard";
 import { useStudio } from "@/lib/cv/store";
 import { SiteFooter } from "@/components/site-footer";
+import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({ meta: [{ title: "Dashboard · CV Studio" }] }),
@@ -35,6 +36,7 @@ function DashboardPage() {
         <Dashboard />
       </main>
       <SiteFooter />
+      <ConsentGate />
     </div>
   );
 }

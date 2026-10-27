@@ -27,6 +27,8 @@ export type ClientRecord = {
   profile: Profile;
   consentAt: number;
   submittedAt: number;
+  /** Secret given only to the submitting client so they can withdraw consent & delete their own record. */
+  deleteKey?: string;
 };
 
 export interface ClientStore {
@@ -36,6 +38,9 @@ export interface ClientStore {
   putClient(c: ClientRecord): Promise<void>;
   clientsByOwner(ownerEntitlementId: string): Promise<ClientRecord[]>;
   getClient(clientId: string): Promise<ClientRecord | undefined>;
+  deleteClient(clientId: string): Promise<boolean>;
+  /** Deletes client records submitted before `cutoff` (ms). Returns count removed. */
+  purgeOlderThan(cutoff: number): Promise<number>;
 }
 
 type Snapshot = { links: ClientLink[]; clients: ClientRecord[] };
@@ -85,5 +90,19 @@ export class FileClientStore implements ClientStore {
   async getClient(id: string) {
     const c = this.clients.get(id);
     return c ? structuredClone(c) : undefined;
+  }
+  async deleteClient(id: string) {
+    const ok = this.clients.delete(id);
+    if (ok) this.flush();
+    return ok;
+  }
+  async purgeOlderThan(cutoff: number) {
+    let n = 0;
+    for (const [k, c] of this.clients) if (c.submittedAt < cutoff) {
+      this.clients.delete(k);
+      n++;
+    }
+    if (n) this.flush();
+    return n;
   }
 }

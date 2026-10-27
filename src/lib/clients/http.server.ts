@@ -76,16 +76,51 @@ export function sanitizeClient(raw: Record<string, unknown>): Profile {
   return { personal, experience: [], education, skills: [], languages: [], certifications: [], children: [], travel: [] };
 }
 
+/** DPDP retention: client submissions are auto-deleted after this many days. */
+export const CLIENT_RETENTION_DAYS = 180;
+let lastPurge = 0;
+async function purgeExpired(st: ClientStore, now = Date.now()) {
+  if (now - lastPurge < 60 * 60 * 1000) return;
+  lastPurge = now;
+  const n = await st.purgeOlderThan(now - CLIENT_RETENTION_DAYS * 86_400_000);
+  if (n) console.log(`[clients] retention purge removed ${n} record(s)`);
+}
+
 export async function handleClients(req: Request, path: string, svc: PaymentService = paymentService(), st: ClientStore = clientStore()) {
   try {
+    await purgeExpired(st).catch((e) => console.error("[clients] purge failed", e));
     // PUBLIC: intake page metadata (business name only — never other clients' data).
     if (req.method === "GET" && path.startsWith("intake/")) {
       const link = await st.getLink(path.slice(7));
       if (!link || link.revoked) return json(404, { error: "not_found", message: "This link is not valid." });
       return json(200, { businessName: link.businessName });
     }
-    if (req.method !== "POST") return json(404, { error: "not_found" });
+    if (req.method !== "POST" && req.method !== "DELETE") return json(404, { error: "not_found" });
     const b = await body(req);
+    if (req.method === "DELETE") {
+      // Client self-service withdrawal: needs the record id + the secret returned at submit time.
+      if (path === "self") {
+        const c = await st.getClient(str(b.clientId, 100));
+        const key = str(b.deleteKey, 100);
+        if (!c || !c.deleteKey || !key || c.deleteKey !== key) throw new PaymentError(404, "not_found", "Record not found (it may already be deleted).");
+        await st.deleteClient(c.clientId);
+        return json(200, { ok: true, deleted: true });
+      }
+      // Owner deletes: the commercial entitlement id proves ownership.
+      const owner = await svc.commercialOwner(str(b.entitlementId, 200) || undefined);
+      if (path === "client") {
+        const c = await st.getClient(str(b.clientId, 100));
+        if (!c || c.ownerEntitlementId !== owner.entitlementId) throw new PaymentError(404, "not_found", "Client not found.");
+        await st.deleteClient(c.clientId);
+        return json(200, { ok: true, deleted: true });
+      }
+      if (path === "link") {
+        const links = (await st.linksByOwner(owner.entitlementId)).filter((l) => !l.revoked);
+        for (const l of links) await st.putLink({ ...l, revoked: true });
+        return json(200, { ok: true, revoked: links.length });
+      }
+      return json(404, { error: "not_found" });
+    }
     if (path === "submit") {
       const link = await st.getLink(str(b.token, 100));
       if (!link || link.revoked) throw new PaymentError(404, "not_found", "This link is not valid.");
@@ -98,8 +133,10 @@ export async function handleClients(req: Request, path: string, svc: PaymentServ
       const name = [profile.personal.givenName, profile.personal.familyName].filter(Boolean).join(" ").trim();
       if (!profile.personal.givenName) throw new PaymentError(400, "name_required", "Name is required.");
       const now = Date.now();
-      await st.putClient({ clientId: id("cli"), token: link.token, ownerEntitlementId: link.ownerEntitlementId, name, profile, consentAt: now, submittedAt: now });
-      return json(201, { ok: true });
+      const clientId = id("cli");
+      const deleteKey = id("del", 18);
+      await st.putClient({ clientId, token: link.token, ownerEntitlementId: link.ownerEntitlementId, name, profile, consentAt: now, submittedAt: now, deleteKey });
+      return json(201, { ok: true, clientId, deleteKey, retentionDays: CLIENT_RETENTION_DAYS });
     }
     // OWNER endpoints — the commercial entitlement id proves ownership.
     const ent = await svc.commercialOwner(str(b.entitlementId, 200) || undefined);

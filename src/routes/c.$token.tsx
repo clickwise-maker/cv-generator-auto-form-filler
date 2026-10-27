@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { intakeInfo, submitIntake } from "@/lib/clients/client";
+import { deleteOwnSubmission, intakeInfo, submitIntake } from "@/lib/clients/client";
+import { ConsentNotice } from "@/components/privacy/consent-ui";
+import { RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
 export const Route = createFileRoute("/c/$token")({
   head: () => ({ meta: [{ title: "Share your details · CV Studio" }, { name: "robots", content: "noindex" }] }),
@@ -57,6 +59,40 @@ function IntakePage() {
   const [p, setP] = useState<Record<string, string>>({ phoneCode: "+91", country: "India" });
   const [edu, setEdu] = useState<Record<string, string>[]>([{}]);
   const [consent, setConsent] = useState(false);
+  const [noticeDone, setNoticeDone] = useState<"no" | "keep" | "delete">("no");
+  const [sub, setSub] = useState<{ clientId: string; deleteKey: string } | null>(null);
+  const [withdrawn, setWithdrawn] = useState(false);
+  const SUB_KEY = `cvstudio.intake.${token}`;
+  useEffect(() => {
+    try {
+      const v = JSON.parse(localStorage.getItem(SUB_KEY) ?? "null");
+      if (v?.clientId) setSub(v);
+    } catch {
+      // ignore
+    }
+  }, [SUB_KEY]);
+  async function withdraw() {
+    if (!window.confirm("Withdraw consent and delete the details you sent? / सहमति वापस लें और भेजा गया विवरण हटाएँ?")) return;
+    if (sub) {
+      try {
+        await deleteOwnSubmission(sub.clientId, sub.deleteKey);
+      } catch (err) {
+        return setError(err instanceof Error ? err.message : "Failed");
+      }
+    }
+    try {
+      localStorage.removeItem(SUB_KEY);
+    } catch {
+      // ignore
+    }
+    setSub(null);
+    setP({ phoneCode: "+91", country: "India" });
+    setEdu([{}]);
+    setConsent(false);
+    setWithdrawn(true);
+    setState("ready");
+    setNoticeDone("no");
+  }
 
   useEffect(() => {
     intakeInfo(token).then(
@@ -75,7 +111,14 @@ function IntakePage() {
     if (!consent) return setError("Please tick the consent box / कृपया सहमति दें");
     setState("sending");
     try {
-      await submitIntake(token, { personal: p, education: edu }, true);
+      const r = await submitIntake(token, { personal: p, education: edu }, true);
+      const keep = { clientId: r.clientId, deleteKey: r.deleteKey };
+      setSub(keep);
+      try {
+        localStorage.setItem(SUB_KEY, JSON.stringify(keep));
+      } catch {
+        // ignore — the email route still works
+      }
       setState("done");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed");
@@ -90,15 +133,42 @@ function IntakePage() {
         <p className="text-xs text-muted">Secure client details form / ग्राहक विवरण फ़ॉर्म</p>
       </header>
       <main className="mx-auto max-w-xl px-4 py-6" data-testid="intake">
+        {state === "ready" && noticeDone === "no" ? (
+          <ConsentNotice
+            testId="intake-consent-dialog"
+            title={`${biz ?? "This business"} is asking for your details / आपका विवरण माँगा जा रहा है`}
+            extra={<p className="mt-2 text-sm">Shared only with <b>{biz}</b> to fill your forms. Auto-deleted after {RETENTION_DAYS} days. / केवल <b>{biz}</b> के साथ, {RETENTION_DAYS} दिन बाद स्वतः हटाया जाता है।</p>}
+            onKeep={() => setNoticeDone("keep")}
+            onDelete={() => {
+              setNoticeDone("delete");
+              void (sub ? deleteOwnSubmission(sub.clientId, sub.deleteKey).catch(() => undefined) : Promise.resolve()).then(() => {
+                try {
+                  localStorage.removeItem(SUB_KEY);
+                } catch {
+                  // ignore
+                }
+                setSub(null);
+              });
+            }}
+          />
+        ) : null}
+        {noticeDone === "delete" ? (
+          <div className="mb-4 rounded-xl border border-line bg-sheet p-4 text-sm" data-testid="intake-declined">
+            Nothing was collected and nothing is stored. You can close this page. / कुछ भी एकत्र या संग्रहीत नहीं किया गया। आप यह पेज बंद कर सकते हैं।
+            <button type="button" className="mt-2 block underline text-forest" onClick={() => setNoticeDone("no")}>Show the notice again / सूचना फिर दिखाएँ</button>
+          </div>
+        ) : null}
+        {withdrawn ? <p className="mb-3 rounded-xl bg-sheet p-3 text-sm" data-testid="intake-withdrawn">Consent withdrawn; your submitted details were deleted. / सहमति वापस ली गई; आपका विवरण हटा दिया गया।</p> : null}
         {state === "loading" ? <p>Loading… / लोड हो रहा है…</p> : null}
         {state === "invalid" ? <p data-testid="intake-invalid">This link is not valid or has expired. / यह लिंक मान्य नहीं है।</p> : null}
         {state === "done" ? (
           <div className="rounded-xl border border-forest bg-sheet p-4" data-testid="intake-done">
             <p className="font-serif text-xl text-forest">Thank you! / धन्यवाद!</p>
             <p className="mt-1 text-sm">Your details were sent to {biz}. / आपका विवरण {biz} को भेज दिया गया है।</p>
+            <p className="mt-2 text-xs text-muted">They are auto-deleted after {RETENTION_DAYS} days. / {RETENTION_DAYS} दिन बाद स्वतः हटा दिए जाते हैं।</p>
           </div>
         ) : null}
-        {state === "ready" || state === "sending" ? (
+        {(state === "ready" || state === "sending") && noticeDone === "keep" ? (
           <form onSubmit={submit} className="space-y-4">
             <div>
               <h1 className="font-serif text-2xl text-forest">Share your details with {biz}</h1>
@@ -138,19 +208,31 @@ function IntakePage() {
               ) : null}
             </fieldset>
             <label className="flex items-start gap-3 rounded-xl bg-sheet p-3 text-sm">
-              <input type="checkbox" className="mt-1 size-5" name="consent" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+              <input type="checkbox" className="mt-1 size-5" name="consent" required data-testid="intake-consent" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
               <span>
                 I agree my details are shared with <b>{biz}</b> for form filling.
                 <br />
                 <span className="text-muted">मैं सहमत हूँ कि मेरा विवरण फ़ॉर्म भरने के लिए {biz} के साथ साझा किया जाए।</span>
               </span>
             </label>
+            <p className="text-xs text-muted" data-testid="intake-deletion-note">
+              To delete your details later, use “Withdraw consent” below or email <a className="underline" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> with the business name. See our <a className="underline" href="/privacy">privacy notice</a>. / बाद में विवरण हटवाने के लिए नीचे “सहमति वापस लें” दबाएँ या ईमेल करें।
+            </p>
             {error ? <p className="text-sm text-red-700" role="alert">{error}</p> : null}
             <button type="submit" disabled={state === "sending"} className="h-12 w-full rounded-full bg-forest text-sheet font-medium" data-testid="intake-submit">
               {state === "sending" ? "Sending… / भेजा जा रहा है…" : "Submit / जमा करें"}
             </button>
           </form>
         ) : null}
+        {state !== "loading" && state !== "invalid" ? (
+          <div className="mt-6 border-t border-line pt-4 text-sm">
+            <button type="button" className="h-11 rounded-full border-2 border-red-700 px-4 font-medium text-red-700" onClick={() => void withdraw()} data-testid="intake-withdraw">
+              Withdraw consent / सहमति वापस लें
+            </button>
+            <p className="mt-2 text-xs text-muted">Or email {SUPPORT_EMAIL} to request deletion. / या हटाने के लिए ईमेल करें।</p>
+          </div>
+        ) : null}
+        {error && state === "done" ? <p className="text-sm text-red-700" role="alert">{error}</p> : null}
       </main>
     </div>
   );
