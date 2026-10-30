@@ -7,11 +7,9 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { ADS, adsenseScriptSrc } from "@/config/ads";
 
-const APP_NAME = "Free CV generator and auto form filler";
+const APP_NAME = "Free CV Builder & Job Application Form Filler | CV Studio";
 const DESCRIPTION =
-  "Free auto form filler and free CV generator. International auto CB generator: read a photo, image, or PDF, autofill the form, and download PDF or Word.";
-const KEYWORDS =
-  "auto CB generator, international CB generator, auto form filler, free auto form filler, free CV generator, auto populate, CV generator";
+  "Create a free CV or resume, download PDF or Word, and read job application forms to map details into your profile. No sign-up needed.";
 
 const SITE = "https://cvstudio-app.onrender.com";
 const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
@@ -38,7 +36,6 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
       { name: "description", content: DESCRIPTION },
-      { name: "keywords", content: KEYWORDS },
       { property: "og:title", content: APP_NAME },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
@@ -81,9 +78,9 @@ export const Route = createRootRoute({
       <body>
         <noscript>
           <p>
-            CV Studio: free CV builder (no login), plain and designed templates, PDF/DOCX download, free watermarked
-            download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year,
-            Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days).{" "}
+            CV Studio: free CV and resume builder with PDF/DOCX downloads, plus a document reader that helps map
+            details from job application forms into your profile on this device. Single Use ₹20/$1, Career Starter
+            ₹1,000/year, Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days).{" "}
             <a href="/services">Services &amp; Plans</a> · <a href="/refund-policy">Refund Policy</a>
           </p>
         </noscript>

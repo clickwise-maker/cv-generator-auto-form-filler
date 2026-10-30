@@ -1,54 +1,104 @@
 [
- {"slug":"cv-for-freshers","title":"How to write a CV as a fresher","desc":"A step-by-step guide to a one-page CV when you have little or no work experience.","lead":"No job history yet? A clear one-page CV built around education, projects and skills still gets shortlisted.",
+ {
+  "slug":"cv-for-freshers",
+  "title":"Free CV Builder for Freshers: How to Write Your First CV",
+  "desc":"Create a clear fresher CV or entry-level resume with education, projects and real skills, even when you have little work experience.",
+  "lead":"Starting your career with no job history? Build a clear first CV around your education, projects, internships and skills—without inventing experience.",
   "sections":[
-   ["Keep it to one page",["Recruiters spend under a minute on a first screen. A fresher CV should fit on one A4 page.","Use one clean template, one font and consistent dates. Fancy graphics rarely help."]],
-   ["Start with a short profile",["Write two or three lines saying what you studied, what you are good at and the role you want.","Example: \"Commerce graduate with Tally and Excel skills, looking for an accounts assistant role in Pune.\""]],
-   ["Put education and projects first",["List your highest qualification first, with institution, year and marks or CGPA if they are good.","Add college projects, internships, apprenticeships or volunteer work. Describe what you did and the result, in one line each."]],
-   ["Show real skills",["Group skills into technical (Excel, Python, AutoCAD) and languages (English, Hindi, Marathi).","Only list skills you can discuss in an interview. Interviewers often test one at random."]],
-   ["Final checks",["Use a professional email address and a phone number you answer.","Save as PDF unless the employer asks for Word, and name the file with your name, for example Priya-Sharma-CV.pdf."]]
-  ]},
- {"slug":"cv-vs-resume","title":"CV vs resume: what is the difference?","desc":"When to send a CV, when to send a resume, and how the two differ in India, the UK, the US and the Gulf.","lead":"The words are often used as if they mean the same thing, but employers in different countries expect different documents.",
+   ["Keep it concise",["A fresher CV is usually easiest to scan when it fits on one A4 page.","Use one clean template, one readable font and consistent dates. Fancy graphics rarely help."]],
+   ["Start with a short profile",["Write two or three lines saying what you studied, what you can do and the kind of entry-level role you want.","Example: \"Commerce graduate with Tally and Excel skills, looking for an accounts assistant role in Pune.\""]],
+   ["Put education and projects first",["List your highest qualification first, with institution, year and marks or CGPA if they are useful.","Add college projects, internships, apprenticeships or volunteer work. Describe what you did and the result, in one line each."]],
+   ["Show real skills",["Group skills into technical (Excel, Python, AutoCAD) and languages (English, Hindi, Marathi).","Only list skills you can discuss in an interview. Do not add skills just because they appear in a job description."]],
+   ["Final checks",["Use a professional email address and a phone number you answer.","Save as PDF unless the employer asks for Word, and name the file clearly, for example Priya-Sharma-CV.pdf."]],
+   ["Build your first CV",["CV Studio lets you create and edit a CV for free, preview templates and download a watermarked sample before choosing a paid clean download. Start with the details you can verify."]]
+  ]
+ },
+ {
+  "slug":"job-application-form-filler",
+  "title":"Job Application Form Filler: Prepare Forms from Your Saved CV Details",
+  "desc":"Learn how to read a job application form, map its fields to your saved CV profile and review missing details before submitting.",
+  "lead":"Repeatedly entering the same name, contact details, education and work history is tedious. A saved, accurate profile can make form preparation more consistent.",
+  "sections":[
+   ["Prepare one accurate profile",["Keep your name, contact details, education, work history and skills in one profile.","Use the spelling and dates shown on your official documents. Correct the profile before reusing it."]],
+   ["Read the form document",["CV Studio can read supported PDF, photo and image files on your device and extract recognizable text.","When you read a form, the app identifies supported fields it can recognize and shows the mapped details for review. Results depend on the document quality and field labels."]],
+   ["Review every mapped field",["Check each proposed value before applying it to your profile. Text extraction can make mistakes, especially with blurry scans or unusual layouts.","The app does not guess missing personal details. It asks you to provide information that is not already in your profile."]],
+   ["Keep sensitive information under control",["Review the privacy policy and understand where your profile is stored before adding sensitive details.","Do not upload documents to unofficial job portals or share identity numbers unless the employer genuinely requires them."]],
+   ["Submit on the employer's official website",["Use the prepared information to complete the employer's own application process and follow its instructions.","CV Studio is a document reader and profile-mapping helper; it does not log in to third-party job portals or submit applications on your behalf. Always review the final form yourself."]]
+  ]
+ },
+ {
+  "slug":"cv-vs-resume",
+  "title":"CV vs Resume: What Is the Difference?",
+  "desc":"When to send a CV, when to send a resume, and how the two differ in India, the UK, the US and Canada.",
+  "lead":"The words are often used as if they mean the same thing, but employers in different countries expect different documents.",
   "sections":[
    ["The short answer",["A resume is a short summary (usually one or two pages) tailored to one job.","A CV (curriculum vitae) is a fuller record of your education, work, publications and achievements, and can be longer."]],
-   ["By country",["India: \"CV\" and \"resume\" are used interchangeably. Most private employers expect one or two pages.","UK, Ireland and much of Europe: \"CV\" means the short two-page document.","US and Canada: \"resume\" is the normal job document; a CV is mostly for academic and research roles.","Gulf countries: employers often expect personal details such as nationality, visa status and sometimes a photo."]],
-   ["Which one should you send?",["Follow the job advertisement. If it says CV, send a CV; if it says resume, send a resume.","For academic, research and medical posts, send the full CV with publications and training."]],
+   ["By country",["India: CV and resume are used interchangeably. Most private employers expect one or two pages.","UK: CV is the normal term for the short job-application document.","US and Canada: resume is the normal job document; a CV is mostly for academic and research roles.","Gulf countries: employers may request additional personal details. Follow the employer's instructions and share only what is required."]],
+   ["Which one should you send?",["Follow the job advertisement. If it says CV, send a CV; if it says resume, send a resume.","For academic, research and medical posts, send the fuller CV with publications and training where requested."]],
    ["What stays the same",["Both must be accurate, easy to scan and free of spelling mistakes.","Never invent qualifications or experience. Background checks are common."]]
-  ]},
- {"slug":"government-job-forms","title":"Filling government job application forms","desc":"Practical tips for online recruitment forms: documents, details, fees and the final submission.","lead":"Online recruitment forms are strict. One wrong date or a mismatched name can get an application rejected.",
+  ]
+ },
+ {
+  "slug":"government-job-forms",
+  "title":"Filling Government Job Application Forms",
+  "desc":"Practical tips for online recruitment forms: documents, personal details, fees and the final submission.",
+  "lead":"Online recruitment forms are strict. One wrong date or a mismatched name can cause an application problem.",
   "sections":[
    ["Read the notification first",["Download the official notification and check eligibility, age limits, reservation rules and the last date.","Note the exact document specifications for photo, signature and certificates before you start."]],
-   ["Keep your details consistent",["Write your name exactly as it appears on your Class 10 certificate, and use the same spelling everywhere.","Date of birth, father's or mother's name and category must match your certificates."]],
-   ["Prepare documents in advance",["Scan your photo, signature and certificates in the required format and size.","Keep caste, income, disability or domicile certificates ready if you claim any category benefit."]],
+   ["Keep your details consistent",["Write your name exactly as it appears on your Class 10 certificate, and use the same spelling everywhere.","Date of birth, parent or guardian details and category must match your certificates where requested."]],
+   ["Prepare documents in advance",["Scan your photo, signature and certificates in the required format and size.","Keep supporting certificates ready if you claim a category benefit."]],
    ["Before you submit",["Use the preview to check every field. Many portals do not allow changes after final submission.","Pay the fee only through the official portal, and save the payment receipt and application number."]],
    ["After submission",["Download and keep the final application PDF.","Watch the official website for admit cards and results. Ignore unofficial messages asking for money."]]
-  ]},
- {"slug":"cover-letter","title":"How to write a cover letter","desc":"A simple structure for a short cover letter that hiring managers actually read.","lead":"A good cover letter is short, specific to the job and explains why you fit.",
+  ]
+ },
+ {
+  "slug":"cover-letter",
+  "title":"How to Write a Cover Letter",
+  "desc":"A simple structure for a short, specific cover letter that supports your CV or resume.",
+  "lead":"A good cover letter is short, specific to the job and explains why you fit.",
   "sections":[
    ["Structure",["Opening: the role you are applying for and where you saw it.","Middle: two or three reasons you fit, each backed by a fact from your experience.","Closing: thank the reader and say you are available for an interview."]],
-   ["Make it specific",["Mention the company name and one thing you know about it.","Match your examples to the requirements in the job advertisement."]],
+   ["Make it specific",["Mention the company name and one thing you know about it.","Match your examples to the requirements in the job advertisement, using only accurate claims."]],
    ["Keep it short",["Three or four short paragraphs, under one page.","Do not repeat your whole CV. Pick the strongest points."]],
    ["Common mistakes",["Sending the same letter to every employer.","Addressing the wrong company or person. Check names before you send."]]
-  ]},
- {"slug":"form-mistakes","title":"Common mistakes in job application forms","desc":"The errors that most often get online applications rejected, and how to avoid them.","lead":"Most rejections at the form stage come from small, avoidable errors.",
+  ]
+ },
+ {
+  "slug":"form-mistakes",
+  "title":"Common Mistakes in Job Application Forms",
+  "desc":"Common errors in online job application forms and practical checks to help avoid them.",
+  "lead":"Small mistakes in names, dates, document uploads and contact details can delay or derail an application.",
   "sections":[
    ["Mismatched details",["Name spelling, date of birth or category that differs from your certificates.","Different email addresses or phone numbers across forms, so you miss updates."]],
    ["Wrong uploads",["Photo or signature in the wrong size, format or background.","Blurred or cropped certificate scans."]],
-   ["Missing information",["Leaving optional fields blank when they are needed for your category or experience.","Not adding all qualifications, or entering marks in the wrong format (percentage instead of CGPA)."]],
+   ["Missing information",["Leaving required fields blank.","Not adding all qualifications, or entering marks in the wrong format (percentage instead of CGPA)."]],
    ["Rushing at the last date",["Portals slow down near the deadline. Apply a few days early.","Always save the confirmation page and payment receipt."]],
-   ["How CV Studio helps",["The Auto Form Filler reuses your saved details, so the same spelling goes into every form.","It never invents values. Anything missing is asked for and saved for next time."]]
-  ]},
- {"slug":"photo-signature-specs","title":"Photo and signature specifications for online forms","desc":"How to prepare a passport-style photo and signature that portals accept.","lead":"Upload errors are one of the most common problems. These general rules work for most portals; always follow the exact notice.",
+   ["How CV Studio helps",["CV Studio can read a supported form document and map recognizable details into your profile for review.","It does not guess missing values. Check every field and complete submission on the employer's official website."]]
+  ]
+ },
+ {
+  "slug":"photo-signature-specs",
+  "title":"Photo and Signature Specifications for Online Forms",
+  "desc":"How to prepare a passport-style photo and signature for online application forms.",
+  "lead":"Upload errors are common. General preparation helps, but always follow the exact instructions in the official notice.",
   "sections":[
-   ["Photo",["Recent colour photo with a plain light background, face clearly visible, no cap or dark glasses.","Use the format and size in the notice. Many Indian recruitment portals ask for a JPG of a few tens of kilobytes.","Crop to the requested dimensions instead of stretching the image."]],
-   ["Signature",["Sign with a black or blue pen on white paper, then scan or photograph it in good light.","Crop tightly around the signature. Do not sign in capital letters if the notice forbids it.","In CV Studio you can draw your signature or upload one; it is trimmed and saved as a PNG."]],
+   ["Photo",["Use a recent colour photo with a plain light background and face clearly visible, unless the notice says otherwise.","Use the format and size in the notice. Requirements differ between portals.","Crop to the requested dimensions instead of stretching the image."]],
+   ["Signature",["Sign with a black or blue pen on white paper, then scan or photograph it in good light.","Crop tightly around the signature. Follow any instructions about signature style."]],
    ["Checking file size",["If the file is too large, reduce the dimensions or the JPG quality.","If it is too small, the portal may reject it as unclear. Do not over-compress."]],
    ["Before uploading",["Open the file once to make sure it is the right image and not rotated.","Keep copies in the exact required sizes in one folder for future applications."]]
-  ]},
- {"slug":"ats-friendly-cv","title":"Making your CV ATS-friendly","desc":"How applicant tracking systems read CVs and how to make sure yours is parsed correctly.","lead":"Many companies run CVs through software before a person reads them. Simple formatting helps it read yours correctly.",
+  ]
+ },
+ {
+  "slug":"ats-friendly-cv",
+  "title":"ATS-Friendly CV: Formatting Tips for Applicant Tracking Systems",
+  "desc":"Learn how to format an ATS-friendly CV or resume with clear headings, readable text and genuine job-related skills.",
+  "lead":"Applicant tracking systems can parse CVs before a recruiter reviews them. Clear structure and readable text make your experience easier to understand.",
   "sections":[
-   ["Use a simple layout",["Standard headings such as Experience, Education and Skills.","Avoid putting key information in images, text boxes or headers."]],
-   ["Use the job's keywords",["Read the job advertisement and use the same words for skills you genuinely have.","Do not paste hidden keywords. Recruiters see them and reject the CV."]],
-   ["Choose the right file",["A text-based PDF or a DOCX works with most systems. Scanned images do not.","CV Studio PDF and DOCX exports are text-based."]],
-   ["Dates and titles",["Write job titles and dates clearly and in the same format throughout.","Explain gaps briefly if asked."]]
-  ]}
+   ["Use a simple layout",["Use standard headings such as Experience, Education and Skills.","Avoid putting essential information in images, text boxes or decorative headers."]],
+   ["Use relevant job keywords honestly",["Read the job advertisement and use the same words for skills and experience you genuinely have.","Do not paste hidden keywords or claim skills you cannot demonstrate."]],
+   ["Choose a readable file",["A text-based PDF or a DOCX is commonly accepted, but follow the employer's stated file requirements.","CV Studio PDF and DOCX exports are text-based."]],
+   ["Dates and titles",["Write job titles and dates clearly and in the same format throughout.","Explain gaps briefly if asked."]],
+   ["Choose a clear template",["CV Studio includes a plain single-column template intended for straightforward reading, alongside more designed layouts.","No template can guarantee an ATS score or an interview. Check the exported file before applying."]]
+  ]
+ }
 ]
