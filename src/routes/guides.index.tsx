@@ -5,7 +5,12 @@ import { ContentShell, contentHead } from "@/components/content/content-shell";
 import { AdSlot } from "@/components/ads/ad-slot";
 
 export const Route = createFileRoute("/guides/")({
-  head: () => contentHead("CV and job application guides", "Free guides on writing a CV, cover letters, government job forms and photo/signature specifications.", "/guides"),
+  head: () =>
+    contentHead(
+      "CV, Resume and Job Application Guides",
+      "Practical guides for fresher CVs, ATS-friendly resumes, job application form preparation, cover letters and online recruitment forms.",
+      "/guides",
+    ),
   component: GuidesIndex,
 });
 
@@ -13,7 +18,7 @@ function GuidesIndex() {
   return (
     <ContentShell>
       <h1 className="font-serif text-4xl">{tr("CV and job application guides")}</h1>
-      <p className="mt-2 max-w-2xl text-sm text-muted">{tr("Practical, free guides for writing your CV and filling application forms correctly.")}</p>
+      <p className="mt-2 max-w-2xl text-sm text-muted">{tr("Practical, free guides for writing your CV and preparing job application forms correctly.")}</p>
       <ul className="mt-8 grid gap-4 sm:grid-cols-2" data-testid="guide-list">
         {GUIDES.map((g) => (
           <li key={g.slug}>
