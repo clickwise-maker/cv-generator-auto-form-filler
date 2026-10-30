@@ -40,6 +40,33 @@ export const authEnabled = import.meta.env.VITE_AUTH_ENABLED !== "false";
 /** The upstream providers to render sign-in buttons for. */
 export { GROK_PROVIDERS };
 
+/**
+ * Direct Google sign-in (deployed apps): shown only when the build sets
+ * `VITE_GOOGLE_DIRECT=true` (matching server-side GOOGLE_CLIENT_ID +
+ * GOOGLE_CLIENT_SECRET). Hidden in the live preview, where the broker popup
+ * flow owns iframe sign-in and a full-page redirect cannot run.
+ */
+export const directGoogleEnabled =
+  import.meta.env.VITE_GOOGLE_DIRECT === "true" && !inLivePreview();
+
+/**
+ * Start direct Google sign-in (Better Auth's built-in `google` provider).
+ * Same pre-sign-in sign-out as `signIn` so switching providers switches
+ * identity, and a plain full-page redirect (deployed apps have cookies).
+ */
+export async function signInDirectGoogle(
+  opts: { callbackURL?: string } = {},
+): Promise<void> {
+  const callbackURL = opts.callbackURL ?? "/";
+  await runPreSignInSignOut({
+    livePreview: false,
+    hasBearer: Boolean(getBearerToken()),
+    requestSignOut: () => authClient.signOut(),
+    clearToken: () => setBearerToken(null),
+  });
+  await authClient.signIn.social({ provider: "google", callbackURL });
+}
+
 // ── Live-preview bearer token ────────────────────────────────────────────────
 // The embedded preview iframe has partitioned cookies, so we keep the session's
 // bearer token in sessionStorage and attach it to every Better Auth request (and

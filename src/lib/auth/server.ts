@@ -81,6 +81,15 @@ const grokIssuer = env("GROK_AUTH_ISSUER") ?? GROK_ISSUER_DEFAULT;
 const grokClientId = env("GROK_AUTH_CLIENT_ID") ?? PREVIEW_CLIENT_ID;
 const grokClientSecret = env("GROK_AUTH_CLIENT_SECRET") ?? PREVIEW_CLIENT_SECRET;
 
+// Direct Google OAuth (deployed apps): the deployer injects GOOGLE_CLIENT_ID
+// and GOOGLE_CLIENT_SECRET from Google Cloud Console. With both present the
+// app signs in with Google directly (its own consent screen); absent, nothing
+// changes and the broker path stays as-is.
+const directGoogleClientId = env("GOOGLE_CLIENT_ID");
+const directGoogleClientSecret = env("GOOGLE_CLIENT_SECRET");
+const directGoogleEnabled =
+  Boolean(directGoogleClientId && directGoogleClientSecret);
+
 /** True when federated sign-in is active (real auth is enforced). */
 export const authConfigured =
   !authDisabled && Boolean(grokClientId && grokClientSecret);
@@ -179,6 +188,22 @@ export const auth = betterAuth({
   secret: env("BETTER_AUTH_SECRET") ?? previewAuthSecret(),
   database,
 
+  // Direct Google sign-in when the deployer injected Google Cloud creds
+  // (see `directGoogleEnabled` above). Callback path is the built-in
+  // `/api/auth/callback/google`.
+  ...(directGoogleEnabled
+    ? {
+        socialProviders: {
+          google: {
+            clientId: directGoogleClientId as string,
+            clientSecret: directGoogleClientSecret as string,
+            // Always show Google's account chooser so users can switch accounts.
+            prompt: "select_account",
+          },
+        },
+      }
+    : {}),
+
   // CSRF / origin check for credentialed auth POSTs (email sign-up/sign-in, …).
   // See `trustedOrigins` construction above — must cover live preview hosts AND
   // local loopback variants, or clients get "Invalid origin".
@@ -197,6 +222,8 @@ export const auth = betterAuth({
       trustedProviders: [
         ...GROK_PROVIDERS.map((p) => p.providerId),
         GATE_PROVIDER_ID,
+        // Direct Google sign-in (deployed apps) carries verified emails.
+        "google",
       ],
       // X's synthetic email is never "verified", so don't gate linking on the
       // local user's email-verified state.
