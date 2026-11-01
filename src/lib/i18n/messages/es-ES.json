@@ -845,5 +845,14 @@
  "Save password": "Guardar contraseña",
  "Open this page from the reset link in your email.": "Abre esta página desde el enlace de restablecimiento de tu correo.",
  "Sign in to start building your CV": "Inicia sesión para empezar a crear tu CV",
- "Use Google or your email. Your CV editor opens right here after you sign in.": "Usa Google o tu correo. El editor de CV se abre aquí mismo cuando inicies sesión."
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Usa Google o tu correo. El editor de CV se abre aquí mismo cuando inicies sesión.",
+ "Build your CV": "Crea tu CV",
+ "Hide password": "Ocultar contraseña",
+ "Medium": "Media",
+ "Password is too weak. Use at least 8 characters with letters and numbers.": "La contraseña es demasiado débil. Usa al menos 8 caracteres con letras y números.",
+ "Password must be at least 8 characters.": "La contraseña debe tener al menos 8 caracteres.",
+ "Show password": "Mostrar contraseña",
+ "Strength: {level}": "Seguridad: {level}",
+ "Strong": "Fuerte",
+ "Weak": "Débil"
 }

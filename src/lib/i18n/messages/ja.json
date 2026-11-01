@@ -845,5 +845,14 @@
  "Save password": "パスワードを保存",
  "Open this page from the reset link in your email.": "メールのリセット用リンクからこのページを開いてください。",
  "Sign in to start building your CV": "サインインして履歴書の作成を始めましょう",
- "Use Google or your email. Your CV editor opens right here after you sign in.": "Googleまたはメールでサインインしてください。サインイン後、ここで履歴書エディターが開きます。"
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Googleまたはメールでサインインしてください。サインイン後、ここで履歴書エディターが開きます。",
+ "Build your CV": "CVを作成",
+ "Hide password": "パスワードを隠す",
+ "Medium": "普通",
+ "Password is too weak. Use at least 8 characters with letters and numbers.": "パスワードが弱すぎます。英字と数字を含む8文字以上にしてください。",
+ "Password must be at least 8 characters.": "パスワードは8文字以上にしてください。",
+ "Show password": "パスワードを表示",
+ "Strength: {level}": "強度：{level}",
+ "Strong": "強い",
+ "Weak": "弱い"
 }

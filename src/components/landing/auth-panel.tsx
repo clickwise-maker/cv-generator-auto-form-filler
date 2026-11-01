@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { tr } from "@/lib/i18n/i18n";
+import { MIN_PW, PasswordField, pwError } from "@/components/auth/password-field";
 import { LanguageSelect } from "@/components/language-select";
 import { captureRedirectSession, readSession, sendReset, signInEmail, signInGoogle, signOutSupa, signUpEmail, supaEnabled, type SupaSession } from "@/lib/auth/supa";
 
@@ -12,6 +13,8 @@ export function AuthPanel() {
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
+  const [pwErr, setPwErr] = useState("");
+  const [mode, setMode] = useState<"in" | "up">("in");
 
   useEffect(() => {
     const sync = () => setSession(readSession());
@@ -31,7 +34,7 @@ export function AuthPanel() {
       const m = await fn();
       if (m) setMsg(m);
     } catch (e) {
-      setMsg((e as Error).message);
+      setMsg(pwError((e as Error).message));
     } finally {
       setBusy(false);
     }
@@ -51,6 +54,7 @@ export function AuthPanel() {
             className="mt-3 grid gap-2"
             onSubmit={(e) => {
               e.preventDefault();
+              setMode("in");
               run(() => signInEmail(email, password));
             }}
           >
@@ -59,10 +63,10 @@ export function AuthPanel() {
               {tr("Continue with Google")}
             </button>
             <input className={input} type="email" required autoComplete="email" placeholder={tr("Email")} aria-label={tr("Email")} value={email} onChange={(e) => setEmail(e.target.value)} data-testid="auth-email" />
-            <input className={input} type="password" required minLength={6} autoComplete="current-password" placeholder={tr("Password")} aria-label={tr("Password")} value={password} onChange={(e) => setPassword(e.target.value)} data-testid="auth-password" />
+            <PasswordField value={password} onChange={(v) => { setPassword(v); setPwErr(""); }} label={tr("Password")} autoComplete={mode === "up" ? "new-password" : "current-password"} meter={mode === "up"} error={pwErr} testId="auth-password" />
             <div className="grid grid-cols-2 gap-2">
               <button type="submit" disabled={!supaEnabled || busy} className="h-11 rounded-full bg-forest text-sm font-medium text-white">{tr("Sign in")}</button>
-              <button type="button" disabled={!supaEnabled || busy} className="h-11 rounded-full border border-forest text-sm font-medium text-forest" onClick={() => run(async () => ((await signUpEmail(email, password)) ? undefined : tr("Check your email to confirm your account.")))}>{tr("Create account")}</button>
+              <button type="button" disabled={!supaEnabled || busy} className="h-11 rounded-full border border-forest text-sm font-medium text-forest" onClick={() => { setMode("up"); if (password.length < MIN_PW) { setPwErr(tr("Password must be at least 8 characters.")); return; } run(async () => ((await signUpEmail(email, password)) ? undefined : tr("Check your email to confirm your account."))); }}>{tr("Create account")}</button>
             </div>
             <button type="button" className="justify-self-start text-xs text-forest underline" onClick={() => run(async () => { if (!email) return tr("Enter your email first."); await sendReset(email); return tr("If that email has an account, a reset link is on its way."); })}>
               {tr("Forgot password?")}
