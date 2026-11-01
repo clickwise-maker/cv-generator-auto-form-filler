@@ -5,6 +5,7 @@ import { CALLING_CODES, COUNTRIES } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
 import { CustomDetails } from "@/components/studio/custom-details";
 import { SignatureSection } from "@/components/studio/signature-pad";
+import { emailError, phoneError } from "@/lib/cv/validate";
 import { useT } from "@/lib/i18n/i18n";
 import { Area, Button, Field, Panel, Select, TextInput } from "@/components/studio/ui";
 
@@ -93,8 +94,8 @@ export function ProfileForm() {
 
       <Panel title={tr("Identity")}>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label={tr("Given name")}>
-            <TextInput value={personal.givenName} onChange={(event) => patch({ givenName: event.target.value })} />
+          <Field label={tr("Given name")} required>
+            <TextInput required aria-required value={personal.givenName} onChange={(event) => patch({ givenName: event.target.value })} />
           </Field>
           <Field label={tr("Family name")}>
             <TextInput value={personal.familyName} onChange={(event) => patch({ familyName: event.target.value })} />
@@ -211,8 +212,8 @@ export function ProfileForm() {
 
       <Panel title={tr("Contact")}>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label={tr("Email")}>
-            <TextInput type="email" value={personal.email} onChange={(event) => patch({ email: event.target.value })} />
+          <Field label={tr("Email")} required error={emailError(personal.email) && tr(emailError(personal.email)!)}>
+            <TextInput type="email" required aria-required aria-invalid={!!emailError(personal.email)} data-testid="cv-email" value={personal.email} onChange={(event) => patch({ email: event.target.value })} />
           </Field>
           <Field label={tr("Calling code")}>
             <Select value={personal.phoneCode} onChange={(event) => patch({ phoneCode: event.target.value })}>
@@ -223,8 +224,8 @@ export function ProfileForm() {
               ))}
             </Select>
           </Field>
-          <Field label={tr("Phone")}>
-            <TextInput value={personal.phone} inputMode="tel" onChange={(event) => patch({ phone: event.target.value })} />
+          <Field label={tr("Phone")} error={phoneError(personal.phone) && tr(phoneError(personal.phone)!)}>
+            <TextInput aria-invalid={!!phoneError(personal.phone)} data-testid="cv-phone" value={personal.phone} inputMode="tel" onChange={(event) => patch({ phone: event.target.value })} />
           </Field>
           <Field label={tr("Street")}>
             <TextInput value={personal.street} onChange={(event) => patch({ street: event.target.value })} />

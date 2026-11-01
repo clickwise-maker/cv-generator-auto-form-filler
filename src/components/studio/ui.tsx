@@ -45,11 +45,15 @@ export function Panel({ title, action, children }: { title: string; action?: Rea
   );
 }
 
-export function Field({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
+export function Field({ label, hint, children, required, error }: { label: string; hint?: string; children: ReactNode; required?: boolean; error?: string | null }) {
   return (
     <label className="flex min-w-0 flex-col gap-1.5">
-      <span className="text-xs font-medium text-muted">{label}</span>
+      <span className="text-xs font-medium text-muted">
+        {label}
+        {required ? <span aria-hidden className="ms-0.5 text-[#B42318]">*</span> : null}
+      </span>
       {children}
+      {error ? <span role="alert" className="text-xs leading-snug text-[#B42318]">{error}</span> : null}
       {hint ? <span className="text-xs leading-snug text-muted">{hint}</span> : null}
     </label>
   );
