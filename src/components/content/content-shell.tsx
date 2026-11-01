@@ -24,6 +24,6 @@ export function contentHead(title: string, desc: string, path: string) {
       { property: "og:description", content: desc },
       { property: "og:url", content: url },
     ],
-    links: [{ rel: "canonical", href: url }],
+    links: [],
   };
 }

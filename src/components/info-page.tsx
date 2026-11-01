@@ -29,7 +29,6 @@ export function infoHead(c: InfoContent) {
       { property: "og:url", content: url },
     ],
     links: [
-      { rel: "canonical", href: url },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap",

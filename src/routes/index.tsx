@@ -11,7 +11,6 @@ import { InsightsSection } from "@/components/landing/insights";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ links: [{ rel: "canonical", href: "https://formzalo.com/" }] }),
   component: Home,
 });
 

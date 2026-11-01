@@ -142,7 +142,6 @@ export const Route = createFileRoute("/services")({
       { property: "og:url", content: `${BASE}/services` },
     ],
     links: [
-      { rel: "canonical", href: `${BASE}/services` },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap",
