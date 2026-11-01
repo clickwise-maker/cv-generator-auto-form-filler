@@ -3,7 +3,7 @@ import { tr } from "@/lib/i18n/i18n";
 import { Link } from "@tanstack/react-router";
 import { SiteFooter } from "./site-footer";
 
-export const EMAIL = "team@clickwisewe24in.we24.in";
+export const EMAIL = "team@formzalo.com";
 
 type Sec = [string, string[]];
 export type InfoContent = {

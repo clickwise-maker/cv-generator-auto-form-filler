@@ -1,6 +1,6 @@
 /** DPDP-style consent + local data erase helpers (browser only). Not legal advice. */
 export const CONSENT_KEY = "cvstudio.consent.v1";
-export const SUPPORT_EMAIL = "team@clickwisewe24in.we24.in";
+export const SUPPORT_EMAIL = "team@formzalo.com";
 export const RETENTION_DAYS = 180;
 
 export type Consent = { at: number; version: 1 };

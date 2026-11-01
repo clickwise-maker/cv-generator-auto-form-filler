@@ -18,7 +18,7 @@ export const Route = createFileRoute("/refund-policy")({
   component: RefundPolicy,
 });
 
-const EMAIL = "team@clickwisewe24in.we24.in";
+const EMAIL = "team@formzalo.com";
 
 type Section = { title: string; items?: string[]; intro?: string; mail?: boolean };
 type Lang = { id: string; lang: string; heading: string; trial: string; sections: Section[] };

@@ -10,7 +10,7 @@
 - Client page: required, unticked checkbox (server also rejects `consent !== true`); “Withdraw consent” button deletes the submitted record via `DELETE /api/clients/self` (record id + secret delete key returned only to the submitter); deletion-by-email note.
 - Commercial owners: per-client “Delete client data” (`DELETE /api/clients/client`) and “Revoke share link” (`DELETE /api/clients/link`), both enforcing the commercial entitlement owner check.
 - **Retention**: client submissions purged server-side after 180 days (checked at most hourly on API traffic).
-- `/privacy` notice (EN + HI): data, purpose, storage, retention, rights, grievance contact `team@clickwisewe24in.we24.in`, breach notification (Board + users, aim ≤72h). Linked in footer.
+- `/privacy` notice (EN + HI): data, purpose, storage, retention, rights, grievance contact `team@formzalo.com`, breach notification (Board + users, aim ≤72h). Linked in footer.
 
 ## Pending
 - **Encryption at rest** for client/plan records — pending Supabase migration (`docs/CLIENTS_SUPABASE_MIGRATION.sql`; not applied). Current file store on Render is ephemeral and unencrypted.
