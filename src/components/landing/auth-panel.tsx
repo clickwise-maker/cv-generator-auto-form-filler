@@ -16,6 +16,7 @@ export function AuthPanel() {
   useEffect(() => {
     const sync = () => setSession(readSession());
     sync();
+    if (location.hash === "#signin" && !readSession()) setTimeout(() => document.getElementById("signin")?.scrollIntoView({ block: "center" }), 300);
     captureRedirectSession().then((p) => {
       if (p?.get("type") === "recovery") location.href = `/reset-password#${p.toString()}`;
     }, () => {});
@@ -37,7 +38,7 @@ export function AuthPanel() {
   };
 
   return (
-    <section className="mx-auto w-full max-w-md px-4 py-6" aria-label={tr("Sign in")} data-testid="auth-panel">
+    <section id="signin" className="mx-auto w-full max-w-md scroll-mt-24 px-4 py-6" aria-label={tr("Sign in")} data-testid="auth-panel">
       <div className="rounded-2xl border border-line bg-sheet p-4 shadow-sm">
         <LanguageSelect className="w-full" />
         {session ? (

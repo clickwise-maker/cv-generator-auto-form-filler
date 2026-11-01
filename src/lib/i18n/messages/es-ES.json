@@ -843,5 +843,7 @@
  "Password updated. You can sign in now.": "Contraseña actualizada. Ya puedes iniciar sesión.",
  "New password": "Nueva contraseña",
  "Save password": "Guardar contraseña",
- "Open this page from the reset link in your email.": "Abre esta página desde el enlace de restablecimiento de tu correo."
+ "Open this page from the reset link in your email.": "Abre esta página desde el enlace de restablecimiento de tu correo.",
+ "Sign in to start building your CV": "Inicia sesión para empezar a crear tu CV",
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Usa Google o tu correo. El editor de CV se abre aquí mismo cuando inicies sesión."
 }

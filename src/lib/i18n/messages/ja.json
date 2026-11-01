@@ -843,5 +843,7 @@
  "Password updated. You can sign in now.": "パスワードを更新しました。サインインできます。",
  "New password": "新しいパスワード",
  "Save password": "パスワードを保存",
- "Open this page from the reset link in your email.": "メールのリセット用リンクからこのページを開いてください。"
+ "Open this page from the reset link in your email.": "メールのリセット用リンクからこのページを開いてください。",
+ "Sign in to start building your CV": "サインインして履歴書の作成を始めましょう",
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Googleまたはメールでサインインしてください。サインイン後、ここで履歴書エディターが開きます。"
 }

@@ -78,3 +78,30 @@ export async function captureRedirectSession() {
   saveSession({ access_token: token, refresh_token: p.get("refresh_token") ?? undefined, expires_at: Date.now() + Number(p.get("expires_in") ?? 3600) * 1000, email: user.email });
   return p;
 }
+
+/** Refreshes an expired session with its refresh token (keeps users signed in across reloads). */
+export async function refreshIfNeeded() {
+  const s = readSession();
+  if (!s || !s.expires_at || s.expires_at - Date.now() > 60_000) return;
+  if (!s.refresh_token) return saveSession(null);
+  try {
+    const b = await call("/token?grant_type=refresh_token", { method: "POST", body: JSON.stringify({ refresh_token: s.refresh_token }) });
+    saveSession({ ...fromToken(b), email: b.user?.email ?? s.email });
+  } catch {
+    saveSession(null);
+  }
+}
+
+/** Auth-state subscription (like supabase onAuthStateChange): fires on sign-in, sign-out, refresh and other tabs. */
+export function onAuthStateChange(cb: (s: SupaSession | null) => void): () => void {
+  const fire = () => cb(readSession());
+  const storage = (e: StorageEvent) => e.key === SESSION_KEY && fire();
+  window.addEventListener("cvstudio-auth", fire);
+  window.addEventListener("storage", storage);
+  fire();
+  void refreshIfNeeded();
+  return () => {
+    window.removeEventListener("cvstudio-auth", fire);
+    window.removeEventListener("storage", storage);
+  };
+}

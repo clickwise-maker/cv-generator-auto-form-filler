@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/brand";
 import { InsightsSection } from "@/components/landing/insights";
 import { AuthPanel } from "@/components/landing/auth-panel";
 import { ShareFormzolo, captureRef } from "@/components/landing/share";
+import { AuthGate } from "@/components/landing/auth-gate";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +28,7 @@ function Home() {
     const pick = new URLSearchParams(window.location.search).get("template");
     if (pick && TEMPLATES.some((t) => t.id === pick)) {
       useStudio.getState().setSettings({ template: pick as TemplateId });
-      window.history.replaceState(null, "", "/");
+      window.history.replaceState(null, "", window.location.hash === "#signin" ? "/#signin" : "/");
     }
     return () => window.removeEventListener("cvstudio-consent", captureRef);
   }, [hydrate]);
@@ -38,7 +39,9 @@ function Home() {
       <LandingHero />
       <AuthPanel />
       <div id="studio" className="scroll-mt-0">
-        <Studio />
+        <AuthGate>
+          <Studio />
+        </AuthGate>
       </div>
       <div className="hidden sm:block">
         <InsightsSection />
