@@ -2,6 +2,10 @@ import { tr } from "@/lib/i18n/i18n";
 import { LanguageSelect } from "@/components/language-select";
 import { LogoMark, Wordmark } from "@/components/brand";
 
+// Column headings go through tr(); listed here so the i18n key collector sees them.
+// i18n-data:start
+// "Product" "Help" "Legal"
+// i18n-data:end
 const COLS: [string, [string, string][]][] = [
   ["Product", [["/", "CV generator"], ["/templates", "Templates"], ["/services", "Services & Plans"], ["/dashboard", "Dashboard"]]],
   ["Help", [["/guides", "Guides"], ["/faq", "FAQ"], ["/about", "About & Contact"]]],

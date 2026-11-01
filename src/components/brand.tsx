@@ -21,6 +21,10 @@ export function Wordmark({ onDark = false, className = "" }: { onDark?: boolean;
   );
 }
 
+// Nav labels go through tr(); listed here so the i18n key collector sees them.
+// i18n-data:start
+// "Home" "CV Templates" "Guides" "Plans" "FAQ" "About"
+// i18n-data:end
 const NAV: [string, string][] = [
   ["/", "Home"],
   ["/templates", "CV Templates"],
