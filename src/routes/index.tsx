@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/brand";
 import { InsightsSection } from "@/components/landing/insights";
 import { AuthPanel } from "@/components/landing/auth-panel";
 import { ShareFormzolo, captureRef } from "@/components/landing/share";
+import { PricingSection, ThreeSteps, TrustStrip } from "@/components/landing/sections";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/")({
@@ -36,7 +37,9 @@ function Home() {
     <>
       <SiteHeader current="/" />
       <LandingHero />
+      <TrustStrip />
       <AuthPanel />
+      <ThreeSteps />
       <div id="studio" className="scroll-mt-0">
         <Studio />
       </div>
@@ -44,6 +47,7 @@ function Home() {
         <InsightsSection />
         <GuidesTeaser />
       </div>
+      <PricingSection />
       <div className="mx-auto max-w-3xl px-4 py-8">
         <ShareFormzolo />
       </div>

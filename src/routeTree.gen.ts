@@ -14,6 +14,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as NextStepsRouteImport } from './routes/next-steps'
+import { Route as PlansRouteImport } from './routes/plans'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
@@ -51,6 +53,16 @@ const FaqRoute = FaqRouteImport.update({
 const NextStepsRoute = NextStepsRouteImport.update({
   id: '/next-steps',
   path: '/next-steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlansRoute = PlansRouteImport.update({
+  id: '/plans',
+  path: '/plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -125,6 +137,8 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
+  '/plans': typeof PlansRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -145,6 +159,8 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
+  '/plans': typeof PlansRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -166,6 +182,8 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
+  '/plans': typeof PlansRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -188,6 +206,8 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/faq'
     | '/next-steps'
+    | '/plans'
+    | '/pricing'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
@@ -208,6 +228,8 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/faq'
     | '/next-steps'
+    | '/plans'
+    | '/pricing'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
@@ -228,6 +250,8 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/faq'
     | '/next-steps'
+    | '/plans'
+    | '/pricing'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
@@ -249,6 +273,8 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   FaqRoute: typeof FaqRoute
   NextStepsRoute: typeof NextStepsRoute
+  PlansRoute: typeof PlansRoute
+  PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
@@ -299,6 +325,20 @@ declare module '@tanstack/react-router' {
       path: '/next-steps'
       fullPath: '/next-steps'
       preLoaderRoute: typeof NextStepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plans': {
+      id: '/plans'
+      path: '/plans'
+      fullPath: '/plans'
+      preLoaderRoute: typeof PlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -401,6 +441,8 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   FaqRoute: FaqRoute,
   NextStepsRoute: NextStepsRoute,
+  PlansRoute: PlansRoute,
+  PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,

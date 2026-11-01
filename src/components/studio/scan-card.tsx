@@ -79,7 +79,7 @@ export function ScanCard() {
             {tr("PDF, photo, or image. The reader autofills the form on this device.")}
           </p>
           <p className="mt-1 text-xs text-muted">
-            {tr("Free CV generator · auto form filler · international CB generator")}
+            {tr("Free CV generator · auto form filler · international CV generator")}
           </p>
         </div>
       </div>

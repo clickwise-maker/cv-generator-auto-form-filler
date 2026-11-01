@@ -1,5 +1,6 @@
 import { tr, useLang } from "@/lib/i18n/i18n";
 import { LOCALE_SEO } from "@/lib/seo-locales";
+import { ScaledPage } from "@/components/studio/scaled-page";
 import { useMode, type StudioMode } from "@/lib/cv/mode";
 
 declare const __HERO_VIDEO__: boolean;
@@ -34,7 +35,7 @@ export function LandingHero() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden
           />
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sheet/55 via-sheet/45 to-sheet/80 lg:hidden" />
@@ -68,25 +69,17 @@ export function LandingHero() {
           </div>
           <p className="mt-3 hidden text-xs text-ink/60 sm:block">{tr("Guest mode — no email, phone or OTP needed")}</p>
         </div>
-        {HAS_VIDEO ? (
-          <div className="hidden justify-center lg:row-span-2 lg:flex">
-            <div className="relative aspect-[720/990] w-full max-w-[340px] overflow-hidden rounded-3xl border border-forest/10 bg-[#0f2a22] shadow-[0_24px_50px_rgba(27,77,62,.18)] ring-4 ring-forest/10">
-              <video
-                className="hero-video h-full w-full scale-[1.025] object-cover"
-                src="/media/hero.mp4"
-                poster="/media/hero-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                disablePictureInPicture
-                preload="auto"
-                aria-hidden
-              />
-              <img src="/media/hero-poster.jpg" alt="" aria-hidden className="hero-poster absolute inset-0 hidden h-full w-full object-cover" />
+        <div className="hidden justify-center lg:row-span-2 lg:flex" data-testid="hero-mockup">
+          <div className="relative w-full max-w-[380px]">
+            <span className="absolute -top-3 start-4 z-10 inline-flex items-center gap-1.5 rounded-full bg-forest px-3 py-1 text-xs font-semibold text-white shadow">
+              <span aria-hidden className="size-2 animate-pulse rounded-full bg-[#7fd6a8]" />
+              {tr("Live preview")}
+            </span>
+            <div className="overflow-hidden rounded-2xl border border-forest/10 shadow-[0_24px_50px_rgba(27,77,62,.18)] ring-4 ring-forest/10">
+              <ScaledPage template="meridian" />
             </div>
           </div>
-        ) : null}
+        </div>
         <ul className={HAS_VIDEO ? "hidden gap-3 text-sm sm:grid sm:grid-cols-3 lg:col-start-1 lg:grid-cols-3" : "hidden gap-3 text-sm sm:grid"}>
           {[
             ["01", tr("CV generator"), tr("A finished page, then PDF or Word.")],
