@@ -1,6 +1,6 @@
-# CV Studio
+# formzolo (formerly CV Studio)
 
-> CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications. Free CV builder with no login, PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
+> formzolo (formerly CV Studio) is an online CV (resume) builder with an Auto Form Filler for job applications. Free CV builder with no login, PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
 
 ## Key facts
 - A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.
@@ -26,13 +26,13 @@
 - Yearly plans: full refund within 7 days of purchase if unused; no refund once credits are used.
 
 ## Pages
-- [Home](https://cvstudio-app.onrender.com/)
-- [Services & Plans (English + Hindi)](https://cvstudio-app.onrender.com/services)
-- [Refund Policy (English + Hindi)](https://cvstudio-app.onrender.com/refund-policy)
-- [Privacy Policy (English + Hindi)](https://cvstudio-app.onrender.com/privacy-policy)
-- [Terms & Conditions (English + Hindi)](https://cvstudio-app.onrender.com/terms)
-- [FAQ (English + Hindi)](https://cvstudio-app.onrender.com/faq)
-- [About & Contact (English + Hindi)](https://cvstudio-app.onrender.com/about)
+- [Home](https://formzalo.com/)
+- [Services & Plans (English + Hindi)](https://formzalo.com/services)
+- [Refund Policy (English + Hindi)](https://formzalo.com/refund-policy)
+- [Privacy Policy (English + Hindi)](https://formzalo.com/privacy-policy)
+- [Terms & Conditions (English + Hindi)](https://formzalo.com/terms)
+- [FAQ (English + Hindi)](https://formzalo.com/faq)
+- [About & Contact (English + Hindi)](https://formzalo.com/about)
 
 ## Privacy
 - The CV you type is saved in your browser's local storage on your device. For a clean (paid) download, CV content is sent to the server only to create the file; order records keep a hash of the CV, not its text.

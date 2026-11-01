@@ -46,4 +46,4 @@ Disallow: /c/
 Disallow: /api/
 Disallow: /dashboard
 
-Sitemap: https://cvstudio-app.onrender.com/sitemap.xml
+Sitemap: https://formzalo.com/sitemap.xml

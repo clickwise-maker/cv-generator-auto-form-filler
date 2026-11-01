@@ -5,9 +5,13 @@ import { useStudio } from "@/lib/cv/store";
 import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
 import { GuidesTeaser } from "@/components/content/guides-teaser";
 import { SiteFooter } from "@/components/site-footer";
+import { LandingHero } from "@/components/landing/hero";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({ links: [{ rel: "canonical", href: "https://formzalo.com/" }] }),
+  component: Home,
+});
 
 function Home() {
   const hydrate = useStudio((state) => state.hydrate);
@@ -24,7 +28,10 @@ function Home() {
 
   return (
     <>
-      <Studio />
+      <LandingHero />
+      <div id="studio" className="scroll-mt-0">
+        <Studio />
+      </div>
       <GuidesTeaser />
       <SiteFooter />
       <ConsentGate />
