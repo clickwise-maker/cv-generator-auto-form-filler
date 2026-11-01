@@ -8,7 +8,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { LandingHero } from "@/components/landing/hero";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({ links: [{ rel: "canonical", href: "https://cvstudio-app.onrender.com/" }] }),
+  component: Home,
+});
 
 function Home() {
   const hydrate = useStudio((state) => state.hydrate);
