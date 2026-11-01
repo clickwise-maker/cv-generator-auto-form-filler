@@ -1,3 +1,4 @@
+import { useDoc } from "@/components/studio/doc-context";
 import { COPY } from "@/lib/cv/model";
 import { useStudio } from "@/lib/cv/store";
 import { tr } from "@/lib/i18n/i18n";
@@ -47,8 +48,8 @@ export function TargetCompanyToggle() {
 
 /** "Prepared for X" line inside the CV preview header, only when the layer is on. */
 export function PreparedFor({ className }: { className?: string }) {
-  const target = useStudio((s) => s.target);
-  const locale = useStudio((s) => s.settings.locale);
+  const target = useDoc((s) => s.target);
+  const locale = useDoc((s) => s.settings.locale);
   const company = target.on ? target.company.trim() : "";
   if (!company) return null;
   const label = COPY[locale].preparedFor;

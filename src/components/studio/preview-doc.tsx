@@ -24,6 +24,8 @@ import {
   summaryLines,
 } from "@/lib/cv/model";
 import { layeredProfile, useStudio } from "@/lib/cv/store";
+import { previewProblems } from "@/lib/cv/validate";
+import { useDoc } from "@/components/studio/doc-context";
 import { PreparedFor } from "@/components/studio/target-company";
 import { signatureLine, templateSigns } from "@/lib/cv/signature";
 
@@ -46,9 +48,14 @@ export function PreviewColumn() {
     return () => window.removeEventListener("meridian-open-plans", open);
   }, []);
 
+  const problems = previewProblems(useStudio((state) => state.profile));
   function previewPdf() {
     const { settings: current } = useStudio.getState();
     const profile = layeredProfile();
+    if (previewProblems(profile).length) {
+      toast.error(tr(previewProblems(profile)[0]!));
+      return;
+    }
     setBusy(true);
     try {
       downloadPreviewPdf(profile, current, WATERMARK_LINES);
@@ -115,11 +122,16 @@ export function PreviewColumn() {
           <Button type="button" tone="quiet" onClick={() => void unlock("docx")} disabled={busy}>
             {tr("Unlock Clean Download · Word")}
           </Button>
-          <Button type="button" tone="quiet" onClick={previewPdf} disabled={busy}>
+          <Button type="button" tone="quiet" onClick={previewPdf} disabled={busy || problems.length > 0} data-testid="preview-pdf">
             {busy ? tr("Building…") : tr("Preview PDF (watermarked)")}
           </Button>
         </div>
       </div>
+      {problems.length ? (
+        <ul className="mb-3 rounded-xl border border-[#F3C9C4] bg-[#FDF3F2] p-3 text-xs text-[#8A1C12]" data-testid="preview-blocked">
+          {problems.map((p) => <li key={p}>{tr(p)}</li>)}
+        </ul>
+      ) : null}
       <UnlockDialog open={unlockFor !== null} format={unlockFor ?? "pdf"} status={status} onClose={closeUnlock} />
       <p className="mb-3 text-xs text-muted">{tr("Click any line on the page to edit it. The form stays in step.")}</p>
       <article key={settings.template} className="cv-preview sheet-shadow rise relative overflow-hidden rounded-2xl border border-line bg-sheet" aria-describedby="preview-watermark-note">
@@ -140,17 +152,22 @@ export function PreviewColumn() {
   );
 }
 
+/** The bare CV page for a template (used by the editor preview, gallery thumbnails and the hero mockup). */
+export function TemplatePage({ template }: { template: string }) {
+  return template === "consulate" ? <ConsulatePage /> : template === "atlas" ? <AtlasPage /> : <MeridianPage />;
+}
+
 function MeridianPage() {
-  const personal = useStudio((state) => state.profile.personal);
-  const experience = useStudio((state) => state.profile.experience);
-  const education = useStudio((state) => state.profile.education);
-  const skills = useStudio((state) => state.profile.skills);
-  const languages = useStudio((state) => state.profile.languages);
-  const certifications = useStudio((state) => state.profile.certifications);
-  const settings = useStudio((state) => state.settings);
-  const patch = useStudio((state) => state.patchPersonal);
-  const updateExperience = useStudio((state) => state.updateExperience);
-  const updateEducation = useStudio((state) => state.updateEducation);
+  const personal = useDoc((state) => state.profile.personal);
+  const experience = useDoc((state) => state.profile.experience);
+  const education = useDoc((state) => state.profile.education);
+  const skills = useDoc((state) => state.profile.skills);
+  const languages = useDoc((state) => state.profile.languages);
+  const certifications = useDoc((state) => state.profile.certifications);
+  const settings = useDoc((state) => state.settings);
+  const patch = useDoc((state) => state.patchPersonal);
+  const updateExperience = useDoc((state) => state.updateExperience);
+  const updateEducation = useDoc((state) => state.updateEducation);
   const copy = COPY[settings.locale];
   const name = displayName(personal, settings.nameOrder);
 
@@ -263,13 +280,13 @@ function MeridianPage() {
 }
 
 function AtlasPage() {
-  const personal = useStudio((state) => state.profile.personal);
-  const experience = useStudio((state) => state.profile.experience);
-  const education = useStudio((state) => state.profile.education);
-  const skills = useStudio((state) => state.profile.skills);
-  const settings = useStudio((state) => state.settings);
-  const patch = useStudio((state) => state.patchPersonal);
-  const updateExperience = useStudio((state) => state.updateExperience);
+  const personal = useDoc((state) => state.profile.personal);
+  const experience = useDoc((state) => state.profile.experience);
+  const education = useDoc((state) => state.profile.education);
+  const skills = useDoc((state) => state.profile.skills);
+  const settings = useDoc((state) => state.settings);
+  const patch = useDoc((state) => state.patchPersonal);
+  const updateExperience = useDoc((state) => state.updateExperience);
   const copy = COPY[settings.locale];
 
   return (
@@ -324,10 +341,10 @@ function AtlasPage() {
 }
 
 function ConsulatePage() {
-  const profile = useStudio((state) => state.profile);
+  const profile = useDoc((state) => state.profile);
   const personal = profile.personal;
-  const settings = useStudio((state) => state.settings);
-  const patch = useStudio((state) => state.patchPersonal);
+  const settings = useDoc((state) => state.settings);
+  const patch = useDoc((state) => state.patchPersonal);
   const copy = COPY[settings.locale];
   const fields: { label: string; value: string; onChange?: (value: string) => void; placeholder: string }[] = [
     {
@@ -411,8 +428,8 @@ function ConsulatePage() {
 }
 
 function LifeLines({ mode }: { mode: "cv" | "full" }) {
-  const profile = useStudio((state) => state.profile);
-  const settings = useStudio((state) => state.settings);
+  const profile = useDoc((state) => state.profile);
+  const settings = useDoc((state) => state.settings);
   const lines = lifeLines(profile, settings, mode);
   if (!lines.length) return null;
   return (
@@ -429,8 +446,8 @@ function LifeLines({ mode }: { mode: "cv" | "full" }) {
 }
 
 function SignatureLine() {
-  const personal = useStudio((state) => state.profile.personal);
-  const settings = useStudio((state) => state.settings);
+  const personal = useDoc((state) => state.profile.personal);
+  const settings = useDoc((state) => state.settings);
   const line = templateSigns(settings) ? signatureLine(personal, settings) : null;
   if (!line) return null;
   return (
