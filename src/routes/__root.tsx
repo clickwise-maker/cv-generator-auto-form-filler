@@ -9,7 +9,7 @@ import { ADS, adsenseScriptSrc } from "@/config/ads";
 
 const APP_NAME = "Free CV generator and auto form filler";
 const DESCRIPTION =
-  "Free auto form filler and free CV generator. International auto CB generator: read a photo, image, or PDF, autofill the form, and download PDF or Word.";
+  "Free auto form filler and free CV generator. International auto CV generator: read a photo, image, or PDF, autofill the form, and download PDF or Word.";
 const KEYWORDS =
   "auto CB generator, international CB generator, auto form filler, free auto form filler, free CV generator, auto populate, CV generator";
 
