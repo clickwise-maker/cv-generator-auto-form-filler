@@ -24,12 +24,12 @@ export function ContentShell({ children }: { children: ReactNode }) {
 }
 
 export function contentHead(title: string, desc: string, path: string) {
-  const url = `https://cvstudio-app.onrender.com${path}`;
+  const url = `https://formzalo.com${path}`;
   return {
     meta: [
-      { title: `${title} — CV Studio` },
+      { title: `${title} — formzolo` },
       { name: "description", content: desc },
-      { property: "og:title", content: `${title} — CV Studio` },
+      { property: "og:title", content: `${title} — formzolo` },
       { property: "og:description", content: desc },
       { property: "og:url", content: url },
     ],

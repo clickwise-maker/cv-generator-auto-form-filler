@@ -3,22 +3,22 @@
  * No search volumes: "regions" = number of the 6 locales where the phrase appeared in autocomplete.
  * Full research: docs/seo/KEYWORDS.md
  */
-export const SITE_URL = "https://cvstudio-app.onrender.com";
+export const SITE_URL = "https://formzalo.com";
 
-export const SEO_TITLE = "Free CV Maker & AI Auto Form Filler | CV Studio";
+export const SEO_TITLE = "Free CV Maker & Auto Form Filler | formzolo";
 export const SEO_DESCRIPTION =
-  "Free online CV maker and resume builder with ATS-friendly templates. Upload a photo or PDF, auto-fill job application forms, and download your CV as PDF or Word. No sign up.";
+  "formzolo: free online CV maker and resume builder with simple, ATS-friendly templates. Reuse your profile to fill job and legal forms, then download your CV as PDF or Word. No sign up.";
 
 export const PRIMARY_KEYWORDS = [
   "free cv maker", "cv maker online free", "free cv generator", "resume builder free",
   "online resume builder", "ats resume builder", "ats friendly cv template",
   "cv template free download", "resume for freshers", "cv format for job",
-  "auto form filler", "ai form filler", "job application form", "cover letter generator",
+  "auto form filler", "online form filler", "job application form", "cover letter generator",
 ];
 
 export const META_KEYWORDS = [
   "free CV maker", "free CV generator", "resume builder", "ATS resume", "CV template",
-  "resume for freshers", "CV format pdf word", "auto form filler", "AI form filler",
+  "resume for freshers", "CV format pdf word", "auto form filler", "online form filler", "legal form filling for advocates",
   "job application form autofill", "cover letter generator",
 ].join(", ");
 

@@ -2,14 +2,14 @@ import { tr, trObj } from "@/lib/i18n/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/site-footer";
 
-const BASE = "https://cvstudio-app.onrender.com";
+const BASE = "https://formzalo.com";
 const EMAIL = "team@clickwisewe24in.we24.in";
 const JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "CV Studio",
-    url: "https://cvstudio-app.onrender.com/",
+    name: "formzolo",
+    url: "https://formzalo.com/",
     email: "team@clickwisewe24in.we24.in",
     contactPoint: {
       "@type": "ContactPoint",
@@ -21,8 +21,8 @@ const JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "CV Studio",
-    url: "https://cvstudio-app.onrender.com/",
+    name: "formzolo",
+    url: "https://formzalo.com/",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
@@ -33,35 +33,35 @@ const JSONLD = [
         name: "Free",
         price: "0",
         priceCurrency: "INR",
-        url: "https://cvstudio-app.onrender.com/services",
+        url: "https://formzalo.com/services",
       },
       {
         "@type": "Offer",
         name: "Single Use",
         price: "20",
         priceCurrency: "INR",
-        url: "https://cvstudio-app.onrender.com/services",
+        url: "https://formzalo.com/services",
       },
       {
         "@type": "Offer",
         name: "Career Starter (yearly)",
         price: "1000",
         priceCurrency: "INR",
-        url: "https://cvstudio-app.onrender.com/services",
+        url: "https://formzalo.com/services",
       },
       {
         "@type": "Offer",
         name: "Global Single Use",
         price: "1",
         priceCurrency: "USD",
-        url: "https://cvstudio-app.onrender.com/services",
+        url: "https://formzalo.com/services",
       },
       {
         "@type": "Offer",
         name: "Global Pro (yearly)",
         price: "29",
         priceCurrency: "USD",
-        url: "https://cvstudio-app.onrender.com/services",
+        url: "https://formzalo.com/services",
       },
     ],
   },
@@ -132,7 +132,7 @@ const JSONLD = [
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Plans — CV Studio" },
+      { title: "Services & Plans — formzolo" },
       {
         name: "description",
         content:

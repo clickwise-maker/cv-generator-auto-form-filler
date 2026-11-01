@@ -9,7 +9,7 @@ import { LandingHero } from "@/components/landing/hero";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ links: [{ rel: "canonical", href: "https://cvstudio-app.onrender.com/" }] }),
+  head: () => ({ links: [{ rel: "canonical", href: "https://formzalo.com/" }] }),
   component: Home,
 });
 

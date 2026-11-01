@@ -6,7 +6,7 @@ import { ConsentNotice } from "@/components/privacy/consent-ui";
 import { RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
 export const Route = createFileRoute("/c/$token")({
-  head: () => ({ meta: [{ title: "Share your details · CV Studio" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Share your details · formzolo" }, { name: "robots", content: "noindex" }] }),
   component: IntakePage,
 });
 

@@ -35,8 +35,8 @@ const EN: Sec[] = [
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy notice (DPDP) · CV Studio" },
-      { name: "description", content: "CV Studio privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { title: "Privacy notice (DPDP) · formzolo" },
+      { name: "description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
     ],
   }),
   component: PrivacyPage,
