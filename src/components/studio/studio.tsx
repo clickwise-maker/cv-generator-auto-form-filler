@@ -4,7 +4,6 @@ import { ProfileForm } from "@/components/studio/profile-form";
 import { PreviewColumn } from "@/components/studio/preview-doc";
 import { TargetCompanyToggle } from "@/components/studio/target-company";
 import { ScanCard } from "@/components/studio/scan-card";
-import { Dashboard } from "@/components/studio/dashboard";
 import { FormFiller, ModeSwitch } from "@/components/studio/form-filler";
 import { useMode } from "@/lib/cv/mode";
 import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
@@ -22,7 +21,7 @@ export function Studio() {
 
   return (
     <div className="min-h-screen bg-paper text-ink">
-      <header className="sticky top-[72px] z-30 border-b border-line bg-paper/95 backdrop-blur-sm">
+      <header className="sticky top-[64px] z-30 sm:top-[72px] border-b border-line bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
           <div className="flex items-center gap-3">
             <span className="grid size-9 shrink-0 place-items-center rounded-lg" aria-hidden><LogoMark />
@@ -64,7 +63,6 @@ export function Studio() {
 
       <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 pb-28 lg:grid-cols-2 lg:items-start lg:pb-10">
         <div className={cn("flex min-w-0 flex-col gap-4", tab !== "compose" && "hidden lg:flex")}>
-          <Dashboard />
           <ScanCard />
           {mode === "filler" ? null : <TargetCompanyToggle />}
           {mode === "filler" ? <FormFiller /> : <ProfileForm />}
