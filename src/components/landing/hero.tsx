@@ -1,4 +1,5 @@
-import { tr } from "@/lib/i18n/i18n";
+import { tr, useLang } from "@/lib/i18n/i18n";
+import { LOCALE_SEO } from "@/lib/seo-locales";
 import { useMode, type StudioMode } from "@/lib/cv/mode";
 
 declare const __HERO_VIDEO__: boolean;
@@ -43,7 +44,7 @@ export function LandingHero() {
         <div>
           <p className="inline-block rounded-full border border-sheet/20 bg-sheet/10 px-3.5 py-1 text-sm font-semibold text-brass-soft">{tr("formzolo · Free CV maker & form filler")}</p>
           <h1 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
-            {tr("Free CV generator and auto form filler")}
+            {LOCALE_SEO[useLang.getState().lang].h1}
           </h1>
           <p className="mt-4 max-w-xl text-base text-mist sm:text-lg">
             {tr("Enter your details once. Get a finished CV in PDF or Word, or let any form fill itself from a photo, image, or PDF.")}

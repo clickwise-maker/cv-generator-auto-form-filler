@@ -7,26 +7,26 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { ADS, adsenseScriptSrc } from "@/config/ads";
 
-import { SEO_TITLE, SEO_DESCRIPTION, META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
+import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
+import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
 
-const APP_NAME = SEO_TITLE;
-const DESCRIPTION = SEO_DESCRIPTION;
 const KEYWORDS = META_KEYWORDS;
 
 const SITE = SITE_URL;
-const WEBAPP_LD = {
+const webAppLd = (DESCRIPTION: string, url: string, inLanguage: string) => ({
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "formzolo",
   alternateName: ["formzalo", "CV Studio"],
-  url: `${SITE}/`,
+  url,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Any (web browser)",
   description: DESCRIPTION,
-  inLanguage: ["en", "hi"],
+  inLanguage,
+  availableLanguage: ["en-IN", "en-GB", "hi-IN", "ar-SA", "es-ES", "fr-FR", "ja", "zh-CN"],
   offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
   publisher: { "@type": "Organization", name: "formzolo", url: `${SITE}/` },
-};
+});
 const ORG_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -37,7 +37,8 @@ const ORG_LD = {
 const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
 /** Privacy-friendly analytics (Plausible-compatible). OFF unless VITE_ANALYTICS_DOMAIN is set at build time. No cookies. */
 const ANALYTICS_DOMAIN = (import.meta.env.VITE_ANALYTICS_DOMAIN as string | undefined) || "";
-const ANALYTICS_SRC = (import.meta.env.VITE_ANALYTICS_SRC as string | undefined) || "https://plausible.io/js/script.js";
+const ANALYTICS_SRC =
+  (import.meta.env.VITE_ANALYTICS_SRC as string | undefined) || "https://plausible.io/js/script.js";
 
 /** Loads the saved UI language and remounts the page tree when it changes, so every string re-translates. */
 function LangRoot() {
@@ -52,48 +53,69 @@ function LangRoot() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: APP_NAME },
-      { name: "description", content: DESCRIPTION },
-      { name: "keywords", content: KEYWORDS },
-      { property: "og:title", content: APP_NAME },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "formzolo" },
-      { property: "og:image", content: `${SITE}/og.jpg` },
-      { property: "og:url", content: `${SITE}/` },
-      { property: "og:locale", content: "en_IN" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: APP_NAME },
-      { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: `${SITE}/og.jpg` },
-      { name: "theme-color", content: "#1b4d3e" },
-      // Search Console: set VITE_GOOGLE_SITE_VERIFICATION at build time (off when unset).
-      ...(GSC ? [{ name: "google-site-verification", content: GSC }] : []),
-    ],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(WEBAPP_LD) },
-      { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
-      ...(ANALYTICS_DOMAIN ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }] : []),
-      // AdSense loads ONLY when ADS.enabled (src/config/ads.ts). Off by default.
-      ...(ADS.enabled ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }] : []),
-    ],
-    links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap",
-      },
-    ],
-  }),
+  head: ({ matches }) => {
+    const leaf = matches[matches.length - 1];
+    const lang = langFromSearch(leaf?.search);
+    const path = leaf?.pathname || "/";
+    const seo = LOCALE_SEO[lang];
+    const APP_NAME = seo.title;
+    const DESCRIPTION = seo.description;
+    const url = localeUrl(path, lang);
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: APP_NAME },
+        { name: "description", content: DESCRIPTION },
+        { name: "keywords", content: KEYWORDS },
+        { property: "og:title", content: APP_NAME },
+        { property: "og:description", content: DESCRIPTION },
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "formzolo" },
+        { property: "og:image", content: `${SITE}/og.jpg` },
+        { property: "og:url", content: url },
+        { property: "og:locale", content: seo.ogLocale },
+        ...Object.values(LOCALE_SEO)
+          .filter((x) => x.ogLocale !== seo.ogLocale)
+          .map((x) => ({ property: "og:locale:alternate", content: x.ogLocale })),
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: APP_NAME },
+        { name: "twitter:description", content: DESCRIPTION },
+        { name: "twitter:image", content: `${SITE}/og.jpg` },
+        { name: "theme-color", content: "#1b4d3e" },
+        // Search Console: set VITE_GOOGLE_SITE_VERIFICATION at build time (off when unset).
+        ...(GSC ? [{ name: "google-site-verification", content: GSC }] : []),
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(webAppLd(DESCRIPTION, url, seo.hreflang)),
+        },
+        { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
+        ...(ANALYTICS_DOMAIN
+          ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
+          : []),
+        // AdSense loads ONLY when ADS.enabled (src/config/ads.ts). Off by default.
+        ...(ADS.enabled
+          ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }]
+          : []),
+      ],
+      links: [
+        { rel: "canonical", href: url },
+        ...hreflangLinks(path),
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "stylesheet", href: appCss },
+        { rel: "manifest", href: "/__grok/manifest.webmanifest" },
+        { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap",
+        },
+      ],
+    };
+  },
   component: () => (
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
@@ -103,10 +125,12 @@ export const Route = createRootRoute({
       <body>
         <noscript>
           <p>
-            formzolo: free CV builder (no login), plain and designed templates, PDF/DOCX download, free watermarked
-            download and an Auto Form Filler for job applications. Single Use ₹20/$1, Career Starter ₹1,000/year,
-            Global Pro $29/year. Support: team@clickwisewe24in.we24.in (reviewed within 2 working days).{" "}
-            <a href="/services">Services &amp; Plans</a> · <a href="/refund-policy">Refund Policy</a>
+            formzolo: free CV builder (no login), plain and designed templates, PDF/DOCX download,
+            free watermarked download and an Auto Form Filler for job applications. Single Use
+            ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support:
+            team@clickwisewe24in.we24.in (reviewed within 2 working days).{" "}
+            <a href="/services">Services &amp; Plans</a> ·{" "}
+            <a href="/refund-policy">Refund Policy</a>
           </p>
         </noscript>
         <PreviewHostBridge />
