@@ -11,3 +11,4 @@ attachments
 *.traineddata
 *.log
 .DS_Store
+.wrangler/

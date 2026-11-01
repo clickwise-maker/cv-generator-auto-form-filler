@@ -1,0 +1,8 @@
+{
+  // Cloudflare Workers config (merged by Nitro's cloudflare_module preset at build time).
+  "name": "formzolo",
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": { "NODE_ENV": "production" }
+}

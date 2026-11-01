@@ -54,7 +54,14 @@ export class TokenBucketLimiter {
     this.maxKeys = maxKeys;
   }
   /** Returns 0 if allowed, else seconds to wait. */
+  private lastSweep = 0;
   take(key: string, rule: BucketRule, now = Date.now()): number {
+    // Opportunistic sweep instead of a module-level setInterval: Cloudflare
+    // Workers forbid timers in global scope.
+    if (now - this.lastSweep > 60_000) {
+      this.lastSweep = now;
+      this.sweep(now);
+    }
     const k = `${rule.name}:${key}`;
     const rate = rule.capacity / rule.windowMs; // tokens per ms
     let b = this.buckets.get(k);
@@ -82,8 +89,6 @@ export class TokenBucketLimiter {
 }
 
 export const limiter = new TokenBucketLimiter();
-const sweepTimer = setInterval(() => limiter.sweep(), 60_000);
-(sweepTimer as { unref?: () => void }).unref?.();
 
 export function rateLimitedResponse(retryAfter: number): Response {
   return new Response(JSON.stringify({ error: "rate_limited", retryAfter }), {
