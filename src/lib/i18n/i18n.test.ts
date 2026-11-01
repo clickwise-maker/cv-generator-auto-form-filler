@@ -7,7 +7,7 @@ import { collectKeys } from "./collect.ts";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.resolve(here, "../..");
-const LANGS = ["hi", "ja", "ar", "zh-CN"] as const;
+const LANGS = ["hi", "ja", "ar", "zh-CN", "es-ES", "fr-FR", "en-GB"] as const;
 const load = (l: string) => JSON.parse(fs.readFileSync(path.join(here, "messages", `${l}.json`), "utf8")) as Record<string, string>;
 const placeholders = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(",");
 
@@ -35,6 +35,7 @@ test("non-Latin catalogues are actually translated (not English copies)", () => 
   for (const lang of LANGS) {
     const cat = load(lang);
     const prose = Object.entries(cat).filter(([k]) => /[a-z]{3,}\s+[a-z]{3,}/.test(k));
+    if (!scripts[lang]) continue;
     const untranslated = prose.filter(([, v]) => !scripts[lang]!.test(v)).map(([k]) => k);
     assert.deepEqual(untranslated, [], `${lang} has English left`);
   }
