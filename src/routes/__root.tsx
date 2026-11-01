@@ -56,7 +56,7 @@ export const Route = createRootRoute({
   head: ({ matches }) => {
     const leaf = matches[matches.length - 1];
     const lang = langFromSearch(leaf?.search);
-    const path = leaf?.pathname || "/";
+    const path = (leaf?.pathname || "/").replace(/(.)\/+$/, "$1");
     const seo = LOCALE_SEO[lang];
     const APP_NAME = seo.title;
     const DESCRIPTION = seo.description;
@@ -125,7 +125,7 @@ export const Route = createRootRoute({
       <body>
         <noscript>
           <p>
-            formzolo: free CV builder (no login), plain and designed templates, PDF/DOCX download,
+            formzolo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
             free watermarked download and an Auto Form Filler for job applications. Single Use
             ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support:
             team@formzalo.com (reviewed within 2 working days).{" "}

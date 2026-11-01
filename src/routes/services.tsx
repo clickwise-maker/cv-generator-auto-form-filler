@@ -136,10 +136,14 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "formzolo services and plans (English & Hindi): free CV builder with no login, PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
+          "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${BASE}/services` },
+      { property: "og:title", content: "Services & Plans — formzolo" },
+      { property: "og:description", content: "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
+      { name: "twitter:title", content: "Services & Plans — formzolo" },
+      { name: "twitter:description", content: "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
     ],
     links: [
       {
