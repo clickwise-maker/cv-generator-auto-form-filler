@@ -44,7 +44,7 @@ export function SiteHeader({ current }: { current?: string }) {
         href={href}
         aria-current={active ? "page" : undefined}
         className={`relative rounded-full px-3.5 py-2 text-[0.95rem] transition-colors ${
-          active ? "bg-sheet/12 text-sheet" : "text-mist hover:bg-sheet/8 hover:text-sheet"
+          active ? "bg-forest/10 text-forest" : "text-ink/70 hover:bg-forest/5 hover:text-forest"
         } ${mobile ? "block rounded-xl px-4 py-3" : ""}`}
       >
         {tr(label)}
@@ -53,26 +53,26 @@ export function SiteHeader({ current }: { current?: string }) {
     );
   };
   return (
-    <header className="sticky top-0 z-40 border-b border-sheet/10 bg-forest text-sheet">
-      <nav className="mx-auto flex h-[72px] max-w-6xl items-center gap-3 px-4" aria-label={tr("Main")}>
+    <header className="sticky top-0 z-40 border-b border-line bg-sheet/95 text-ink backdrop-blur-sm">
+      <nav className="mx-auto flex h-[64px] max-w-6xl sm:h-[72px] items-center gap-3 px-4" aria-label={tr("Main")}>
         <a href="/" className="me-auto flex items-center gap-2" aria-label="formzolo home">
-          <LogoMark onDark />
-          <Wordmark onDark />
+          <LogoMark size={30} />
+          <Wordmark />
         </a>
         <div className="hidden items-center gap-1 md:flex">{NAV.map(([h, l]) => link(h, l))}</div>
         <a
           href="/#studio"
-          className="hidden rounded-full bg-brass px-5 py-2.5 text-sm font-bold text-ink shadow-[0_4px_14px_rgba(0,0,0,.18)] transition-colors hover:bg-[#C2A273] md:inline-block"
+          className="hidden rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#24624F] md:inline-block"
         >
           {tr("Start free")}
         </a>
         <details className="relative md:hidden">
-          <summary className="list-none rounded-xl border border-sheet/25 px-3 py-2 text-sm [&::-webkit-details-marker]:hidden" aria-label={tr("Menu")}>
+          <summary className="list-none rounded-xl border border-line px-3 py-2 text-forest text-sm [&::-webkit-details-marker]:hidden" aria-label={tr("Menu")}>
             ☰
           </summary>
-          <div className="fixed inset-x-0 top-[72px] grid gap-1 bg-forest-deep px-4 pb-5 pt-3 shadow-2xl">
+          <div className="fixed inset-x-0 top-[64px] grid gap-1 border-b border-line bg-sheet sm:top-[72px] px-4 pb-5 pt-3 shadow-2xl">
             {NAV.map(([h, l]) => link(h, l, true))}
-            <a href="/#studio" className="mt-3 rounded-full bg-brass px-5 py-3 text-center font-bold text-ink">
+            <a href="/#studio" className="mt-3 rounded-full bg-forest px-5 py-3 text-center font-semibold text-white">
               {tr("Start free")}
             </a>
           </div>
