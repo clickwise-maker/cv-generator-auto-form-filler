@@ -38,6 +38,11 @@ export const Route = createFileRoute("/privacy")({
     meta: [
       { title: "Privacy notice (DPDP) · formzolo" },
       { name: "description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { property: "og:title", content: "Privacy notice (DPDP) · formzolo" },
+      { property: "og:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { property: "og:url", content: "https://formzalo.com/privacy" },
+      { name: "twitter:title", content: "Privacy notice (DPDP) · formzolo" },
+      { name: "twitter:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
     ],
   }),
   component: PrivacyPage,

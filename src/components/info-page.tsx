@@ -27,6 +27,8 @@ export function infoHead(c: InfoContent) {
       { property: "og:title", content: `formzolo — ${c.title}` },
       { property: "og:description", content: c.desc },
       { property: "og:url", content: url },
+      { name: "twitter:title", content: `formzolo — ${c.title}` },
+      { name: "twitter:description", content: c.desc },
     ],
     links: [
       {

@@ -23,6 +23,8 @@ export function contentHead(title: string, desc: string, path: string) {
       { property: "og:title", content: `${title} — formzolo` },
       { property: "og:description", content: desc },
       { property: "og:url", content: url },
+      { name: "twitter:title", content: `${title} — formzolo` },
+      { name: "twitter:description", content: desc },
     ],
     links: [],
   };

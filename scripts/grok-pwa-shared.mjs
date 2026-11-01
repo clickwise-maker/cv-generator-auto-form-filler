@@ -445,7 +445,9 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  // formzolo: pages that render their own per-route share tags (og:title) keep them.
+  const pageOwnsShareTags = /<meta\b[^>]*\bproperty\s*=\s*["']og:title["']/i.test(html);
+  let next = pageOwnsShareTags ? html : stripShareMetaTags(html);
   if (!readGrokExtensionsEnabled()) next = stripGrokExtensionsScript(next);
 
   const missing = grokPwaHeadTags(appName)
@@ -456,10 +458,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  if (!pageOwnsShareTags) {
+    next = insertAfterHeadOpen(
+      next,
+      grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    );
+  }
 
   if (readGrokExtensionsEnabled() && !next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));

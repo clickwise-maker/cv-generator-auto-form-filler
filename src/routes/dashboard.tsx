@@ -10,7 +10,7 @@ import { ShareFormzolo } from "@/components/landing/share";
 import { AdSlot } from "@/components/ads/ad-slot";
 
 export const Route = createFileRoute("/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard · formzolo" }] }),
+  head: () => ({ meta: [{ title: "Dashboard · formzolo" }, { name: "robots", content: "noindex" }] }),
   component: DashboardPage,
 });
 

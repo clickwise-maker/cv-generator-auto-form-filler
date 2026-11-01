@@ -7,6 +7,11 @@ export const Route = createFileRoute("/refund-policy")({
     meta: [
       { title: "Refund Policy — formzolo" },
       { name: "description", content: "formzolo refund policy in English and Hindi." },
+      { property: "og:title", content: "Refund Policy — formzolo" },
+      { property: "og:description", content: "formzolo refund policy in English and Hindi." },
+      { property: "og:url", content: "https://formzalo.com/refund-policy" },
+      { name: "twitter:title", content: "Refund Policy — formzolo" },
+      { name: "twitter:description", content: "formzolo refund policy in English and Hindi." },
     ],
     links: [
       {
