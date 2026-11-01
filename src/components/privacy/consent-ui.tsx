@@ -1,8 +1,20 @@
 import { tr } from "@/lib/i18n/i18n";
 import { useEffect, useState, type ReactNode } from "react";
+import terms from "@/content/terms.json";
 import { eraseAllLocalData, giveConsent, NOTICE, readConsent, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
-const btn = "h-12 flex-1 rounded-full border-2 border-forest px-4 text-sm font-medium text-forest bg-paper disabled:opacity-40";
+const btn = "h-12 flex-1 rounded-full border-2 border-forest px-4 text-base font-medium text-forest bg-paper disabled:opacity-40";
+const TERMS = (terms as unknown as { title: string; en: [string, string[]][] });
+
+// i18n-data:start
+// "Your data stays in this browser, under your control. Nothing is sold and nothing is shared for advertising."
+// "You can delete your data anytime, but we recommend keeping it so we can send you updates. Tick if you agree."
+// "Keeping it means your CVs, drafts and form details are ready the next time you visit, and you hear about new templates, features and job-season tips first."
+// "Changed your mind later? Use “Withdraw consent” at any time and everything is erased from this browser at once."
+// "I agree to keep my data and receive updates from formzolo."
+// "Keep data & continue"
+// "Delete data"
+// i18n-data:end
 
 /**
  * Data-collection notice (EN + Hindi) shown BEFORE data is collected.
@@ -21,30 +33,46 @@ export function ConsentNotice({
   onDelete: () => void;
   testId?: string;
 }) {
-  const [ticked, setTicked] = useState(false);
+  // Pre-ticked by default per owner instruction (Wilson, 2026-11-01). Unticked = Continue disabled.
+  const [ticked, setTicked] = useState(true);
   return (
     <div className="fixed inset-0 z-[100] grid place-items-center bg-black/50 p-3" role="dialog" aria-modal="true" aria-labelledby="consent-title" data-testid={testId}>
-      <div className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-2xl bg-sheet p-5 text-ink shadow-xl">
+      <div className="max-h-[94vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-sheet p-5 text-base text-ink shadow-xl sm:p-6">
         <h2 id="consent-title" className="font-serif text-xl text-forest">{title}</h2>
-        <ul className="mt-3 list-disc space-y-1 ps-5 text-sm">
+        <ul className="mt-3 list-disc space-y-1 ps-5">
           {NOTICE.en.map((t) => <li key={t}>{tr(t)}</li>)}
         </ul>
+        <div className="mt-3 space-y-2 leading-relaxed text-ink/85">
+          <p>{tr("Your data stays in this browser, under your control. Nothing is sold and nothing is shared for advertising.")}</p>
+          <p>{tr("Keeping it means your CVs, drafts and form details are ready the next time you visit, and you hear about new templates, features and job-season tips first.")}</p>
+          <p>{tr("You can delete your data anytime, but we recommend keeping it so we can send you updates. Tick if you agree.")}</p>
+          <p>{tr("Changed your mind later? Use “Withdraw consent” at any time and everything is erased from this browser at once.")}</p>
+        </div>
         {extra}
+        <div className="mt-4 max-h-56 overflow-y-auto rounded-xl border border-line bg-paper p-4 text-sm leading-relaxed" data-testid="consent-terms" tabIndex={0}>
+          <h3 className="font-serif text-lg text-forest">{tr(TERMS.title)}</h3>
+          {TERMS.en.map(([t, items]) => (
+            <div key={t} className="mt-3">
+              <h4 className="font-semibold">{tr(t)}</h4>
+              {items.filter((i) => i !== "mail").map((i) => <p key={i} className="mt-1">{tr(i)}</p>)}
+            </div>
+          ))}
+        </div>
         <p className="mt-2 text-xs text-muted">
           <a className="underline" href="/privacy" target="_blank" rel="noreferrer">{tr("Privacy notice")}</a> · {SUPPORT_EMAIL}
         </p>
-        <label className="mt-3 flex items-start gap-3 rounded-xl bg-paper p-3 text-sm">
+        <label className="mt-3 flex items-start gap-3 rounded-xl bg-paper p-3">
           <input type="checkbox" className="mt-1 size-5" checked={ticked} onChange={(e) => setTicked(e.target.checked)} data-testid="consent-check" />
           <span>
-            {tr("I have read this notice and agree to my data being stored for this purpose. I can withdraw at any time.")}
+            {tr("I agree to keep my data and receive updates from formzolo.")}
           </span>
         </label>
         <div className="mt-4 flex gap-2">
           <button type="button" className={btn} disabled={!ticked} onClick={onKeep} data-testid="consent-keep">
-            {tr("Keep my data")}
+            {tr("Keep data & continue")}
           </button>
           <button type="button" className={btn} onClick={onDelete} data-testid="consent-delete">
-            {tr("Delete my data")}
+            {tr("Delete data")}
           </button>
         </div>
       </div>

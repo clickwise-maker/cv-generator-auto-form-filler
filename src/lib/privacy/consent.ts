@@ -3,7 +3,7 @@ export const CONSENT_KEY = "cvstudio.consent.v1";
 export const SUPPORT_EMAIL = "team@formzalo.com";
 export const RETENTION_DAYS = 180;
 
-export type Consent = { at: number; version: 1 };
+export type Consent = { at: number; version: 1; updates?: boolean };
 
 export function readConsent(): Consent | null {
   try {
@@ -14,7 +14,7 @@ export function readConsent(): Consent | null {
   }
 }
 export function giveConsent() {
-  localStorage.setItem(CONSENT_KEY, JSON.stringify({ at: Date.now(), version: 1 } satisfies Consent));
+  localStorage.setItem(CONSENT_KEY, JSON.stringify({ at: Date.now(), version: 1, updates: true } satisfies Consent));
   window.dispatchEvent(new Event("cvstudio-consent"));
 }
 
