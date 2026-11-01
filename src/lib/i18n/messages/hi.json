@@ -843,5 +843,7 @@
  "Password updated. You can sign in now.": "पासवर्ड अपडेट हो गया। अब आप साइन इन कर सकते हैं।",
  "New password": "नया पासवर्ड",
  "Save password": "पासवर्ड सहेजें",
- "Open this page from the reset link in your email.": "यह पेज अपने ईमेल के रीसेट लिंक से खोलें।"
+ "Open this page from the reset link in your email.": "यह पेज अपने ईमेल के रीसेट लिंक से खोलें।",
+ "Sign in to start building your CV": "CV बनाना शुरू करने के लिए साइन इन करें",
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Google या अपने ईमेल से साइन इन करें। साइन इन के बाद आपका CV एडिटर यहीं खुलेगा।"
 }

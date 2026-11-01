@@ -843,5 +843,7 @@
  "Password updated. You can sign in now.": "تم تحديث كلمة المرور. يمكنك تسجيل الدخول الآن.",
  "New password": "كلمة مرور جديدة",
  "Save password": "حفظ كلمة المرور",
- "Open this page from the reset link in your email.": "افتح هذه الصفحة من رابط إعادة التعيين في بريدك الإلكتروني."
+ "Open this page from the reset link in your email.": "افتح هذه الصفحة من رابط إعادة التعيين في بريدك الإلكتروني.",
+ "Sign in to start building your CV": "سجّل الدخول لبدء إنشاء سيرتك الذاتية",
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "استخدم Google أو بريدك الإلكتروني. يفتح محرر سيرتك الذاتية هنا بعد تسجيل الدخول."
 }

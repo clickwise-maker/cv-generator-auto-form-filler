@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { tr } from "@/lib/i18n/i18n";
 import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
 import { ContentShell, contentHead } from "@/components/content/content-shell";
+import { readSession } from "@/lib/auth/supa";
 import { AdSlot } from "@/components/ads/ad-slot";
 
 export const Route = createFileRoute("/templates")({
@@ -18,7 +19,7 @@ const USE_FOR: Record<TemplateId, string> = {
 };
 
 function TemplatesPage() {
-  const use = (id: TemplateId) => (window.location.href = `/?template=${id}`);
+  const use = (id: TemplateId) => (window.location.href = readSession() ? `/?template=${id}` : `/?template=${id}#signin`);
   return (
     <ContentShell>
       <h1 className="font-serif text-4xl">{tr("CV templates gallery")}</h1>
