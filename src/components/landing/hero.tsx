@@ -1,3 +1,4 @@
+import { ZaloDisclaimer } from "@/components/zalo-disclaimer";
 import { tr, useLang } from "@/lib/i18n/i18n";
 import { LOCALE_SEO } from "@/lib/seo-locales";
 import { readSession } from "@/lib/auth/supa";
@@ -70,6 +71,7 @@ export function LandingHero() {
             </button>
           </div>
           <p className="mt-3 hidden text-xs text-ink/60 sm:block">{tr("Guest mode — no email, phone or OTP needed")}</p>
+          <ZaloDisclaimer className="mt-3 max-w-xl" />
         </div>
         {HAS_VIDEO ? (
           <div className="hidden justify-center lg:row-span-2 lg:flex">
