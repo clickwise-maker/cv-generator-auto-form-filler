@@ -845,5 +845,14 @@
  "Save password": "Save password",
  "Open this page from the reset link in your email.": "Open this page from the reset link in your email.",
  "Sign in to start building your CV": "Sign in to start building your CV",
- "Use Google or your email. Your CV editor opens right here after you sign in.": "Use Google or your email. Your CV editor opens right here after you sign in."
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Use Google or your email. Your CV editor opens right here after you sign in.",
+ "Build your CV": "Build your CV",
+ "Hide password": "Hide password",
+ "Medium": "Medium",
+ "Password is too weak. Use at least 8 characters with letters and numbers.": "Password is too weak. Use at least 8 characters with letters and numbers.",
+ "Password must be at least 8 characters.": "Password must be at least 8 characters.",
+ "Show password": "Show password",
+ "Strength: {level}": "Strength: {level}",
+ "Strong": "Strong",
+ "Weak": "Weak"
 }

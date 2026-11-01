@@ -845,5 +845,14 @@
  "Save password": "保存密码",
  "Open this page from the reset link in your email.": "请通过邮件中的重置链接打开此页面。",
  "Sign in to start building your CV": "登录后开始制作简历",
- "Use Google or your email. Your CV editor opens right here after you sign in.": "使用 Google 或邮箱登录。登录后简历编辑器会在此处打开。"
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "使用 Google 或邮箱登录。登录后简历编辑器会在此处打开。",
+ "Build your CV": "制作你的简历",
+ "Hide password": "隐藏密码",
+ "Medium": "中",
+ "Password is too weak. Use at least 8 characters with letters and numbers.": "密码太弱。请使用至少 8 个字符，并包含字母和数字。",
+ "Password must be at least 8 characters.": "密码至少需要 8 个字符。",
+ "Show password": "显示密码",
+ "Strength: {level}": "强度：{level}",
+ "Strong": "强",
+ "Weak": "弱"
 }

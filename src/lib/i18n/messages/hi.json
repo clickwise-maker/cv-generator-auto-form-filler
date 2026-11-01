@@ -845,5 +845,14 @@
  "Save password": "पासवर्ड सहेजें",
  "Open this page from the reset link in your email.": "यह पेज अपने ईमेल के रीसेट लिंक से खोलें।",
  "Sign in to start building your CV": "CV बनाना शुरू करने के लिए साइन इन करें",
- "Use Google or your email. Your CV editor opens right here after you sign in.": "Google या अपने ईमेल से साइन इन करें। साइन इन के बाद आपका CV एडिटर यहीं खुलेगा।"
+ "Use Google or your email. Your CV editor opens right here after you sign in.": "Google या अपने ईमेल से साइन इन करें। साइन इन के बाद आपका CV एडिटर यहीं खुलेगा।",
+ "Build your CV": "अपना CV बनाएँ",
+ "Hide password": "पासवर्ड छिपाएँ",
+ "Medium": "मध्यम",
+ "Password is too weak. Use at least 8 characters with letters and numbers.": "पासवर्ड बहुत कमज़ोर है। अक्षरों और अंकों के साथ कम से कम 8 अक्षर रखें।",
+ "Password must be at least 8 characters.": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
+ "Show password": "पासवर्ड दिखाएँ",
+ "Strength: {level}": "मज़बूती: {level}",
+ "Strong": "मज़बूत",
+ "Weak": "कमज़ोर"
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/brand";
 import { SiteFooter } from "@/components/site-footer";
 import { tr } from "@/lib/i18n/i18n";
+import { MIN_PW, PasswordField, pwError } from "@/components/auth/password-field";
 import { consumeHash, updatePassword } from "@/lib/auth/supa";
 
 export const Route = createFileRoute("/reset-password")({
@@ -14,6 +15,7 @@ function ResetPage() {
   const [token, setToken] = useState<string | null>(null);
   const [pw, setPw] = useState("");
   const [msg, setMsg] = useState("");
+  const [pwErr, setPwErr] = useState("");
   useEffect(() => {
     setToken(consumeHash()?.get("access_token") ?? null);
   }, []);
@@ -28,10 +30,11 @@ function ResetPage() {
               className="mt-4 grid gap-3"
               onSubmit={(e) => {
                 e.preventDefault();
-                updatePassword(token, pw).then(() => setMsg(tr("Password updated. You can sign in now.")), (err: Error) => setMsg(err.message));
+                if (pw.length < MIN_PW) return setPwErr(tr("Password must be at least 8 characters."));
+                updatePassword(token, pw).then(() => setMsg(tr("Password updated. You can sign in now.")), (err: Error) => setMsg(pwError(err.message)));
               }}
             >
-              <input className="h-11 rounded-xl border border-line px-3 text-sm" type="password" minLength={6} required autoComplete="new-password" placeholder={tr("New password")} aria-label={tr("New password")} value={pw} onChange={(e) => setPw(e.target.value)} />
+              <PasswordField value={pw} onChange={(v) => { setPw(v); setPwErr(""); }} label={tr("New password")} autoComplete="new-password" meter error={pwErr} testId="reset-password" />
               <button type="submit" className="h-11 rounded-full bg-forest text-sm font-medium text-white">{tr("Save password")}</button>
             </form>
           ) : (
