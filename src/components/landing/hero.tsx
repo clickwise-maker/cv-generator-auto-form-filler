@@ -1,6 +1,8 @@
 import { tr, useLang } from "@/lib/i18n/i18n";
 import { LOCALE_SEO } from "@/lib/seo-locales";
 import { ScaledPage } from "@/components/studio/scaled-page";
+import { readSession } from "@/lib/auth/supa";
+import { goToSignIn } from "@/components/landing/auth-gate";
 import { useMode, type StudioMode } from "@/lib/cv/mode";
 
 declare const __HERO_VIDEO__: boolean;
@@ -12,6 +14,7 @@ export function LandingHero() {
 
   const start = (mode: StudioMode) => {
     setMode(mode);
+    if (!readSession()) return goToSignIn();
     requestAnimationFrame(() =>
       document.getElementById("studio")?.scrollIntoView({ behavior: "smooth", block: "start" }),
     );

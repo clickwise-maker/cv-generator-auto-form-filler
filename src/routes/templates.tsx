@@ -5,6 +5,7 @@ import { ContentShell, contentHead } from "@/components/content/content-shell";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { ScaledPage } from "@/components/studio/scaled-page";
 import { useEffect, useState } from "react";
+import { readSession } from "@/lib/auth/supa";
 
 export const Route = createFileRoute("/templates")({
   head: () => contentHead("CV templates gallery", "Free CV templates: a modern two-column layout, a classic consular format and a plain ATS-friendly page.", "/templates"),
@@ -38,7 +39,7 @@ const FILTERS: [Filter, string][] = [
 ];
 
 function TemplatesPage() {
-  const use = (id: TemplateId) => (window.location.href = `/?template=${id}`);
+  const use = (id: TemplateId) => (window.location.href = readSession() ? `/?template=${id}` : `/?template=${id}#signin`);
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<TemplateId | null>(null);
   useEffect(() => {
