@@ -1,6 +1,9 @@
 import { tr } from "@/lib/i18n/i18n";
 import { useMode, type StudioMode } from "@/lib/cv/mode";
 
+declare const __HERO_VIDEO__: boolean;
+const HAS_VIDEO = typeof __HERO_VIDEO__ !== "undefined" && __HERO_VIDEO__;
+
 /** Homepage hero: the page's single H1 and the two entry points. No video. */
 export function LandingHero() {
   const setMode = useMode((state) => state.setMode);
@@ -13,29 +16,43 @@ export function LandingHero() {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-line bg-forest-deep text-sheet">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 80% at 15% 10%, rgba(255,253,248,0.14), transparent 60%), radial-gradient(50% 70% at 90% 90%, rgba(255,253,248,0.10), transparent 60%)",
-        }}
-      />
+    <section
+      className="relative overflow-hidden text-sheet"
+      style={{
+        background:
+          "radial-gradient(900px 420px at 85% -10%, rgba(166,132,86,.28), transparent), linear-gradient(180deg, #1B4D3E, #102E26)",
+      }}
+    >
+      {HAS_VIDEO ? (
+        <>
+          <video
+            className="hero-video pointer-events-none absolute inset-0 h-full w-full object-cover lg:hidden"
+            src="/media/hero.mp4"
+            poster="/media/hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden
+          />
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-forest/85 to-forest-deep/90 lg:hidden" />
+        </>
+      ) : null}
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div>
-          <p className="kicker text-sheet/70">{tr("CV Studio")}</p>
+          <p className="inline-block rounded-full border border-sheet/20 bg-sheet/10 px-3.5 py-1 text-sm font-semibold text-brass-soft">{tr("formzolo · Free CV maker & form filler")}</p>
           <h1 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
             {tr("Free CV generator and auto form filler")}
           </h1>
-          <p className="mt-4 max-w-xl text-base text-sheet/80 sm:text-lg">
+          <p className="mt-4 max-w-xl text-base text-mist sm:text-lg">
             {tr("Enter your details once. Get a finished CV in PDF or Word, or let any form fill itself from a photo, image, or PDF.")}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={() => start("generator")}
-              className="h-12 rounded-full bg-sheet px-6 text-sm font-semibold text-forest-deep shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+              className="h-12 rounded-full bg-brass px-6 text-sm font-bold text-ink shadow-lg hover:bg-[#C2A273] transition hover:-translate-y-0.5 hover:shadow-xl"
             >
               {tr("Build your first CV")}
             </button>
@@ -49,7 +66,25 @@ export function LandingHero() {
           </div>
           <p className="mt-4 text-xs text-sheet/60">{tr("Guest mode — no email, phone or OTP needed")}</p>
         </div>
-        <ul className="grid gap-3 text-sm">
+        {HAS_VIDEO ? (
+          <div className="hidden justify-center lg:row-span-2 lg:flex">
+            <div className="relative aspect-[720/990] w-full max-w-[340px] overflow-hidden rounded-3xl border border-sheet/15 shadow-[0_30px_60px_rgba(0,0,0,.35)] ring-4 ring-brass/30">
+              <video
+                className="hero-video h-full w-full object-cover"
+                src="/media/hero.mp4"
+                poster="/media/hero-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden
+              />
+              <img src="/media/hero-poster.jpg" alt="" aria-hidden className="hero-poster absolute inset-0 hidden h-full w-full object-cover" />
+            </div>
+          </div>
+        ) : null}
+        <ul className={HAS_VIDEO ? "grid gap-3 text-sm sm:grid-cols-3 lg:col-start-1 lg:grid-cols-3" : "grid gap-3 text-sm"}>
           {[
             ["01", tr("CV generator"), tr("A finished page, then PDF or Word.")],
             ["02", tr("Auto form filler"), tr("Photo, PDF, or a letter. The fields fill themselves.")],

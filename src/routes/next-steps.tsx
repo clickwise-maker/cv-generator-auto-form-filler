@@ -5,7 +5,7 @@ import { ContentShell, contentHead } from "@/components/content/content-shell";
 import { AffiliateBlocks } from "@/components/ads/affiliate-blocks";
 
 export const Route = createFileRoute("/next-steps")({
-  head: () => ({ ...contentHead("After you download your CV", "What to check before you send your CV, and guides for the next steps.", "/next-steps"), meta: [{ title: "After you download your CV — CV Studio" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ ...contentHead("After you download your CV", "What to check before you send your CV, and guides for the next steps.", "/next-steps"), meta: [{ title: "After you download your CV — formzolo" }, { name: "robots", content: "noindex" }] }),
   component: NextSteps,
 });
 
@@ -33,7 +33,7 @@ function NextSteps() {
         ))}
       </ul>
       <AffiliateBlocks />
-      <p className="mt-10 text-sm"><a href="/" className="underline">{tr("← Back to CV Studio")}</a></p>
+      <p className="mt-10 text-sm"><a href="/" className="underline">{tr("← Back to formzolo")}</a></p>
     </ContentShell>
   );
 }

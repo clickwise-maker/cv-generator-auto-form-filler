@@ -132,7 +132,7 @@ function IntakePage() {
   return (
     <div className="min-h-screen bg-paper text-ink">
       <header className="border-b border-line px-4 py-3">
-        <p className="font-serif text-lg">{tr("CV Studio")}</p>
+        <p className="font-serif text-lg">{tr("formzolo")}</p>
         <p className="text-xs text-muted">{tr("Secure client details form")}</p>
       </header>
       <main className="mx-auto max-w-xl px-4 py-6" data-testid="intake">

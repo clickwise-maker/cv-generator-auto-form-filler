@@ -18,7 +18,7 @@ export function giveConsent() {
   window.dispatchEvent(new Event("cvstudio-consent"));
 }
 
-/** Removes every CV Studio key (meridian*, cvstudio*) from this browser, including the consent record. */
+/** Removes every formzolo key (meridian*, cvstudio*) from this browser, including the consent record. */
 export function eraseAllLocalData() {
   try {
     const keys: string[] = [];
@@ -42,12 +42,12 @@ export const NOTICE = {
     "Your data is being collected.",
     "It is needed only to fill your forms / build your CV.",
     "You can keep it or have it deleted — entirely your choice.",
-    "CV Studio has no interest in your data either way.",
+    "formzolo has no interest in your data either way.",
   ],
   hi: [
     "आपका डेटा एकत्र किया जा रहा है।",
     "यह केवल आपके फ़ॉर्म भरने / CV बनाने के लिए आवश्यक है।",
     "आप इसे रख सकते हैं या हटवा सकते हैं — पूरी तरह आपकी पसंद।",
-    "CV Studio को आपके डेटा में किसी भी तरह से कोई रुचि नहीं है।",
+    "formzolo को आपके डेटा में किसी भी तरह से कोई रुचि नहीं है।",
   ],
 };

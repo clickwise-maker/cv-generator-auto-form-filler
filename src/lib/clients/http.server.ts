@@ -147,7 +147,7 @@ export async function handleClients(req: Request, path: string, svc: PaymentServ
     const ent = await svc.commercialOwner(str(b.entitlementId, 200) || undefined);
     if (path === "link") {
       const existing = (await st.linksByOwner(ent.entitlementId)).find((l) => !l.revoked);
-      const businessName = str(b.businessName, 80) || existing?.businessName || "CV Studio business";
+      const businessName = str(b.businessName, 80) || existing?.businessName || "formzolo business";
       let link = existing;
       if (!link || b.rotate === true) {
         if (link) await st.putLink({ ...link, revoked: true });

@@ -1,3 +1,4 @@
+import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
 import { ProfileForm } from "@/components/studio/profile-form";
 import { PreviewColumn } from "@/components/studio/preview-doc";
@@ -21,14 +22,13 @@ export function Studio() {
 
   return (
     <div className="min-h-screen bg-paper text-ink">
-      <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur-sm">
+      <header className="sticky top-[72px] z-30 border-b border-line bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
           <div className="flex items-center gap-3">
-            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-forest font-serif text-sm text-sheet" aria-hidden>
-              {tr("CV")}
+            <span className="grid size-9 shrink-0 place-items-center rounded-lg" aria-hidden><LogoMark />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="font-serif text-lg leading-none">{tr("CV Studio")}</p>
+              <p className="font-serif text-lg leading-none">{tr("formzolo")}</p>
               <p className="truncate text-xs text-muted">{tr("Guest mode — no email, phone or OTP needed")}</p>
             </div>
             <a href="/guides" className="hidden h-11 content-center px-2 text-sm font-medium text-forest sm:block">

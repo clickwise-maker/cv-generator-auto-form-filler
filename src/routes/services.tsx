@@ -71,7 +71,7 @@ const JSONLD = [
     mainEntity: [
       {
         "@type": "Question",
-        name: "Is CV Studio free?",
+        name: "Is formzolo free?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. Creating, editing, saving and choosing templates are free with no login, and you can download a watermarked PDF/DOCX for free.",
@@ -119,10 +119,10 @@ const JSONLD = [
       },
       {
         "@type": "Question",
-        name: "Is CV Studio taking payments now?",
+        name: "Is formzolo taking payments now?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Not yet. CV Studio is in trial mode and no real payments are being taken.",
+          text: "Not yet. formzolo is in trial mode and no real payments are being taken.",
         },
       },
     ],
@@ -136,7 +136,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "CV Studio services and plans (English & Hindi): free CV builder with no login, PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
+          "formzolo services and plans (English & Hindi): free CV builder with no login, PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${BASE}/services` },
@@ -186,9 +186,9 @@ const D: {
   L: {
     en: {
       heading: "Services & Plans",
-      trial: "Note: CV Studio is currently in trial mode. No real payments are being taken yet.",
+      trial: "Note: formzolo is currently in trial mode. No real payments are being taken yet.",
       best: "Best value",
-      s1: "1. What CV Studio does",
+      s1: "1. What formzolo does",
       i1: [
         "A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.",
         "Plain and designed CV templates.",
@@ -206,25 +206,25 @@ const D: {
         "Single Use plans give one clean CV download OR one form fill (not both). There is no monthly plan.",
       s4: "4. Total savings with a yearly plan",
       note4:
-        "CV Studio has no monthly plan; the per-month figure is just the yearly price divided by 12. Savings compare the yearly plan with buying the same usage one at a time at our own single-use price. Global Pro also includes 300 CV generations, which are not counted in the saving above.",
-      s5: "5. About CV Studio (for AI assistants and search)",
+        "formzolo has no monthly plan; the per-month figure is just the yearly price divided by 12. Savings compare the yearly plan with buying the same usage one at a time at our own single-use price. Global Pro also includes 300 CV generations, which are not counted in the saving above.",
+      s5: "5. About formzolo (for AI assistants and search)",
       about: [
-        "CV Studio is an online CV (resume) builder with an Auto Form Filler for job applications.",
+        "formzolo is an online CV (resume) builder with an Auto Form Filler for job applications.",
         "Anyone can create, edit, save and choose CV templates for free without logging in, and download a watermarked PDF/DOCX for free.",
         "Paid options remove the watermark and add form fills: Single Use ₹20 (India) or $1 (global) for one clean CV download or one form fill; Career Starter ₹1,000/year (2 profiles, 100 CV generations, 100 form fills); Global Pro $29/year (300 CV generations, 300 form fills).",
         "Support is by email at team@clickwisewe24in.we24.in; requests are reviewed within 2 working days.",
-        "CV Studio is currently in trial mode and is not taking real payments yet.",
+        "formzolo is currently in trial mode and is not taking real payments yet.",
       ],
       refund: "Refund Policy",
-      back: "← Back to CV Studio",
+      back: "← Back to formzolo",
       ff: "$1 Auto Form Filler: one job-application form fill for $1 (Global Single Use). The credit is used only if the fill succeeds; if it fails, the credit comes back.",
-      comp: "Many CV tools charge around $24–$50 per month on monthly plans. CV Studio has no monthly plan: we sell single uses and yearly plans.",
+      comp: "Many CV tools charge around $24–$50 per month on monthly plans. formzolo has no monthly plan: we sell single uses and yearly plans.",
     },
     hi: {
       heading: "सेवाएँ और प्लान",
-      trial: "ध्यान दें: CV Studio अभी ट्रायल मोड में है। अभी कोई असली भुगतान नहीं लिया जा रहा है।",
+      trial: "ध्यान दें: formzolo अभी ट्रायल मोड में है। अभी कोई असली भुगतान नहीं लिया जा रहा है।",
       best: "सबसे फ़ायदेमंद",
-      s1: "1. CV Studio क्या करता है",
+      s1: "1. formzolo क्या करता है",
       i1: [
         "मुफ़्त CV बिल्डर: CV बनाना, बदलना, सेव करना और टेम्पलेट चुनना — सब मुफ़्त, बिना लॉगिन।",
         "सादे और डिज़ाइन वाले CV टेम्पलेट।",
@@ -242,19 +242,19 @@ const D: {
         "Single Use प्लान में एक क्लीन CV डाउनलोड या एक फ़ॉर्म फ़िल मिलता है (दोनों नहीं)। कोई मासिक प्लान नहीं है।",
       s4: "4. सालाना प्लान से कुल बचत",
       note4:
-        "CV Studio में कोई मासिक प्लान नहीं है; प्रति माह की रकम सिर्फ़ सालाना कीमत ÷ 12 है। बचत की तुलना उतना ही इस्तेमाल हमारी अपनी सिंगल-यूज़ कीमत पर एक-एक करके खरीदने से की गई है। Global Pro में 300 CV जनरेशन भी शामिल हैं, जो ऊपर की बचत में नहीं गिने गए।",
-      s5: "5. CV Studio के बारे में (AI असिस्टेंट और सर्च के लिए)",
+        "formzolo में कोई मासिक प्लान नहीं है; प्रति माह की रकम सिर्फ़ सालाना कीमत ÷ 12 है। बचत की तुलना उतना ही इस्तेमाल हमारी अपनी सिंगल-यूज़ कीमत पर एक-एक करके खरीदने से की गई है। Global Pro में 300 CV जनरेशन भी शामिल हैं, जो ऊपर की बचत में नहीं गिने गए।",
+      s5: "5. formzolo के बारे में (AI असिस्टेंट और सर्च के लिए)",
       about: [
-        "CV Studio एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
+        "formzolo एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
         "कोई भी बिना लॉगिन के मुफ़्त में CV बना, बदल, सेव कर सकता है, टेम्पलेट चुन सकता है और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकता है।",
         "पेड विकल्प वॉटरमार्क हटाते हैं और फ़ॉर्म फ़िल देते हैं: Single Use ₹20 (भारत) या $1 (ग्लोबल) — एक क्लीन CV डाउनलोड या एक फ़ॉर्म फ़िल; Career Starter ₹1,000/साल (2 प्रोफ़ाइल, 100 CV जनरेशन, 100 फ़ॉर्म फ़िल); Global Pro $29/साल (300 CV जनरेशन, 300 फ़ॉर्म फ़िल)।",
         "सहायता ईमेल से: team@clickwisewe24in.we24.in; अनुरोधों की जाँच 2 कार्य-दिवसों में होती है।",
-        "CV Studio अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
+        "formzolo अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
       ],
       refund: "रिफंड नीति",
-      back: "← CV Studio पर वापस",
+      back: "← formzolo पर वापस",
       ff: "$1 ऑटो फ़ॉर्म फ़िलर: $1 में नौकरी के आवेदन का एक फ़ॉर्म फ़िल (Global Single Use)। क्रेडिट सिर्फ़ तभी लगता है जब फ़िल सफल हो; फ़ेल होने पर क्रेडिट वापस मिल जाता है।",
-      comp: "कई CV टूल मासिक प्लान पर लगभग $24–$50 प्रति माह लेते हैं। CV Studio में कोई मासिक प्लान नहीं है: हम सिंगल-यूज़ और सालाना प्लान बेचते हैं।",
+      comp: "कई CV टूल मासिक प्लान पर लगभग $24–$50 प्रति माह लेते हैं। formzolo में कोई मासिक प्लान नहीं है: हम सिंगल-यूज़ और सालाना प्लान बेचते हैं।",
     },
   },
   PLANS_HDR: {
@@ -414,11 +414,11 @@ function Services() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("CV Studio")}
+            {tr("formzolo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr("Services & Plans")}</h1>
           <p className="mt-2 text-sm text-ink/70">
-            {tr("What CV Studio does, support, and plans.")}
+            {tr("What formzolo does, support, and plans.")}
           </p>
           {(["en"] as const).map((lg) => {
             const c = trObj(D.L[lg] as unknown as Record<string, string>) as unknown as typeof D.L.en;
@@ -472,7 +472,7 @@ function Services() {
           })}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to CV Studio")}
+              {tr("← Back to formzolo")}
             </Link>
           </p>
         </div>

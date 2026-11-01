@@ -6,6 +6,8 @@ import { TEMPLATES, type TemplateId } from "@/lib/cv/model";
 import { GuidesTeaser } from "@/components/content/guides-teaser";
 import { SiteFooter } from "@/components/site-footer";
 import { LandingHero } from "@/components/landing/hero";
+import { SiteHeader } from "@/components/brand";
+import { InsightsSection } from "@/components/landing/insights";
 import { ConsentGate } from "@/components/privacy/consent-ui";
 
 export const Route = createFileRoute("/")({
@@ -28,10 +30,12 @@ function Home() {
 
   return (
     <>
+      <SiteHeader current="/" />
       <LandingHero />
       <div id="studio" className="scroll-mt-0">
         <Studio />
       </div>
+      <InsightsSection />
       <GuidesTeaser />
       <SiteFooter />
       <ConsentGate />
