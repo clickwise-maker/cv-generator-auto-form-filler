@@ -1,3 +1,4 @@
+import { ZaloDisclaimer } from "@/components/zalo-disclaimer";
 import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
 import { Link } from "@tanstack/react-router";
@@ -83,6 +84,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
           <p className="mt-2 text-sm text-ink/70">
             {tr(c.lead)}
           </p>
+          {c.slug === "about" || c.slug === "terms" ? <ZaloDisclaimer className="mt-4 rounded-md border border-line bg-sheet px-3 py-2 text-sm" /> : null}
           <section className="mt-8 rounded-lg border border-line bg-sheet p-6">
             {c.en.map(([t, items]) => (
               <div key={t} className="mt-6 first:mt-0">

@@ -1,3 +1,4 @@
+import { ZaloDisclaimer } from "@/components/zalo-disclaimer";
 import { tr } from "@/lib/i18n/i18n";
 import { LanguageSelect } from "@/components/language-select";
 import { LogoMark, Wordmark } from "@/components/brand";
@@ -40,6 +41,7 @@ export function SiteFooter() {
         <span>© {new Date().getFullYear()} formzolo · formzalo.com</span>
         <LanguageSelect className="h-9 text-xs" />
       </div>
+      <ZaloDisclaimer className="mx-auto mt-3 max-w-6xl px-4 text-ink/65" />
     </footer>
   );
 }
