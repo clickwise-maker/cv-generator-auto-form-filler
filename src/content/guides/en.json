@@ -35,12 +35,12 @@
    ["Wrong uploads",["Photo or signature in the wrong size, format or background.","Blurred or cropped certificate scans."]],
    ["Missing information",["Leaving optional fields blank when they are needed for your category or experience.","Not adding all qualifications, or entering marks in the wrong format (percentage instead of CGPA)."]],
    ["Rushing at the last date",["Portals slow down near the deadline. Apply a few days early.","Always save the confirmation page and payment receipt."]],
-   ["How CV Studio helps",["The Auto Form Filler reuses your saved details, so the same spelling goes into every form.","It never invents values. Anything missing is asked for and saved for next time."]]
+   ["How formzolo helps",["The Auto Form Filler reuses your saved details, so the same spelling goes into every form.","It never invents values. Anything missing is asked for and saved for next time."]]
   ]},
  {"slug":"photo-signature-specs","title":"Photo and signature specifications for online forms","desc":"How to prepare a passport-style photo and signature that portals accept.","lead":"Upload errors are one of the most common problems. These general rules work for most portals; always follow the exact notice.",
   "sections":[
    ["Photo",["Recent colour photo with a plain light background, face clearly visible, no cap or dark glasses.","Use the format and size in the notice. Many Indian recruitment portals ask for a JPG of a few tens of kilobytes.","Crop to the requested dimensions instead of stretching the image."]],
-   ["Signature",["Sign with a black or blue pen on white paper, then scan or photograph it in good light.","Crop tightly around the signature. Do not sign in capital letters if the notice forbids it.","In CV Studio you can draw your signature or upload one; it is trimmed and saved as a PNG."]],
+   ["Signature",["Sign with a black or blue pen on white paper, then scan or photograph it in good light.","Crop tightly around the signature. Do not sign in capital letters if the notice forbids it.","In formzolo you can draw your signature or upload one; it is trimmed and saved as a PNG."]],
    ["Checking file size",["If the file is too large, reduce the dimensions or the JPG quality.","If it is too small, the portal may reject it as unclear. Do not over-compress."]],
    ["Before uploading",["Open the file once to make sure it is the right image and not rotated.","Keep copies in the exact required sizes in one folder for future applications."]]
   ]},
@@ -48,7 +48,7 @@
   "sections":[
    ["Use a simple layout",["Standard headings such as Experience, Education and Skills.","Avoid putting key information in images, text boxes or headers."]],
    ["Use the job's keywords",["Read the job advertisement and use the same words for skills you genuinely have.","Do not paste hidden keywords. Recruiters see them and reject the CV."]],
-   ["Choose the right file",["A text-based PDF or a DOCX works with most systems. Scanned images do not.","CV Studio PDF and DOCX exports are text-based."]],
+   ["Choose the right file",["A text-based PDF or a DOCX works with most systems. Scanned images do not.","formzolo PDF and DOCX exports are text-based."]],
    ["Dates and titles",["Write job titles and dates clearly and in the same format throughout.","Explain gaps briefly if asked."]]
   ]}
 ]

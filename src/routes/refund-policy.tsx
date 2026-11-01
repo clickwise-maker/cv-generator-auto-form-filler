@@ -29,7 +29,7 @@ const CONTENT: Lang[] = [
     id: "en",
     lang: "en",
     heading: "Refund Policy",
-    trial: "Note: CV Studio is currently in trial mode. No real payments are being taken yet.",
+    trial: "Note: formzolo is currently in trial mode. No real payments are being taken yet.",
     sections: [
       {
         title: "1. ₹20 one-time clean download (no watermark)",
@@ -74,7 +74,7 @@ function RefundPolicy() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("CV Studio")}
+            {tr("formzolo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
           <p className="mt-2 text-sm text-ink/70">
@@ -118,7 +118,7 @@ function RefundPolicy() {
           ))}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to CV Studio")}
+              {tr("← Back to formzolo")}
             </Link>
           </p>
         </div>

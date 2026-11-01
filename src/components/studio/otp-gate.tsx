@@ -38,7 +38,7 @@ export function OtpGate() {
     <main className="flex min-h-screen flex-col bg-paper text-ink lg:grid lg:grid-cols-2">
       <section className="order-2 flex flex-col justify-between gap-10 px-6 py-10 sm:px-10 lg:order-1 lg:px-14 lg:py-14">
         <div>
-          <p className="kicker text-forest">{tr("CV Studio · International desk")}</p>
+          <p className="kicker text-forest">{tr("formzolo · International desk")}</p>
           <h1 className="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
             {tr("The same particulars, on every form.")}
           </h1>

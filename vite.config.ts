@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
@@ -156,6 +156,7 @@ export default defineConfig(({ command, isPreview }) => ({
     port: 8081,
     strictPort: true,
   },
+  define: { __HERO_VIDEO__: JSON.stringify(existsSync("public/media/hero.mp4")) },
   resolve: { tsconfigPaths: true },
   plugins: [
     pgliteBootstrapPlugin(),

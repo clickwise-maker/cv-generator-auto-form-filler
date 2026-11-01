@@ -148,3 +148,8 @@
     color: #1c1915;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-poster { display: block; }
+}

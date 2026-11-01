@@ -1,3 +1,4 @@
+import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
 import { Link } from "@tanstack/react-router";
 import { SiteFooter } from "./site-footer";
@@ -71,10 +72,11 @@ function Items({ items, plain }: { items: string[]; plain: boolean }) {
 export function InfoPage({ c }: { c: InfoContent }) {
   return (
     <>
+      <SiteHeader />
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("CV Studio")}
+            {tr("formzolo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
           <p className="mt-2 text-sm text-ink/70">
@@ -90,7 +92,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
           </section>
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to CV Studio")}
+              {tr("← Back to formzolo")}
             </Link>
           </p>
         </div>

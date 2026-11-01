@@ -67,8 +67,8 @@ export function ConsentGate({ floating = true }: { floating?: boolean } = {}) {
       <div className="fixed inset-0 z-[100] grid place-items-center bg-black/50 p-3" data-testid="consent-declined">
         <div className="w-full max-w-md rounded-2xl bg-sheet p-5 text-sm">
           <p className="font-serif text-xl text-forest">{tr("Deleted")}</p>
-          <p className="mt-2">{tr("Nothing from CV Studio is stored in this browser now. You can close this tab.")}</p>
-          <p className="text-muted">{tr("इस ब्राउज़र में अब CV Studio का कोई डेटा संग्रहीत नहीं है। आप यह टैब बंद कर सकते हैं।")}</p>
+          <p className="mt-2">{tr("Nothing from formzolo is stored in this browser now. You can close this tab.")}</p>
+          <p className="text-muted">{tr("इस ब्राउज़र में अब formzolo का कोई डेटा संग्रहीत नहीं है। आप यह टैब बंद कर सकते हैं।")}</p>
           <button type="button" className={`${btn} mt-4 w-full`} onClick={() => setState("ask")}>{tr("Show the notice again")}</button>
         </div>
       </div>
@@ -104,7 +104,7 @@ export function WithdrawButton({ className, label = tr("Withdraw consent & delet
       className={className}
       data-testid="withdraw-consent"
       onClick={() => {
-        if (!window.confirm(tr("Withdraw consent and delete all CV Studio data saved in this browser (CVs, drafts, plan key, history)? This cannot be undone."))) return;
+        if (!window.confirm(tr("Withdraw consent and delete all formzolo data saved in this browser (CVs, drafts, plan key, history)? This cannot be undone."))) return;
         eraseAllLocalData();
         window.location.href = "/";
       }}

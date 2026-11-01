@@ -2,11 +2,11 @@
  "slug": "faq",
  "title": "FAQ",
  "hi_title": "अक्सर पूछे जाने वाले सवाल",
- "desc": "CV Studio frequently asked questions in English and Hindi: pricing, login, downloads, storage, refunds.",
+ "desc": "formzolo frequently asked questions in English and Hindi: pricing, login, downloads, storage, refunds.",
  "lead": "Short answers to common questions.",
  "en": [
   [
-   "Is CV Studio free?",
+   "Is formzolo free?",
    [
     "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
    ]
@@ -14,7 +14,7 @@
   [
    "Do I need to sign up?",
    [
-    "No login is needed — you can use CV Studio as a guest."
+    "No login is needed — you can use formzolo as a guest."
    ]
   ],
   [
@@ -50,7 +50,7 @@
   [
    "Are payments live?",
    [
-    "Not yet. CV Studio is in trial mode and no real payments are taken."
+    "Not yet. formzolo is in trial mode and no real payments are taken."
    ]
   ],
   [
@@ -68,7 +68,7 @@
  ],
  "hi": [
   [
-   "क्या CV Studio मुफ़्त है?",
+   "क्या formzolo मुफ़्त है?",
    [
     "हाँ। CV बनाना, एडिट करना, सेव करना और टेम्पलेट चुनना मुफ़्त है, और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकते हैं। क्लीन डाउनलोड या एक फ़ॉर्म फ़िल ₹20 / $1 का है, या आप सालाना प्लान ले सकते हैं (Services & Plans देखें)।"
    ]
@@ -112,7 +112,7 @@
   [
    "क्या भुगतान चालू है?",
    [
-    "अभी नहीं। CV Studio ट्रायल मोड में है और कोई असली भुगतान नहीं लिया जा रहा है।"
+    "अभी नहीं। formzolo ट्रायल मोड में है और कोई असली भुगतान नहीं लिया जा रहा है।"
    ]
   ],
   [
@@ -135,7 +135,7 @@
   "mainEntity": [
    {
     "@type": "Question",
-    "name": "Is CV Studio free?",
+    "name": "Is formzolo free?",
     "acceptedAnswer": {
      "@type": "Answer",
      "text": "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
@@ -146,7 +146,7 @@
     "name": "Do I need to sign up?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "No login is needed — you can use CV Studio as a guest."
+     "text": "No login is needed — you can use formzolo as a guest."
     }
    },
    {
@@ -194,7 +194,7 @@
     "name": "Are payments live?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Not yet. CV Studio is in trial mode and no real payments are taken."
+     "text": "Not yet. formzolo is in trial mode and no real payments are taken."
     }
    },
    {
