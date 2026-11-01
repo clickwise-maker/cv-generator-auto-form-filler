@@ -17,14 +17,22 @@ const SITE = SITE_URL;
 const WEBAPP_LD = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "CV Studio",
-  alternateName: "AI Form Pilot",
+  name: "formzolo",
+  alternateName: ["formzalo", "CV Studio"],
   url: `${SITE}/`,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Any (web browser)",
   description: DESCRIPTION,
   inLanguage: ["en", "hi"],
   offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+  publisher: { "@type": "Organization", name: "formzolo", url: `${SITE}/` },
+};
+const ORG_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "formzolo",
+  url: `${SITE}/`,
+  logo: `${SITE}/favicon.svg`,
 };
 const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
 /** Privacy-friendly analytics (Plausible-compatible). OFF unless VITE_ANALYTICS_DOMAIN is set at build time. No cookies. */
@@ -54,9 +62,9 @@ export const Route = createRootRoute({
       { property: "og:title", content: APP_NAME },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "CV Studio" },
+      { property: "og:site_name", content: "formzolo" },
       { property: "og:image", content: `${SITE}/og.jpg` },
-      { property: "og:url", content: SITE },
+      { property: "og:url", content: `${SITE}/` },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: APP_NAME },
@@ -68,6 +76,7 @@ export const Route = createRootRoute({
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(WEBAPP_LD) },
+      { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
       ...(ANALYTICS_DOMAIN ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }] : []),
       // AdSense loads ONLY when ADS.enabled (src/config/ads.ts). Off by default.
       ...(ADS.enabled ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }] : []),

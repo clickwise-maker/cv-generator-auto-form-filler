@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
     meta: [
-      { title: "Refund Policy — CV Studio" },
-      { name: "description", content: "CV Studio refund policy in English and Hindi." },
+      { title: "Refund Policy — formzolo" },
+      { name: "description", content: "formzolo refund policy in English and Hindi." },
     ],
     links: [
       {

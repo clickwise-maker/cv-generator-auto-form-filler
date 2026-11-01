@@ -18,12 +18,12 @@ export type InfoContent = {
 };
 
 export function infoHead(c: InfoContent) {
-  const url = `https://cvstudio-app.onrender.com/${c.slug}`;
+  const url = `https://formzalo.com/${c.slug}`;
   return {
     meta: [
-      { title: `${c.title} — CV Studio` },
+      { title: `${c.title} — formzolo` },
       { name: "description", content: c.desc },
-      { property: "og:title", content: `CV Studio — ${c.title}` },
+      { property: "og:title", content: `formzolo — ${c.title}` },
       { property: "og:description", content: c.desc },
       { property: "og:url", content: url },
     ],

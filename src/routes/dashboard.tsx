@@ -8,7 +8,7 @@ import { ConsentGate } from "@/components/privacy/consent-ui";
 import { AdSlot } from "@/components/ads/ad-slot";
 
 export const Route = createFileRoute("/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard · CV Studio" }] }),
+  head: () => ({ meta: [{ title: "Dashboard · formzolo" }] }),
   component: DashboardPage,
 });
 

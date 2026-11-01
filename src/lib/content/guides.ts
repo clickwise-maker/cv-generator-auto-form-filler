@@ -4,4 +4,4 @@ import data from "@/content/guides/en.json";
 export type Guide = { slug: string; title: string; desc: string; lead: string; sections: [string, string[]][] };
 export const GUIDES = data as unknown as Guide[];
 export const guideBySlug = (slug: string) => GUIDES.find((g) => g.slug === slug);
-export const SITE = "https://cvstudio-app.onrender.com";
+export const SITE = "https://formzalo.com";
