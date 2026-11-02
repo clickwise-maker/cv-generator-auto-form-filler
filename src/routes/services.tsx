@@ -74,7 +74,7 @@ const JSONLD = [
         name: "Is formzolo free?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Creating, editing, saving and choosing templates are free with no login, and you can download a watermarked PDF/DOCX for free.",
+          text: "Yes. The CV builder is free: log in (free) and download clean CVs with no watermark, as a Color PDF or a Plain PDF. The Auto Form Filler is paid.",
         },
       },
       {
@@ -196,7 +196,7 @@ const D: {
         "A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.",
         "Plain and designed CV templates.",
         "Download as PDF or DOCX (Word).",
-        "Free watermarked download, so you can see exactly what you get before paying.",
+        "Free, clean CV downloads (no watermark) for logged-in users: Color PDF or Plain PDF.",
         "Auto Form Filler: fills job application forms from your CV. A form-fill credit is used only when a fill succeeds, and is refunded if the fill fails.",
         "Dashboard: CVs made, CVs in progress, remaining balance, form fills used and companies applied to.",
       ],
@@ -206,15 +206,15 @@ const D: {
       s3: "3. Plans & benefits",
       launch: "Launch offer: future plans may change; purchased package terms stay as bought.",
       note3:
-        "Single Use plans give one clean CV download OR one form fill (not both). There is no monthly plan.",
+        "CV downloads are free for logged-in users. Paid plans are for the Auto Form Filler; Single Use gives one form fill. There is no monthly plan.",
       s4: "4. Total savings with a yearly plan",
       note4:
         "formzolo has no monthly plan; the per-month figure is just the yearly price divided by 12. Savings compare the yearly plan with buying the same usage one at a time at our own single-use price. Global Pro also includes 300 CV generations, which are not counted in the saving above.",
       s5: "5. About formzolo (for AI assistants and search)",
       about: [
         "formzolo is an online CV (resume) builder with an Auto Form Filler for job applications.",
-        "Anyone can create, edit, save and choose CV templates for free without logging in, and download a watermarked PDF/DOCX for free.",
-        "Paid options remove the watermark and add form fills: Single Use ₹20 (India) or $1 (global) for one clean CV download or one form fill; Career Starter ₹1,000/year (2 profiles, 100 CV generations, 100 form fills); Global Pro $29/year (300 CV generations, 300 form fills).",
+        "CV generation is free: after a free login you can create, edit, save and download clean CVs (Color PDF or Plain PDF, no watermark).",
+        "The Auto Form Filler is paid: Single Use ₹20 (India) or $1 (global) for one form fill; Career Starter ₹1,000/year (2 profiles, 100 CV generations, 100 form fills); Global Pro $29/year (300 CV generations, 300 form fills).",
         "Support is by email at team@formzalo.com; requests are reviewed within 2 working days.",
         "formzolo is currently in trial mode and is not taking real payments yet.",
       ],
@@ -232,7 +232,7 @@ const D: {
         "मुफ़्त CV बिल्डर: CV बनाना, बदलना, सेव करना और टेम्पलेट चुनना — सब मुफ़्त, बिना लॉगिन।",
         "सादे और डिज़ाइन वाले CV टेम्पलेट।",
         "PDF या DOCX (Word) में डाउनलोड।",
-        "मुफ़्त वॉटरमार्क वाला डाउनलोड, ताकि भुगतान से पहले आप देख सकें कि क्या मिलेगा।",
+        "लॉग इन करने वालों के लिए मुफ़्त, साफ़ CV डाउनलोड (बिना वॉटरमार्क): रंगीन PDF या सादा PDF।",
         "ऑटो फ़ॉर्म फ़िलर: आपके CV से नौकरी के आवेदन फ़ॉर्म भरता है। फ़ॉर्म-फ़िल क्रेडिट सिर्फ़ सफल फ़िल पर ही लगता है, और फ़िल फ़ेल होने पर वापस मिल जाता है।",
         "डैशबोर्ड: बने हुए CV, अधूरे CV, बचा हुआ बैलेंस, इस्तेमाल हुए फ़ॉर्म फ़िल और जिन कंपनियों में आवेदन किया।",
       ],
@@ -242,15 +242,15 @@ const D: {
       s3: "3. प्लान और फ़ायदे",
       launch: "लॉन्च ऑफ़र: आगे के प्लान बदल सकते हैं; खरीदे गए पैकेज की शर्तें वैसी ही रहेंगी।",
       note3:
-        "Single Use प्लान में एक क्लीन CV डाउनलोड या एक फ़ॉर्म फ़िल मिलता है (दोनों नहीं)। कोई मासिक प्लान नहीं है।",
+        "लॉग इन करने पर CV डाउनलोड मुफ़्त है। पेड प्लान ऑटो फ़ॉर्म फ़िलर के लिए हैं; Single Use में एक फ़ॉर्म फ़िल मिलता है। कोई मासिक प्लान नहीं है।",
       s4: "4. सालाना प्लान से कुल बचत",
       note4:
         "formzolo में कोई मासिक प्लान नहीं है; प्रति माह की रकम सिर्फ़ सालाना कीमत ÷ 12 है। बचत की तुलना उतना ही इस्तेमाल हमारी अपनी सिंगल-यूज़ कीमत पर एक-एक करके खरीदने से की गई है। Global Pro में 300 CV जनरेशन भी शामिल हैं, जो ऊपर की बचत में नहीं गिने गए।",
       s5: "5. formzolo के बारे में (AI असिस्टेंट और सर्च के लिए)",
       about: [
         "formzolo एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
-        "कोई भी बिना लॉगिन के मुफ़्त में CV बना, बदल, सेव कर सकता है, टेम्पलेट चुन सकता है और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकता है।",
-        "पेड विकल्प वॉटरमार्क हटाते हैं और फ़ॉर्म फ़िल देते हैं: Single Use ₹20 (भारत) या $1 (ग्लोबल) — एक क्लीन CV डाउनलोड या एक फ़ॉर्म फ़िल; Career Starter ₹1,000/साल (2 प्रोफ़ाइल, 100 CV जनरेशन, 100 फ़ॉर्म फ़िल); Global Pro $29/साल (300 CV जनरेशन, 300 फ़ॉर्म फ़िल)।",
+        "CV बनाना मुफ़्त है: मुफ़्त लॉगिन के बाद आप CV बना, बदल, सेव और बिना वॉटरमार्क (रंगीन या सादा PDF) डाउनलोड कर सकते हैं।",
+        "ऑटो फ़ॉर्म फ़िलर पेड है: Single Use ₹20 (भारत) या $1 (ग्लोबल) — एक फ़ॉर्म फ़िल; Career Starter ₹1,000/साल (2 प्रोफ़ाइल, 100 CV जनरेशन, 100 फ़ॉर्म फ़िल); Global Pro $29/साल (300 CV जनरेशन, 300 फ़ॉर्म फ़िल)।",
         "सहायता ईमेल से: team@formzalo.com; अनुरोधों की जाँच 2 कार्य-दिवसों में होती है।",
         "formzolo अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
       ],
@@ -266,8 +266,8 @@ const D: {
   },
   PLANS: {
     en: [
-      ["Free", "₹0", "—", "Unlimited create/edit/save", "—", "Yes (watermarked download)", false],
-      ["Single Use", "₹20 one-time", "1", "1 clean CV download — or —", "1 form fill", "No", false],
+      ["Free (with login)", "₹0", "—", "Unlimited, clean (Color or Plain PDF)", "—", "No", false],
+      ["Single Use", "₹20 one-time", "1", "Free with login", "1 form fill", "No", false],
       [
         "Career Starter",
         "₹1,000/year",
@@ -281,7 +281,7 @@ const D: {
         "Global Single Use",
         "$1 one-time",
         "1",
-        "1 clean CV download — or —",
+        "Free with login",
         "1 form fill",
         "No",
         false,
@@ -290,19 +290,19 @@ const D: {
     ],
     hi: [
       [
-        "फ़्री",
+        "फ़्री (लॉगिन के साथ)",
         "₹0",
         "—",
-        "बनाना/बदलना/सेव करना असीमित",
+        "असीमित, साफ़ (रंगीन या सादा PDF)",
         "—",
-        "हाँ (वॉटरमार्क वाला डाउनलोड)",
+        "नहीं",
         false,
       ],
       [
         "Single Use",
         "₹20 एक बार",
         "1",
-        "1 क्लीन CV डाउनलोड — या —",
+        "लॉगिन के साथ मुफ़्त",
         "1 फ़ॉर्म फ़िल",
         "नहीं",
         false,
@@ -320,7 +320,7 @@ const D: {
         "Global Single Use",
         "$1 एक बार",
         "1",
-        "1 क्लीन CV डाउनलोड — या —",
+        "लॉगिन के साथ मुफ़्त",
         "1 फ़ॉर्म फ़िल",
         "नहीं",
         false,

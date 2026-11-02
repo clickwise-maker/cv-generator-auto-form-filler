@@ -37,10 +37,10 @@ const CONTENT: Lang[] = [
     trial: "Note: formzolo is currently in trial mode. No real payments are being taken yet.",
     sections: [
       {
-        title: "1. ₹20 one-time clean download (no watermark)",
+        title: "1. ₹20 / $1 Single Use form fill",
         items: [
-          "You can always try the free watermarked download first, so you see exactly what you will get.",
-          "If you paid ₹20 and the PDF/DOCX does not generate, or the download fails because of a technical error on our side, you get a full refund.",
+          "CV downloads are free (no watermark) for logged-in users, so there is nothing to refund for them.",
+          "If you paid ₹20 / $1 and the form fill fails because of a technical error on our side, the credit is returned or you get a full refund.",
         ],
       },
       {

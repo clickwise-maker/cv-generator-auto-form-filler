@@ -40,6 +40,10 @@ export function configFromEnv(env: PaymentEnv): ServiceConfig {
   let live: PaymentProvider | null = null;
   if (!trialMode && env.PAYMENT_PROVIDER === "razorpay" && env.RAZORPAY_KEY_ID && env.RAZORPAY_KEY_SECRET && env.RAZORPAY_WEBHOOK_SECRET) {
     live = new RazorpayProvider(env.RAZORPAY_KEY_ID, env.RAZORPAY_KEY_SECRET, env.RAZORPAY_WEBHOOK_SECRET);
+  } else if (trialMode && env.PAYMENT_PROVIDER === "razorpay" && env.RAZORPAY_KEY_ID?.startsWith("rzp_test_") && env.RAZORPAY_KEY_SECRET && env.RAZORPAY_WEBHOOK_SECRET) {
+    // Trial mode + Razorpay SANDBOX keys only (rzp_test_…): real checkout UI, no real money.
+    // A live key (rzp_live_…) is never used while TRIAL_MODE is on.
+    live = new RazorpayProvider(env.RAZORPAY_KEY_ID, env.RAZORPAY_KEY_SECRET, env.RAZORPAY_WEBHOOK_SECRET);
   }
   const simulated = trialMode && !production ? new SimulatedProvider(env.SIMULATED_PAYMENT_SECRET || randomBytes(32).toString("hex")) : null;
   return { trialMode, production, priceMinor: EXPORT_PRICE_MINOR, currency: EXPORT_CURRENCY, policy, maxDownloads, live, simulated };
@@ -88,7 +92,7 @@ export class PaymentService {
     if (this.cfg.simulated) {
       return { ...base, mode: "test", provider: "simulated", message: "TEST MODE — simulated payment. No money is charged and test unlocks never count as real purchases." };
     }
-    return { ...base, mode: "unavailable", provider: null, message: "Paid clean exports are not yet available. You can keep editing and download the watermarked preview for free." };
+    return { ...base, mode: "unavailable", provider: null, message: "Paid form-filler plans are not yet available. CV downloads stay free for logged-in users." };
   }
 
   /** Create (or idempotently reuse) an order for this CV. Amount/currency come from server config only. */

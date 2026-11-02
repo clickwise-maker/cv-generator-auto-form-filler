@@ -5,7 +5,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
-import { ADS, adsenseScriptSrc } from "@/config/ads";
+import { ADS, ADSENSE_CLIENT, adsenseScriptSrc } from "@/config/ads";
 
 import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
 import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
@@ -67,6 +67,7 @@ export const Route = createRootRoute({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
+        ...(ADS.enabled ? [{ name: "google-adsense-account", content: ADSENSE_CLIENT }] : []),
         { name: "keywords", content: KEYWORDS },
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
@@ -95,7 +96,7 @@ export const Route = createRootRoute({
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
-        // AdSense loads ONLY when ADS.enabled (src/config/ads.ts). Off by default.
+        // AdSense loads ONLY when VITE_ADSENSE_CLIENT is a valid ca-pub id (src/config/ads.ts). Off by default.
         ...(ADS.enabled
           ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }]
           : []),
@@ -126,7 +127,7 @@ export const Route = createRootRoute({
         <noscript>
           <p>
             formzolo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
-            free watermarked download and an Auto Form Filler for job applications. Single Use
+            free clean CV download (Color or Plain PDF) after login, and a paid Auto Form Filler for job applications. Single Use
             ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support:
             team@formzalo.com (reviewed within 2 working days).{" "}
             <a href="/services">Services &amp; Plans</a> ·{" "}

@@ -8,7 +8,7 @@
   [
    "Is formzolo free?",
    [
-    "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
+    "Yes. CV generation is free: after a free login you can download clean CVs (Color PDF or Plain PDF) with no watermark. The Auto Form Filler is paid: ₹20 / $1 per form fill, or a yearly plan (see Services & Plans)."
    ]
   ],
   [
@@ -32,7 +32,7 @@
   [
    "What does the free download include?",
    [
-    "The full CV with a watermark, so you can see exactly what you get before paying."
+    "The full CV with no watermark, as a Color PDF or a Plain PDF (black and white). You need a free login."
    ]
   ],
   [
@@ -70,7 +70,7 @@
   [
    "क्या formzolo मुफ़्त है?",
    [
-    "हाँ। CV बनाना, एडिट करना, सेव करना और टेम्पलेट चुनना मुफ़्त है, और वॉटरमार्क वाला PDF/DOCX मुफ़्त डाउनलोड कर सकते हैं। क्लीन डाउनलोड या एक फ़ॉर्म फ़िल ₹20 / $1 का है, या आप सालाना प्लान ले सकते हैं (Services & Plans देखें)।"
+    "हाँ। CV बनाना मुफ़्त है: मुफ़्त लॉगिन के बाद आप बिना वॉटरमार्क के साफ़ CV (रंगीन PDF या सादा PDF) डाउनलोड कर सकते हैं। ऑटो फ़ॉर्म फ़िलर पेड है: हर फ़ॉर्म फ़िल ₹20 / $1, या सालाना प्लान (Services & Plans देखें)।"
    ]
   ],
   [
@@ -94,7 +94,7 @@
   [
    "मुफ़्त डाउनलोड में क्या मिलता है?",
    [
-    "वॉटरमार्क के साथ पूरा CV, ताकि भुगतान से पहले आप देख सकें कि क्या मिलेगा।"
+    "बिना वॉटरमार्क के पूरा CV, रंगीन PDF या सादा (श्वेत-श्याम) PDF में। इसके लिए मुफ़्त लॉगिन चाहिए।"
    ]
   ],
   [
@@ -138,7 +138,7 @@
     "name": "Is formzolo free?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Yes. Creating, editing, saving and choosing templates are free, and you can download a watermarked PDF/DOCX for free. A clean download or a form fill costs ₹20 / $1 each, or you can use a yearly plan (see Services & Plans)."
+     "text": "Yes. CV generation is free: after a free login you can download clean CVs (Color PDF or Plain PDF) with no watermark. The Auto Form Filler is paid: ₹20 / $1 per form fill, or a yearly plan (see Services & Plans)."
     }
    },
    {
@@ -170,7 +170,7 @@
     "name": "What does the free download include?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "The full CV with a watermark, so you can see exactly what you get before paying."
+     "text": "The full CV with no watermark, as a Color PDF or a Plain PDF (black and white). You need a free login."
     }
    },
    {
