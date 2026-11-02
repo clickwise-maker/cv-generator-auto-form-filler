@@ -367,8 +367,25 @@ function drawSignature(pen: Pen, profile: Profile, settings: Settings) {
   pen.y = top + 26;
 }
 
-export function buildPdf(profile: Profile, settings: Settings): jsPDF {
+export type PdfStyle = "color" | "plain";
+
+/**
+ * Plain (black-and-white) mode: same layout and content, but every text colour
+ * becomes black, filled colour bands become white and rules become black/light grey.
+ * Printer-friendly, simple styling.
+ */
+function makePlain(doc: jsPDF) {
+  const lum = (c: unknown[]) => (c.length >= 3 && c.every((v) => typeof v === "number") ? 0.299 * (c[0] as number) + 0.587 * (c[1] as number) + 0.114 * (c[2] as number) : 0);
+  const d = doc as unknown as Record<string, (...a: unknown[]) => unknown>;
+  const text = d.setTextColor.bind(doc), fill = d.setFillColor.bind(doc), draw = d.setDrawColor.bind(doc);
+  d.setTextColor = () => text(0, 0, 0);
+  d.setFillColor = () => fill(255, 255, 255);
+  d.setDrawColor = (...c: unknown[]) => (lum(c) > 190 ? draw(200, 200, 200) : draw(0, 0, 0));
+}
+
+export function buildPdf(profile: Profile, settings: Settings, style: PdfStyle = "color"): jsPDF {
   const doc = new jsPDF({ unit: "mm", format: settings.paper });
+  if (style === "plain") makePlain(doc);
   const pen = new Pen(doc);
   if (settings.template === "consulate") drawConsulate(pen, profile, settings);
   else if (settings.template === "atlas") drawAtlas(pen, profile, settings);
@@ -422,4 +439,9 @@ export function buildPreviewPdf(profile: Profile, settings: Settings, lines: rea
 
 export function downloadPreviewPdf(profile: Profile, settings: Settings, lines: readonly string[]) {
   buildPreviewPdf(profile, settings, lines).save(`${fileBase(profile, settings)}-PREVIEW.pdf`);
+}
+
+/** Clean CV PDF (no watermark), built in the browser for signed-in users. Free. */
+export function downloadCvPdf(profile: Profile, settings: Settings, style: PdfStyle = "color") {
+  buildPdf(profile, settings, style).save(`${fileBase(profile, settings)}${style === "plain" ? "-plain" : ""}.pdf`);
 }

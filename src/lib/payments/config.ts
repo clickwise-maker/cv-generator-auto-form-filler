@@ -92,7 +92,7 @@ export const PLANS: readonly Plan[] = [
     formFills: 1,
     companyLimit: 0,
     singleUse: true,
-    bullets: ["One clean CV export or one form fill", "PDF and Word"],
+    bullets: ["One Auto Form Filler use"],
   },
   {
     id: "career_starter",
@@ -105,7 +105,7 @@ export const PLANS: readonly Plan[] = [
     formFills: 100,
     companyLimit: 100,
     singleUse: false,
-    bullets: ["1 year", "2 profiles", "100 CV generations", "100 form-filler uses (up to 100 companies, counted within those 100 fills)"],
+    bullets: ["1 year", "2 profiles", "100 form-filler uses (up to 100 companies, counted within those 100 fills)"],
   },
   {
     id: "global_single",
@@ -118,7 +118,7 @@ export const PLANS: readonly Plan[] = [
     formFills: 1,
     companyLimit: 0,
     singleUse: true,
-    bullets: ["One clean CV export or one form fill", "PDF and Word"],
+    bullets: ["One Auto Form Filler use"],
   },
   {
     id: "global_pro",

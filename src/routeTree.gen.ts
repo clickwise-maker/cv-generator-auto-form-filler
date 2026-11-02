@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdsDottxtRouteImport } from './routes/ads[.]txt'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as NextStepsRouteImport } from './routes/next-steps'
@@ -36,6 +37,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdsDottxtRoute = AdsDottxtRouteImport.update({
+  id: '/ads.txt',
+  path: '/ads.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -122,6 +128,7 @@ const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
@@ -185,6 +194,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
@@ -246,6 +258,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdsDottxtRoute: typeof AdsDottxtRoute
   DashboardRoute: typeof DashboardRoute
   FaqRoute: typeof FaqRoute
   NextStepsRoute: typeof NextStepsRoute
@@ -278,6 +291,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ads.txt': {
+      id: '/ads.txt'
+      path: '/ads.txt'
+      fullPath: '/ads.txt'
+      preLoaderRoute: typeof AdsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -398,6 +418,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdsDottxtRoute: AdsDottxtRoute,
   DashboardRoute: DashboardRoute,
   FaqRoute: FaqRoute,
   NextStepsRoute: NextStepsRoute,
