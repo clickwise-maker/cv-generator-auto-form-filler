@@ -5,7 +5,6 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
-import { ADS, ADSENSE_CLIENT, adsenseScriptSrc } from "@/config/ads";
 
 import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
 import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
@@ -96,10 +95,11 @@ export const Route = createRootRoute({
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
-        // AdSense loads ONLY when VITE_ADSENSE_CLIENT is a valid ca-pub id (src/config/ads.ts). Off by default.
-        ...(ADS.enabled
-          ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }]
-          : []),
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5439325240008654",
+          async: true,
+          crossOrigin: "anonymous" as const,
+        },
       ],
       links: [
         { rel: "canonical", href: url },
