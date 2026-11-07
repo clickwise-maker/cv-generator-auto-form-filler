@@ -51,3 +51,22 @@ No third-party mentions exist anywhere today, so ChatGPT/Gemini/Perplexity canno
 - PageSpeed scores (free API rate-limited during the audit)
 - Google indexing status (needs Search Console)
 - Competitor keywords (needs an Ahrefs/Semrush account)
+
+## Run 2 - 7 Nov 2026 (logins + live data attempt)
+
+Done:
+- Google Trends (India, last 3 months, no login needed): "free resume" avg 53 / peak 100 (week of 20 Sep), "resume builder" avg 20, "cv maker" avg 14. Rising queries map 1:1 to features we already ship: "free resume builder online without payment", "free ai resume builder and download", "free cv maker and download pdf", "free resume templates download in word format", "europass cv maker". Action: first 5 guides should target exactly these phrases.
+- Homepage weight probe (PSI API quota exhausted for the day): TTFB ~0.14s, HTML 27.4KB, only 1 render-blocking script (Cloudflare's own beacon), 2 stylesheets, 18 preloads, 1 image missing width/height, 2 JSON-LD blocks. Performance looks structurally fine; real Lighthouse scores still pending.
+- Confirmed live homepage still has no GSC meta, no GA4, no Clarity.
+
+Blocked / pending logins (per your rule, login + OTP steps go through you, not around you):
+- Google Search Console: reached the sign-in step; the automated browser could not pass it this run. Retry: sign in with the saved Google account, then add property https://formzalo.com/ (URL-prefix; HTML meta or file verification) or domain property (DNS TXT at Domain India).
+- Bing Webmaster: sign-in supports Google account; after GSC exists we can import the site instead of re-verifying.
+- Microsoft Clarity: needs a Google or Microsoft sign-in, then the tracking script goes into the site shell.
+- Ahrefs Webmaster Tools: free signup; verifies formzalo.com with its own meta tag (needs deploy access).
+- Keyword Planner: needs a Google Ads account; stop if it demands billing/payment setup.
+- HubSpot AI Search Grader: form-based, no real account; run when the browser session is healthy.
+- Product Hunt / SaaSHub: Phase 5 launch steps; accounts only when we actually list.
+
+Deploy-source mismatch to resolve first (blocks every meta-tag install):
+- Live formzalo.com serves llms.txt titled "formzolo (formerly CV Studio)"; repo main's public/llms.txt still says "CV Studio". The live build is NOT repo main. Before touching verification meta tags, confirm which branch/repo deploys formzalo.com (Render "cvstudio-app" is referenced in __root.tsx SITE constant; DNS sits behind Cloudflare).
