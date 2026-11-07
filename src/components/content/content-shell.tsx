@@ -1,3 +1,4 @@
+import { LegacyBreadcrumbs } from "./seo-breadcrumbs";
 import type { ReactNode } from "react";
 import { tr } from "@/lib/i18n/i18n";
 import { SiteHeader } from "@/components/brand";
@@ -8,7 +9,7 @@ export function ContentShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-paper text-ink">
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
+      <main className="mx-auto max-w-5xl px-4 py-10"><LegacyBreadcrumbs/>{children}</main>
       <SiteFooter />
     </div>
   );

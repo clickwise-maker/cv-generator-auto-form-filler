@@ -137,5 +137,6 @@
   "privacyLabel": "سياسة الخصوصية (بالإنجليزية)",
   "termsLabel": "الشروط (بالإنجليزية)",
   "navLabel": "التنقل الرئيسي",
-  "chooseTemplate": "استخدم هذا القالب"
+  "chooseTemplate": "استخدم هذا القالب",
+  "breadcrumbLabel": "مسار التنقل"
 }

@@ -14,3 +14,5 @@ import id from '@/content/public-locales/id.json';
 export type PublicCopy = typeof en;
 export const PUBLIC_COPY: Record<PublicLocale,PublicCopy> = {en,hi,pl,ar,es,"zh-cn":zh_cn,ru,de,fr,pt,ja,id};
 export function publicPageCopy(match:PublicMatch){return PUBLIC_COPY[match.locale].pages[match.page];}
+
+export function publicBreadcrumbs(locale:PublicLocale,page:PublicMatch["page"]){const copy=PUBLIC_COPY[locale];return [{name:copy.nav.home,item:`https://formzalo.com/${locale}/`},...(page!=="home"?[{name:copy.nav[page],item:`https://formzalo.com/${locale}/${page}/`}]:[])];}

@@ -137,5 +137,6 @@
   "privacyLabel": "Privacidad (inglés)",
   "termsLabel": "Condiciones (inglés)",
   "navLabel": "Navegación principal",
-  "chooseTemplate": "Usar esta plantilla"
+  "chooseTemplate": "Usar esta plantilla",
+  "breadcrumbLabel": "Ruta de navegación"
 }

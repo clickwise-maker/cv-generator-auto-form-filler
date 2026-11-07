@@ -137,5 +137,6 @@
       "answer": "Status publik pada 7 November 2026 menunjukkan pembayaran tidak tersedia, mode uji coba aktif, dan tanpa penyedia. Tidak ada klaim pembelian nyata yang berhasil."
     }
   ],
-  "locale": "id"
+  "locale": "id",
+  "breadcrumbLabel": "Jejak navigasi"
 }

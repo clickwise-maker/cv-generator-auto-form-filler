@@ -137,5 +137,6 @@
       "answer": "Le statut public du 7 novembre 2026 indiquait un paiement indisponible, un mode d’essai actif et aucun prestataire. Aucun achat réel réussi n’est revendiqué."
     }
   ],
-  "locale": "fr"
+  "locale": "fr",
+  "breadcrumbLabel": "Fil d’Ariane"
 }

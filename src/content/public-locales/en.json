@@ -137,5 +137,6 @@
   "privacyLabel": "Privacy policy (English)",
   "termsLabel": "Terms (English)",
   "navLabel": "Main navigation",
-  "chooseTemplate": "Use this template"
+  "chooseTemplate": "Use this template",
+  "breadcrumbLabel": "Breadcrumb"
 }

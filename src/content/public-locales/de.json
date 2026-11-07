@@ -137,5 +137,6 @@
       "answer": "Der öffentliche Status vom 7. November 2026 meldete Bezahlung nicht verfügbar, Testmodus aktiv und keinen Zahlungsanbieter. Ein erfolgreicher realer Kauf wird nicht behauptet."
     }
   ],
-  "locale": "de"
+  "locale": "de",
+  "breadcrumbLabel": "Navigationspfad"
 }

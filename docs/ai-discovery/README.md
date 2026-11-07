@@ -89,3 +89,12 @@ See [LOCALIZATION.md](LOCALIZATION.md): thirty request-local public pages (en/hi
 ### Remaining-seven extension prepared
 
 Current source now covers all twelve public-content locale collections (72 translated pages +12 existing English content pages =84 sitemap URLs). The first-five subsection above records the earlier batch. [ALL_LOCALES.md](ALL_LOCALES.md) records the extension, BCP47 Chinese mapping, editor-language fallback, tests and remaining review gates. No production release or new sitemap submission occurred. Native-language review and browser/mobile/a11y/performance/authenticated E2E remain pending. Parent later reports Bing signed in, but its manual www property remained unverified and no Bing submission was confirmed as of7 November2026 23:14 IST; account actions remain outside this source batch.
+
+## Current review package (not live)
+
+- [Reusable research + exact implementation reference](reusable-seo/README.md)
+- [Technical SEO/schema/disabled IndexNow](TECHNICAL_SEO.md)
+- [138 targeted tests and manual gaps](TEST_REPORT.md)
+- [LaunchChecklist and WorldwidePromotionOutline — HOLD/plan only](LAUNCH_PLAN.md)
+- [Deployment operator gates](DEPLOYMENT.md) / [Git diff summary](GIT_DIFF_SUMMARY.md)
+- [Actual account/submission observations](submissions.json): Google live102 differs from unpublished84.

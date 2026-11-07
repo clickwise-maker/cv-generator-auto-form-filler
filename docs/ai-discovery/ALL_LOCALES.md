@@ -1,3 +1,5 @@
+> Historical all12 batch proof at166661b:127 targeted tests. Current Phase6 supersedes FAQPage markup with visible FAQ only (official2026 rich-result retirement), adds factual graph/breadcrumb/social checks and138 targeted tests. See TEST_REPORT.md and TECHNICAL_SEO.md. Native/browser/release gates remain open.
+
 # Phase 4 — twelve public-content locales, review branch only
 
 This extends the preserved [first-five batch](LOCALIZATION.md), not a fresh audit or deployment. Source base remains live5ccb8b4 on feature/free-cv-paid-filler-ads; PR5 stays on feature/global-ai-discovery-20261107, unmerged. PR3/4 are not merged or overwritten.
