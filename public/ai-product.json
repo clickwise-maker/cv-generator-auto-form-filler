@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-07T17:26:14.162007+00:00",
+  "canonicalOrigin": "https://formzalo.com",
+  "brand": {
+    "displayName": "formzolo",
+    "aliases": [
+      "FormZalo",
+      "formzalo",
+      "CV Studio"
+    ],
+    "note": "Existing product branding is retained; aliases do not rename the application."
+  },
+  "positioning": "A sign-in CV builder with free clean Color and Plain PDF downloads and local document-to-profile field-mapping assistance.",
+  "freeCv": {
+    "signInRequiredForEditor": true,
+    "signInRequiredForDownload": true,
+    "formats": [
+      "pdf"
+    ],
+    "styles": [
+      "color",
+      "plain"
+    ],
+    "watermark": false,
+    "templates": [
+      "meridian",
+      "consulate",
+      "atlas"
+    ],
+    "numericDailyQuota": null,
+    "quotaNote": "No numerical daily quota was found in the direct browser PDF path. This is not an unlimited-service promise. Device resources and input limits apply.",
+    "wordDownloadVerifiedFree": false
+  },
+  "documentReader": {
+    "processing": "On-device PDF text extraction, OCR and heuristic field proposals; OCR resources may need network downloads.",
+    "acceptedInputs": [
+      "PDF",
+      "supported images including PNG and JPEG",
+      "plain text including TXT, Markdown and CSV"
+    ],
+    "maxInputBytes": 12582912,
+    "scannedPdfFallbackMaxPages": 2,
+    "ocrLanguageCodes": [
+      "eng"
+    ],
+    "note": "UI translation support does not establish multilingual OCR or full-document scanned-PDF processing."
+  },
+  "formAssistance": {
+    "availableWorkflow": [
+      "detect requested fields",
+      "propose profile values from document text",
+      "review and apply selected values",
+      "ask for missing details",
+      "edit shared profile fields"
+    ],
+    "arbitraryThirdPartySubmissionVerified": false,
+    "automaticJobApplicationVerified": false,
+    "arbitraryPdfWritebackVerified": false,
+    "paidCreditUiIntegrationVerified": false,
+    "note": "Local field mapping is not a promise to submit external applications or write back into any uploaded PDF. Paid server credit APIs exist; the inspected local UI did not establish the completed paid-fill integration."
+  },
+  "generativeAi": {
+    "activeModelIntegrationVerified": false,
+    "note": "No active generative-model integration was established by the source audit. Do not advertise verified AI resume writing or unrestricted AI form automation."
+  },
+  "paidCheckout": {
+    "mode": "unavailable",
+    "trialMode": true,
+    "provider": null,
+    "observedAt": "2026-11-07T17:26:14.162007+00:00",
+    "sourceUrl": "https://formzalo.com/api/paid-export/status",
+    "note": "Paid form-filler plans exist in source, but public checkout was unavailable at the recorded observation. Legacy paid-export limits/prices are not free-PDF limits."
+  },
+  "languages": {
+    "uiLocaleIds": [
+      "en",
+      "en-GB",
+      "hi",
+      "ar",
+      "zh-CN",
+      "es-ES",
+      "fr-FR",
+      "ja"
+    ],
+    "baseLanguageCount": 7,
+    "cvHeadingLocaleIds": [
+      "en",
+      "fr",
+      "de",
+      "es"
+    ],
+    "unicodePdfValidation": "not_completed",
+    "ssrLocaleParity": "incomplete",
+    "note": "Non-English metadata and client translations exist; raw SSR body/html language parity is incomplete. Output-language and OCR capability must be tested separately."
+  },
+  "support": {
+    "publicEmail": "team@formzalo.com",
+    "publicContactUrl": "https://formzalo.com/services",
+    "mailboxDeliverabilityTested": false,
+    "note": "Email is published on the public services page; no email was sent and inbox existence/deliverability was not tested."
+  },
+  "publicPaths": [
+    "/",
+    "/services",
+    "/refund-policy",
+    "/privacy-policy",
+    "/privacy",
+    "/terms",
+    "/faq",
+    "/about",
+    "/guides",
+    "/templates",
+    "/guides/cv-for-freshers",
+    "/guides/cv-vs-resume",
+    "/guides/government-job-forms",
+    "/guides/cover-letter",
+    "/guides/form-mistakes",
+    "/guides/photo-signature-specs",
+    "/guides/ats-friendly-cv"
+  ],
+  "sitemap": {
+    "path": "/sitemap.xml",
+    "localeIds": [
+      "en",
+      "en-GB",
+      "ar",
+      "es-ES",
+      "fr-FR",
+      "hi"
+    ],
+    "hreflangTags": [
+      "en-IN",
+      "en-GB",
+      "ar-SA",
+      "es-ES",
+      "fr-FR",
+      "hi-IN"
+    ],
+    "expectedUrlCount": 102,
+    "note": "Existing six-locale coverage retained pending SSR parity; ja/zh-CN and proposed directory routes are not added in Phase 3. Legacy lastmod values are not refreshed or independently freshness-certified.",
+    "existingContentSha256": "98632494f7fca910b32c5b6236be650789f7050718c96d110dd496345e8190f7"
+  },
+  "discoveryNotice": "These voluntary AI-readable assets do not guarantee discovery, crawling, indexing, retrieval, citation, ranking or recommendation. They are not a special Google ranking requirement.",
+  "evidence": {
+    "publicUrls": [
+      "https://formzalo.com/services",
+      "https://formzalo.com/api/paid-export/status"
+    ],
+    "sourceFiles": [
+      "src/components/landing/auth-gate.tsx",
+      "src/components/studio/preview-doc.tsx",
+      "src/lib/cv/read-document.ts",
+      "src/components/studio/scan-card.tsx",
+      "src/components/studio/form-filler.tsx",
+      "src/lib/i18n/i18n.ts",
+      "src/lib/payments/config.ts",
+      "src/routes/services.tsx"
+    ],
+    "note": "Public facts and source audit only. No customer records, credentials, payment or authenticated production E2E tests used."
+  }
+}

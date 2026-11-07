@@ -1,38 +1,53 @@
-# formzolo (formerly CV Studio)
+# formzolo — product facts
 
-> formzolo (formerly CV Studio) is an online CV (resume) builder with an Auto Form Filler for job applications. Free CV builder with no login, PDF/DOCX download, a free watermarked download, and paid single-use or yearly plans. Currently in trial mode: no real payments are taken yet.
+> A sign-in CV builder with free clean Color and Plain PDF downloads and local document-to-profile field-mapping assistance.
 
-## Key facts
-- A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.
-- Plain and designed CV templates.
-- Download as PDF or DOCX (Word).
-- Free watermarked download, so you can see exactly what you get before paying.
-- Auto Form Filler: fills job application forms from your CV. A form-fill credit is used only when a fill succeeds, and is refunded if the fill fails.
-- Dashboard: CVs made, CVs in progress, remaining balance, form fills used and companies applied to.
+Reviewed snapshot: 2026-11-07T17:26:14.162007+00:00. Existing brand aliases: FormZalo, formzalo, CV Studio.
 
-## Plans (launch offer; future plans may change, purchased package terms stay as bought)
-- Free: create, edit, save, choose templates; watermarked PDF/DOCX download.
-- Single Use: ₹20 one-time — one clean CV download OR one form fill.
-- Career Starter: ₹1,000/year (≈ ₹83/month) — 2 profiles, 100 CV generations, 100 form fills (up to 100 companies within those fills). Same usage at ₹20 each = ₹4,000, so it saves ₹3,000 (75%).
-- Global Single Use: $1 one-time — one clean CV download OR one form fill (form-fill credit used only on success).
-- Global Pro: $29/year (≈ $2.42/month) — 300 CV generations, 300 form fills. 300 fills at $1 = $300, so it saves $271 (≈ 90%).
-- No monthly plan.
+## Free CV builder
+- Sign-in is required for the editor and current free download UI.
+- Color PDF and Plain PDF downloads are free and have no watermark. Three templates: meridian, consulate, atlas.
+- The current free UI does not establish a free Word/DOCX download.
+- No numerical daily quota was found in the direct browser PDF path. This is not an unlimited-service promise. Device resources and input limits apply.
 
-## Support
-- Email: team@formzalo.com. Requests are reviewed within 2 working days. (Email only.)
+## Document reading and local form assistance
+- Input size limit: 12582912 bytes (12 MiB). Scanned-PDF OCR fallback reads at most 2 pages.
+- OCR is initialized with English (eng). PDF text/image/plain-text input is processed on-device; OCR resources may require network downloads.
+- Field detection, document-to-profile proposals, user review, missing-detail prompts and shared profile editing exist.
+- Arbitrary third-party job submission, automatic application completion and writing back into any uploaded PDF are not verified.
+- No active generative-model integration was established. AI resume writing is not a verified live capability.
 
-## Refunds
-- ₹20 single use: full refund if the download fails because of a technical error on our side.
-- Yearly plans: full refund within 7 days of purchase if unused; no refund once credits are used.
+## Paid plans and availability
+- At 2026-11-07T17:26:14.162007+00:00, public checkout reported mode=unavailable, trialMode=true, provider=null.
+- Paid form-filler plans exist in source; checkout availability must be rechecked before promotion. Legacy paid-export prices/download limits are not free-PDF limits.
 
-## Pages
+## Languages
+- Eight UI locale IDs across seven base languages: en, en-GB, hi, ar, zh-CN, es-ES, fr-FR, ja.
+- CV heading options are separate: en, fr, de, es. UI support is not proof of multilingual OCR or PDF glyph coverage.
+- Non-English metadata/client translations exist; raw SSR locale parity and Unicode PDF validation remain incomplete.
+- Existing sitemap covers six locale IDs; no twelve-language directory routing is implemented by these assets.
+
+## Contact
+- Published support contact: team@formzalo.com; https://formzalo.com/services. Mailbox deliverability was not tested; no email was sent.
+
+## Public pages
 - [Home](https://formzalo.com/)
-- [Services & Plans (English + Hindi)](https://formzalo.com/services)
-- [Refund Policy (English + Hindi)](https://formzalo.com/refund-policy)
-- [Privacy Policy (English + Hindi)](https://formzalo.com/privacy-policy)
-- [Terms & Conditions (English + Hindi)](https://formzalo.com/terms)
-- [FAQ (English + Hindi)](https://formzalo.com/faq)
-- [About & Contact (English + Hindi)](https://formzalo.com/about)
+- [services](https://formzalo.com/services)
+- [refund-policy](https://formzalo.com/refund-policy)
+- [privacy-policy](https://formzalo.com/privacy-policy)
+- [privacy](https://formzalo.com/privacy)
+- [terms](https://formzalo.com/terms)
+- [faq](https://formzalo.com/faq)
+- [about](https://formzalo.com/about)
+- [guides](https://formzalo.com/guides)
+- [templates](https://formzalo.com/templates)
+- [guides/cv-for-freshers](https://formzalo.com/guides/cv-for-freshers)
+- [guides/cv-vs-resume](https://formzalo.com/guides/cv-vs-resume)
+- [guides/government-job-forms](https://formzalo.com/guides/government-job-forms)
+- [guides/cover-letter](https://formzalo.com/guides/cover-letter)
+- [guides/form-mistakes](https://formzalo.com/guides/form-mistakes)
+- [guides/photo-signature-specs](https://formzalo.com/guides/photo-signature-specs)
+- [guides/ats-friendly-cv](https://formzalo.com/guides/ats-friendly-cv)
 
-## Privacy
-- The CV you type is saved in your browser's local storage on your device. For a clean (paid) download, CV content is sent to the server only to create the file; order records keep a hash of the CV, not its text.
+## Discovery limitation
+These voluntary AI-readable assets do not guarantee discovery, crawling, indexing, retrieval, citation, ranking or recommendation. They are not a special Google ranking requirement.

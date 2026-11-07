@@ -1,0 +1,72 @@
+# formzolo — product facts
+
+> A sign-in CV builder with free clean Color and Plain PDF downloads and local document-to-profile field-mapping assistance.
+
+Reviewed snapshot: 2026-11-07T17:26:14.162007+00:00. Existing brand aliases: FormZalo, formzalo, CV Studio.
+
+## Free CV builder
+- Sign-in is required for the editor and current free download UI.
+- Color PDF and Plain PDF downloads are free and have no watermark. Three templates: meridian, consulate, atlas.
+- The current free UI does not establish a free Word/DOCX download.
+- No numerical daily quota was found in the direct browser PDF path. This is not an unlimited-service promise. Device resources and input limits apply.
+
+## Document reading and local form assistance
+- Input size limit: 12582912 bytes (12 MiB). Scanned-PDF OCR fallback reads at most 2 pages.
+- OCR is initialized with English (eng). PDF text/image/plain-text input is processed on-device; OCR resources may require network downloads.
+- Field detection, document-to-profile proposals, user review, missing-detail prompts and shared profile editing exist.
+- Arbitrary third-party job submission, automatic application completion and writing back into any uploaded PDF are not verified.
+- No active generative-model integration was established. AI resume writing is not a verified live capability.
+
+## Paid plans and availability
+- At 2026-11-07T17:26:14.162007+00:00, public checkout reported mode=unavailable, trialMode=true, provider=null.
+- Paid form-filler plans exist in source; checkout availability must be rechecked before promotion. Legacy paid-export prices/download limits are not free-PDF limits.
+
+## Languages
+- Eight UI locale IDs across seven base languages: en, en-GB, hi, ar, zh-CN, es-ES, fr-FR, ja.
+- CV heading options are separate: en, fr, de, es. UI support is not proof of multilingual OCR or PDF glyph coverage.
+- Non-English metadata/client translations exist; raw SSR locale parity and Unicode PDF validation remain incomplete.
+- Existing sitemap covers six locale IDs; no twelve-language directory routing is implemented by these assets.
+
+## Contact
+- Published support contact: team@formzalo.com; https://formzalo.com/services. Mailbox deliverability was not tested; no email was sent.
+
+## Public pages
+- [Home](https://formzalo.com/)
+- [services](https://formzalo.com/services)
+- [refund-policy](https://formzalo.com/refund-policy)
+- [privacy-policy](https://formzalo.com/privacy-policy)
+- [privacy](https://formzalo.com/privacy)
+- [terms](https://formzalo.com/terms)
+- [faq](https://formzalo.com/faq)
+- [about](https://formzalo.com/about)
+- [guides](https://formzalo.com/guides)
+- [templates](https://formzalo.com/templates)
+- [guides/cv-for-freshers](https://formzalo.com/guides/cv-for-freshers)
+- [guides/cv-vs-resume](https://formzalo.com/guides/cv-vs-resume)
+- [guides/government-job-forms](https://formzalo.com/guides/government-job-forms)
+- [guides/cover-letter](https://formzalo.com/guides/cover-letter)
+- [guides/form-mistakes](https://formzalo.com/guides/form-mistakes)
+- [guides/photo-signature-specs](https://formzalo.com/guides/photo-signature-specs)
+- [guides/ats-friendly-cv](https://formzalo.com/guides/ats-friendly-cv)
+
+## Discovery limitation
+These voluntary AI-readable assets do not guarantee discovery, crawling, indexing, retrieval, citation, ranking or recommendation. They are not a special Google ranking requirement.
+## Detailed capability record
+
+Available local assistance steps: detect requested fields; propose profile values from document text; review and apply selected values; ask for missing details; edit shared profile fields.
+Local field mapping is not a promise to submit external applications or write back into any uploaded PDF. Paid server credit APIs exist; the inspected local UI did not establish the completed paid-fill integration.
+
+UI translation support does not establish multilingual OCR or full-document scanned-PDF processing.
+Non-English metadata and client translations exist; raw SSR body/html language parity is incomplete. Output-language and OCR capability must be tested separately.
+Existing six-locale coverage retained pending SSR parity; ja/zh-CN and proposed directory routes are not added in Phase 3. Legacy lastmod values are not refreshed or independently freshness-certified.
+
+## Evidence and currency
+Public observation URLs: https://formzalo.com/services, https://formzalo.com/api/paid-export/status.
+Source audit paths: src/components/landing/auth-gate.tsx, src/components/studio/preview-doc.tsx, src/lib/cv/read-document.ts, src/components/studio/scan-card.tsx, src/components/studio/form-filler.tsx, src/lib/i18n/i18n.ts, src/lib/payments/config.ts, src/routes/services.tsx.
+Public facts and source audit only. No customer records, credentials, payment or authenticated production E2E tests used.
+This document is generated from a dated factual snapshot, not live monitoring. Re-verify runtime availability before changing claims.
+
+## Crawling versus training
+Generated training policy defaults to allow, preserving the prior public decision. Every named allow group repeats the wildcard sensitive-path exclusions.
+Search, model training, user-initiated fetching and grounding are distinct. Google-Extended is a usage-control token covering training and some Gemini grounding, not a separate HTTP crawler or Google Search inclusion switch.
+robots.txt is not authentication, and a user-initiated fetcher may follow different robots behavior.
