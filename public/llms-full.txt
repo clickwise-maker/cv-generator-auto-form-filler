@@ -24,23 +24,48 @@ Reviewed snapshot: 2026-11-07T17:26:14.162007+00:00. Existing brand aliases: For
 ## Languages
 - Eight UI locale IDs across seven base languages: en, en-GB, hi, ar, zh-CN, es-ES, fr-FR, ja.
 - CV heading options are separate: en, fr, de, es. UI support is not proof of multilingual OCR or PDF glyph coverage.
-- Non-English metadata/client translations exist; raw SSR locale parity and Unicode PDF validation remain incomplete.
-- Existing sitemap covers six locale IDs; no twelve-language directory routing is implemented by these assets.
+- Five public content locales (en, hi, pl, ar, es) have independent SSR pages. The legacy editor language architecture and Unicode PDF validation remain separate.
+- The sitemap lists thirty active localized public pages and twelve existing English content pages. Seven later public locale collections are not implemented.
 
 ## Contact
 - Published support contact: team@formzalo.com; https://formzalo.com/services. Mailbox deliverability was not tested; no email was sent.
 
 ## Public pages
-- [Home](https://formzalo.com/)
-- [services](https://formzalo.com/services)
+- [en/](https://formzalo.com/en/)
+- [en/templates/](https://formzalo.com/en/templates/)
+- [en/services/](https://formzalo.com/en/services/)
+- [en/faq/](https://formzalo.com/en/faq/)
+- [en/about/](https://formzalo.com/en/about/)
+- [en/help/](https://formzalo.com/en/help/)
+- [hi/](https://formzalo.com/hi/)
+- [hi/templates/](https://formzalo.com/hi/templates/)
+- [hi/services/](https://formzalo.com/hi/services/)
+- [hi/faq/](https://formzalo.com/hi/faq/)
+- [hi/about/](https://formzalo.com/hi/about/)
+- [hi/help/](https://formzalo.com/hi/help/)
+- [pl/](https://formzalo.com/pl/)
+- [pl/templates/](https://formzalo.com/pl/templates/)
+- [pl/services/](https://formzalo.com/pl/services/)
+- [pl/faq/](https://formzalo.com/pl/faq/)
+- [pl/about/](https://formzalo.com/pl/about/)
+- [pl/help/](https://formzalo.com/pl/help/)
+- [ar/](https://formzalo.com/ar/)
+- [ar/templates/](https://formzalo.com/ar/templates/)
+- [ar/services/](https://formzalo.com/ar/services/)
+- [ar/faq/](https://formzalo.com/ar/faq/)
+- [ar/about/](https://formzalo.com/ar/about/)
+- [ar/help/](https://formzalo.com/ar/help/)
+- [es/](https://formzalo.com/es/)
+- [es/templates/](https://formzalo.com/es/templates/)
+- [es/services/](https://formzalo.com/es/services/)
+- [es/faq/](https://formzalo.com/es/faq/)
+- [es/about/](https://formzalo.com/es/about/)
+- [es/help/](https://formzalo.com/es/help/)
 - [refund-policy](https://formzalo.com/refund-policy)
 - [privacy-policy](https://formzalo.com/privacy-policy)
 - [privacy](https://formzalo.com/privacy)
 - [terms](https://formzalo.com/terms)
-- [faq](https://formzalo.com/faq)
-- [about](https://formzalo.com/about)
 - [guides](https://formzalo.com/guides)
-- [templates](https://formzalo.com/templates)
 - [guides/cv-for-freshers](https://formzalo.com/guides/cv-for-freshers)
 - [guides/cv-vs-resume](https://formzalo.com/guides/cv-vs-resume)
 - [guides/government-job-forms](https://formzalo.com/guides/government-job-forms)
@@ -57,12 +82,12 @@ Available local assistance steps: detect requested fields; propose profile value
 Local field mapping is not a promise to submit external applications or write back into any uploaded PDF. Paid server credit APIs exist; the inspected local UI did not establish the completed paid-fill integration.
 
 UI translation support does not establish multilingual OCR or full-document scanned-PDF processing.
-Non-English metadata and client translations exist; raw SSR body/html language parity is incomplete. Output-language and OCR capability must be tested separately.
-Existing six-locale coverage retained pending SSR parity; ja/zh-CN and proposed directory routes are not added in Phase 3. Legacy lastmod values are not refreshed or independently freshness-certified.
+Five locale-prefixed public content collections have request-scoped SSR. Existing editor UI remains eight locale IDs; Polish public content opens the English editor. Legacy app locale behavior and Unicode PDF validation are separate, incomplete work.
+Generated from active public counterparts and existing English-only content. No absent/untranslated locale routes or lastmod dates are emitted. Seven later public locales are not indexed by this batch.
 
 ## Evidence and currency
 Public observation URLs: https://formzalo.com/services, https://formzalo.com/api/paid-export/status.
-Source audit paths: src/components/landing/auth-gate.tsx, src/components/studio/preview-doc.tsx, src/lib/cv/read-document.ts, src/components/studio/scan-card.tsx, src/components/studio/form-filler.tsx, src/lib/i18n/i18n.ts, src/lib/payments/config.ts, src/routes/services.tsx.
+Source audit paths: src/components/landing/auth-gate.tsx, src/components/studio/preview-doc.tsx, src/lib/cv/read-document.ts, src/components/studio/scan-card.tsx, src/components/studio/form-filler.tsx, src/lib/i18n/i18n.ts, src/lib/payments/config.ts, src/routes/services.tsx, src/content/public-locales/registry.json, src/components/content/public-localized.tsx.
 Public facts and source audit only. No customer records, credentials, payment or authenticated production E2E tests used.
 This document is generated from a dated factual snapshot, not live monitoring. Re-verify runtime availability before changing claims.
 

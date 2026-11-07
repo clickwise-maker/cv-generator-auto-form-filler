@@ -6,6 +6,8 @@ import { routeTree } from "./routeTree.gen";
 export function getRouter() {
   return createRouter({
     routeTree,
+    // Public locale middleware owns canonical slashes; preserve legacy app URLs.
+    trailingSlash: "preserve",
     rewrite: previewPathRewrite(),
     defaultErrorComponent: AppErrorComponent,
   });

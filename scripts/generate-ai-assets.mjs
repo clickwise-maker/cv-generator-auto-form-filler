@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import { registry, publicUrl, publicAlternates } from '../src/lib/public-locale-routing.mjs';
 import { directory, validateDirectory, validateShape } from './validate-ai-discovery.mjs';
 const root = new URL('../', import.meta.url);
 const readJson = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
@@ -14,7 +15,9 @@ export function validateManifest(m) {
   assert.deepEqual(m.languages.uiLocaleIds, ['en','en-GB','hi','ar','zh-CN','es-ES','fr-FR','ja']);
   assert.deepEqual(m.languages.cvHeadingLocaleIds, ['en','fr','de','es']);
   assert.equal(new Set(m.publicPaths).size, m.publicPaths.length);
-  assert.equal(m.publicPaths.length * m.sitemap.localeIds.length, m.sitemap.expectedUrlCount);
+  assert.equal(m.publicPaths.length, m.sitemap.expectedUrlCount);
+  assert.deepEqual(m.languages.publicContentLocaleIds,registry.activeLocales);
+  assert.equal(m.languages.publicContentPageCount,registry.activeLocales.length*registry.pages.length);
   assert.equal(m.sitemap.localeIds.length, m.sitemap.hreflangTags.length);
   for (const p of m.publicPaths) assert.ok(p.startsWith('/') && !p.includes('?') && !p.includes('#') && !p.startsWith('/api/') && !p.startsWith('/c/'));
   assert.equal(new Set(m.languages.uiLocaleIds.map(l => l.split('-')[0])).size, m.languages.baseLanguageCount);
@@ -72,8 +75,8 @@ export function renderAssets(m = manifest, p = policy) {
     '## Languages',
     `- Eight UI locale IDs across seven base languages: ${ui}.`,
     `- CV heading options are separate: ${m.languages.cvHeadingLocaleIds.join(', ')}. UI support is not proof of multilingual OCR or PDF glyph coverage.`,
-    '- Non-English metadata/client translations exist; raw SSR locale parity and Unicode PDF validation remain incomplete.',
-    '- Existing sitemap covers six locale IDs; no twelve-language directory routing is implemented by these assets.', '',
+    '- Five public content locales (en, hi, pl, ar, es) have independent SSR pages. The legacy editor language architecture and Unicode PDF validation remain separate.',
+    '- The sitemap lists thirty active localized public pages and twelve existing English content pages. Seven later public locale collections are not implemented.', '',
     '## Contact',
     `- Published support contact: ${m.support.publicEmail}; ${m.support.publicContactUrl}. Mailbox deliverability was not tested; no email was sent.`, '',
     '## Public pages', pages, '',
@@ -110,19 +113,29 @@ export function renderAssets(m = manifest, p = policy) {
     '## Scope and outcomes',
     '- Discovery, crawl, indexing, retrieval and citation are distinct, non-guaranteed stages. Training permission is a separate policy.',
     '- No platform submission, IndexNow ping, webmaster account verification or country-availability test occurred in this batch.',
-    '- Current sitemap retains 102 existing URLs across six locale IDs; /en/, /pl/ and other proposed directory routes are not added.',
-    '- Existing non-English SSR limitations, remaining app metadata/schema contradictions and functional browser testing are later work.', '',
+    '- Current sitemap contains 42 canonical URLs: five public locales across six page intents plus twelve existing English pages. Seven later locale collections are not advertised.',
+    '- Locale-prefixed public content has request-scoped SSR; legacy editor localization, remaining old app metadata and visual/authenticated functional testing remain separate.', '',
     '## Existing public pages', pages, '',
     '## Contact', `${m.support.publicEmail} (published address; inbox delivery not tested). ${m.support.publicContactUrl}`, '',
     m.discoveryNotice, ''
   ].join('\n');
-  return new Map([['public/llms.txt', facts], ['public/llms-full.txt', full], ['public/AI-DISCOVERY.md', discovery], ['public/ai-product.json', JSON.stringify(m, null, 2) + '\n'], ['public/robots.txt', renderRobots(p)]]);
+  return new Map([['public/llms.txt', facts], ['public/llms-full.txt', full], ['public/AI-DISCOVERY.md', discovery], ['public/ai-product.json', JSON.stringify(m, null, 2) + '\n'], ['public/robots.txt', renderRobots(p)], ['public/sitemap.xml', renderSitemap(m)]]);
+}
+export function renderSitemap(m = manifest) {
+  const esc=value=>value.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+  const rows=[];
+  for(const locale of registry.activeLocales)for(const page of registry.pages){
+    const links=publicAlternates(locale,page).map(a=>`    <xhtml:link rel="alternate" hreflang="${a.hrefLang}" href="${esc(a.href)}" />`).join('\n');
+    rows.push(`  <url>\n    <loc>${esc(publicUrl(locale,page))}</loc>\n${links}\n  </url>`);
+  }
+  for(const path of registry.legacyEnglishPaths)rows.push(`  <url>\n    <loc>${esc(m.canonicalOrigin+path)}</loc>\n  </url>`);
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${rows.join('\n')}\n</urlset>\n`;
 }
 export function checkGenerated() {
   for (const [path, expected] of renderAssets()) assert.equal(readFileSync(new URL(path, root), 'utf8'), expected, `${path}: generated content drift; run node scripts/generate-ai-assets.mjs`);
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   assert.ok(process.argv.slice(2).every(arg => arg === '--check'), 'only --check is supported');
-  if (process.argv.includes('--check')) { checkGenerated(); console.log('Five generated AI assets match the factual manifest and policy.'); }
-  else { for (const [path, content] of renderAssets()) writeFileSync(new URL(path, root), content); console.log('Generated five public AI assets; no deployment or runtime settings changed.'); }
+  if (process.argv.includes('--check')) { checkGenerated(); console.log('Six generated discovery assets match the factual manifest and policy.'); }
+  else { for (const [path, content] of renderAssets()) writeFileSync(new URL(path, root), content); console.log('Generated six public discovery assets; no deployment or runtime settings changed.'); }
 }

@@ -1,1125 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://formzalo.com/</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
   </url>
   <url>
-    <loc>https://formzalo.com/?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
   </url>
   <url>
-    <loc>https://formzalo.com/?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
   </url>
   <url>
-    <loc>https://formzalo.com/?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
   </url>
   <url>
-    <loc>https://formzalo.com/?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
   </url>
   <url>
-    <loc>https://formzalo.com/?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/"/>
+    <loc>https://formzalo.com/en/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
   </url>
   <url>
-    <loc>https://formzalo.com/services?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/services?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/services?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/services?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/services?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/services"/>
+    <loc>https://formzalo.com/hi/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
   </url>
   <url>
     <loc>https://formzalo.com/refund-policy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/refund-policy?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/refund-policy?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/refund-policy?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/refund-policy?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/refund-policy?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/refund-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/refund-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/refund-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/refund-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/refund-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/refund-policy"/>
   </url>
   <url>
     <loc>https://formzalo.com/privacy-policy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy-policy?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy-policy?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy-policy?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy-policy?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy-policy?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy-policy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy-policy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy-policy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy-policy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy-policy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy-policy"/>
   </url>
   <url>
     <loc>https://formzalo.com/privacy</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/privacy?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/privacy?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/privacy?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/privacy?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/privacy?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/privacy?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/privacy"/>
   </url>
   <url>
     <loc>https://formzalo.com/terms</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/terms?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/terms?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/terms?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/terms?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/terms?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/terms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/terms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/terms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/terms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/terms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/terms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/terms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/faq?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/faq?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/faq?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/faq?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/faq?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/faq"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/about?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/about?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/about?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/about?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/about?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/about"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/templates?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/templates"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/templates?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/templates?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/templates?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/templates?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/templates?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/templates"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/cv-for-freshers</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-for-freshers?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-for-freshers?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-for-freshers?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-for-freshers?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-for-freshers?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-for-freshers"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-for-freshers?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-for-freshers?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-for-freshers?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-for-freshers?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-for-freshers?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-for-freshers"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/cv-vs-resume</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-vs-resume?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-vs-resume?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-vs-resume?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-vs-resume?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cv-vs-resume?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cv-vs-resume"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cv-vs-resume?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cv-vs-resume?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cv-vs-resume?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cv-vs-resume?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cv-vs-resume?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cv-vs-resume"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/government-job-forms</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/government-job-forms?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/government-job-forms?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/government-job-forms?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/government-job-forms?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/government-job-forms?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/government-job-forms"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/government-job-forms?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/government-job-forms?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/government-job-forms?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/government-job-forms?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/government-job-forms?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/government-job-forms"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/cover-letter</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cover-letter?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cover-letter?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cover-letter?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cover-letter?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/cover-letter?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/cover-letter"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/cover-letter?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/cover-letter?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/cover-letter?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/cover-letter?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/cover-letter?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/cover-letter"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/form-mistakes</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/form-mistakes?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/form-mistakes?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/form-mistakes?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/form-mistakes?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/form-mistakes?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/form-mistakes"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/form-mistakes?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/form-mistakes?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/form-mistakes?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/form-mistakes?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/form-mistakes?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/form-mistakes"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/photo-signature-specs</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/photo-signature-specs?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/photo-signature-specs?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/photo-signature-specs?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/photo-signature-specs?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/photo-signature-specs?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/photo-signature-specs"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/photo-signature-specs?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/photo-signature-specs?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/photo-signature-specs?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/photo-signature-specs?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/photo-signature-specs?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/photo-signature-specs"/>
   </url>
   <url>
     <loc>https://formzalo.com/guides/ats-friendly-cv</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/ats-friendly-cv?lang=en-GB</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/ats-friendly-cv?lang=ar</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/ats-friendly-cv?lang=es-ES</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
-  </url>
-  <url>
-    <loc>https://formzalo.com/guides/ats-friendly-cv?lang=hi</loc>
-    <lastmod>2026-11-01</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://formzalo.com/guides/ats-friendly-cv"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://formzalo.com/guides/ats-friendly-cv?lang=en-GB"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://formzalo.com/guides/ats-friendly-cv?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://formzalo.com/guides/ats-friendly-cv?lang=es-ES"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://formzalo.com/guides/ats-friendly-cv?lang=fr-FR"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://formzalo.com/guides/ats-friendly-cv?lang=hi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/guides/ats-friendly-cv"/>
   </url>
 </urlset>
