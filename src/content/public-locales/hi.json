@@ -137,5 +137,6 @@
   "privacyLabel": "गोपनीयता नीति (अंग्रेज़ी)",
   "termsLabel": "नियम (अंग्रेज़ी)",
   "navLabel": "मुख्य नेविगेशन",
-  "chooseTemplate": "यह टेम्पलेट चुनें"
+  "chooseTemplate": "यह टेम्पलेट चुनें",
+  "breadcrumbLabel": "पृष्ठ पथ"
 }

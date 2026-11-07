@@ -137,5 +137,6 @@
   "privacyLabel": "Polityka prywatności (angielski)",
   "termsLabel": "Warunki (angielski)",
   "navLabel": "Nawigacja główna",
-  "chooseTemplate": "Wybierz ten szablon"
+  "chooseTemplate": "Wybierz ten szablon",
+  "breadcrumbLabel": "Ścieżka nawigacji"
 }

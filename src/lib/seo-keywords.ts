@@ -5,9 +5,9 @@
  */
 export const SITE_URL = "https://formzalo.com";
 
-export const SEO_TITLE = "Free CV Maker & Auto Form Filler | formzolo";
+export const SEO_TITLE = "Free CV Builder & Document Reading | formzolo";
 export const SEO_DESCRIPTION =
-  "formzolo: free online CV maker and resume builder with simple, ATS-friendly templates. Reuse your profile to fill job and legal forms, then sign in free and download your CV as PDF or Word.";
+  "Sign in to create a CV with three templates and download Color PDF or Plain PDF without a watermark. Review document field suggestions and reading limits.";
 
 export const PRIMARY_KEYWORDS = [
   "free cv maker", "cv maker online free", "free cv generator", "resume builder free",

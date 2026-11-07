@@ -1,0 +1,1 @@
+export function schemaGraph(input:{url:string;title:string;description:string;language:string;breadcrumbs?:{name:string;item:string}[];freeBuilder?:boolean}):{'@context':string;'@graph':Record<string,unknown>[]};

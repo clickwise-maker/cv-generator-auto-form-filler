@@ -137,5 +137,6 @@
       "answer": "O estado público observado em 7 de novembro de 2026 indicava pagamento indisponível, modo de teste ativo e nenhum provedor. Não afirmamos ter realizado uma compra real com sucesso."
     }
   ],
-  "locale": "pt"
+  "locale": "pt",
+  "breadcrumbLabel": "Caminho de navegação"
 }

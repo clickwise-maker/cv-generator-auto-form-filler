@@ -1,3 +1,4 @@
+import { LegacyBreadcrumbs } from "@/components/content/seo-breadcrumbs";
 import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
 import { createFileRoute } from "@tanstack/react-router";
@@ -36,12 +37,12 @@ const EN: Sec[] = [
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy notice (DPDP) · formzolo" },
+      { title: "Privacy notice (DPDP) — formzolo" },
       { name: "description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
-      { property: "og:title", content: "Privacy notice (DPDP) · formzolo" },
+      { property: "og:title", content: "Privacy notice (DPDP) — formzolo" },
       { property: "og:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
       { property: "og:url", content: "https://formzalo.com/privacy" },
-      { name: "twitter:title", content: "Privacy notice (DPDP) · formzolo" },
+      { name: "twitter:title", content: "Privacy notice (DPDP) — formzolo" },
       { name: "twitter:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
     ],
   }),
@@ -68,7 +69,7 @@ function PrivacyPage() {
     <div className="min-h-screen bg-paper text-ink">
       <SiteHeader />
       <main className="mx-auto max-w-3xl px-4 py-6" data-testid="privacy-page">
-        <h1 className="font-serif text-3xl text-forest">{tr("Privacy notice")}</h1>
+        <LegacyBreadcrumbs/><h1 className="font-serif text-3xl text-forest">{tr("Privacy notice")}</h1>
         <p className="mt-1 text-xs text-muted">{tr("Last updated: 27 October 2026 · Digital Personal Data Protection Act, 2023 (India)")}</p>
         <div className="mt-6">
           <Block secs={EN} />
