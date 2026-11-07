@@ -1,4 +1,6 @@
-# Phase 4 — first-five public locale foundation (review branch, not live)
+# Phase 4 — first-five public locale foundation (historical batch, not live)
+
+This records the preserved first-five batch. The subsequent remaining-seven extension and current twelve-locale / 84-URL scope are documented in [ALL_LOCALES.md](ALL_LOCALES.md). Its earlier test counts and 42-URL sitemap describe that batch, not the current review head.
 
 ## Scope and factual content
 
