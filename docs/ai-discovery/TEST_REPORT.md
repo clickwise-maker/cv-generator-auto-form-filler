@@ -64,3 +64,9 @@ Use only the approved public client build configuration; never print/commit acco
 |7 Git diff/commits |GIT_DIFF_SUMMARY.md + PR5; correct live base, no main merge |
 |8 Deployment instructions |DEPLOYMENT.md + LAUNCH_PLAN.md; sanctioned upload capability and explicit PR5 release approval required |
 |9 Actual submissions |submissions.json:Google one existing live102-URL sitemap Success, not indexing. Bing0/IndexNow0/direct AI listings0; branch84 not deployed/submitted |
+
+## Final browser-QA status —7 November2026,23:42–23:43 IST
+
+Parent real box Chrome GUI navigation to127.0.0.1:4161 and4162 returned net::ERR_CONNECTION_REFUSED. No browser hydration/mobile/keyboard/navigation QA was executed. This is NOT evidence that the servers died: ss confirmed listeners214472/217193 and Shell localhost/noproxy English/Arabic responses were200. Parent box-doctor reported all11 health checks PASS at23:42 IST. Bounded read-only diagnostics found no proxy-server/proxy-bypass-list/no-proxy-server/proxy-auto-detect process flags on the inspected Chrome processes; browser and Shell network namespace identities matched. These observations do not identify the cause or rule out other browser/runtime routing mechanisms. Exact cause remains unknown. No credentials/cookies/profile databases inspected, no proxy/egress/network/security settings changed, no new server copies or production-domain retries. The documented box debugging reference did not establish another sanctioned local-preview method; no workaround or box restart proposed.
+
+Existing managed preview remains http://127.0.0.1:4162/en/ (Node listener217193, managed shell217189; log /workspace/formzalo-phase6-evidence-20261107/preview-managed.log), but GUI reachability is blocked. Local source/raw-HTTP138-test/build results above remain valid and are NOT browser results. LaunchReady stays HOLD.

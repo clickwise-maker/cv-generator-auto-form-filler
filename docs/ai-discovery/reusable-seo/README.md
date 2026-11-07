@@ -27,3 +27,7 @@
 12. Monitor status/error rates and non-PII logs, crawler/sitemap processing and existing consented analytics. Event names may be proposed, never represented as already emitted. No guaranteed rankings, AI citations or income.
 
 FormZalo-specific release limits and promotion PLAN ONLY: [../LAUNCH_PLAN.md](../LAUNCH_PLAN.md). Latest automated/release evidence: [../TEST_REPORT.md](../TEST_REPORT.md). Do not execute historical rebuild_research.py; it is not part of this repository workflow.
+
+### Final preview QA boundary
+
+7 November2026,23:42–23:43 IST: actual box Chrome returned net::ERR_CONNECTION_REFUSED for both local previews, while Shell HTTP200/listeners persisted and box-doctor11/11 passed. No browser/mobile/hydration QA executed; exact cause unknown after bounded read-only checks (no inspected proxy flags, same network namespace). No network/settings changes or workaround.138 targeted automated tests remain source/offline/local HTTP evidence only; LaunchReady HOLD. See ../TEST_REPORT.md.
