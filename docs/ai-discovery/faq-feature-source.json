@@ -1,0 +1,11 @@
+{
+  "requestedUrl": "https://developers.google.com/search/docs/appearance/structured-data/faqpage",
+  "finalUrl": "https://developers.google.com/search/updates#removing-faq-rich-result",
+  "httpStatus": 200,
+  "checkedDate": "2026-11-07",
+  "readScope": "Official changelog retirement and documentation-removal entries, not a complete crawl of all search docs",
+  "quote": "The FAQ rich result feature is no longer shown in Google Search results",
+  "quoteSha256": "fa5de5a80d2b059a24275592d5b8c6a4ec773b433177bcc6cc392df413471439",
+  "capturedResponseSha256": "7d1173334e74d979363f43dffa4f75910d856b08e58e2bf783fc1d61785da887",
+  "fullPublisherSnapshotIncluded": false
+}

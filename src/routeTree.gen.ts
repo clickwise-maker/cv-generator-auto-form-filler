@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdsDottxtRouteImport } from './routes/ads[.]txt'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -22,6 +23,8 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as LocaleIndexRouteImport } from './routes/$locale.index'
+import { Route as LocalePageRouteImport } from './routes/$locale.$page'
 import { Route as CTokenRouteImport } from './routes/c.$token'
 import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as GuidesSlugRouteImport } from './routes/guides.$slug'
@@ -32,6 +35,11 @@ import { Route as ApiPaidExportSplatRouteImport } from './routes/api/paid-export
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleRoute = LocaleRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -94,6 +102,16 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocalePageRoute = LocalePageRouteImport.update({
+  id: '/$page',
+  path: '/$page',
+  getParentRoute: () => LocaleRoute,
+} as any)
 const CTokenRoute = CTokenRouteImport.update({
   id: '/c/$token',
   path: '/c/$token',
@@ -127,6 +145,7 @@ const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/about': typeof AboutRoute
   '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
@@ -139,8 +158,10 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale/': typeof LocaleIndexRoute
   '/guides/': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -160,8 +181,10 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale': typeof LocaleIndexRoute
   '/guides': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -170,6 +193,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/about': typeof AboutRoute
   '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
@@ -182,8 +206,10 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale/': typeof LocaleIndexRoute
   '/guides/': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -193,6 +219,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$locale'
     | '/about'
     | '/ads.txt'
     | '/dashboard'
@@ -205,8 +232,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale/'
     | '/guides/'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -226,8 +255,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale'
     | '/guides'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -235,6 +266,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$locale'
     | '/about'
     | '/ads.txt'
     | '/dashboard'
@@ -247,8 +279,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale/'
     | '/guides/'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -257,6 +291,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocaleRoute: typeof LocaleRouteWithChildren
   AboutRoute: typeof AboutRoute
   AdsDottxtRoute: typeof AdsDottxtRoute
   DashboardRoute: typeof DashboardRoute
@@ -284,6 +319,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -370,6 +412,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/$page': {
+      id: '/$locale/$page'
+      path: '/$page'
+      fullPath: '/$locale/$page'
+      preLoaderRoute: typeof LocalePageRouteImport
+      parentRoute: typeof LocaleRoute
+    }
     '/c/$token': {
       id: '/c/$token'
       path: '/c/$token'
@@ -415,8 +471,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface LocaleRouteChildren {
+  LocalePageRoute: typeof LocalePageRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteChildren: LocaleRouteChildren = {
+  LocalePageRoute: LocalePageRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteWithChildren =
+  LocaleRoute._addFileChildren(LocaleRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocaleRoute: LocaleRouteWithChildren,
   AboutRoute: AboutRoute,
   AdsDottxtRoute: AdsDottxtRoute,
   DashboardRoute: DashboardRoute,

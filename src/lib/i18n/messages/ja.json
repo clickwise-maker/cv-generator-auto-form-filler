@@ -880,5 +880,9 @@
  "Paid: the Auto Form Filler, with single-use credits or a yearly plan.": "有料：自動フォーム入力（シングルユースのクレジットまたは年額プラン）。",
  "Yes. CV generation is free: after a free login you can download clean CVs (Color PDF or Plain PDF) with no watermark. The Auto Form Filler is paid: ₹20 / $1 per form fill, or a yearly plan (see Services & Plans).": "はい。CV作成は無料です。無料ログイン後、透かしなしのCV（カラーPDFまたはシンプルPDF）をダウンロードできます。自動フォーム入力は有料で、1回 ₹20 / $1、または年額プランです（サービスとプランを参照）。",
  "The full CV with no watermark, as a Color PDF or a Plain PDF (black and white). You need a free login.": "透かしのない完全なCVを、カラーPDFまたはシンプルPDF（白黒）で。無料ログインが必要です。",
- "Creating, editing, saving and downloading CVs is free for logged-in users, with no watermark. Form fills use paid credits, as described on the Services & Plans page.": "ログインユーザーはCVの作成・編集・保存・ダウンロードが無料で、透かしもありません。フォーム入力には、サービスとプランのページに記載の有料クレジットを使います。"
+ "Creating, editing, saving and downloading CVs is free for logged-in users, with no watermark. Form fills use paid credits, as described on the Services & Plans page.": "ログインユーザーはCVの作成・編集・保存・ダウンロードが無料で、透かしもありません。フォーム入力には、サービスとプランのページに記載の有料クレジットを使います。",
+  "After sign-in, Color PDF and Plain PDF downloads are free without watermark. Paid checkout was unavailable in the public status observed on 7 November 2026; recheck availability before purchasing.": "サインイン後は、カラーPDFと白黒PDFを透かしなしで無料ダウンロードできます。2026年11月7日の公開状況確認では有料決済は利用できませんでした。購入前に現在の状況をご確認ください。",
+  "The current free interface offers Color PDF and Plain PDF after sign-in; free Word export is not verified.": "現在の無料画面では、サインイン後にカラーPDFと白黒PDFを利用できます。無料のWord出力は確認されていません。",
+  "Sign-in is required to use the editor and download the free PDFs.": "エディターの利用と無料PDFのダウンロードにはサインインが必要です。",
+  "Form assistance suggests mappings from document fields for you to review. Arbitrary browser auto-application and guaranteed PDF writeback are not verified.": "フォーム支援は、利用者が確認するための文書フィールドの対応付けを提案します。任意のブラウザーフォームへの自動入力や、PDFへの確実な書き戻しは確認されていません。"
 }

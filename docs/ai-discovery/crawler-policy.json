@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "trainingPolicy": "allow",
+  "protectedPaths": [
+    "/api/",
+    "/c/",
+    "/dashboard"
+  ],
+  "sitemapUrl": "https://formzalo.com/sitemap.xml",
+  "note": "Build-time generated public policy only. Default preserves the existing public training-allow decision. Deny targets only verified training-control tokens in platforms.json; unknown providers remain governed by the wildcard, not a blanket all-training prohibition. Google-Extended also controls some Gemini grounding. No runtime or production configuration is changed."
+}

@@ -1,0 +1,1151 @@
+[
+  {
+    "source_id": "fed19fb9874f",
+    "url": "https://aplikomat.pl/auto-apply",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": "acdf88d6bb253cde0f2fafc882c540fdf79fbc5d7a78c20b12a8f313ae49c7f4",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "f932ee20b80c",
+    "url": "https://atheel.ai/free-tools/cv-maker",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "صانع سيرة ذاتية مجاني",
+        "excerpt": "صانع سيرة ذاتية مجاني بالعربي وقالب ATS | أثيل\nأثيل\nEN\n◐\nآخر الأخبار\nأثيل\n›\nأدوات مجانية\n› صانع سيرة "
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "صانع سيرة ذاتية",
+        "excerpt": "صانع سيرة ذاتية مجاني بالعربي وقالب ATS | أثيل\nأثيل\nEN\n◐\nآخر الأخبار\nأثيل\n›\nأدوات مجانية\n› صانع"
+      }
+    ],
+    "full_snapshot_sha256": "8435366295f82b048535c474c86656114fd20cf4d75726e18f4e55b571b5c761",
+    "persisted_exact_vocabulary": [
+      "صانع سيرة ذاتية مجاني",
+      "صانع سيرة ذاتية"
+    ],
+    "excerpt_sha256": "f55ef91ac0c0667d536f35c3b5b2e08cbd54241af063919429718515cbea8b65",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "ba5b21056bf9",
+    "url": "https://curriculumvitaeonline.com/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "f19120936fa6",
+    "url": "https://cv-en-ligne.fr/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "28132820688d",
+    "url": "https://helloboss.com/resume",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "AI履歴書作成",
+        "excerpt": "Boss（ハローボス）\nAI履歴書\nAIサポート\nAI履歴書作成\n無料\n書類選考に強い履歴書を\n最短5分で作成\n全国コンビニ印刷\n無料ダウンロード\nPC・アプリ対応\nファイルをここにドラッグ＆ドロップ\n.pdf・word・e"
+      }
+    ],
+    "full_snapshot_sha256": "a2d7f7d4a3c404d091f9cbe0b429a8d9ffc63f1ba00ef455bee00eb14c2a6c2e",
+    "persisted_exact_vocabulary": [
+      "AI履歴書作成"
+    ],
+    "excerpt_sha256": "b454ed9cff98d065446b41ae0f16624db952a4572c78488e18c7a4e68e835a4f",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "611b52a3ba5c",
+    "url": "https://keenresume.com/cn/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "a4a25e7741ab",
+    "url": "https://keenresume.com/ru/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "1afaf2b09ac7",
+    "url": "https://lanjut.org/id",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "3137987e1d2a",
+    "url": "https://lebenslauf-vorlage-kostenlos.de/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Lebenslauf kostenlos erstellen",
+        "excerpt": "Lebenslauf kostenlos erstellen – Vorlage & PDF, ohne Anmeldung\nVorlage holen\nAnzeige\nNeue Fenster für dein Zuh"
+      }
+    ],
+    "full_snapshot_sha256": "e639fd0df3e58f6c7040f1bd48d644efd495d72dbabbb58351f2c4708b734f6d",
+    "persisted_exact_vocabulary": [
+      "Lebenslauf kostenlos erstellen"
+    ],
+    "excerpt_sha256": "342f2dcca233328ba63ad9677187b2ae9cf80cbc92ca5479171d7bc5ff354158",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "7cd6929143c7",
+    "url": "https://makecv.pl/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "6866636ae152",
+    "url": "https://meinpdf.de/lebenslauf-erstellen",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "1c11679e39b6",
+    "url": "https://meracvresume.com/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "1464b7be2135",
+    "url": "https://nanonets.com/pdf-form-filling/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Fill out PDF Forms with AI",
+        "excerpt": " Forms Online | Nanonets\nFill out PDF Forms with AI\nFree AI PDF form filler. Upload any PDF form and your reference files — our AI "
+      }
+    ],
+    "full_snapshot_sha256": "437b3e16f2d46c252e154cb831421312bb6ef78d123b9742e693571a205be558",
+    "persisted_exact_vocabulary": [
+      "Fill out PDF Forms with AI"
+    ],
+    "excerpt_sha256": "aec01bd5e06185fee4bfb33f44feef3c6bc0cfa1e58a68aa0a5c108755095525",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "6ec961e87376",
+    "url": "https://nobsresume.com/resume-builder/hindi",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "9c03b325e182",
+    "url": "https://owlapply.com/pl",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "8c1dd94df7b3",
+    "url": "https://pulsarkit.com/id/tools/resume-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "2b49e2e38ab7",
+    "url": "https://rirekimaker.com/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "履歴書メーカー",
+        "excerpt": "履歴書メーカー｜無料・登録不要で履歴書をPDF作成\n履歴書メーカー\n履歴書・職務経歴書を無料で作成\n登録なしで入力からPDF保存まで。スマホ・パソコンに対応。\n作成する書類を"
+      },
+      {
+        "claim": "Publisher distinguishes career history and resume documents",
+        "phrase": "職務経歴書",
+        "excerpt": "書をPDF作成\n履歴書メーカー\n履歴書・職務経歴書を無料で作成\n登録なしで入力からPDF保存まで。スマホ・パソコンに対応。\n作成する書類を選ぼう\n内容はあとから修正できま"
+      }
+    ],
+    "full_snapshot_sha256": "a24e53078a952701c3278f8f04d26c71f2751d089f03cc14cb3350a5109b11e9",
+    "persisted_exact_vocabulary": [
+      "履歴書メーカー",
+      "職務経歴書"
+    ],
+    "excerpt_sha256": "556062d7767dc7e741d4973aab2367f815fbc0db3a41ab34d2e2cfd4e9c803de",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "ccfa9224712c",
+    "url": "https://rirekisho-note.jp/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "無料で履歴書をつくる",
+        "excerpt": "料作成。PDFにして印刷・メール送信もできます。\n無料で履歴書をつくる\nログインして続きを書く\n登録しなくても、PDFを作るところまで使えます。保存して書き足していくときは、LINE・Google・Apple・メールアドレスで無料"
+      }
+    ],
+    "full_snapshot_sha256": "49e5e395e8e6f22414d742c47cfdd8aa684e9bf3556933279f9daecbdb2ee14f",
+    "persisted_exact_vocabulary": [
+      "無料で履歴書をつくる"
+    ],
+    "excerpt_sha256": "c80f81bcd8cf78a994a6d0b112789bfb40ffcc9e78748ca2ae906e5fd5d03dfe",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "3f69f98e82ea",
+    "url": "https://rotinadiaria.com/gerador-de-curriculo",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "be40d867d154",
+    "url": "https://sealapply.com/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "727c5a3c116a",
+    "url": "https://simplecv.io/pt-br/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "92ede218e381",
+    "url": "https://taqdeem.net/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": "d77bf26129991cfa0a04a0e339d4c287d6de1a5d9ee5585bf873cb6dc3ef03ef",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "ae74456af52c",
+    "url": "https://taqdeem.net/ai-cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "منشئ سيرة ذاتية بالذكاء الاصطناعي",
+        "excerpt": "منشئ سيرة ذاتية بالذكاء الاصطناعي - مجاني بالعربي والإنجليزي | تقديم\nEN\n/\nع\nتسجيل الدخول\nابدأ مجانًا\nمنشئ بالذكاء"
+      }
+    ],
+    "full_snapshot_sha256": "f490990825048012f24352c9a894edf5d1d0d65d16696a02baaaabbc977410b6",
+    "persisted_exact_vocabulary": [
+      "منشئ سيرة ذاتية بالذكاء الاصطناعي"
+    ],
+    "excerpt_sha256": "989e842d23b519fb141f627a533847d34d0e8ed56a5c64aa8045ae684945a9a6",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "f9d6b6988032",
+    "url": "https://trakrio.com/es/tools/resume-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Crear CV gratis online",
+        "excerpt": "Crear CV gratis online, con plantillas y descarga en PDF\nTrakrio\nMi cuenta de Trakrio\nMi espacio\nAbrir"
+      }
+    ],
+    "full_snapshot_sha256": "294d2bd7af71b7bfa099db2d85a4c6cb8fbf4fbf7b32c79f6dc944479ebf416e",
+    "persisted_exact_vocabulary": [
+      "Crear CV gratis online"
+    ],
+    "excerpt_sha256": "bda6022d176267a1825576cdf77f7f1dd863c840e70282b74aa38f00344268e9",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "3db9aeec7309",
+    "url": "https://turbopdf.app/es/formularios_pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Rellenar Formularios PDF Online Gratis",
+        "excerpt": "Rellenar Formularios PDF Online Gratis - TurboPDF\nTurbo\nPDF\nEspañol\nRellenar y Completar Formularios PDF Online\nComple"
+      }
+    ],
+    "full_snapshot_sha256": "273b6f7b7cc440e3e68d52cc96e9698341eda539f7c3434cec7e05aca89ea2cd",
+    "persisted_exact_vocabulary": [
+      "Rellenar Formularios PDF Online Gratis"
+    ],
+    "excerpt_sha256": "505bb7f5608351fb2d754843bdec6545373341cd7d5473006ab5a38861be288d",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "01a0945af9f2",
+    "url": "https://uddatak.com/ru/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Бесплатный конструктор резюме онлайн",
+        "excerpt": "Бесплатный конструктор резюме онлайн — 15 шаблонов | Uddatak\nПерейти к основному содержимому\nU\nUddatak\nРусский\nПерек"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "конструктор резюме онлайн",
+        "excerpt": "Бесплатный конструктор резюме онлайн — 15 шаблонов | Uddatak\nПерейти к основному содержимому\nU\nUddatak\nРусский\nПерек"
+      }
+    ],
+    "full_snapshot_sha256": "07d7b7b439bcf721dfacc4d5e1e9d5939f26aee5c5fdcaf6b462ec92ae59e7da",
+    "persisted_exact_vocabulary": [
+      "Бесплатный конструктор резюме онлайн",
+      "конструктор резюме онлайн"
+    ],
+    "excerpt_sha256": "9fe4f403ee74130dbcec88423c9d5571ba65a6ac7d834b9a406f2391c47300ab",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "f88fec9b11df",
+    "url": "https://uddatak.com/zh-hans/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "免费简历生成器",
+        "excerpt": "免费简历生成器——15 套模板在线制作 | Uddatak\n跳到主要内容\nU\nUddatak\n简体中文\n切换到\nالعربية\n切换到\nEnglish\n切换到\nहिन्दी\n"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "简历生成器",
+        "excerpt": "免费简历生成器——15 套模板在线制作 | Uddatak\n跳到主要内容\nU\nUddatak\n简体中文\n切换到\nالعربية\n切换到\nEnglish\n切换到\nहिन्दी\n"
+      }
+    ],
+    "full_snapshot_sha256": "8cdac0c7c8c6ce181b37d247d4fa7549b26903e36c9110eaa11da74eabf1fd85",
+    "persisted_exact_vocabulary": [
+      "免费简历生成器",
+      "简历生成器"
+    ],
+    "excerpt_sha256": "1504ee73c15f36923914d250218c1d537fd29b055ff5ea61457c0ec7acab967b",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "cf79bbe7ab54",
+    "url": "https://www.csctoolhub.com/resume-builder.html",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": "9b3209eae1753fe12a027cca49bd0f328a4f4a4cda34d4379e5c1a5e05fcecdb",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "894036ef96d2",
+    "url": "https://www.loopcv.pro/pl/job-application-autofill/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Automatyczne wypełnianie każdej aplikacji o pracę",
+        "excerpt": "głównych platformach ATS\nAutomatyczne wypełnianie każdej aplikacji o pracę\nPrzestań wpisywać imię, adres i historię zatrudnienia w każdy formularz. LoopCV"
+      }
+    ],
+    "full_snapshot_sha256": "66c6c616286a9b44346c9bfed8882ceaf3b934e870237221723a9b007cceebce",
+    "persisted_exact_vocabulary": [
+      "Automatyczne wypełnianie każdej aplikacji o pracę"
+    ],
+    "excerpt_sha256": "13be2a1853edd75ff409138942d370c021857cd740dc290146148325e95edba8",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "6d4170d48b9d",
+    "url": "https://www.mera-form.com/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "AI Form Filler",
+        "excerpt": "AI Form Filler — Free Browser Extension for Job Applications | Mera Form\nMera Form\nFill job ap"
+      }
+    ],
+    "full_snapshot_sha256": "e074daa7a101c574f8268efcdd447a8073246f3999811a7a6c409aaa6074bf43",
+    "persisted_exact_vocabulary": [
+      "AI Form Filler"
+    ],
+    "excerpt_sha256": "aceaae8e035005d0bb0ebb3ac516091ffda4bb9e325b4e26fbbb695092ed5c6a",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_en",
+    "url": "https://uddatak.com/en/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Free CV & Resume Builder Online",
+        "excerpt": "Free CV & Resume Builder Online — 15 Templates | Uddatak\nSkip to main content\nU\nUddatak\nEnglish\nSwitch to\nالعرب"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "CV Builder",
+        "excerpt": "\nSwitch to\nBahasa Melayu\nCV Builder\nBuild a professional resume from 15 templates and download it as a PDF — free, "
+      }
+    ],
+    "full_snapshot_sha256": "9aa3b4175ac71bd84faa99fc9d36837ad43ae133dc56ae673a82f9a596203340",
+    "persisted_exact_vocabulary": [
+      "Free CV & Resume Builder Online",
+      "CV Builder"
+    ],
+    "excerpt_sha256": "2d2a83b9edaf717dc1916f05105eaf3ce7c292b199959a7d649a6d8e6adeac89",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_hi",
+    "url": "https://uddatak.com/hi/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "मुफ्त सीवी और रिज्यूमे बिल्डर ऑनलाइन",
+        "excerpt": "मुफ्त सीवी और रिज्यूमे बिल्डर ऑनलाइन — 15 टेम्पलेट्स | Uddatak\nमुख्य सामग्री पर जाएं\nU\nUddatak\nहिन्दी\nالعربية\nमें बद"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "सीवी बिल्डर",
+        "excerpt": "\nBahasa Melayu\nमें बदलें\nसीवी बिल्डर\n15 टेम्पलेट्स से एक प्रोफेशनल रिज्यूमे बनाएं और इसे PDF के रूप में डाउनलोड करें"
+      }
+    ],
+    "full_snapshot_sha256": "792d7f8b7ac0a951cde67348629d4a774b4c37b632780c3134c51b163367e33b",
+    "persisted_exact_vocabulary": [
+      "मुफ्त सीवी और रिज्यूमे बिल्डर ऑनलाइन",
+      "सीवी बिल्डर"
+    ],
+    "excerpt_sha256": "caa2a1296cc3a9ba9a9e197e8636b512718a0aa47c41c435c035b74d4f634a8d",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_pl",
+    "url": "https://uddatak.com/pl/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Kreator CV online",
+        "excerpt": "Kreator CV online — 15 profesjonalnych szablonów | Uddatak\nPrzejdź do głównej treści\nU\nUddatak\nPo"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Kreator CV online",
+        "excerpt": "Kreator CV online — 15 profesjonalnych szablonów | Uddatak\nPrzejdź do głównej treści\nU\nUddatak\nPo"
+      }
+    ],
+    "full_snapshot_sha256": "f984b09bac3b9732f017af4665d65c9bfd0bc74dd1dec789229fa1ad2075fd0c",
+    "persisted_exact_vocabulary": [
+      "Kreator CV online"
+    ],
+    "excerpt_sha256": "3d3724236e9f0b92f51fd4e0420742e58ce29c43924ec1de9988f4ed1283a89a",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_fr",
+    "url": "https://uddatak.com/fr/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Générateur de CV Gratuit en Ligne",
+        "excerpt": "Générateur de CV Gratuit en Ligne — 15 Modèles | Uddatak\nPasser au contenu principal\nU\nUddatak\nFrançais\nPasser en"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Générateur de CV",
+        "excerpt": "Générateur de CV Gratuit en Ligne — 15 Modèles | Uddatak\nPasser au contenu principal\nU\nUddatak\nF"
+      }
+    ],
+    "full_snapshot_sha256": "6e50780a5c94d173df53cd5275989e424ce7a10324b4558a9563146411b98824",
+    "persisted_exact_vocabulary": [
+      "Générateur de CV Gratuit en Ligne",
+      "Générateur de CV"
+    ],
+    "excerpt_sha256": "df5ddf046d90b1ab56f56952e963161662efe04ab38d2d3a61c169e3777f5127",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_de",
+    "url": "https://uddatak.com/de/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Lebenslauf-Generator",
+        "excerpt": "Kostenloser Lebenslauf-Generator Online — 15 Vorlagen | Uddatak\nZum Hauptinhalt springen\nU\nUddatak\nDeutsch\nZu\nال"
+      }
+    ],
+    "full_snapshot_sha256": "571756be73313cad20d74c92cb02636fa4f48dbf0969358fb44b83f478d829b3",
+    "persisted_exact_vocabulary": [
+      "Lebenslauf-Generator"
+    ],
+    "excerpt_sha256": "3ff0f75549d3e62d4ce5afd913860e5c28a6824630fa4b2db231f5ae8090ae2e",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_pt-br",
+    "url": "https://uddatak.com/pt-br/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Criador de Currículo Grátis Online",
+        "excerpt": "Criador de Currículo Grátis Online — 15 Modelos | Uddatak\nPular para o conteúdo principal\nU\nUddatak\nPortuguês (Bra"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Criador de Currículo",
+        "excerpt": "Criador de Currículo Grátis Online — 15 Modelos | Uddatak\nPular para o conteúdo principal\nU\nUddatak\n"
+      }
+    ],
+    "full_snapshot_sha256": "e1d060dfc5c048e6cc4a5880c77fb7d89f7334af6cd7d25401cf7b32f5bdfd50",
+    "persisted_exact_vocabulary": [
+      "Criador de Currículo Grátis Online",
+      "Criador de Currículo"
+    ],
+    "excerpt_sha256": "cd5d35d2dbe659904edc4374cc99610c2cf933247e199991f990af759cd85b41",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_id",
+    "url": "https://uddatak.com/id/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Pembuat CV & Resume Gratis Online",
+        "excerpt": "Pembuat CV & Resume Gratis Online — 15 Template | Uddatak\nLewati ke konten utama\nU\nUddatak\nBahasa Indonesia\nGanti"
+      },
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Pembuat CV",
+        "excerpt": "Pembuat CV & Resume Gratis Online — 15 Template | Uddatak\nLewati ke konten utama\nU\nUddatak"
+      }
+    ],
+    "full_snapshot_sha256": "8f94e2b77348b7cb526ffb0d213e3a4915a8da06a2c7ce5b1ab7e47a11317a3d",
+    "persisted_exact_vocabulary": [
+      "Pembuat CV & Resume Gratis Online",
+      "Pembuat CV"
+    ],
+    "excerpt_sha256": "70765fa0d005ee0f0ed8290d45f51d7233a2951a55d66d01350f9f3861bc0f08",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "locale_es",
+    "url": "https://uddatak.com/es/tools/cv-builder",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "selected title/body excerpt, not independent product verification",
+    "supported_claim_summaries": [
+      {
+        "claim": "Publisher uses this phrase; no demand implication",
+        "phrase": "Creador de CV",
+        "excerpt": "Creador de CV Gratis Online — 15 Plantillas | Uddatak\nSaltar al contenido principal\nU\nUddatak"
+      }
+    ],
+    "full_snapshot_sha256": "2880c03382f06abb8a7fbee0b2f380a06092691bc7b47672582cb7c8b0d82999",
+    "persisted_exact_vocabulary": [
+      "Creador de CV"
+    ],
+    "excerpt_sha256": "48e338bd553ae510fc5fd324d7906e8550b3712b672f2a6c461ee8ca73a9f629",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "india_commencement",
+    "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Gazette G.S.R.843(E), clauses (a)-(c), English p2",
+    "supported_claim_summaries": [
+      {
+        "section": "Gazette G.S.R.843(E), clauses (a)-(c), English p2",
+        "claim": "Staged commencement: listed institutional provisions on publication; s6(9)/27(1)(d) one year later; principal s3-17 provisions eighteen months later."
+      }
+    ],
+    "full_snapshot_sha256": "f1f0b2fc299e1f8a2c0cd4ebeb521ca413b275fd4a1e6498fbcec1da4577f0c5",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "saudi_pdpl",
+    "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/PersonalDataProtectionLaw.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "gdpr",
+    "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Articles 3,13,27; recital 23",
+    "supported_claim_summaries": [
+      {
+        "section": "Articles 3,13,27; recital 23",
+        "claim": "Scope depends on establishment, offering or monitoring; notice/controller identity and conditional EU representative obligations."
+      }
+    ],
+    "full_snapshot_sha256": "438772a408184f334695c97ab1e734adac89fde5f67c139b91c279883ee499d7",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "eprivacy",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02002L0058-20091219",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Article 5(3)",
+    "supported_claim_summaries": [
+      {
+        "section": "Article 5(3)",
+        "claim": "Terminal storage/access consent rule has transmission and strictly-necessary-service exceptions; national implementation must be checked."
+      }
+    ],
+    "full_snapshot_sha256": "79270feece82f38d11f76188bc53e231832d2ce1071f869a5fd7eb252064e890",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "uae",
+    "url": "https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Personal Data Protection Law, Provisions 1-4",
+    "supported_claim_summaries": [
+      {
+        "section": "Personal Data Protection Law, Provisions 1-4",
+        "claim": "Government overview describes electronic processing inside/outside UAE and cross-border requirements; not full applicability determination."
+      }
+    ],
+    "full_snapshot_sha256": "49835d7efaf6ff7fd68cee4d46816ff588473d54e401f4815135141b6190df10",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "japan_index",
+    "url": "https://www.ppc.go.jp/en/legal/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Act on the Protection of Personal Information",
+    "supported_claim_summaries": [
+      {
+        "section": "Act on the Protection of Personal Information",
+        "claim": "PPC links official reference translation and warns Japanese original has legal effect."
+      }
+    ],
+    "full_snapshot_sha256": "acfab5c198341cae9ac30603720c6606a029b065413b84f68705775285942402",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "brazil",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "indonesia",
+    "url": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "us_california",
+    "url": "https://oag.ca.gov/privacy/ccpa",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "CCPA FAQ: businesses covered",
+    "supported_claim_summaries": [
+      {
+        "section": "CCPA FAQ: businesses covered",
+        "claim": "CCPA has business/applicability thresholds; no FormZalo threshold assessment. Current inflation-adjusted threshold not verified."
+      }
+    ],
+    "full_snapshot_sha256": "f15937b6906a7a699433c0ec7c10e939a07057e175fbc2ea1d9ddff567734914",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "uk",
+    "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "indonesia_law",
+    "url": "https://jdih.setkab.go.id/PUUdoc/176837/Salinan_UU_Nomor_27_Tahun_2022.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "brazil_law",
+    "url": "https://www.gov.br/prf/pt-br/canais-de-atendimento/corregedoria/Lei137092018.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": "c657c02ab08ed8112a629c7b9813483fa65f46e4c07c2bfe8818bd1050445751",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "japan_law",
+    "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Articles 17,21,28",
+    "supported_claim_summaries": [
+      {
+        "section": "Articles 17,21,28",
+        "claim": "Purpose specification/notice and conditional foreign-third-party consent/information measures; translation version is reference, not certified current law."
+      }
+    ],
+    "full_snapshot_sha256": "a9c27ccbee553666bd6d4a24f6ddbd2feb711fe59435c1ca41a37c352199f718",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "china_icp",
+    "url": "https://sdca.miit.gov.cn/zwgk/fgbz/art/2026/art_fea940f81f1d423e87101adf147ab979.html",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "brazil_text",
+    "url": "https://www.gov.br/trensurb/pt-br/acesso-a-informacao/lgpd-na-trensurb/guias-manuais-e-afins/lei-13709_2018_lgpd.pdf/@@display-file/file",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Articles 3 and 33",
+    "supported_claim_summaries": [
+      {
+        "section": "Articles 3 and 33",
+        "claim": "LGPD scope includes processing/targeted services/collection in Brazil; international transfers require an applicable statutory route. Government-published compiled copy dated 2025, later amendments not exhaustively checked."
+      }
+    ],
+    "full_snapshot_sha256": "0c043befc434692c4eb5489f644d2f4fee3dc5adc462e4725bf29f2eaeb4c593",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "indonesia_text",
+    "url": "https://jdih.kemenkeu.go.id/api/download/46c17b53-4a45-411c-9b76-c6799e5769fc/UU_Nomor_27_Tahun_2022%20Perlindungan%20Data%20Pribadi.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": false,
+    "read_scope": "not substantively read",
+    "supported_claim_summaries": [],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "saudi_primary_excerpt",
+    "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/PersonalDataProtectionLaw.pdf",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Search-index excerpts of Articles 2 and 29 only; direct PDF connection closed",
+    "supported_claim_summaries": [
+      "Potential extraterritorial scope and conditional transfer restrictions; full implementing regulations not verified"
+    ],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "russia_publication",
+    "url": "http://publication.pravo.gov.ru/document/0001202502280034",
+    "repository_source_url": null,
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "Publication metadata only; scanned law body NOT read",
+    "supported_claim_summaries": [
+      "Publication number 0001202502280034; Federal Law 23-FZ dated 28 February 2025 exists. No operative localization claim supported."
+    ],
+    "full_snapshot_sha256": null,
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_auth",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/components/landing/auth-gate.tsx",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "19-30",
+    "supported_claim_summaries": [
+      "Signed-in editor gate"
+    ],
+    "full_snapshot_sha256": "a27201199381f1f14e10f9ba4b3e91d0fcf46cd1b42b1f4ef9452c17431a8f9a",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_free_export",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/components/studio/preview-doc.tsx",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "49-59;108-117",
+    "supported_claim_summaries": [
+      "Signed-in Color/Plain PDF download calls clean browser exporter"
+    ],
+    "full_snapshot_sha256": "4d26ac8d29c90e62ec4f18fb6a96dea0da411fd7622189791ef41be959e0e46f",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_pdf",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/lib/cv/export-pdf.ts",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "432-446",
+    "supported_claim_summaries": [
+      "Separate watermarked preview and free clean download functions"
+    ],
+    "full_snapshot_sha256": "195324bdd8c55ad3cfd4ba839c7fdb4bff73cb740944b610c72b6ec070bde312",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_templates",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/lib/cv/model.ts",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "254-272",
+    "supported_claim_summaries": [
+      "Three template definitions"
+    ],
+    "full_snapshot_sha256": "f72fa0b99f7f0c3d301b069ef1225633ac79bd89ff8b49b8bcfcb2baeac6cf4a",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_ocr",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/lib/cv/read-document.ts",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "6-8;41-63",
+    "supported_claim_summaries": [
+      "12 MiB input cap; two scanned pages; English OCR worker"
+    ],
+    "full_snapshot_sha256": "cbd1ff855da7208499a1169f6925da6ef1edacdb7dcd93a2921bc1b3a95a8e29",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_audit",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/docs/ai-discovery/product-manifest.json",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "15-95",
+    "supported_claim_summaries": [
+      "Audit-derived limits/model/payment/language caveats; not fresh runtime validation"
+    ],
+    "full_snapshot_sha256": "cfb07d8667adfcd8e9dae1c85fbd43409c9b7b28a04bdcfc8dd6f2cbb7b7287c",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_privacy",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/content/privacy-policy.json",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "9-20;39-55;73-84",
+    "supported_claim_summaries": [
+      "No-login claim conflicts with auth; data-flow/retention verification needed"
+    ],
+    "full_snapshot_sha256": "579a64b8b4e8d7f2fcb89ee9923736dbd78c09fa722b5f75e72677616fa21e0d",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_mail",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/components/info-page.tsx",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "45-56",
+    "supported_claim_summaries": [
+      "mail placeholder renders an email link"
+    ],
+    "full_snapshot_sha256": "b40ee1ecfd9075569d985147bda8cffc7cafcba37c62c880d6fc45007f5ce8f9",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_paid_route",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/routes/api/paid-export/$.ts",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "15-36",
+    "supported_claim_summaries": [
+      "Legacy paid-route comments do not describe free browser export"
+    ],
+    "full_snapshot_sha256": "0e46370fa4f63ca9187ea844914c535d81631721f5f23529255bf13cd6cc4727",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  },
+  {
+    "source_id": "product_assistance",
+    "url": null,
+    "repository_source_url": "https://github.com/clickwise-maker/cv-generator-auto-form-filler/blob/166661b9cdb105c65c77b045a027f5dfb2b62e34/src/components/studio/form-filler.tsx",
+    "retrieval_date": "2026-11-07",
+    "content_read": true,
+    "read_scope": "133-194",
+    "supported_claim_summaries": [
+      "Local fields and missing-detail interface"
+    ],
+    "full_snapshot_sha256": "cae8ffdbae828619444c9d31fcb6e778d10559dc8f71c75572e58dcc63e360a0",
+    "persisted_exact_vocabulary": [],
+    "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_snapshot_embedded": false
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Start",
+    "templates": "Vorlagen",
+    "services": "Tarife und Verfügbarkeit",
+    "faq": "Fragen",
+    "about": "Über uns",
+    "help": "Hilfe"
+  },
+  "openEditor": "Anmelden und Lebenslauf erstellen",
+  "language": "Sprache",
+  "editorNote": "Der Editor öffnet sich derzeit auf Englisch. Seitensprache, Editorsprache, OCR und PDF-Überschriften sind getrennte Funktionen; die Zeichenausgabe im PDF ist nicht für alle Sprachen geprüft.",
+  "contact": "Veröffentlichter Kontakt",
+  "templateAlt": "Vorschau der Lebenslaufvorlage {name}",
+  "faqTitle": "Häufige Fragen",
+  "privacyLabel": "Datenschutz (Englisch)",
+  "termsLabel": "Bedingungen (Englisch)",
+  "navLabel": "Hauptnavigation",
+  "chooseTemplate": "Diese Vorlage verwenden",
+  "pages": {
+    "home": {
+      "title": "Kostenloser Lebenslauf-Editor mit PDF-Download",
+      "description": "Nach der Anmeldung einen Lebenslauf erstellen und Farb- oder Schwarz-Weiß-PDF ohne Wasserzeichen herunterladen. Dokumentgrenzen und Zahlungsstatus verstehen.",
+      "h1": "Lebenslauf gestalten und als PDF herunterladen",
+      "intro": "Ordnen Sie Berufserfahrung, Ausbildung und Fähigkeiten in einem strukturierten Profil. Nach der Anmeldung stehen drei Vorlagen und zwei kostenlose PDF-Stile bereit.",
+      "sections": [
+        {
+          "heading": "Angaben bleiben bearbeitbar",
+          "body": "Prüfen Sie importierte Vorschläge vor der Übernahme. Fehlende Angaben müssen ergänzt und dürfen nicht erfunden werden."
+        },
+        {
+          "heading": "Den Funktionsumfang kennen",
+          "body": "Die Dokumentauswertung extrahiert Text und schlägt Profilfelder vor. Generatives Schreiben, automatische Bewerbungsabgabe und das Zurückschreiben in beliebige PDFs sind nicht nachgewiesen."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Lebenslaufvorlagen Meridian, Consulate und Atlas",
+      "description": "Drei vorhandene Layouts sowie kostenlose Farb- und Schwarz-Weiß-PDFs vergleichen. Keine versprochenen ATS-Werte oder Einstellungschancen.",
+      "h1": "Ein Layout passend zur Bewerbung auswählen",
+      "intro": "Meridian, Consulate und Atlas sind im Editor vorhanden. Machen Sie korrekte Angaben und beachten Sie das vom Arbeitgeber gewünschte Format.",
+      "sections": [
+        {
+          "heading": "Mit Gestaltung oder schlicht",
+          "body": "Das Farb-PDF behält die Gestaltung bei. Das schlichte PDF zeigt dieselben Inhalte in Schwarz-Weiß; beide sind ohne Wasserzeichen."
+        },
+        {
+          "heading": "Export überprüfen",
+          "body": "Öffnen Sie die PDF-Datei vor dem Versand und prüfen Sie Seitenumbrüche und Zeichen. Unicode-Ausgabe wurde noch nicht für alle Sprachen validiert."
+        }
+      ]
+    },
+    "services": {
+      "title": "Kostenlose PDFs und Verfügbarkeit kostenpflichtiger Tarife",
+      "description": "Farb- und Schwarz-Weiß-PDFs sind nach Anmeldung kostenlos. Bei der datierten Prüfung war die Bezahlung der Formularhilfe nicht verfügbar.",
+      "h1": "Was ist kostenlos und was noch nicht bereit?",
+      "intro": "Der Editor bietet nach Anmeldung zwei kostenlose PDF-Stile ohne Wasserzeichen. Eine kostenlose Word-Schaltfläche ist im aktuellen Interface nicht belegt.",
+      "sections": [
+        {
+          "heading": "Bezahlung noch nicht verfügbar",
+          "body": "Der öffentliche Status vom 7. November 2026 meldete nicht verfügbare Bezahlung, aktivierten Testmodus und keinen Anbieter. Prüfen Sie vor einem Kauf die aktuelle Verfügbarkeit."
+        },
+        {
+          "heading": "Kein unbegrenztes Nutzungsversprechen",
+          "body": "Im direkten PDF-Export im Browser wurde keine numerische Tagesquote gefunden. Daraus folgt kein unbegrenzter Dienst; Dokument- und Geräteressourcengrenzen gelten weiterhin."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Fragen zu kostenlosen Lebenslauf-PDFs und Dokumentauswertung",
+      "description": "Antworten zu Anmeldung, wasserzeichenfreien PDFs, englischer OCR, Dateigrenzen und dem beobachteten Zahlungsstatus.",
+      "h1": "Die tatsächlichen Möglichkeiten verstehen",
+      "intro": "Diese Antworten beschreiben implementiertes Verhalten und kennzeichnen nicht geprüfte Funktionen ausdrücklich.",
+      "sections": [
+        {
+          "heading": "Vor dem Start",
+          "body": "Verwenden Sie nur Angaben, die in Ihren Lebenslauf gehören. Prüfen Sie erkannte Vorschläge und das fertige PDF."
+        },
+        {
+          "heading": "Funktionen getrennt betrachten",
+          "body": "Eine übersetzte Website belegt weder mehrsprachige OCR noch alle PDF-Zeichen oder weltweite Verfügbarkeit."
+        }
+      ]
+    },
+    "about": {
+      "title": "Über formzolo und FormZalo",
+      "description": "Der bestehende formzolo-Lebenslauf-Editor auf formzalo.com: Profilorganisation, Feldvorschläge und Grenzen.",
+      "h1": "Angaben für den Lebenslauf übersichtlich vorbereiten",
+      "intro": "Das Produkt verwendet die Marke formzolo auf der Domain formzalo.com. FormZalo ist auch ein Projektname; diese Seiten benennen den Editor nicht um.",
+      "sections": [
+        {
+          "heading": "Praktische Unterstützung",
+          "body": "Das Werkzeug organisiert Profile, zeigt Vorlagen und schlägt Felder aus Dokumenttext zur Prüfung vor. Eine aktive generative Modellintegration wurde nicht bestätigt."
+        },
+        {
+          "heading": "Klare Grenzen",
+          "body": "Keine Garantie für Stellenangebote, ATS-Werte, automatische Bewerbungen, beliebige PDF-Bearbeitung, Suchplatzierungen oder KI-Empfehlungen."
+        }
+      ]
+    },
+    "help": {
+      "title": "Hilfe: anmelden, Dokument auslesen und Lebenslauf herunterladen",
+      "description": "Den vorhandenen PDF-Ablauf nutzen: 12 MiB Eingabegrenze, höchstens zwei gescannte PDF-Seiten im OCR-Ersatzverfahren und englische OCR.",
+      "h1": "Lebenslauf Schritt für Schritt vorbereiten und prüfen",
+      "intro": "Editor öffnen, anmelden, Angaben eingeben oder ein unterstütztes Dokument auslesen, Vorschläge prüfen und Farb- oder Schwarz-Weiß-PDF herunterladen.",
+      "sections": [
+        {
+          "heading": "Grenzen beim Auslesen",
+          "body": "PDF-Text, unterstützte Bilder und Klartext werden angenommen. Eingaben sind auf 12 MiB begrenzt; die OCR-Ausweichverarbeitung liest höchstens zwei gescannte PDF-Seiten und startet nur mit Englisch. Ressourcen müssen gegebenenfalls heruntergeladen werden."
+        },
+        {
+          "heading": "Wenn Korrekturen nötig sind",
+          "body": "Ein deutlicheres Bild oder ein Text-PDF verwenden und das Profil manuell korrigieren. Die heruntergeladene Datei prüfen und keine unnötigen persönlichen Angaben hochladen."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Muss ich mich anmelden?",
+      "answer": "Ja. Der aktuelle Editor und die kostenlosen Downloadfunktionen erfordern eine Anmeldung."
+    },
+    {
+      "question": "Enthalten kostenlose PDFs ein Wasserzeichen?",
+      "answer": "Nein. Angemeldete Nutzer können Farb- und Schwarz-Weiß-PDFs ohne Wasserzeichen herunterladen."
+    },
+    {
+      "question": "Gibt es kostenlose Word-Dateien oder KI-generierte Lebenslauftexte?",
+      "answer": "Die kostenlose Oberfläche zeigt PDF-Stile, keine kostenlose Word-Schaltfläche. Eine aktive generative Integration zum Schreiben wurde nicht bestätigt."
+    },
+    {
+      "question": "Welche Grenzen gelten beim Auslesen?",
+      "answer": "Dateien dürfen höchstens 12 MiB groß sein. Das OCR-Ersatzverfahren für gescannte PDFs liest maximal zwei Seiten und initialisiert nur Englisch."
+    },
+    {
+      "question": "Kann ich jetzt einen Formularhilfe-Tarif kaufen?",
+      "answer": "Der öffentliche Status vom 7. November 2026 meldete Bezahlung nicht verfügbar, Testmodus aktiv und keinen Zahlungsanbieter. Ein erfolgreicher realer Kauf wird nicht behauptet."
+    }
+  ],
+  "locale": "de",
+  "breadcrumbLabel": "Navigationspfad"
+}

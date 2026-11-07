@@ -880,5 +880,9 @@
  "Paid: the Auto Form Filler, with single-use credits or a yearly plan.": "付费：自动表单填写，使用单次额度或年度方案。",
  "Yes. CV generation is free: after a free login you can download clean CVs (Color PDF or Plain PDF) with no watermark. The Auto Form Filler is paid: ₹20 / $1 per form fill, or a yearly plan (see Services & Plans).": "是的。生成简历免费：免费登录后即可下载无水印简历（彩色 PDF 或简洁 PDF）。自动表单填写为付费功能：每次 ₹20 / $1，或年度方案（见服务与方案）。",
  "The full CV with no watermark, as a Color PDF or a Plain PDF (black and white). You need a free login.": "完整的无水印简历，可选彩色 PDF 或简洁 PDF（黑白）。需要免费登录。",
- "Creating, editing, saving and downloading CVs is free for logged-in users, with no watermark. Form fills use paid credits, as described on the Services & Plans page.": "登录用户创建、编辑、保存和下载简历均免费，且无水印。表单填写使用付费额度，详见服务与方案页面。"
+ "Creating, editing, saving and downloading CVs is free for logged-in users, with no watermark. Form fills use paid credits, as described on the Services & Plans page.": "登录用户创建、编辑、保存和下载简历均免费，且无水印。表单填写使用付费额度，详见服务与方案页面。",
+  "After sign-in, Color PDF and Plain PDF downloads are free without watermark. Paid checkout was unavailable in the public status observed on 7 November 2026; recheck availability before purchasing.": "登录后可免费下载无水印的彩色PDF和普通PDF。2026年11月7日检查公开状态时，付费结账不可用；购买前请确认当前状态。",
+  "The current free interface offers Color PDF and Plain PDF after sign-in; free Word export is not verified.": "当前免费界面在登录后提供彩色PDF和普通PDF；尚未验证免费Word导出。",
+  "Sign-in is required to use the editor and download the free PDFs.": "使用编辑器和下载免费PDF需要登录。",
+  "Form assistance suggests mappings from document fields for you to review. Arbitrary browser auto-application and guaranteed PDF writeback are not verified.": "表单辅助会建议文档字段的对应关系，供您检查。尚未验证任意浏览器表单自动填入或保证写回PDF的功能。"
 }

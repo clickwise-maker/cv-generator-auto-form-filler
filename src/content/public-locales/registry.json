@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://formzalo.com",
+  "activeLocales": [
+    "en",
+    "hi",
+    "pl",
+    "ar",
+    "es",
+    "zh-cn",
+    "ru",
+    "de",
+    "fr",
+    "pt",
+    "ja",
+    "id"
+  ],
+  "plannedLocales": [],
+  "pages": [
+    "home",
+    "templates",
+    "services",
+    "faq",
+    "about",
+    "help"
+  ],
+  "legacyPages": {
+    "/": "home",
+    "/templates": "templates",
+    "/services": "services",
+    "/faq": "faq",
+    "/about": "about"
+  },
+  "legacyEnglishPaths": [
+    "/refund-policy",
+    "/privacy-policy",
+    "/privacy",
+    "/terms",
+    "/guides",
+    "/guides/cv-for-freshers",
+    "/guides/cv-vs-resume",
+    "/guides/government-job-forms",
+    "/guides/cover-letter",
+    "/guides/form-mistakes",
+    "/guides/photo-signature-specs",
+    "/guides/ats-friendly-cv"
+  ],
+  "locales": {
+    "en": {
+      "label": "English",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "en_IN",
+      "languageTag": "en"
+    },
+    "hi": {
+      "label": "हिंदी",
+      "dir": "ltr",
+      "appLocale": "hi",
+      "ogLocale": "hi_IN",
+      "languageTag": "hi"
+    },
+    "pl": {
+      "label": "Polski",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "pl_PL",
+      "languageTag": "pl"
+    },
+    "ar": {
+      "label": "العربية",
+      "dir": "rtl",
+      "appLocale": "ar",
+      "ogLocale": "ar_SA",
+      "languageTag": "ar"
+    },
+    "es": {
+      "label": "Español",
+      "dir": "ltr",
+      "appLocale": "es-ES",
+      "ogLocale": "es_ES",
+      "languageTag": "es"
+    },
+    "zh-cn": {
+      "label": "简体中文",
+      "dir": "ltr",
+      "appLocale": "zh-CN",
+      "ogLocale": "zh_CN",
+      "languageTag": "zh-CN"
+    },
+    "ru": {
+      "label": "Русский",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "ru_RU",
+      "languageTag": "ru"
+    },
+    "de": {
+      "label": "Deutsch",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "de_DE",
+      "languageTag": "de"
+    },
+    "fr": {
+      "label": "Français",
+      "dir": "ltr",
+      "appLocale": "fr-FR",
+      "ogLocale": "fr_FR",
+      "languageTag": "fr"
+    },
+    "pt": {
+      "label": "Português",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "pt_BR",
+      "languageTag": "pt"
+    },
+    "ja": {
+      "label": "日本語",
+      "dir": "ltr",
+      "appLocale": "ja",
+      "ogLocale": "ja_JP",
+      "languageTag": "ja"
+    },
+    "id": {
+      "label": "Bahasa Indonesia",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "id_ID",
+      "languageTag": "id"
+    }
+  }
+}

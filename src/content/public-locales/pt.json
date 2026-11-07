@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Início",
+    "templates": "Modelos",
+    "services": "Planos e disponibilidade",
+    "faq": "Perguntas",
+    "about": "Sobre",
+    "help": "Ajuda"
+  },
+  "openEditor": "Entrar para criar o currículo",
+  "language": "Idioma",
+  "editorNote": "O editor abre atualmente em inglês. O idioma desta página, o do editor, o OCR e os títulos do PDF são recursos distintos; os caracteres do PDF ainda não foram validados em todos os idiomas.",
+  "contact": "Contato publicado",
+  "templateAlt": "Prévia do modelo de currículo {name}",
+  "faqTitle": "Perguntas frequentes",
+  "privacyLabel": "Privacidade (inglês)",
+  "termsLabel": "Termos (inglês)",
+  "navLabel": "Navegação principal",
+  "chooseTemplate": "Usar este modelo",
+  "pages": {
+    "home": {
+      "title": "Criador de currículo gratuito com download em PDF",
+      "description": "Entre para criar um currículo e baixar um PDF colorido ou simples sem marca d’água. Conheça os limites de leitura e o estado do pagamento.",
+      "h1": "Prepare seu currículo e baixe um PDF",
+      "intro": "Organize experiência, formação e habilidades em um perfil estruturado. Após entrar, o editor oferece três modelos e dois estilos gratuitos de PDF.",
+      "sections": [
+        {
+          "heading": "Informações editáveis",
+          "body": "Confira as sugestões importadas antes de aplicá-las. Dados ausentes precisam ser solicitados, não inventados."
+        },
+        {
+          "heading": "Entenda os recursos disponíveis",
+          "body": "A leitura extrai texto e sugere campos do perfil. Não foram comprovados redação generativa, envio automático de candidaturas ou gravação de volta em qualquer PDF."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Modelos de currículo Meridian, Consulate e Atlas",
+      "description": "Compare três layouts existentes e os estilos gratuitos de PDF colorido e simples, sem promessa de pontuação ATS.",
+      "h1": "Escolha um layout adequado à candidatura",
+      "intro": "Meridian, Consulate e Atlas estão no editor. Use informações corretas e siga o formato solicitado pelo empregador.",
+      "sections": [
+        {
+          "heading": "Colorido ou simples",
+          "body": "O PDF colorido mantém o estilo visual. O PDF simples usa preto e branco com o mesmo conteúdo; ambos não têm marca d’água."
+        },
+        {
+          "heading": "Confira o arquivo exportado",
+          "body": "Abra o PDF e verifique caracteres e quebras de página antes de enviá-lo. A saída Unicode ainda não foi validada em todos os idiomas."
+        }
+      ]
+    },
+    "services": {
+      "title": "PDFs gratuitos e disponibilidade dos planos pagos",
+      "description": "PDFs coloridos e simples são gratuitos após entrar. O pagamento da assistência a formulários estava indisponível na observação datada.",
+      "h1": "O que é gratuito e o que ainda não está pronto?",
+      "intro": "Após entrar, o editor oferece dois estilos de PDF sem marca d’água. A interface gratuita atual não apresenta um botão de Word gratuito comprovado.",
+      "sections": [
+        {
+          "heading": "Pagamento ainda indisponível",
+          "body": "Em 7 de novembro de 2026, o estado público indicava pagamento indisponível, modo de teste ativo e nenhum provedor. Confira novamente a disponibilidade antes de comprar."
+        },
+        {
+          "heading": "Sem promessa de uso ilimitado",
+          "body": "Não foi encontrada cota diária numérica no download direto de PDF pelo navegador. Isso não significa serviço ilimitado: limites de documentos e recursos do dispositivo continuam valendo."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Perguntas sobre PDFs gratuitos e leitura de documentos",
+      "description": "Respostas sobre login, PDFs sem marca d’água, OCR em inglês, tamanho dos arquivos e o estado observado do pagamento.",
+      "h1": "Conheça as capacidades reais",
+      "intro": "As respostas descrevem funções implementadas e identificam o que ainda não foi verificado.",
+      "sections": [
+        {
+          "heading": "Antes de começar",
+          "body": "Inclua somente os dados que pretende colocar no currículo. Revise as sugestões extraídas e o PDF final."
+        },
+        {
+          "heading": "Não confunda os recursos",
+          "body": "A tradução do site não comprova OCR multilíngue, todos os caracteres em PDF ou disponibilidade mundial."
+        }
+      ]
+    },
+    "about": {
+      "title": "Sobre formzolo e FormZalo",
+      "description": "Conheça o criador de currículos formzolo em formzalo.com, as sugestões de campos e os limites reais.",
+      "h1": "Organize melhor os dados do currículo",
+      "intro": "O produto existente usa a marca formzolo no domínio formzalo.com. FormZalo também é um nome do projeto; estas páginas não renomeiam o editor.",
+      "sections": [
+        {
+          "heading": "Assistência prática",
+          "body": "A ferramenta organiza perfis, mostra modelos e sugere campos do texto de documentos para revisão. Não foi confirmada uma integração ativa com modelo generativo."
+        },
+        {
+          "heading": "Limites claros",
+          "body": "Não garantimos emprego, pontuação ATS, candidaturas automáticas, edição de qualquer PDF, posições nos buscadores ou recomendações de IA."
+        }
+      ]
+    },
+    "help": {
+      "title": "Ajuda: entrar, ler um documento e baixar o currículo",
+      "description": "Use o fluxo atual de PDF: entrada de até 12 MiB, no máximo duas páginas digitalizadas no OCR alternativo e reconhecimento em inglês.",
+      "h1": "Prepare e confira o currículo passo a passo",
+      "intro": "Abra o editor, entre, preencha os dados ou leia um documento compatível, revise os valores e baixe o PDF colorido ou simples.",
+      "sections": [
+        {
+          "heading": "Limites de leitura",
+          "body": "São aceitos texto de PDF, imagens compatíveis e texto simples. O limite é 12 MiB; o OCR alternativo de PDF digitalizado lê até duas páginas e inicializa apenas inglês. Alguns recursos precisam ser baixados."
+        },
+        {
+          "heading": "Quando for necessário corrigir",
+          "body": "Use uma imagem mais nítida ou um PDF de texto e corrija o perfil manualmente. Confira o arquivo baixado e não envie informações desnecessárias ao currículo."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Preciso entrar na conta?",
+      "answer": "Sim. O editor atual e os controles de download gratuito exigem login."
+    },
+    {
+      "question": "Os PDFs gratuitos têm marca d’água?",
+      "answer": "Não. Após entrar, é possível baixar PDFs coloridos e simples sem marca d’água."
+    },
+    {
+      "question": "Posso baixar Word gratuitamente ou gerar texto de currículo com IA?",
+      "answer": "A interface gratuita oferece estilos de PDF, não um botão gratuito de Word. Não foi verificada uma integração generativa ativa de escrita."
+    },
+    {
+      "question": "Quais são os limites de leitura?",
+      "answer": "Os arquivos têm limite de 12 MiB. O OCR alternativo de PDF digitalizado lê no máximo duas páginas e inicializa apenas inglês."
+    },
+    {
+      "question": "Posso comprar um plano de assistência a formulários agora?",
+      "answer": "O estado público observado em 7 de novembro de 2026 indicava pagamento indisponível, modo de teste ativo e nenhum provedor. Não afirmamos ter realizado uma compra real com sucesso."
+    }
+  ],
+  "locale": "pt",
+  "breadcrumbLabel": "Caminho de navegação"
+}

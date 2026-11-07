@@ -1,3 +1,4 @@
+import { LegacyBreadcrumbs } from "./content/seo-breadcrumbs";
 import { ZaloDisclaimer } from "@/components/zalo-disclaimer";
 import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
@@ -25,10 +26,10 @@ export function infoHead(c: InfoContent) {
     meta: [
       { title: `${c.title} — formzolo` },
       { name: "description", content: c.desc },
-      { property: "og:title", content: `formzolo — ${c.title}` },
+      { property: "og:title", content: `${c.title} — formzolo` },
       { property: "og:description", content: c.desc },
       { property: "og:url", content: url },
-      { name: "twitter:title", content: `formzolo — ${c.title}` },
+      { name: "twitter:title", content: `${c.title} — formzolo` },
       { name: "twitter:description", content: c.desc },
     ],
     links: [
@@ -37,7 +38,7 @@ export function infoHead(c: InfoContent) {
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap",
       },
     ],
-    scripts: c.faqld ? [{ type: "application/ld+json", children: JSON.stringify(c.faqld) }] : [],
+    scripts: [], // FAQ rich-result markup intentionally not emitted.
   };
 }
 
@@ -80,7 +81,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
             {tr("formzolo")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
+          <LegacyBreadcrumbs/><h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
           <p className="mt-2 text-sm text-ink/70">
             {tr(c.lead)}
           </p>

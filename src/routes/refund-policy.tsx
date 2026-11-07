@@ -1,3 +1,4 @@
+import { LegacyBreadcrumbs } from "@/components/content/seo-breadcrumbs";
 import { tr } from "@/lib/i18n/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/site-footer";
@@ -81,7 +82,7 @@ function RefundPolicy() {
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
             {tr("formzolo")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
+          <LegacyBreadcrumbs/><h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
           <p className="mt-2 text-sm text-ink/70">
             {tr("Plain and simple.")}
           </p>

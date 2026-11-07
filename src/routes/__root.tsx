@@ -1,39 +1,23 @@
 import { Fragment, useEffect } from "react";
 import { LANG_BOOT, useLang } from "@/lib/i18n/i18n";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { ADS, ADSENSE_CLIENT, adsenseScriptSrc } from "@/config/ads";
 
-import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
+import { SITE_URL } from "@/lib/seo-keywords";
 import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
 
-const KEYWORDS = META_KEYWORDS;
+import { resolvePublicRoute, legacyPublicRoute, publicAlternates, registry } from "@/lib/public-locale-routing.mjs";
+import { schemaGraph } from "@/lib/seo-graph.mjs";
+import { LEGACY_PUBLIC_SEO,legacyBreadcrumbs } from "@/lib/legacy-public-seo";
+import { publicBreadcrumbs, publicPageCopy } from "@/lib/public-locales";
+
+
 
 const SITE = SITE_URL;
-const webAppLd = (DESCRIPTION: string, url: string, inLanguage: string) => ({
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "formzolo",
-  alternateName: ["formzalo", "CV Studio"],
-  url,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Any (web browser)",
-  description: DESCRIPTION,
-  inLanguage,
-  availableLanguage: ["en-IN", "en-GB", "hi-IN", "ar-SA", "es-ES", "fr-FR", "ja", "zh-CN"],
-  offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-  publisher: { "@type": "Organization", name: "formzolo", url: `${SITE}/` },
-});
-const ORG_LD = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "formzolo",
-  url: `${SITE}/`,
-  logo: `${SITE}/favicon.svg`,
-};
 const GSC = (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
 /** Privacy-friendly analytics (Plausible-compatible). OFF unless VITE_ANALYTICS_DOMAIN is set at build time. No cookies. */
 const ANALYTICS_DOMAIN = (import.meta.env.VITE_ANALYTICS_DOMAIN as string | undefined) || "";
@@ -44,9 +28,11 @@ const ANALYTICS_SRC =
 function LangRoot() {
   const lang = useLang((s) => s.lang);
   const load = useLang((s) => s.load);
-  useEffect(() => load(), [load]);
+  const pathname = useRouterState({select: (state) => state.location.pathname});
+  const publicRoute = resolvePublicRoute(pathname);
+  useEffect(() => { if (!publicRoute) load(); }, [load, publicRoute?.locale]);
   return (
-    <Fragment key={lang}>
+    <Fragment key={publicRoute?.locale ?? lang}>
       <Outlet />
     </Fragment>
   );
@@ -57,10 +43,13 @@ export const Route = createRootRoute({
     const leaf = matches[matches.length - 1];
     const lang = langFromSearch(leaf?.search);
     const path = (leaf?.pathname || "/").replace(/(.)\/+$/, "$1");
+    const publicRoute = resolvePublicRoute(path) ?? legacyPublicRoute(path, (leaf?.search as {lang?:unknown} | undefined)?.lang);
+    const legacySeo=LEGACY_PUBLIC_SEO[path];
+    const publicCopy = publicRoute ? publicPageCopy(publicRoute) : null;
     const seo = LOCALE_SEO[lang];
-    const APP_NAME = seo.title;
-    const DESCRIPTION = seo.description;
-    const url = localeUrl(path, lang);
+    const APP_NAME = publicCopy ? `${publicCopy.title} | formzolo` : legacySeo ? `${legacySeo.title} — formzolo` : seo.title;
+    const DESCRIPTION = publicCopy?.description ?? legacySeo?.description ?? seo.description;
+    const url = publicRoute?.url ?? (legacySeo ? `${SITE}${path}` : localeUrl(path, lang));
     return {
       meta: [
         { charSet: "utf-8" },
@@ -68,17 +57,16 @@ export const Route = createRootRoute({
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
         ...(ADS.enabled ? [{ name: "google-adsense-account", content: ADSENSE_CLIENT }] : []),
-        { name: "keywords", content: KEYWORDS },
+
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: "formzolo" },
         { property: "og:image", content: `${SITE}/og.jpg` },
         { property: "og:url", content: url },
-        { property: "og:locale", content: seo.ogLocale },
-        ...Object.values(LOCALE_SEO)
-          .filter((x) => x.ogLocale !== seo.ogLocale)
-          .map((x) => ({ property: "og:locale:alternate", content: x.ogLocale })),
+        { property: "og:locale", content: publicRoute ? registry.locales[publicRoute.locale].ogLocale : legacySeo ? "en_IN" : seo.ogLocale },
+        ...(!legacySeo && publicRoute ? registry.activeLocales.map(locale => registry.locales[locale].ogLocale).filter(locale=>locale!==registry.locales[publicRoute.locale].ogLocale) : legacySeo ? [] : Object.values(LOCALE_SEO).filter(x=>x.ogLocale!==seo.ogLocale).map(x=>x.ogLocale))
+          .map(locale=>({property:"og:locale:alternate",content:locale})),
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: APP_NAME },
         { name: "twitter:description", content: DESCRIPTION },
@@ -88,11 +76,7 @@ export const Route = createRootRoute({
         ...(GSC ? [{ name: "google-site-verification", content: GSC }] : []),
       ],
       scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(webAppLd(DESCRIPTION, url, seo.hreflang)),
-        },
-        { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
+        ...((publicRoute || legacySeo) ? [{type:"application/ld+json",children:JSON.stringify(schemaGraph({url,title:APP_NAME,description:DESCRIPTION,language:publicRoute?.languageTag??"en",breadcrumbs:publicRoute?publicBreadcrumbs(publicRoute.locale,publicRoute.page):legacyBreadcrumbs(path),freeBuilder:publicRoute?.page==="home"}))}] : []),
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
@@ -103,7 +87,7 @@ export const Route = createRootRoute({
       ],
       links: [
         { rel: "canonical", href: url },
-        ...hreflangLinks(path),
+        ...(publicRoute ? publicAlternates(publicRoute.locale, publicRoute.page) : legacySeo ? [{rel:"alternate",hrefLang:"en",href:url},{rel:"alternate",hrefLang:"x-default",href:url}] : hreflangLinks(path)),
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "stylesheet", href: appCss },
         { rel: "manifest", href: "/__grok/manifest.webmanifest" },
@@ -117,23 +101,22 @@ export const Route = createRootRoute({
       ],
     };
   },
-  component: () => (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+  component: RootDocument,
+});
+
+function RootDocument() {
+  const pathname=useRouterState({select:(state)=>state.location.pathname});
+  const publicRoute=resolvePublicRoute(pathname);
+  return (
+    <html lang={publicRoute?.languageTag ?? "en"} dir={publicRoute?.dir ?? "ltr"} className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />
+        {!publicRoute && <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />}
       </head>
       <body>
-        <noscript>
-          <p>
-            formzolo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
-            free clean CV download (Color or Plain PDF) after login, and a paid Auto Form Filler for job applications. Single Use
-            ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support:
-            team@formzalo.com (reviewed within 2 working days).{" "}
-            <a href="/services">Services &amp; Plans</a> ·{" "}
-            <a href="/refund-policy">Refund Policy</a>
-          </p>
-        </noscript>
+        {!publicRoute && <noscript>
+          <p>formzolo: sign in to build a CV and download Color PDF or Plain PDF without a watermark. Document reading proposes fields for review; it is not verified generative writing or automatic application submission. <a href="/en/services/">Plans and dated checkout availability</a> · <a href="/en/help/">Document limits and help</a></p>
+        </noscript>}
         <PreviewHostBridge />
         <AuthProvider>
           <LangRoot />
@@ -153,5 +136,5 @@ export const Route = createRootRoute({
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}

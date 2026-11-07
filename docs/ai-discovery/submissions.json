@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "source": "Parent-reported official read-only account observations; this source executor made no account calls",
+  "google": {
+    "checkedAt": "2026-11-07T23:09:00+05:30",
+    "property": "formzalo.com domain property",
+    "ownership": "verified via domain-name provider; two verified owners reported",
+    "sitemapUrl": "https://formzalo.com/sitemap.xml",
+    "actualSubmissions": 1,
+    "status": "Success",
+    "discoveredPages": 102,
+    "videos": 0,
+    "indexedCount": null,
+    "urlIndexingRequests": 0,
+    "evidence": "/cursor/stores/user/grok-bot/agents/2f07a415-d6dd-4637-a3d6-85dbe78a8ef2/assets/9e7bdcbc156755ecc54fd69d70630b1e874fe6d8da90b196f87490a4534c8a08.png"
+  },
+  "bing": {
+    "checkedAt": "2026-11-07T23:21:00+05:30",
+    "property": "https://www.formzalo.com/",
+    "status": "Not verified; verification pending",
+    "apexPropertyShown": false,
+    "sitemapAccess": "inaccessible while property unverified",
+    "actualSubmissions": 0,
+    "userBoundary": "Do not repeat import, login, consent, Continue or Verify without new explicit instruction",
+    "evidence": "/cursor/stores/user/grok-bot/agents/2f07a415-d6dd-4637-a3d6-85dbe78a8ef2/assets/56852d9fff554206ee953f364490e994d85a96fba2b7c8b6eec8e932dcef7732.png"
+  },
+  "indexnow": {
+    "status": "OFFLINE_DRAFT_DISABLED",
+    "actualSubmissions": 0,
+    "liveKeyVerified": false
+  },
+  "aiDirectoryDirectListings": {
+    "actualSubmissions": 0,
+    "note": "Google sitemap discovery is not a direct Gemini/AI-app listing"
+  },
+  "preparedBranchSitemap": {
+    "urlCount": 84,
+    "deployed": false,
+    "submitted": false
+  },
+  "adsense": {
+    "checkedAtApproximate": "2026-11-07T23:25:00+05:30",
+    "site": "formzalo.com",
+    "accountAndSiteAlreadyExist": true,
+    "status": "Requires review",
+    "ownershipVerified": false,
+    "adsTxtStatus": "Not found",
+    "reportedLastUpdatedIST": "18:19 IST",
+    "placedCodeChecked": false,
+    "requestReviewEnabled": false,
+    "deployment": "NOT DEPLOYED / NOT MERGED: parent narrow PR3 diagnosis at23:31 IST; supported full-artifact upload capability blocked, not user approval/CI; homepage code presence unconfirmed",
+    "actualReviewRequestsThisBatch": 0,
+    "deploymentCheckedAt": "2026-11-07T23:31:00+05:30",
+    "productionVersionUnchanged": "0ad7c6fa-498e-4892-b1b0-edc81a2fc452",
+    "productionDeploymentUnchanged": "5760ff11-8b87-479a-a20b-1cc913b43cdd"
+  }
+}

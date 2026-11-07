@@ -1,0 +1,426 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:formzalo:product-manifest:v1",
+  "$comment": "Current audited snapshot contract. A future capability change requires new evidence, schema review and regenerated assets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reviewedAt",
+    "canonicalOrigin",
+    "brand",
+    "positioning",
+    "freeCv",
+    "documentReader",
+    "formAssistance",
+    "generativeAi",
+    "paidCheckout",
+    "languages",
+    "support",
+    "publicPaths",
+    "sitemap",
+    "discoveryNotice",
+    "evidence"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "canonicalOrigin": {
+      "const": "https://formzalo.com"
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "displayName",
+        "aliases",
+        "note"
+      ],
+      "properties": {
+        "displayName": {
+          "const": "formzolo"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "positioning": {
+      "type": "string",
+      "minLength": 1
+    },
+    "freeCv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signInRequiredForEditor",
+        "signInRequiredForDownload",
+        "formats",
+        "styles",
+        "watermark",
+        "templates",
+        "numericDailyQuota",
+        "quotaNote",
+        "wordDownloadVerifiedFree"
+      ],
+      "properties": {
+        "signInRequiredForEditor": {
+          "const": true
+        },
+        "signInRequiredForDownload": {
+          "const": true
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "const": "pdf"
+          }
+        },
+        "styles": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "color",
+              "plain"
+            ]
+          }
+        },
+        "watermark": {
+          "const": false
+        },
+        "templates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "numericDailyQuota": {
+          "type": "null"
+        },
+        "quotaNote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wordDownloadVerifiedFree": {
+          "const": false
+        }
+      }
+    },
+    "documentReader": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "processing",
+        "acceptedInputs",
+        "maxInputBytes",
+        "scannedPdfFallbackMaxPages",
+        "ocrLanguageCodes",
+        "note"
+      ],
+      "properties": {
+        "processing": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acceptedInputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "maxInputBytes": {
+          "const": 12582912
+        },
+        "scannedPdfFallbackMaxPages": {
+          "const": 2
+        },
+        "ocrLanguageCodes": {
+          "type": "array",
+          "items": {
+            "const": "eng"
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "formAssistance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "availableWorkflow",
+        "arbitraryThirdPartySubmissionVerified",
+        "automaticJobApplicationVerified",
+        "arbitraryPdfWritebackVerified",
+        "paidCreditUiIntegrationVerified",
+        "note"
+      ],
+      "properties": {
+        "availableWorkflow": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "arbitraryThirdPartySubmissionVerified": {
+          "const": false
+        },
+        "automaticJobApplicationVerified": {
+          "const": false
+        },
+        "arbitraryPdfWritebackVerified": {
+          "const": false
+        },
+        "paidCreditUiIntegrationVerified": {
+          "const": false
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "generativeAi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activeModelIntegrationVerified",
+        "note"
+      ],
+      "properties": {
+        "activeModelIntegrationVerified": {
+          "const": false
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "paidCheckout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "trialMode",
+        "provider",
+        "observedAt",
+        "sourceUrl",
+        "note"
+      ],
+      "properties": {
+        "mode": {
+          "const": "unavailable"
+        },
+        "trialMode": {
+          "const": true
+        },
+        "provider": {
+          "type": "null"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uiLocaleIds",
+        "baseLanguageCount",
+        "cvHeadingLocaleIds",
+        "unicodePdfValidation",
+        "ssrLocaleParity",
+        "note",
+        "publicContentLocaleIds",
+        "publicContentPageCount"
+      ],
+      "properties": {
+        "uiLocaleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "baseLanguageCount": {
+          "const": 7
+        },
+        "cvHeadingLocaleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unicodePdfValidation": {
+          "const": "not_completed"
+        },
+        "ssrLocaleParity": {
+          "const": "twelve_public_locales_implemented_legacy_ui_not_migrated"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publicContentLocaleIds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "en",
+              "hi",
+              "pl",
+              "ar",
+              "es",
+              "zh-cn",
+              "ru",
+              "de",
+              "fr",
+              "pt",
+              "ja",
+              "id"
+            ]
+          }
+        },
+        "publicContentPageCount": {
+          "const": 72
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicEmail",
+        "publicContactUrl",
+        "mailboxDeliverabilityTested",
+        "note"
+      ],
+      "properties": {
+        "publicEmail": {
+          "const": "team@formzalo.com"
+        },
+        "publicContactUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "mailboxDeliverabilityTested": {
+          "const": false
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "publicPaths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sitemap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "localeIds",
+        "hreflangTags",
+        "expectedUrlCount",
+        "note",
+        "registrySource"
+      ],
+      "properties": {
+        "path": {
+          "const": "/sitemap.xml"
+        },
+        "localeIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hreflangTags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expectedUrlCount": {
+          "const": 84
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "registrySource": {
+          "const": "src/content/public-locales/registry.json"
+        }
+      }
+    },
+    "discoveryNotice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicUrls",
+        "sourceFiles",
+        "note"
+      ],
+      "properties": {
+        "publicUrls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "sourceFiles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
