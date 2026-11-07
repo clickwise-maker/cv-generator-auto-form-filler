@@ -67,7 +67,7 @@ export const Route = createRootRoute({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
-        ...(ADS.enabled ? [{ name: "google-adsense-account", content: ADSENSE_CLIENT }] : []),
+        { name: "google-adsense-account", content: "ca-pub-5439325240008654" },
         { name: "keywords", content: KEYWORDS },
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
