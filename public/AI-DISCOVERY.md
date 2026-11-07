@@ -19,20 +19,45 @@ Training option: allow. Edit docs/ai-discovery/crawler-policy.json and regenerat
 ## Scope and outcomes
 - Discovery, crawl, indexing, retrieval and citation are distinct, non-guaranteed stages. Training permission is a separate policy.
 - No platform submission, IndexNow ping, webmaster account verification or country-availability test occurred in this batch.
-- Current sitemap retains 102 existing URLs across six locale IDs; /en/, /pl/ and other proposed directory routes are not added.
-- Existing non-English SSR limitations, remaining app metadata/schema contradictions and functional browser testing are later work.
+- Current sitemap contains 42 canonical URLs: five public locales across six page intents plus twelve existing English pages. Seven later locale collections are not advertised.
+- Locale-prefixed public content has request-scoped SSR; legacy editor localization, remaining old app metadata and visual/authenticated functional testing remain separate.
 
 ## Existing public pages
-- [Home](https://formzalo.com/)
-- [services](https://formzalo.com/services)
+- [en/](https://formzalo.com/en/)
+- [en/templates/](https://formzalo.com/en/templates/)
+- [en/services/](https://formzalo.com/en/services/)
+- [en/faq/](https://formzalo.com/en/faq/)
+- [en/about/](https://formzalo.com/en/about/)
+- [en/help/](https://formzalo.com/en/help/)
+- [hi/](https://formzalo.com/hi/)
+- [hi/templates/](https://formzalo.com/hi/templates/)
+- [hi/services/](https://formzalo.com/hi/services/)
+- [hi/faq/](https://formzalo.com/hi/faq/)
+- [hi/about/](https://formzalo.com/hi/about/)
+- [hi/help/](https://formzalo.com/hi/help/)
+- [pl/](https://formzalo.com/pl/)
+- [pl/templates/](https://formzalo.com/pl/templates/)
+- [pl/services/](https://formzalo.com/pl/services/)
+- [pl/faq/](https://formzalo.com/pl/faq/)
+- [pl/about/](https://formzalo.com/pl/about/)
+- [pl/help/](https://formzalo.com/pl/help/)
+- [ar/](https://formzalo.com/ar/)
+- [ar/templates/](https://formzalo.com/ar/templates/)
+- [ar/services/](https://formzalo.com/ar/services/)
+- [ar/faq/](https://formzalo.com/ar/faq/)
+- [ar/about/](https://formzalo.com/ar/about/)
+- [ar/help/](https://formzalo.com/ar/help/)
+- [es/](https://formzalo.com/es/)
+- [es/templates/](https://formzalo.com/es/templates/)
+- [es/services/](https://formzalo.com/es/services/)
+- [es/faq/](https://formzalo.com/es/faq/)
+- [es/about/](https://formzalo.com/es/about/)
+- [es/help/](https://formzalo.com/es/help/)
 - [refund-policy](https://formzalo.com/refund-policy)
 - [privacy-policy](https://formzalo.com/privacy-policy)
 - [privacy](https://formzalo.com/privacy)
 - [terms](https://formzalo.com/terms)
-- [faq](https://formzalo.com/faq)
-- [about](https://formzalo.com/about)
 - [guides](https://formzalo.com/guides)
-- [templates](https://formzalo.com/templates)
 - [guides/cv-for-freshers](https://formzalo.com/guides/cv-for-freshers)
 - [guides/cv-vs-resume](https://formzalo.com/guides/cv-vs-resume)
 - [guides/government-job-forms](https://formzalo.com/guides/government-job-forms)

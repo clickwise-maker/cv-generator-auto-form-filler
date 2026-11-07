@@ -259,7 +259,9 @@
         "cvHeadingLocaleIds",
         "unicodePdfValidation",
         "ssrLocaleParity",
-        "note"
+        "note",
+        "publicContentLocaleIds",
+        "publicContentPageCount"
       ],
       "properties": {
         "uiLocaleIds": {
@@ -283,11 +285,26 @@
           "const": "not_completed"
         },
         "ssrLocaleParity": {
-          "const": "incomplete"
+          "const": "five_public_locales_implemented_legacy_ui_not_migrated"
         },
         "note": {
           "type": "string",
           "minLength": 1
+        },
+        "publicContentLocaleIds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "en",
+              "hi",
+              "pl",
+              "ar",
+              "es"
+            ]
+          }
+        },
+        "publicContentPageCount": {
+          "const": 30
         }
       }
     },
@@ -333,7 +350,7 @@
         "hreflangTags",
         "expectedUrlCount",
         "note",
-        "existingContentSha256"
+        "registrySource"
       ],
       "properties": {
         "path": {
@@ -354,15 +371,14 @@
           }
         },
         "expectedUrlCount": {
-          "const": 102
+          "const": 42
         },
         "note": {
           "type": "string",
           "minLength": 1
         },
-        "existingContentSha256": {
-          "type": "string",
-          "minLength": 64
+        "registrySource": {
+          "const": "src/content/public-locales/registry.json"
         }
       }
     },

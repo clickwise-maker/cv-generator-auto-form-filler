@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
+import { resolvePublicRoute, publicAlternates } from '../src/lib/public-locale-routing.mjs';
 import { readFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
@@ -18,22 +18,17 @@ for u in r:
 print(json.dumps(rows))`], {input:xml, encoding:'utf8', timeout:5000, maxBuffer:1024*1024});
   assert.equal(parsed.status, 0, `Sitemap XML parse failed: ${parsed.error?.message ?? parsed.stderr}`);
   const rows = JSON.parse(parsed.stdout);
-  const expected = new Set(m.publicPaths.flatMap(path => m.sitemap.localeIds.map(lang => `${m.canonicalOrigin}${path}${lang === 'en' ? '' : `?lang=${encodeURIComponent(lang)}`}`)));
+  const expected = new Set(m.publicPaths.map(path => m.canonicalOrigin+path));
   assert.equal(rows.length, m.sitemap.expectedUrlCount);
   assert.equal(new Set(rows.map(r => r.loc)).size, rows.length, 'duplicate loc');
-  assert.deepEqual(new Set(rows.map(r => r.loc)), expected, 'only current canonical public routes/locales');
+  assert.deepEqual(new Set(rows.map(r => r.loc)), expected, 'only implemented canonical routes');
   for (const row of rows) {
-    const url = new URL(row.loc); assert.equal(url.origin,m.canonicalOrigin); assert.equal(url.hash,'');
-    const links = [...m.sitemap.localeIds.map((lang,i) => ({rel:'alternate', hreflang:m.sitemap.hreflangTags[i], href:`${m.canonicalOrigin}${url.pathname}${lang === 'en' ? '' : `?lang=${encodeURIComponent(lang)}`}`})),{rel:'alternate',hreflang:'x-default',href:`${m.canonicalOrigin}${url.pathname}`}];
-    assert.deepEqual(row.alternates, links, `${row.loc}: reciprocal hreflang/x-default parity`);
-    assert.ok(row.lastmod.length <= 1);
-    for (const date of row.lastmod) {
-      assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(date), 'expected legacy date-only lastmod');
-      assert.equal(new Date(date).toISOString().slice(0,10), date, 'real calendar lastmod');
-      assert.ok(date <= m.reviewedAt.slice(0,10), 'future lastmod');
-    }
+    const url=new URL(row.loc); assert.equal(url.origin,m.canonicalOrigin); assert.equal(url.hash,''); assert.equal(url.search,'');
+    const match=resolvePublicRoute(url.pathname);
+    const links=match?publicAlternates(match.locale,match.page).map(({hrefLang,href})=>({rel:'alternate',hreflang:hrefLang,href})):[];
+    assert.deepEqual(row.alternates,links,`${row.loc}: reciprocal hreflang/x-default parity`);
+    assert.deepEqual(row.lastmod,[],'No invented lastmod dates');
   }
-  assert.equal(createHash('sha256').update(xml).digest('hex'),m.sitemap.existingContentSha256,'Phase 3 retains existing sitemap bytes/dates; a later locale change needs explicit manifest review');
   return rows.length;
 }
 export function validateSourceFacts(m = manifest) {
@@ -56,5 +51,5 @@ export function validateSourceFacts(m = manifest) {
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
   validateSourceFacts(); checkGenerated();
-  console.log(JSON.stringify({generatedAssets:5,sitemapUrls:validateSitemap(),sourceFacts:'pass',runtimeObservation:'dated snapshot; not re-fetched by this validator'}));
+  console.log(JSON.stringify({generatedAssets:6,sitemapUrls:validateSitemap(),sourceFacts:'pass',runtimeObservation:'dated snapshot; not re-fetched by this validator'}));
 }

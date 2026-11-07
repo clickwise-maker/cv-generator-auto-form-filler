@@ -91,8 +91,16 @@
       "es"
     ],
     "unicodePdfValidation": "not_completed",
-    "ssrLocaleParity": "incomplete",
-    "note": "Non-English metadata and client translations exist; raw SSR body/html language parity is incomplete. Output-language and OCR capability must be tested separately."
+    "ssrLocaleParity": "five_public_locales_implemented_legacy_ui_not_migrated",
+    "note": "Five locale-prefixed public content collections have request-scoped SSR. Existing editor UI remains eight locale IDs; Polish public content opens the English editor. Legacy app locale behavior and Unicode PDF validation are separate, incomplete work.",
+    "publicContentLocaleIds": [
+      "en",
+      "hi",
+      "pl",
+      "ar",
+      "es"
+    ],
+    "publicContentPageCount": 30
   },
   "support": {
     "publicEmail": "team@formzalo.com",
@@ -101,16 +109,41 @@
     "note": "Email is published on the public services page; no email was sent and inbox existence/deliverability was not tested."
   },
   "publicPaths": [
-    "/",
-    "/services",
+    "/en/",
+    "/en/templates/",
+    "/en/services/",
+    "/en/faq/",
+    "/en/about/",
+    "/en/help/",
+    "/hi/",
+    "/hi/templates/",
+    "/hi/services/",
+    "/hi/faq/",
+    "/hi/about/",
+    "/hi/help/",
+    "/pl/",
+    "/pl/templates/",
+    "/pl/services/",
+    "/pl/faq/",
+    "/pl/about/",
+    "/pl/help/",
+    "/ar/",
+    "/ar/templates/",
+    "/ar/services/",
+    "/ar/faq/",
+    "/ar/about/",
+    "/ar/help/",
+    "/es/",
+    "/es/templates/",
+    "/es/services/",
+    "/es/faq/",
+    "/es/about/",
+    "/es/help/",
     "/refund-policy",
     "/privacy-policy",
     "/privacy",
     "/terms",
-    "/faq",
-    "/about",
     "/guides",
-    "/templates",
     "/guides/cv-for-freshers",
     "/guides/cv-vs-resume",
     "/guides/government-job-forms",
@@ -123,23 +156,21 @@
     "path": "/sitemap.xml",
     "localeIds": [
       "en",
-      "en-GB",
+      "hi",
+      "pl",
       "ar",
-      "es-ES",
-      "fr-FR",
-      "hi"
+      "es"
     ],
     "hreflangTags": [
-      "en-IN",
-      "en-GB",
-      "ar-SA",
-      "es-ES",
-      "fr-FR",
-      "hi-IN"
+      "en",
+      "hi",
+      "pl",
+      "ar",
+      "es"
     ],
-    "expectedUrlCount": 102,
-    "note": "Existing six-locale coverage retained pending SSR parity; ja/zh-CN and proposed directory routes are not added in Phase 3. Legacy lastmod values are not refreshed or independently freshness-certified.",
-    "existingContentSha256": "98632494f7fca910b32c5b6236be650789f7050718c96d110dd496345e8190f7"
+    "expectedUrlCount": 42,
+    "note": "Generated from active public counterparts and existing English-only content. No absent/untranslated locale routes or lastmod dates are emitted. Seven later public locales are not indexed by this batch.",
+    "registrySource": "src/content/public-locales/registry.json"
   },
   "discoveryNotice": "These voluntary AI-readable assets do not guarantee discovery, crawling, indexing, retrieval, citation, ranking or recommendation. They are not a special Google ranking requirement.",
   "evidence": {
@@ -155,7 +186,9 @@
       "src/components/studio/form-filler.tsx",
       "src/lib/i18n/i18n.ts",
       "src/lib/payments/config.ts",
-      "src/routes/services.tsx"
+      "src/routes/services.tsx",
+      "src/content/public-locales/registry.json",
+      "src/components/content/public-localized.tsx"
     ],
     "note": "Public facts and source audit only. No customer records, credentials, payment or authenticated production E2E tests used."
   }

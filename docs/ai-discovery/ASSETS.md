@@ -1,6 +1,6 @@
 # Phase 3 — factual AI-readable assets and crawler policy
 
-This batch extends the Phase 2 branch/PR only. It changes static public discovery files and repository tooling, not application functionality, paid-provider configuration or production settings. It is **not live** until a separately authorized complete deployment succeeds.
+Historical Phase 3 scope (the Phase 4 public-page changes are documented in LOCALIZATION.md): this batch extends the Phase 2 branch/PR only. It changes static public discovery files and repository tooling, not application functionality, paid-provider configuration or production settings. It is **not live** until a separately authorized complete deployment succeeds.
 
 ## Single product-truth input
 
@@ -41,18 +41,18 @@ Only verified tokens in `platforms.json` are emitted. Public search permission f
 
 The deny option applies to **GPTBot, ClaudeBot, Google-Extended and Applebot-Extended**. It does **not** claim to block all AI training by unknown providers; they retain wildcard behavior. Google-Extended is a control token, not a separate HTTP crawler, and also affects some Gemini grounding. A training-deny setting can therefore affect those grounding uses; it does not control Google Search inclusion. User-requested fetchers can apply robots rules differently. Do not loosen security rules based on an agent name.
 
-## Sitemap deliberately unchanged
+## Sitemap — Phase 4 first-five foundation supersedes Phase 3 freeze
 
-`public/sitemap.xml` remains exactly the existing 102 URLs (17 paths × six locale IDs). The manifest stores its existing SHA-256, freezing Phase 3 scope. The validator parses XML with Python's standard library, validates canonical apex URLs, exact current routes/locales, duplicate absence, reciprocal hreflang/x-default and calendar/nonfuture date syntax. It adds no directory URLs, no ja/zh-CN expansion and no fresh/fabricated lastmod values.
+Phase 3 retained the original 102 query-locale URLs. Phase 4 now generates **42 canonical URLs** from `src/content/public-locales/registry.json`: five actual public locales × six page intents, plus twelve existing English-only content routes. All 42 returned 200 in the isolated Node SSR integration test. Reciprocal hreflang/x-default appears only for actual translated counterparts. No `lastmod` is invented. Planned seven locale collections do not enter the sitemap. See [LOCALIZATION.md](LOCALIZATION.md).
 
-Legacy lastmod values were **not independently freshness-certified** and are not refreshed. A Phase 4 sitemap change must deliberately update the reviewed manifest/checksum and validate actual locale/body parity. A valid XML/date contract does not establish Google indexing or prove the historical content-update date.
+This prepared sitemap is **not live or submitted**. The parent's separately authorized Google submission on 7 November 2026 at 23:09 IST concerned the existing live 102-URL sitemap; it does not submit this branch or establish indexing.
 
 ## Update process and remaining work
 
 1. Recheck source/runtime facts through approved read-only methods; update the manifest, schema and tests together only with evidence. A future functioning provider/model/output flow needs proof, not a flag or new claim.
 2. Keep aliases and existing `formzolo` branding; no surprise UI rename. Keep only published support contact information; do not invent support@/hello@/billing@ inboxes.
-3. Regenerate and check all five outputs. Test both training policies without committing a default change. No private records, tokens, session material or personal CV data belong in assets.
+3. Regenerate and check all six outputs. Test both training policies without committing a default change. No private records, tokens, session material or personal CV data belong in assets.
 4. Run safe `typecheck`, `build:cloudflare` and relevant offline regressions. Never use generic `npm run build` here: it invokes migrations. No real checkout/payment or submissions.
 5. Preserve PR3/PR4 and leave PR5 unmerged. Deployment remains blocked by the sanctioned connector's 4 MiB/no-stream limitation and explicit asset-domain network restriction; do not use incomplete assets or alternate deployment credentials/routes.
 
-Phase 4 SSR/localized URLs, existing application metadata/services FAQ contradictions, new languages, multilingual OCR/PDF output validation, keyword research, compliance and live E2E remain later work. This batch does not repair those application surfaces or certify country availability.
+Phase 4 first-five public SSR pages are prepared; the seven later public locales, legacy application metadata/services FAQ contradictions, multilingual OCR/PDF output validation, keyword research, compliance and live E2E remain later work. This batch does not repair those application surfaces or certify country availability.

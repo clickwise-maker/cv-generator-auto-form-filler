@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://formzalo.com",
+  "activeLocales": [
+    "en",
+    "hi",
+    "pl",
+    "ar",
+    "es"
+  ],
+  "plannedLocales": [
+    "zh-cn",
+    "ru",
+    "de",
+    "fr",
+    "pt",
+    "ja",
+    "id"
+  ],
+  "pages": [
+    "home",
+    "templates",
+    "services",
+    "faq",
+    "about",
+    "help"
+  ],
+  "legacyPages": {
+    "/": "home",
+    "/templates": "templates",
+    "/services": "services",
+    "/faq": "faq",
+    "/about": "about"
+  },
+  "legacyEnglishPaths": [
+    "/refund-policy",
+    "/privacy-policy",
+    "/privacy",
+    "/terms",
+    "/guides",
+    "/guides/cv-for-freshers",
+    "/guides/cv-vs-resume",
+    "/guides/government-job-forms",
+    "/guides/cover-letter",
+    "/guides/form-mistakes",
+    "/guides/photo-signature-specs",
+    "/guides/ats-friendly-cv"
+  ],
+  "locales": {
+    "en": {
+      "label": "English",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "en_IN"
+    },
+    "hi": {
+      "label": "हिंदी",
+      "dir": "ltr",
+      "appLocale": "hi",
+      "ogLocale": "hi_IN"
+    },
+    "pl": {
+      "label": "Polski",
+      "dir": "ltr",
+      "appLocale": "en",
+      "ogLocale": "pl_PL"
+    },
+    "ar": {
+      "label": "العربية",
+      "dir": "rtl",
+      "appLocale": "ar",
+      "ogLocale": "ar_SA"
+    },
+    "es": {
+      "label": "Español",
+      "dir": "ltr",
+      "appLocale": "es-ES",
+      "ogLocale": "es_ES"
+    }
+  }
+}
