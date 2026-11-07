@@ -17,7 +17,7 @@ export const LOCALE_SEO: Record<UiLang, LocaleSeo> = {
     ogLocale: "en_IN",
     title: "Free CV Maker India & Resume for Freshers | formzolo",
     description:
-      "Free CV maker for India: build a resume for freshers in Indian format, sign in free and download PDF or Word. Reuse your details to fill job, affidavit and vakalatnama forms (form filling, not legal drafting).",
+      "Free CV maker for India and freshers. Sign in to create your resume and download free Color and Plain PDFs with no watermark.",
     h1: "Free CV maker for India, resume for freshers and online form filling",
   },
   "en-GB": {
@@ -33,7 +33,7 @@ export const LOCALE_SEO: Record<UiLang, LocaleSeo> = {
     ogLocale: "hi_IN",
     title: "फ्री बायोडाटा और रिज्यूम कैसे बनाएं | formzolo",
     description:
-      "बायोडाटा और रिज्यूम फॉर्मेट में मुफ़्त CV बनाएं और PDF या Word में डाउनलोड करें। वही जानकारी नौकरी और शपथ पत्र जैसे फॉर्म भरने में दोबारा इस्तेमाल करें (फॉर्म भरना, कानूनी ड्राफ्टिंग नहीं)।",
+      "बायोडाटा और रिज्यूम फॉर्मेट में मुफ़्त CV बनाएं। साइन इन करके बिना वॉटरमार्क के रंगीन और सादा PDF मुफ़्त डाउनलोड करें।",
     h1: "मुफ़्त बायोडाटा / रिज्यूम मेकर और ऑनलाइन फॉर्म भरना",
   },
   ar: {
