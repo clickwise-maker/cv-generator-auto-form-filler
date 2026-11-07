@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "templates": "Templates",
+    "services": "Plans and availability",
+    "faq": "Questions",
+    "about": "About",
+    "help": "Help"
+  },
+  "openEditor": "Sign in to build your CV",
+  "language": "Language",
+  "editorNote": "The editor requires sign-in. Public page language, editor language, OCR and PDF heading options are separate; Polish public pages currently open the English editor.",
+  "contact": "Published contact",
+  "templateAlt": "Preview of the {name} CV template",
+  "faqTitle": "Common questions",
+  "pages": {
+    "home": {
+      "title": "Free CV builder with clean PDF downloads",
+      "description": "Sign in to create a CV and download Color or Plain PDFs without a watermark. Learn the actual document-reading limits and checkout status.",
+      "h1": "Build your CV, then download a clean PDF",
+      "intro": "Use a structured profile to organize your experience, education and skills. The signed-in editor provides three templates and two free PDF styles.",
+      "sections": [
+        {
+          "heading": "Your details stay editable",
+          "body": "Review imported values before applying them. Missing details are requested rather than invented."
+        },
+        {
+          "heading": "Understand the available tools",
+          "body": "Document reading extracts text and proposes profile fields. It is not verified generative resume writing, automatic job submission or a tool that writes back into every PDF."
+        }
+      ]
+    },
+    "templates": {
+      "title": "CV templates: Meridian, Consulate and Atlas",
+      "description": "Compare the three implemented CV layouts and free Color and Plain PDF styles. Choose based on the application instructions, not a promised ATS score.",
+      "h1": "Choose a CV layout for your application",
+      "intro": "Meridian, Consulate and Atlas are existing layouts in the editor. Keep the information accurate and follow the employer’s requested format.",
+      "sections": [
+        {
+          "heading": "Designed or plain",
+          "body": "Color PDF preserves the designed style. Plain PDF uses simple black-and-white styling with the same content and no watermark."
+        },
+        {
+          "heading": "Check the exported file",
+          "body": "Open your PDF and inspect page breaks and characters before sending it. Unicode output across all languages has not yet been validated."
+        }
+      ]
+    },
+    "services": {
+      "title": "Free PDF downloads and paid-plan availability",
+      "description": "Color and Plain PDFs are free after sign-in. Paid form-filler checkout is currently unavailable in the dated public status observation.",
+      "h1": "What is free, and what is not ready?",
+      "intro": "The current editor offers free Color PDF and Plain PDF downloads after sign-in, without a watermark. The free UI does not establish a free Word download.",
+      "sections": [
+        {
+          "heading": "Paid checkout is not ready",
+          "body": "Paid form-filler plans exist, but the public status observed on 7 November 2026 reported unavailable, trial mode enabled and no provider. Recheck availability before relying on a purchase."
+        },
+        {
+          "heading": "No unlimited-use promise",
+          "body": "No numerical daily quota was found in the direct browser PDF path. This does not mean unlimited service; device resources, document limits and future reviewed policies may apply."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions about free CV PDFs and document reading",
+      "description": "Answers about sign-in, watermark-free PDF downloads, English OCR, file limits and the current availability of paid form-filler checkout.",
+      "h1": "Know what the product can do",
+      "intro": "These answers describe implemented behavior and explicitly identify what has not been verified.",
+      "sections": [
+        {
+          "heading": "Before you start",
+          "body": "Use only details you intend to include in your CV. Review extracted suggestions and the final PDF."
+        },
+        {
+          "heading": "Scope matters",
+          "body": "Website translations do not prove multilingual OCR, worldwide availability or support for every PDF character."
+        }
+      ]
+    },
+    "about": {
+      "title": "About formzolo and FormZalo",
+      "description": "A factual overview of the existing formzolo CV builder, FormZalo domain, document-to-profile assistance and limits.",
+      "h1": "One profile, clearer CV preparation",
+      "intro": "The existing product uses the formzolo brand on the formzalo.com domain. FormZalo is also used as a project alias; these pages do not rename the editor.",
+      "sections": [
+        {
+          "heading": "Practical assistance",
+          "body": "The product organizes profile details, displays template previews and proposes fields from document text for user review. There is no verified active generative-model integration."
+        },
+        {
+          "heading": "Clear boundaries",
+          "body": "We do not promise job offers, ATS scores, automatic applications, arbitrary PDF writeback, search rankings or AI recommendations."
+        }
+      ]
+    },
+    "help": {
+      "title": "Help: sign in, read a document and download a CV",
+      "description": "Follow the existing sign-in and PDF workflow. Check the 12 MiB input limit, two-page scanned-PDF fallback and English OCR support.",
+      "h1": "Prepare and check your CV step by step",
+      "intro": "Open the editor, sign in, enter your details or read a supported document, review suggested values, then download Color PDF or Plain PDF.",
+      "sections": [
+        {
+          "heading": "Document reading limits",
+          "body": "PDF text, supported images and plain text are accepted. The input limit is 12 MiB; scanned-PDF OCR fallback reads at most two pages and initializes English OCR. Resources may need to download."
+        },
+        {
+          "heading": "When results need correction",
+          "body": "Use a clearer image or text PDF, and correct the profile manually. Always check the downloaded file. Do not upload information that is unnecessary for your intended CV."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Do I need to sign in?",
+      "answer": "Yes. The current editor and free download controls require sign-in."
+    },
+    {
+      "question": "Are free PDF downloads watermarked?",
+      "answer": "No. Signed-in users can download Color PDF and Plain PDF without a watermark."
+    },
+    {
+      "question": "Can I download free Word files or generate AI-written CV text?",
+      "answer": "The current free UI exposes PDF styles, not a free Word button. An active generative-model writing integration has not been verified."
+    },
+    {
+      "question": "What are the reading limits?",
+      "answer": "Input files are limited to 12 MiB. Scanned-PDF fallback reads at most two pages; OCR initializes English only."
+    },
+    {
+      "question": "Can I buy a form-filler plan now?",
+      "answer": "The public status observed on 7 November 2026 reported paid checkout unavailable, trial mode enabled and no payment provider. No successful live purchase is claimed."
+    }
+  ],
+  "locale": "en",
+  "privacyLabel": "Privacy policy (English)",
+  "termsLabel": "Terms (English)",
+  "navLabel": "Main navigation",
+  "chooseTemplate": "Use this template"
+}

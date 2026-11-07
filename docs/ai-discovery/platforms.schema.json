@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:formzalo:ai-discovery:platforms:v1",
+  "$comment": "Repository-only schema identifier. Validator implements the keywords used here, not arbitrary JSON Schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "project",
+    "reviewedAt",
+    "reviewTimezone",
+    "scope",
+    "submissionCount",
+    "sources",
+    "platforms",
+    "reviewNotes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewTimezone": {
+      "const": "Asia/Kolkata"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "submissionCount": {
+      "const": 0
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "finalUrl",
+          "httpStatus",
+          "checkedAt",
+          "access",
+          "title",
+          "note"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "finalUrl": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "httpStatus": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 100,
+                "maximum": 599
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "checkedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "access": {
+            "enum": [
+              "content_fetched",
+              "shell_only",
+              "inaccessible"
+            ]
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 23,
+      "maxItems": 23,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "requestedName",
+          "officialName",
+          "officialWebsite",
+          "discovery",
+          "crawlers",
+          "publicSubmission",
+          "submissionStatus",
+          "lastVerification",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requestedName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "officialName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "officialWebsite": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "sourceId"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "sourceId": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "discovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "summary",
+              "sourceIds"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "verified",
+                  "unknown"
+                ]
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "crawlers": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "documentationStatus",
+              "sourceIds",
+              "agents",
+              "notes"
+            ],
+            "properties": {
+              "documentationStatus": {
+                "enum": [
+                  "verified",
+                  "not_found_in_review",
+                  "inaccessible"
+                ]
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "agents": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "token",
+                    "kind",
+                    "purposes",
+                    "sourceId"
+                  ],
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "http_user_agent",
+                        "robots_control_token"
+                      ]
+                    },
+                    "purposes": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "enum": [
+                          "search",
+                          "training",
+                          "user_fetch",
+                          "grounding"
+                        ]
+                      }
+                    },
+                    "sourceId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "publicSubmission": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mechanismStatus",
+              "mechanisms",
+              "notes"
+            ],
+            "properties": {
+              "mechanismStatus": {
+                "enum": [
+                  "documented_indirect",
+                  "documented_direct",
+                  "unknown"
+                ]
+              },
+              "mechanisms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "url",
+                    "sourceId",
+                    "relationship",
+                    "notes"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "sourceId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "relationship": {
+                      "enum": [
+                        "indirect_search_index",
+                        "direct_platform_submission"
+                      ]
+                    },
+                    "notes": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "submissionStatus": {
+            "const": "NOT_SUBMITTED"
+          },
+          "lastVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "attemptedAt",
+              "contentVerifiedAt",
+              "coverage",
+              "notes"
+            ],
+            "properties": {
+              "attemptedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "contentVerifiedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "coverage": {
+                "enum": [
+                  "official_content_fetched",
+                  "inaccessible_or_insufficient_content"
+                ]
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "reviewNotes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

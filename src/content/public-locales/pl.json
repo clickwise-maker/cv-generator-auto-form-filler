@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "templates": "Szablony",
+    "services": "Plany i dostępność",
+    "faq": "Pytania",
+    "about": "O produkcie",
+    "help": "Pomoc"
+  },
+  "openEditor": "Zaloguj się i utwórz CV",
+  "language": "Język",
+  "editorNote": "Edytor wymaga logowania. Język stron, interfejs edytora, OCR i nagłówki PDF to osobne funkcje. Polskie strony otwierają obecnie edytor po angielsku.",
+  "contact": "Opublikowany kontakt",
+  "templateAlt": "Podgląd szablonu CV {name}",
+  "faqTitle": "Częste pytania",
+  "pages": {
+    "home": {
+      "title": "Kreator CV z bezpłatnym pobieraniem PDF",
+      "description": "Po zalogowaniu utwórz CV i pobierz kolorowy lub prosty PDF bez znaku wodnego. Poznaj rzeczywiste ograniczenia odczytu dokumentów.",
+      "h1": "Przygotuj CV i pobierz PDF bez znaku wodnego",
+      "intro": "Uporządkuj doświadczenie, wykształcenie i umiejętności w profilu. Edytor po zalogowaniu udostępnia trzy szablony i dwa bezpłatne style PDF.",
+      "sections": [
+        {
+          "heading": "Kontroluj swoje dane",
+          "body": "Sprawdź wykryte wartości przed ich zastosowaniem. Brakujące informacje są wymagane od użytkownika, a nie wymyślane."
+        },
+        {
+          "heading": "Znaj ograniczenia narzędzi",
+          "body": "Odczyt dokumentów wydobywa tekst i proponuje pola profilu. Nie potwierdzono generowania treści CV przez aktywny model AI, wysyłania aplikacji ani zapisu do dowolnego PDF."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Szablony CV: Meridian, Consulate i Atlas",
+      "description": "Porównaj trzy dostępne układy oraz kolorowy i prosty PDF. Kieruj się wymaganiami pracodawcy, nie obietnicą oceny ATS.",
+      "h1": "Dobierz układ CV do aplikacji",
+      "intro": "Meridian, Consulate i Atlas to istniejące układy edytora. Podawaj prawdziwe informacje i stosuj format wymagany w ogłoszeniu.",
+      "sections": [
+        {
+          "heading": "Kolorowy lub prosty",
+          "body": "Kolorowy PDF zachowuje styl projektu. Prosty PDF zawiera te same dane w czarno-białym układzie. Oba są bez znaku wodnego."
+        },
+        {
+          "heading": "Sprawdź pobrany plik",
+          "body": "Przed wysłaniem otwórz PDF, sprawdź podział stron i znaki. Nie zakończono testów znaków Unicode dla wszystkich języków."
+        }
+      ]
+    },
+    "services": {
+      "title": "Bezpłatne PDF i dostępność płatnych planów",
+      "description": "Kolorowy i prosty PDF są bezpłatne po zalogowaniu. Zapisana publiczna odpowiedź wskazywała niedostępność płatności za plany wypełniania formularzy.",
+      "h1": "Co jest bezpłatne, a co nie jest gotowe?",
+      "intro": "Po zalogowaniu obecny edytor pozwala bezpłatnie pobrać kolorowy lub prosty PDF bez znaku wodnego. Darmowy interfejs nie potwierdza pobierania plików Word.",
+      "sections": [
+        {
+          "heading": "Płatności nie są gotowe",
+          "body": "Plany formularzy istnieją w kodzie, ale 7 listopada 2026 publiczny status wskazywał niedostępność płatności, tryb próbny i brak dostawcy. Przed zakupem sprawdź aktualny stan."
+        },
+        {
+          "heading": "Bez obietnicy nieograniczonego użycia",
+          "body": "Nie znaleziono liczbowego limitu dziennego w bezpośredniej ścieżce PDF w przeglądarce. Nie oznacza to nieograniczonej usługi; znaczenie mają zasoby urządzenia i limity dokumentów."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Pytania o bezpłatne CV PDF i odczyt dokumentów",
+      "description": "Odpowiedzi o logowaniu, PDF bez znaku wodnego, angielskim OCR, limitach plików i dostępności płatności.",
+      "h1": "Dowiedz się, co produkt rzeczywiście robi",
+      "intro": "Odpowiedzi opisują istniejące funkcje i wyraźnie zaznaczają niepotwierdzone możliwości.",
+      "sections": [
+        {
+          "heading": "Zanim zaczniesz",
+          "body": "Używaj tylko danych potrzebnych w CV. Sprawdź propozycje odczytu i gotowy plik PDF."
+        },
+        {
+          "heading": "Język nie oznacza pełnego wsparcia",
+          "body": "Tłumaczenie strony nie potwierdza wielojęzycznego OCR, dostępności w każdym kraju ani obsługi każdego znaku w PDF."
+        }
+      ]
+    },
+    "about": {
+      "title": "O formzolo i FormZalo",
+      "description": "Rzetelny opis istniejącego kreatora formzolo, domeny FormZalo, mapowania dokumentu do profilu i ograniczeń.",
+      "h1": "Jeden profil ułatwia przygotowanie CV",
+      "intro": "Produkt na domenie formzalo.com używa nazwy formzolo. FormZalo to także nazwa projektu; te strony nie zmieniają nazwy edytora.",
+      "sections": [
+        {
+          "heading": "Praktyczna pomoc",
+          "body": "Produkt porządkuje profil, pokazuje szablony i proponuje wartości z tekstu dokumentu do sprawdzenia przez użytkownika. Nie potwierdzono aktywnej integracji modelu generatywnego."
+        },
+        {
+          "heading": "Jasne granice",
+          "body": "Nie obiecujemy zatrudnienia, wyników ATS, automatycznych aplikacji, zapisu do każdego PDF, pozycji w wyszukiwarce ani rekomendacji AI."
+        }
+      ]
+    },
+    "help": {
+      "title": "Pomoc: logowanie, dokument i pobieranie CV",
+      "description": "Poznaj proces tworzenia PDF, limit pliku 12 MiB, odczyt dwóch stron skanowanego PDF i angielski OCR.",
+      "h1": "Przygotuj i sprawdź CV krok po kroku",
+      "intro": "Otwórz edytor, zaloguj się, wpisz dane lub odczytaj obsługiwany dokument. Sprawdź sugestie, a następnie pobierz kolorowy lub prosty PDF.",
+      "sections": [
+        {
+          "heading": "Limity odczytu",
+          "body": "Obsługiwane są tekst PDF, wybrane obrazy i zwykły tekst. Limit wynosi 12 MiB. OCR skanowanego PDF odczytuje najwyżej dwie strony i uruchamia język angielski. Zasoby mogą wymagać pobrania."
+        },
+        {
+          "heading": "Gdy trzeba poprawić wynik",
+          "body": "Użyj wyraźniejszego obrazu albo tekstowego PDF i popraw profil ręcznie. Zawsze sprawdź pobrany plik. Nie przesyłaj zbędnych danych osobowych."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Czy muszę się zalogować?",
+      "answer": "Tak. Obecny edytor i bezpłatne pobieranie wymagają zalogowania."
+    },
+    {
+      "question": "Czy darmowy PDF ma znak wodny?",
+      "answer": "Nie. Po zalogowaniu można pobrać kolorowy lub prosty PDF bez znaku wodnego."
+    },
+    {
+      "question": "Czy otrzymam bezpłatny Word lub tekst CV napisany przez AI?",
+      "answer": "Darmowy interfejs udostępnia style PDF, nie przycisk Word. Nie potwierdzono aktywnego generatywnego modelu piszącego CV."
+    },
+    {
+      "question": "Jakie są limity odczytu?",
+      "answer": "Plik może mieć do 12 MiB. Odczyt skanowanego PDF obejmuje najwyżej dwie strony; OCR uruchamia wyłącznie angielski."
+    },
+    {
+      "question": "Czy mogę kupić plan formularzy?",
+      "answer": "7 listopada 2026 publiczny status wskazywał niedostępne płatności, włączony tryb próbny i brak dostawcy. Nie deklarujemy udanego zakupu produkcyjnego."
+    }
+  ],
+  "locale": "pl",
+  "privacyLabel": "Polityka prywatności (angielski)",
+  "termsLabel": "Warunki (angielski)",
+  "navLabel": "Nawigacja główna",
+  "chooseTemplate": "Wybierz ten szablon"
+}

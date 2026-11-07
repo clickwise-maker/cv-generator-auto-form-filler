@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
 import { LANG_BOOT, useLang } from "@/lib/i18n/i18n";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
@@ -9,6 +9,9 @@ import { ADS, ADSENSE_CLIENT, adsenseScriptSrc } from "@/config/ads";
 
 import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
 import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
+
+import { resolvePublicRoute, legacyPublicRoute, publicAlternates, registry } from "@/lib/public-locale-routing.mjs";
+import { PUBLIC_COPY, publicPageCopy } from "@/lib/public-locales";
 
 const KEYWORDS = META_KEYWORDS;
 
@@ -44,9 +47,11 @@ const ANALYTICS_SRC =
 function LangRoot() {
   const lang = useLang((s) => s.lang);
   const load = useLang((s) => s.load);
-  useEffect(() => load(), [load]);
+  const pathname = useRouterState({select: (state) => state.location.pathname});
+  const publicRoute = resolvePublicRoute(pathname);
+  useEffect(() => { if (!publicRoute) load(); }, [load, publicRoute?.locale]);
   return (
-    <Fragment key={lang}>
+    <Fragment key={publicRoute?.locale ?? lang}>
       <Outlet />
     </Fragment>
   );
@@ -57,10 +62,12 @@ export const Route = createRootRoute({
     const leaf = matches[matches.length - 1];
     const lang = langFromSearch(leaf?.search);
     const path = (leaf?.pathname || "/").replace(/(.)\/+$/, "$1");
+    const publicRoute = resolvePublicRoute(path) ?? legacyPublicRoute(path, (leaf?.search as {lang?:unknown} | undefined)?.lang);
+    const publicCopy = publicRoute ? publicPageCopy(publicRoute) : null;
     const seo = LOCALE_SEO[lang];
-    const APP_NAME = seo.title;
-    const DESCRIPTION = seo.description;
-    const url = localeUrl(path, lang);
+    const APP_NAME = publicCopy ? `${publicCopy.title} | formzolo` : seo.title;
+    const DESCRIPTION = publicCopy?.description ?? seo.description;
+    const url = publicRoute?.url ?? localeUrl(path, lang);
     return {
       meta: [
         { charSet: "utf-8" },
@@ -68,17 +75,16 @@ export const Route = createRootRoute({
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
         ...(ADS.enabled ? [{ name: "google-adsense-account", content: ADSENSE_CLIENT }] : []),
-        { name: "keywords", content: KEYWORDS },
+        ...(!publicRoute ? [{ name: "keywords", content: KEYWORDS }] : []),
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: "formzolo" },
         { property: "og:image", content: `${SITE}/og.jpg` },
         { property: "og:url", content: url },
-        { property: "og:locale", content: seo.ogLocale },
-        ...Object.values(LOCALE_SEO)
-          .filter((x) => x.ogLocale !== seo.ogLocale)
-          .map((x) => ({ property: "og:locale:alternate", content: x.ogLocale })),
+        { property: "og:locale", content: publicRoute ? registry.locales[publicRoute.locale].ogLocale : seo.ogLocale },
+        ...(publicRoute ? registry.activeLocales.map(locale => registry.locales[locale].ogLocale).filter(locale=>locale!==registry.locales[publicRoute.locale].ogLocale) : Object.values(LOCALE_SEO).filter(x=>x.ogLocale!==seo.ogLocale).map(x=>x.ogLocale))
+          .map(locale=>({property:"og:locale:alternate",content:locale})),
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: APP_NAME },
         { name: "twitter:description", content: DESCRIPTION },
@@ -90,9 +96,10 @@ export const Route = createRootRoute({
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify(webAppLd(DESCRIPTION, url, seo.hreflang)),
+          children: JSON.stringify(publicRoute ? {"@context":"https://schema.org","@type":"WebPage",name:APP_NAME,description:DESCRIPTION,url,inLanguage:publicRoute.languageTag,isPartOf:{"@type":"WebSite",name:"formzolo",url:`${SITE}/en/`}} : webAppLd(DESCRIPTION, url, seo.hreflang)),
         },
         { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
+        ...(publicRoute?.page === "faq" ? [{type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",inLanguage:publicRoute.languageTag,mainEntity:PUBLIC_COPY[publicRoute.locale].faq.map(item=>({"@type":"Question",name:item.question,acceptedAnswer:{"@type":"Answer",text:item.answer}}))})}] : []),
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
@@ -103,7 +110,7 @@ export const Route = createRootRoute({
       ],
       links: [
         { rel: "canonical", href: url },
-        ...hreflangLinks(path),
+        ...(publicRoute ? publicAlternates(publicRoute.locale, publicRoute.page) : hreflangLinks(path)),
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "stylesheet", href: appCss },
         { rel: "manifest", href: "/__grok/manifest.webmanifest" },
@@ -117,14 +124,20 @@ export const Route = createRootRoute({
       ],
     };
   },
-  component: () => (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+  component: RootDocument,
+});
+
+function RootDocument() {
+  const pathname=useRouterState({select:(state)=>state.location.pathname});
+  const publicRoute=resolvePublicRoute(pathname);
+  return (
+    <html lang={publicRoute?.languageTag ?? "en"} dir={publicRoute?.dir ?? "ltr"} className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />
+        {!publicRoute && <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />}
       </head>
       <body>
-        <noscript>
+        {!publicRoute && <noscript>
           <p>
             formzolo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
             free clean CV download (Color or Plain PDF) after login, and a paid Auto Form Filler for job applications. Single Use
@@ -133,7 +146,7 @@ export const Route = createRootRoute({
             <a href="/services">Services &amp; Plans</a> ·{" "}
             <a href="/refund-policy">Refund Policy</a>
           </p>
-        </noscript>
+        </noscript>}
         <PreviewHostBridge />
         <AuthProvider>
           <LangRoot />
@@ -153,5 +166,5 @@ export const Route = createRootRoute({
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}
