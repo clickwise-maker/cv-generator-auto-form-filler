@@ -285,7 +285,7 @@
           "const": "not_completed"
         },
         "ssrLocaleParity": {
-          "const": "five_public_locales_implemented_legacy_ui_not_migrated"
+          "const": "twelve_public_locales_implemented_legacy_ui_not_migrated"
         },
         "note": {
           "type": "string",
@@ -299,12 +299,19 @@
               "hi",
               "pl",
               "ar",
-              "es"
+              "es",
+              "zh-cn",
+              "ru",
+              "de",
+              "fr",
+              "pt",
+              "ja",
+              "id"
             ]
           }
         },
         "publicContentPageCount": {
-          "const": 30
+          "const": 72
         }
       }
     },
@@ -371,7 +378,7 @@
           }
         },
         "expectedUrlCount": {
-          "const": 42
+          "const": 84
         },
         "note": {
           "type": "string",

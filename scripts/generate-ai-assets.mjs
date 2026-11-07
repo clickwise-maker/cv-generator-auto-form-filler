@@ -18,7 +18,8 @@ export function validateManifest(m) {
   assert.equal(m.publicPaths.length, m.sitemap.expectedUrlCount);
   assert.deepEqual(m.languages.publicContentLocaleIds,registry.activeLocales);
   assert.equal(m.languages.publicContentPageCount,registry.activeLocales.length*registry.pages.length);
-  assert.equal(m.sitemap.localeIds.length, m.sitemap.hreflangTags.length);
+  assert.deepEqual(m.sitemap.localeIds,registry.activeLocales);
+  assert.deepEqual(m.sitemap.hreflangTags,registry.activeLocales.map(l=>registry.locales[l].languageTag));
   for (const p of m.publicPaths) assert.ok(p.startsWith('/') && !p.includes('?') && !p.includes('#') && !p.startsWith('/api/') && !p.startsWith('/c/'));
   assert.equal(new Set(m.languages.uiLocaleIds.map(l => l.split('-')[0])).size, m.languages.baseLanguageCount);
   return m;
@@ -75,8 +76,8 @@ export function renderAssets(m = manifest, p = policy) {
     '## Languages',
     `- Eight UI locale IDs across seven base languages: ${ui}.`,
     `- CV heading options are separate: ${m.languages.cvHeadingLocaleIds.join(', ')}. UI support is not proof of multilingual OCR or PDF glyph coverage.`,
-    '- Five public content locales (en, hi, pl, ar, es) have independent SSR pages. The legacy editor language architecture and Unicode PDF validation remain separate.',
-    '- The sitemap lists thirty active localized public pages and twelve existing English content pages. Seven later public locale collections are not implemented.', '',
+    '- Twelve public content locales have independent SSR pages (en, hi, pl, ar, es, zh-cn, ru, de, fr, pt, ja, id). The legacy editor language architecture and Unicode PDF validation remain separate.',
+    '- The sitemap lists seventy-two translated public pages and twelve existing English content pages. Twelve website translations do not establish twelve-language editor, OCR or PDF character support.', '',
     '## Contact',
     `- Published support contact: ${m.support.publicEmail}; ${m.support.publicContactUrl}. Mailbox deliverability was not tested; no email was sent.`, '',
     '## Public pages', pages, '',
@@ -113,7 +114,7 @@ export function renderAssets(m = manifest, p = policy) {
     '## Scope and outcomes',
     '- Discovery, crawl, indexing, retrieval and citation are distinct, non-guaranteed stages. Training permission is a separate policy.',
     '- No platform submission, IndexNow ping, webmaster account verification or country-availability test occurred in this batch.',
-    '- Current sitemap contains 42 canonical URLs: five public locales across six page intents plus twelve existing English pages. Seven later locale collections are not advertised.',
+    '- Current sitemap contains 84 canonical URLs: twelve public locales across six page intents plus twelve existing English pages. Translation drafts await native-speaker review.',
     '- Locale-prefixed public content has request-scoped SSR; legacy editor localization, remaining old app metadata and visual/authenticated functional testing remain separate.', '',
     '## Existing public pages', pages, '',
     '## Contact', `${m.support.publicEmail} (published address; inbox delivery not tested). ${m.support.publicContactUrl}`, '',

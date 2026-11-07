@@ -9,13 +9,13 @@ export function resolvePublicRoute(pathname) {
   try { parts=pathname.split('/').filter(Boolean).map(s=>decodeURIComponent(s).toLowerCase()); } catch { return null; }
   if(parts.length<1 || parts.length>2 || !registry.activeLocales.includes(parts[0]))return null;
   const page=parts[1]??'home';if(!registry.pages.includes(page) || page==='home' && parts.length===2)return null;
-  return {locale:parts[0],page,url:publicUrl(parts[0],page),dir:registry.locales[parts[0]].dir};
+  return {locale:parts[0],page,url:publicUrl(parts[0],page),dir:registry.locales[parts[0]].dir,languageTag:registry.locales[parts[0]].languageTag};
 }
 export function legacyPublicRoute(pathname, lang) {
   const path=pathname==='/'?'/':pathname.replace(/\/+$/,'');const page=registry.legacyPages[path];if(!page)return null;
-  const raw=typeof lang==='string'?lang.toLowerCase():'en';const base=raw.split('-')[0];
+  const raw=typeof lang==='string'?lang.toLowerCase():'en';const base=raw==='zh-cn'?'zh-cn':raw.split('-')[0];
   if(!registry.activeLocales.includes(base))return null;
-  return {locale:base,page,url:publicUrl(base,page),dir:registry.locales[base].dir};
+  return {locale:base,page,url:publicUrl(base,page),dir:registry.locales[base].dir,languageTag:registry.locales[base].languageTag};
 }
 export function canonicalRedirect(input) {
   const url=new URL(input);const publicRoute=resolvePublicRoute(url.pathname);
@@ -33,5 +33,5 @@ export function canonicalRedirect(input) {
 }
 export function publicAlternates(locale,page) {
   publicUrl(locale,page);
-  return [...registry.activeLocales.map(l=>({rel:'alternate',hrefLang:l,href:publicUrl(l,page)})),{rel:'alternate',hrefLang:'x-default',href:publicUrl('en',page)}];
+  return [...registry.activeLocales.map(l=>({rel:'alternate',hrefLang:registry.locales[l].languageTag,href:publicUrl(l,page)})),{rel:'alternate',hrefLang:'x-default',href:publicUrl('en',page)}];
 }

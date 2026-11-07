@@ -43,9 +43,9 @@ The deny option applies to **GPTBot, ClaudeBot, Google-Extended and Applebot-Ext
 
 ## Sitemap — Phase 4 first-five foundation supersedes Phase 3 freeze
 
-Phase 3 retained the original 102 query-locale URLs. Phase 4 now generates **42 canonical URLs** from `src/content/public-locales/registry.json`: five actual public locales × six page intents, plus twelve existing English-only content routes. All 42 returned 200 in the isolated Node SSR integration test. Reciprocal hreflang/x-default appears only for actual translated counterparts. No `lastmod` is invented. Planned seven locale collections do not enter the sitemap. See [LOCALIZATION.md](LOCALIZATION.md).
+Phase 3 retained the original102 query-locale URLs. The first-five Phase4 batch then prepared42 canonical routes. The subsequent remaining-seven extension now generates **84 canonical URLs** from `src/content/public-locales/registry.json`: twelve actual public-content locales × six page intents, plus twelve existing English content routes. All84 returned200 in the isolated Node SSR integration check. Reciprocal hreflang/x-default references only actual public counterparts; Chinese URL ID `zh-cn` uses `zh-CN` for document language and hreflang. No `lastmod` is invented. See [ALL_LOCALES.md](ALL_LOCALES.md); first-five evidence is retained in [LOCALIZATION.md](LOCALIZATION.md).
 
-This prepared sitemap is **not live or submitted**. The parent's separately authorized Google submission on 7 November 2026 at 23:09 IST concerned the existing live 102-URL sitemap; it does not submit this branch or establish indexing.
+This prepared sitemap is **not live or submitted**. The parent's separate authorized Google submission at23:09 IST on7 November2026 concerns the existing live102-URL sitemap, not this84-URL review branch, and does not establish indexing.
 
 ## Update process and remaining work
 
@@ -55,4 +55,4 @@ This prepared sitemap is **not live or submitted**. The parent's separately auth
 4. Run safe `typecheck`, `build:cloudflare` and relevant offline regressions. Never use generic `npm run build` here: it invokes migrations. No real checkout/payment or submissions.
 5. Preserve PR3/PR4 and leave PR5 unmerged. Deployment remains blocked by the sanctioned connector's 4 MiB/no-stream limitation and explicit asset-domain network restriction; do not use incomplete assets or alternate deployment credentials/routes.
 
-Phase 4 first-five public SSR pages are prepared; the seven later public locales, legacy application metadata/services FAQ contradictions, multilingual OCR/PDF output validation, keyword research, compliance and live E2E remain later work. This batch does not repair those application surfaces or certify country availability.
+All twelve Phase 4 public SSR collections are prepared as translation drafts; native-language review, legacy application metadata/services FAQ contradictions, multilingual OCR/PDF output validation, keyword research, compliance and live E2E remain later work. This batch does not repair those application surfaces or certify country availability.

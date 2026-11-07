@@ -96,10 +96,10 @@ export const Route = createRootRoute({
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify(publicRoute ? {"@context":"https://schema.org","@type":"WebPage",name:APP_NAME,description:DESCRIPTION,url,inLanguage:publicRoute.locale,isPartOf:{"@type":"WebSite",name:"formzolo",url:`${SITE}/en/`}} : webAppLd(DESCRIPTION, url, seo.hreflang)),
+          children: JSON.stringify(publicRoute ? {"@context":"https://schema.org","@type":"WebPage",name:APP_NAME,description:DESCRIPTION,url,inLanguage:publicRoute.languageTag,isPartOf:{"@type":"WebSite",name:"formzolo",url:`${SITE}/en/`}} : webAppLd(DESCRIPTION, url, seo.hreflang)),
         },
         { type: "application/ld+json", children: JSON.stringify(ORG_LD) },
-        ...(publicRoute?.page === "faq" ? [{type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",inLanguage:publicRoute.locale,mainEntity:PUBLIC_COPY[publicRoute.locale].faq.map(item=>({"@type":"Question",name:item.question,acceptedAnswer:{"@type":"Answer",text:item.answer}}))})}] : []),
+        ...(publicRoute?.page === "faq" ? [{type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",inLanguage:publicRoute.languageTag,mainEntity:PUBLIC_COPY[publicRoute.locale].faq.map(item=>({"@type":"Question",name:item.question,acceptedAnswer:{"@type":"Answer",text:item.answer}}))})}] : []),
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
@@ -131,7 +131,7 @@ function RootDocument() {
   const pathname=useRouterState({select:(state)=>state.location.pathname});
   const publicRoute=resolvePublicRoute(pathname);
   return (
-    <html lang={publicRoute?.locale ?? "en"} dir={publicRoute?.dir ?? "ltr"} className="antialiased" suppressHydrationWarning>
+    <html lang={publicRoute?.languageTag ?? "en"} dir={publicRoute?.dir ?? "ltr"} className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
         {!publicRoute && <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />}

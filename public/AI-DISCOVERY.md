@@ -1,6 +1,6 @@
 # FormZalo / formzolo — AI discovery notes
 
-Factual snapshot: 2026-11-07T17:26:14.162007+00:00. Canonical origin: https://formzalo.com.
+Factual snapshot: 2026-11-07T23:19:30+05:30. Canonical origin: https://formzalo.com.
 Generated repository assets are not a claim of deployment, indexing, platform submission or recommendation.
 
 ## Read the product truth
@@ -19,7 +19,7 @@ Training option: allow. Edit docs/ai-discovery/crawler-policy.json and regenerat
 ## Scope and outcomes
 - Discovery, crawl, indexing, retrieval and citation are distinct, non-guaranteed stages. Training permission is a separate policy.
 - No platform submission, IndexNow ping, webmaster account verification or country-availability test occurred in this batch.
-- Current sitemap contains 42 canonical URLs: five public locales across six page intents plus twelve existing English pages. Seven later locale collections are not advertised.
+- Current sitemap contains 84 canonical URLs: twelve public locales across six page intents plus twelve existing English pages. Translation drafts await native-speaker review.
 - Locale-prefixed public content has request-scoped SSR; legacy editor localization, remaining old app metadata and visual/authenticated functional testing remain separate.
 
 ## Existing public pages
@@ -53,6 +53,48 @@ Training option: allow. Edit docs/ai-discovery/crawler-policy.json and regenerat
 - [es/faq/](https://formzalo.com/es/faq/)
 - [es/about/](https://formzalo.com/es/about/)
 - [es/help/](https://formzalo.com/es/help/)
+- [zh-cn/](https://formzalo.com/zh-cn/)
+- [zh-cn/templates/](https://formzalo.com/zh-cn/templates/)
+- [zh-cn/services/](https://formzalo.com/zh-cn/services/)
+- [zh-cn/faq/](https://formzalo.com/zh-cn/faq/)
+- [zh-cn/about/](https://formzalo.com/zh-cn/about/)
+- [zh-cn/help/](https://formzalo.com/zh-cn/help/)
+- [ru/](https://formzalo.com/ru/)
+- [ru/templates/](https://formzalo.com/ru/templates/)
+- [ru/services/](https://formzalo.com/ru/services/)
+- [ru/faq/](https://formzalo.com/ru/faq/)
+- [ru/about/](https://formzalo.com/ru/about/)
+- [ru/help/](https://formzalo.com/ru/help/)
+- [de/](https://formzalo.com/de/)
+- [de/templates/](https://formzalo.com/de/templates/)
+- [de/services/](https://formzalo.com/de/services/)
+- [de/faq/](https://formzalo.com/de/faq/)
+- [de/about/](https://formzalo.com/de/about/)
+- [de/help/](https://formzalo.com/de/help/)
+- [fr/](https://formzalo.com/fr/)
+- [fr/templates/](https://formzalo.com/fr/templates/)
+- [fr/services/](https://formzalo.com/fr/services/)
+- [fr/faq/](https://formzalo.com/fr/faq/)
+- [fr/about/](https://formzalo.com/fr/about/)
+- [fr/help/](https://formzalo.com/fr/help/)
+- [pt/](https://formzalo.com/pt/)
+- [pt/templates/](https://formzalo.com/pt/templates/)
+- [pt/services/](https://formzalo.com/pt/services/)
+- [pt/faq/](https://formzalo.com/pt/faq/)
+- [pt/about/](https://formzalo.com/pt/about/)
+- [pt/help/](https://formzalo.com/pt/help/)
+- [ja/](https://formzalo.com/ja/)
+- [ja/templates/](https://formzalo.com/ja/templates/)
+- [ja/services/](https://formzalo.com/ja/services/)
+- [ja/faq/](https://formzalo.com/ja/faq/)
+- [ja/about/](https://formzalo.com/ja/about/)
+- [ja/help/](https://formzalo.com/ja/help/)
+- [id/](https://formzalo.com/id/)
+- [id/templates/](https://formzalo.com/id/templates/)
+- [id/services/](https://formzalo.com/id/services/)
+- [id/faq/](https://formzalo.com/id/faq/)
+- [id/about/](https://formzalo.com/id/about/)
+- [id/help/](https://formzalo.com/id/help/)
 - [refund-policy](https://formzalo.com/refund-policy)
 - [privacy-policy](https://formzalo.com/privacy-policy)
 - [privacy](https://formzalo.com/privacy)
