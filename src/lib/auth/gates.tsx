@@ -8,6 +8,7 @@ import {
   signInDirectGoogle,
   signOut,
 } from "./client";
+import { tr } from "@/lib/i18n/i18n";
 import { hasGateSessionMarker } from "./gate-session-marker";
 import { resolveSignInGateState } from "./sign-in-gate";
 import { useCurrentUser, useCurrentUserState } from "./use-current-user";
@@ -82,7 +83,7 @@ export function SignInButtons() {
           onClick={() => signInDirectGoogle({ callbackURL: "/" })}
           className="w-full cursor-pointer rounded-md border border-neutral-300 px-4 py-2 hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900"
         >
-          Continue with Google
+          {tr("Continue with Google")}
         </button>
       ) : null}
       {GROK_PROVIDERS.filter(

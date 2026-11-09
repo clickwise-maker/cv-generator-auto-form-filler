@@ -1,3 +1,4 @@
+/* global supabase */
 const C=window.CVS_SUPABASE,sb=supabase.createClient(C.url,C.anonKey,{auth:{flowType:'implicit',detectSessionInUrl:true,persistSession:true}});
 const $=i=>document.getElementById(i),qs=new URLSearchParams(location.search);
 const say=(t,ok)=>{const m=$('msg');m.textContent=t;m.className=ok?'ok':''};

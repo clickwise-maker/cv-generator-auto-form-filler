@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildPdf, buildPreviewPdf } from "./export-pdf.ts";
 import { buildDocxBuffer } from "./export-docx.ts";
-import { defaultSettings, emptyExperience, emptyProfile, sampleProfile, type Profile } from "./model.ts";
+import { defaultSettings, emptyExperience, emptyProfile, formatWhen, sampleProfile, type Profile } from "./model.ts";
 import { watermarkSvg } from "./watermark.ts";
 import { WATERMARK_LINES } from "../payments/config.ts";
 
@@ -76,6 +76,43 @@ describe("no-login creation and regressions", () => {
   });
 });
 
+describe("ISO date style (audit fix 2026-11-09)", () => {
+  it("renders the day, not the month, for a full ISO date", () => {
+    assert.equal(formatWhen("1998-03-15", "iso"), "1998-03-15");
+    assert.equal(formatWhen("1998-03-15", "dmy"), "15 Mar 1998");
+    assert.equal(formatWhen("1998-03-15", "mdy"), "Mar 15, 1998");
+    assert.equal(formatWhen("2021-03", "iso"), "2021-03");
+  });
+  it("Consulate PDF shows the correct ISO date of birth", () => {
+    const p = sampleProfile();
+    p.personal.dateOfBirth = "1998-03-15";
+    const out = buildPdf(p, { ...defaultSettings(), template: "consulate", dateStyle: "iso" }).output();
+    assert.match(out, /1998-03-15/);
+    assert.doesNotMatch(out, /1998-03-03/);
+  });
+});
+
+describe("long values are not clipped in PDF exports (audit fix 2026-11-09)", () => {
+  function longProfile(): Profile {
+    const p = sampleProfile();
+    p.personal.givenName = "Aarav Krishnan Sharma Venkateshwaran";
+    p.personal.familyName = "Iyer-Chandrasekaran";
+    p.personal.headline = "Computer Science Fresher with a very long headline that keeps going";
+    p.personal.street = "14 Linking Road, Bandra West, Near the very long shopping street";
+    p.personal.city = "Mumbai";
+    return p;
+  }
+  it("Meridian header keeps the full long name", () => {
+    const out = buildPdf(longProfile(), { ...defaultSettings(), template: "meridian" }).output();
+    assert.match(out, /Iyer-Chandrasekaran/);
+  });
+  it("Consulate rows show every wrapped line, not just the first", () => {
+    const out = buildPdf(longProfile(), { ...defaultSettings(), template: "consulate" }).output();
+    assert.match(out, /Iyer-Chandrasekaran/);
+    assert.match(out, /shopping/);
+  });
+});
+
 describe("auto form filler regression (text → profile)", () => {
   it("SAMPLE_CV and SAMPLE_FORM still fill the profile", async () => {
     const { proposeFromText, applyProposals } = await import("./parse.ts");
@@ -84,5 +121,53 @@ describe("auto form filler regression (text → profile)", () => {
       const filled = applyProposals(emptyProfile(), proposeFromText(text));
       assert.match(`${filled.personal.givenName} ${filled.personal.familyName}`, /Amira/i);
     }
+  });
+});
+
+describe("multilingual form detection + US dates (audit fix 2026-11-09)", () => {
+  it("US slash dates are read as MM/DD, never as an invalid month", async () => {
+    const { proposeFromText, applyProposals } = await import("./parse.ts");
+    const us = applyProposals(emptyProfile(), proposeFromText("Full name: Aarav Sharma\nDate of birth: 03/15/1998\n"));
+    assert.equal(us.personal.dateOfBirth, "1998-03-15");
+    const dmy = applyProposals(emptyProfile(), proposeFromText("Full name: Aarav Sharma\nDate of birth: 15/03/1998\n"));
+    assert.equal(dmy.personal.dateOfBirth, "1998-03-15");
+    const bad = applyProposals(emptyProfile(), proposeFromText("Full name: Aarav Sharma\nDate of birth: 15/15/1998\n"));
+    assert.doesNotMatch(bad.personal.dateOfBirth, /^1998-15-/);
+  });
+  it("Japanese 年月日 dates parse", async () => {
+    const { proposeFromText, applyProposals } = await import("./parse.ts");
+    const filled = applyProposals(emptyProfile(), proposeFromText("氏名：田中太郎\n生年月日：1998年3月15日\n"));
+    assert.equal(filled.personal.dateOfBirth, "1998-03-15");
+  });
+  it("Hindi and Arabic labels are detected and mapped", async () => {
+    const { detectFormFields, proposeFromText, applyProposals } = await import("./parse.ts").then(async (parse) => ({
+      ...parse,
+      detectFormFields: (await import("./form-fields.ts")).detectFormFields,
+    }));
+    const hi = "पूरा नाम: आरव शर्मा\nईमेल: aarav.sharma@example.com\nजन्म तिथि: 15/03/1998\n";
+    assert.ok(detectFormFields(hi).includes("givenName"), `Hindi detect: ${detectFormFields(hi)}`);
+    const hiFilled = applyProposals(emptyProfile(), proposeFromText(hi));
+    assert.match(hiFilled.personal.givenName, /आरव/);
+    assert.equal(hiFilled.personal.dateOfBirth, "1998-03-15");
+    const ar = "الاسم الكامل: أحمد علي\nتاريخ الميلاد: 15/03/1998\n";
+    assert.ok(detectFormFields(ar).includes("givenName"), `Arabic detect: ${detectFormFields(ar)}`);
+    const arFilled = applyProposals(emptyProfile(), proposeFromText(ar));
+    assert.match(arFilled.personal.givenName, /أحمد/);
+    const ja = "氏名：田中太郎\n";
+    assert.ok(detectFormFields(ja).includes("givenName"), `Japanese detect: ${detectFormFields(ja)}`);
+  });
+  it("Devanagari digits are normalised before matching", async () => {
+    const { proposeFromText, applyProposals } = await import("./parse.ts");
+    const filled = applyProposals(emptyProfile(), proposeFromText("पूरा नाम: आरव शर्मा\nजन्म तिथि: १५/०३/१९९८\n"));
+    assert.equal(filled.personal.dateOfBirth, "1998-03-15");
+  });
+  it("fullwidth colons and matra labels reach the missing-field salvage", async () => {
+    const { formLabels } = await import("./missing.ts");
+    assert.ok(formLabels("氏名：田中太郎\n生年月日：1998年3月15日\n").includes("氏名"));
+    assert.ok(formLabels("जन्म तिथि: 15/03/1998\nईमेल: a@example.com\n").includes("जन्म तिथि"));
+  });
+  it("+7 calling code splits correctly", async () => {
+    const { splitPhone } = await import("./parse.ts");
+    assert.deepEqual(splitPhone("+7 916 123 45 67"), { phoneCode: "+7", phone: "916 123 45 67" });
   });
 });

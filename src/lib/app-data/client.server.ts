@@ -278,7 +278,9 @@ function tokenIdentityKey(token: string): string {
             .digest("base64url");
         }
       }
-    } catch {}
+    } catch {
+      // Token is not a signed gate token; fall through to hashing it directly.
+    }
   }
   return createHash("sha256").update(token).digest("base64url");
 }

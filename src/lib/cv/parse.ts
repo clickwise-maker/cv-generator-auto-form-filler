@@ -86,7 +86,7 @@ const HEADINGS: Record<string, SectionName> = {
 };
 
 const MONTH =
-  "jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|janv(?:ier)?|févr(?:ier)?|fevr(?:ier)?|mars|avr(?:il)?|mai|juin|juil(?:let)?|ao[uû]t|sept(?:embre)?|octobre|novembre|d[ée]cembre|märz|maerz|okt|dez|ene|abr|ago|dic";
+  "jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|janv(?:ier)?|févr(?:ier)?|fevr(?:ier)?|mars|avr(?:il)?|mai|juin|juil(?:let)?|ao[uû]t|sept(?:embre)?|octobre|novembre|d[ée]cembre|märz|maerz|okt|dez|ene|abr|ago|dic|जनवरी|फ़रवरी|फरवरी|मार्च|अप्रैल|मई|जून|जुलाई|अगस्त|सितंबर|सितम्बर|अक्टूबर|नवंबर|दिसंबर|يناير|فبراير|مارس|أبريل|ابريل|مايو|يونيو|يوليو|أغسطس|اغسطس|سبتمبر|أكتوبر|اكتوبر|نوفمبر|ديسمبر";
 
 const DATE_TOKEN = `(?:(?:${MONTH})\\.?\\s+\\d{4}|\\d{1,2}[\\/.\\-]\\d{4}|\\d{4}[\\/.\\-]\\d{1,2}|\\d{4})`;
 const RANGE = new RegExp(
@@ -128,6 +128,37 @@ const MONTH_INDEX: Record<string, string> = {
   dic: "12",
   mär: "03",
   maerz: "03",
+  // Hindi month names (Devanagari)
+  जनवरी: "01",
+  फ़रवरी: "02",
+  फरवरी: "02",
+  मार्च: "03",
+  अप्रैल: "04",
+  मई: "05",
+  जून: "06",
+  जुलाई: "07",
+  अगस्त: "08",
+  सितंबर: "09",
+  सितम्बर: "09",
+  अक्टूबर: "10",
+  नवंबर: "11",
+  दिसंबर: "12",
+  // Arabic month names
+  يناير: "01",
+  فبراير: "02",
+  مارس: "03",
+  أبريل: "04",
+  ابريل: "04",
+  مايو: "05",
+  يونيو: "06",
+  يوليو: "07",
+  أغسطس: "08",
+  اغسطس: "08",
+  سبتمبر: "09",
+  أكتوبر: "10",
+  اكتوبر: "10",
+  نوفمبر: "11",
+  ديسمبر: "12",
 };
 
 function monthKey(token: string): string | undefined {
@@ -140,8 +171,18 @@ function monthKey(token: string): string | undefined {
   return MONTH_INDEX[cleaned.slice(0, 4)] ?? MONTH_INDEX[cleaned.slice(0, 3)];
 }
 
+/** Devanagari (०-९), Arabic-Indic (٠-٩) and Eastern Arabic (۰-۹) digits → ASCII 0-9. */
+function normalizeDigits(text: string): string {
+  return text.replace(/[\u0966-\u096F\u0660-\u0669\u06F0-\u06F9]/g, (ch) => {
+    const code = ch.codePointAt(0) ?? 0;
+    if (code >= 0x0966 && code <= 0x096f) return String(code - 0x0966);
+    if (code >= 0x0660 && code <= 0x0669) return String(code - 0x0660);
+    return String(code - 0x06f0);
+  });
+}
+
 function normalize(text: string): string {
-  return text
+  return normalizeDigits(text)
     .replace(/\r/g, "")
     .replace(/\u00a0/g, " ")
     .replace(/[ \t]+\n/g, "\n")
@@ -190,7 +231,7 @@ function cleanBullet(line: string): string {
 
 function isLocation(line: string): boolean {
   if (line.length > 64 || /\d{3,}/.test(line) || line.includes("@")) return false;
-  return /^[\p{L}][\p{L} .'\-]+,\s*[\p{L}][\p{L} .'\-]+$/u.test(line);
+  return /^[\p{L}][\p{L} .'-]+,\s*[\p{L}][\p{L} .'-]+$/u.test(line);
 }
 
 function toYearMonth(token: string): { value: string; current: boolean } {
@@ -201,6 +242,9 @@ function toYearMonth(token: string): { value: string; current: boolean } {
   }
   const iso = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(trimmed);
   if (iso) return { value: `${iso[1]}-${iso[2]}`, current: false };
+  // Japanese / Chinese 年月日 form, e.g. 1998年3月15日 → 1998-03 (month precision).
+  const ymd = /^(\d{4})年(\d{1,2})月(?:\d{1,2}日)?$/.exec(trimmed);
+  if (ymd) return { value: `${ymd[1]}-${(ymd[2] ?? "").padStart(2, "0")}`, current: false };
   if (/^\d{4}$/.test(trimmed)) return { value: trimmed, current: false };
   const named = new RegExp(`^(${MONTH})\\.?\\s+(\\d{4})$`, "i").exec(trimmed);
   if (named) {
@@ -358,7 +402,7 @@ function parseEducationChunk(chunk: string[]): Education | null {
 function parseLanguage(line: string): Language | null {
   const cleaned = cleanBullet(line);
   const match =
-    /^([A-Za-zÀ-ÿ][\p{L} \-]{1,32}?)\s*[—–:\-|]\s*(native|mother tongue|bilingual|fluent|professional|advanced|intermediate|elementary|basic|c2|c1|b2|b1|a2|a1)$/iu.exec(
+    /^([A-Za-zÀ-ÿ][\p{L} -]{1,32}?)\s*[—–:\-|]\s*(native|mother tongue|bilingual|fluent|professional|advanced|intermediate|elementary|basic|c2|c1|b2|b1|a2|a1)$/iu.exec(
       cleaned,
     );
   if (!match) return null;
@@ -409,24 +453,24 @@ function splitSkills(text: string): string[] {
 }
 
 const KV: { re: RegExp; key: keyof Personal | "fullName" }[] = [
-  { re: /^(?:first name|given name|given names|prénom|prenom|vorname|nombre de pila)\s*[:\-–]\s*(.+)$/i, key: "givenName" },
-  { re: /^(?:last name|family name|surname|nom de famille|nachname|apellidos|apellido)\s*[:\-–]\s*(.+)$/i, key: "familyName" },
-  { re: /^(?:customer name|applicant name|account name|subscriber name|full name|name|nom complet)\s*[:\-–]\s*(.+)$/i, key: "fullName" },
-  { re: /^(?:headline|title|occupation|job title|poste|beruf|profesión|profesion|provider|operator|network)\s*[:\-–]\s*(.+)$/i, key: "headline" },
-  { re: /^(?:e-?mail(?:\s+address)?|courriel|correo)\s*[:\-–]\s*(.+)$/i, key: "email" },
-  { re: /^(?:phone|telephone|téléphone|telefon|teléfono|telefono|mobile|cell|whatsapp)(?:\s+(?:number|no\.?|num(?:ber)?))?\s*[:\-–]\s*(.+)$/i, key: "phone" },
-  { re: /^(?:street|address|adresse|dirección|direccion|straße|strasse)\s*[:\-–]\s*(.+)$/i, key: "street" },
-  { re: /^(?:postal code|postcode|zip|zip code|code postal|plz|c\.?p\.?)\s*[:\-–]\s*(.+)$/i, key: "postalCode" },
-  { re: /^(?:city|ville|stadt|ciudad)\s*[:\-–]\s*(.+)$/i, key: "city" },
-  { re: /^(?:region|state|province|région|bundesland|canton)\s*[:\-–]\s*(.+)$/i, key: "region" },
-  { re: /^(?:country|pays|land|país|pais)\s*[:\-–]\s*(.+)$/i, key: "country" },
-  { re: /^(?:nationality|nationalité|staatsangehörigkeit|nacionalidad)\s*[:\-–]\s*(.+)$/i, key: "nationality" },
-  { re: /^(?:date of birth|dob|birth date|born|date de naissance|geburtsdatum|fecha de nacimiento)\s*[:\-–]\s*(.+)$/i, key: "dateOfBirth" },
-  { re: /^(?:place of birth|birth place|lieu de naissance|geburtsort|lugar de nacimiento)\s*[:\-–]\s*(.+)$/i, key: "placeOfBirth" },
-  { re: /^(?:passport|passport number|n[°ºo]\.?\s*passeport|passeport|reisepass|pasaporte)\s*[:\-–]\s*(.+)$/i, key: "passportNumber" },
-  { re: /^(?:linkedin)\s*[:\-–]\s*(.+)$/i, key: "linkedin" },
-  { re: /^(?:website|site|web|url|portfolio)\s*[:\-–]\s*(.+)$/i, key: "website" },
-  { re: /^(?:summary|profile|profil|about|résumé|resumen)\s*[:\-–]\s*(.+)$/i, key: "summary" },
+  { re: /^(?:first name|given name|given names|prénom|prenom|vorname|nombre de pila|पहला नाम|الاسم الأول|名)\s*[:\-–：]\s*(.+)$/i, key: "givenName" },
+  { re: /^(?:last name|family name|surname|nom de famille|nachname|apellidos|apellido|उपनाम|اسم العائلة|姓)\s*[:\-–：]\s*(.+)$/i, key: "familyName" },
+  { re: /^(?:customer name|applicant name|account name|subscriber name|full name|name|nom complet|nombre completo|पूरा नाम|नाम|الاسم الكامل|الاسم|氏名|姓名|全名)\s*[:\-–：]\s*(.+)$/i, key: "fullName" },
+  { re: /^(?:headline|title|occupation|job title|poste|beruf|profesión|profesion|provider|operator|network|पेशा|المهنة|職業|职业)\s*[:\-–：]\s*(.+)$/i, key: "headline" },
+  { re: /^(?:e-?mail(?:\s+address)?|courriel|correo|ईमेल|البريد الإلكتروني|メールアドレス|电子邮箱|邮箱)\s*[:\-–：]\s*(.+)$/i, key: "email" },
+  { re: /^(?:phone|telephone|téléphone|telefon|teléfono|telefono|mobile|cell|whatsapp|फ़ोन|टेलीफ़ोन|الهاتف|電話番号|電話|电话|手机)(?:\s+(?:number|no\.?|num(?:ber)?))?\s*[:\-–：]\s*(.+)$/i, key: "phone" },
+  { re: /^(?:street|address|adresse|dirección|direccion|straße|strasse|पता|العنوان|住所|地址)\s*[:\-–：]\s*(.+)$/i, key: "street" },
+  { re: /^(?:postal code|postcode|zip|zip code|code postal|código postal|codigo postal|plz|पिन कोड|c\.?p\.?)\s*[:\-–：]\s*(.+)$/i, key: "postalCode" },
+  { re: /^(?:city|ville|stadt|ciudad|शहर|المدينة|市|城市)\s*[:\-–：]\s*(.+)$/i, key: "city" },
+  { re: /^(?:region|state|province|région|bundesland|canton|राज्य|المنطقة|都道府県|省)\s*[:\-–：]\s*(.+)$/i, key: "region" },
+  { re: /^(?:country|pays|land|país|pais|देश|البلد|国|国家)\s*[:\-–：]\s*(.+)$/i, key: "country" },
+  { re: /^(?:nationality|nationalité|staatsangehörigkeit|nacionalidad|राष्ट्रीयता|الجنسية|国籍)\s*[:\-–：]\s*(.+)$/i, key: "nationality" },
+  { re: /^(?:date of birth|dob|birth date|born|date de naissance|geburtsdatum|fecha de nacimiento|जन्म तिथि|تاريخ الميلاد|生年月日|出生日期)\s*[:\-–：]\s*(.+)$/i, key: "dateOfBirth" },
+  { re: /^(?:place of birth|birth place|lieu de naissance|geburtsort|lugar de nacimiento|जन्म स्थान|مكان الميلاد|出生地)\s*[:\-–：]\s*(.+)$/i, key: "placeOfBirth" },
+  { re: /^(?:passport|passport number|n[°ºo]\.\?\s*passeport|passeport|reisepass|pasaporte|पासपोर्ट|جواز السفر|パスポート|护照)\s*[:\-–：]\s*(.+)$/i, key: "passportNumber" },
+  { re: /^(?:linkedin)\s*[:\-–：]\s*(.+)$/i, key: "linkedin" },
+  { re: /^(?:website|site|web|url|portfolio|वेबसाइट|الموقع|网站)\s*[:\-–：]\s*(.+)$/i, key: "website" },
+  { re: /^(?:summary|profile|profil|about|résumé|resumen|सारांश|ملخص|概要|简介)\s*[:\-–：]\s*(.+)$/i, key: "summary" },
 ];
 
 function splitName(full: string): { givenName: string; familyName: string } {
@@ -445,12 +489,23 @@ function looksLikeName(line: string): boolean {
   if (line.length > 48 || /\d|@|https?:/.test(line)) return false;
   const parts = line.split(/\s+/);
   if (parts.length < 2 || parts.length > 4) return false;
-  return parts.every((part) => /^[\p{Lu}][\p{L}'’.\-]+$/u.test(part) || /^(el|al|de|van|von)$/i.test(part));
+  return parts.every((part) => {
+    if (/^(el|al|de|van|von)$/i.test(part)) return true;
+    if (!/^[\p{L}][\p{L}'’.-]+$/u.test(part)) return false;
+    // Scripts without case (Devanagari, Arabic, CJK, …) have no uppercase
+    // letters at all, so they can never satisfy a \p{Lu} check — accept
+    // them; cased scripts must still start with an uppercase letter.
+    const hasCase = /[\p{Ll}\p{Lu}]/u.test(part);
+    return !hasCase || /^[\p{Lu}]/u.test(part);
+  });
 }
 
 function looseDate(value: string): string {
-  const trimmed = value.trim();
+  const trimmed = normalizeDigits(value.trim());
   if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return trimmed;
+  // Japanese / Chinese 年月日 form, e.g. 1998年3月15日.
+  const ymd = /^(\d{4})年(\d{1,2})月(\d{1,2})日$/.exec(trimmed);
+  if (ymd) return `${ymd[1]}-${(ymd[2] ?? "").padStart(2, "0")}-${(ymd[3] ?? "").padStart(2, "0")}`;
   const named = new RegExp(`^(\\d{1,2})\\s+(${MONTH})\\.?\\s+(\\d{4})$`, "i").exec(trimmed);
   if (named) {
     const month = monthKey(named[2] ?? "");
@@ -462,7 +517,17 @@ function looseDate(value: string): string {
     if (month) return `${mdy[3]}-${month}-${(mdy[2] ?? "").padStart(2, "0")}`;
   }
   const slash = /^(\d{1,2})[/.](\d{1,2})[/.](\d{4})$/.exec(trimmed);
-  if (slash) return `${slash[3]}-${(slash[2] ?? "").padStart(2, "0")}-${(slash[1] ?? "").padStart(2, "0")}`;
+  if (slash) {
+    const a = Number(slash[1]);
+    const b = Number(slash[2]);
+    // Never emit an invalid month. DD/MM is the default; when that reading
+    // would put an impossible month (>12) in the month slot but MM/DD is
+    // valid (US form), use MM/DD; when neither reading is valid, leave the
+    // date unparsed instead of emitting corrupt output like 1998-15-03.
+    if (b <= 12) return `${slash[3]}-${(slash[2] ?? "").padStart(2, "0")}-${(slash[1] ?? "").padStart(2, "0")}`;
+    if (a <= 12) return `${slash[3]}-${(slash[1] ?? "").padStart(2, "0")}-${(slash[2] ?? "").padStart(2, "0")}`;
+    return trimmed;
+  }
   return trimmed;
 }
 
@@ -503,7 +568,7 @@ function findWebsite(text: string, email?: string): string | undefined {
 }
 
 function leadingPlace(line: string): { city: string; country: string } | null {
-  const match = /^([\p{L}][\p{L} .'\-]{1,40}),\s*([\p{L}][\p{L} .'\-]{1,40})/u.exec(line.trim());
+  const match = /^([\p{L}][\p{L} .'-]{1,40}),\s*([\p{L}][\p{L} .'-]{1,40})/u.exec(line.trim());
   if (!match?.[1] || !match[2]) return null;
   return { city: match[1].trim(), country: match[2].trim() };
 }
@@ -615,7 +680,7 @@ export function proposeFromText(source: string): Proposal[] {
   if (email && !personal.email) personal.email = email;
 
   if (!personal.phone) {
-    const phoneMatch = text.match(/\+\d{1,3}[\s.\-]?(?:\(?\d{1,4}\)?[\s.\-]?){2,4}\d{2,4}/);
+    const phoneMatch = text.match(/\+\d{1,3}[\s.-]?(?:\(?\d{1,4}\)?[\s.-]?){2,4}\d{2,4}/);
     const digits = phoneMatch?.[0]?.replace(/\D/g, "") ?? "";
     if (phoneMatch && digits.length >= 8 && digits.length <= 15) {
       const phone = splitPhone(phoneMatch[0]);
@@ -648,6 +713,7 @@ export function proposeFromText(source: string): Proposal[] {
 
   if (!personal.headline) {
     const headline = contentLines.find((line) => {
+      if (line.includes(":") || line.includes("：")) return false; // a "Label: value" line is not a headline
       if (looksLikeName(line) && titleCaseIfShouting(splitName(line).givenName) === personal.givenName) return false;
       if (leadingPlace(line) && line.length < 48) return false;
       return line.length < 80 && !/^[\d\s+().-]+$/.test(line);

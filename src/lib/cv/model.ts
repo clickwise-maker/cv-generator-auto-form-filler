@@ -328,6 +328,7 @@ export const COUNTRIES = [
 
 export const CALLING_CODES: { code: string; label: string }[] = [
   { code: "+1", label: "+1 United States / Canada" },
+  { code: "+7", label: "+7 Russia / Kazakhstan" },
   { code: "+20", label: "+20 Egypt" },
   { code: "+27", label: "+27 South Africa" },
   { code: "+30", label: "+30 Greece" },
@@ -354,6 +355,7 @@ export const CALLING_CODES: { code: string; label: string }[] = [
   { code: "+61", label: "+61 Australia" },
   { code: "+62", label: "+62 Indonesia" },
   { code: "+63", label: "+63 Philippines" },
+  { code: "+64", label: "+64 New Zealand" },
   { code: "+65", label: "+65 Singapore" },
   { code: "+66", label: "+66 Thailand" },
   { code: "+81", label: "+81 Japan" },
@@ -644,7 +646,7 @@ export function formatWhen(value: string, style: DateStyle): string {
   if (!y || !m) return raw;
   const label = MONTHS[Number(m) - 1];
   if (!label) return raw;
-  if (style === "iso") return full ? `${y}-${m}-${full[2]}` : `${y}-${m}`;
+  if (style === "iso") return full ? `${y}-${m}-${full[3]}` : `${y}-${m}`;
   if (full) {
     const d = Number(full[3]);
     if (style === "mdy") return `${label} ${d}, ${y}`;

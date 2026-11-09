@@ -38,7 +38,7 @@ const norm = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
 export function formLabels(text: string): string[] {
   const out: string[] = [];
   for (const raw of text.split(/\r?\n/)) {
-    const m = /^\s*([\p{L}][\p{L}\p{N} '’/()&.,-]{1,60}?)\s*(?::|_{3,}|\.{3,})/u.exec(raw);
+    const m = /^\s*([\p{L}\p{M}][\p{L}\p{M}\p{N} '’/()&.,-]{1,60}?)\s*(?::|：|_{3,}|\.{3,})/u.exec(raw);
     if (!m) continue;
     const label = m[1]!.replace(/[\s.,-]+$/, "").trim();
     if (label.length >= 2 && !out.some((x) => norm(x) === norm(label))) out.push(label);

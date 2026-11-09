@@ -209,8 +209,14 @@ function drawMeridian(pen: Pen, profile: Profile, settings: Settings) {
   pen.doc.rect(0, 34, pen.pageW, 1.2, "F");
   pen.doc.setTextColor(...SHEET);
   pen.doc.setFont("times", "bold");
-  pen.doc.setFontSize(22);
-  pen.doc.text(pdfText(name), pen.margin, 16);
+  // Shrink very long names so the header never clips at the page edge.
+  let nameSize = 22;
+  pen.doc.setFontSize(nameSize);
+  while (nameSize > 12 && pen.doc.getTextWidth(pdfText(name)) > pen.width) {
+    nameSize -= 2;
+    pen.doc.setFontSize(nameSize);
+  }
+  pen.doc.text(pdfText(name), pen.margin, 16, { maxWidth: pen.width });
   pen.doc.setFont("times", "italic");
   pen.doc.setFontSize(12);
   pen.doc.text(pdfText(profile.personal.headline || "Add a headline"), pen.margin, 23);
@@ -295,12 +301,19 @@ function drawConsulate(pen: Pen, profile: Profile, settings: Settings) {
   ];
 
   for (let index = 0; index < rows.length; index += 2) {
-    pen.ensure(14);
     const left = rows[index];
     const right = rows[index + 1];
     const col = pen.width / 2;
+    const lineHeight = 4.6;
+    const linesFor = (pair: [string, string] | undefined) =>
+      pair ? (pen.doc.splitTextToSize(pdfText(pair[1] || "-"), col - 6) as string[]) : ["-"];
+    const leftLines = linesFor(left);
+    const rightLines = linesFor(right);
+    const rowLines = Math.max(leftLines.length, rightLines.length);
+    const rowHeight = 5 + (rowLines - 1) * lineHeight + 8;
+    pen.ensure(rowHeight);
     const y = pen.y;
-    const paint = (pair: [string, string] | undefined, x: number) => {
+    const paint = (pair: [string, string] | undefined, x: number, lines: string[]) => {
       if (!pair) return;
       pen.doc.setFont("helvetica", "bold");
       pen.doc.setFontSize(7.5);
@@ -309,15 +322,14 @@ function drawConsulate(pen: Pen, profile: Profile, settings: Settings) {
       pen.doc.setFont("times", "normal");
       pen.doc.setFontSize(11);
       pen.doc.setTextColor(...INK);
-      const lines = pen.doc.splitTextToSize(pdfText(pair[1] || "-"), col - 6) as string[];
-      pen.doc.text(lines[0] ?? "-", x, y + 5);
+      pen.doc.text(lines, x, y + 5);
       pen.doc.setDrawColor(...RULE);
       pen.doc.setLineWidth(0.2);
-      pen.doc.line(x, y + 7.5, x + col - 6, y + 7.5);
+      pen.doc.line(x, y + 5 + (lines.length - 1) * lineHeight + 2.5, x + col - 6, y + 5 + (lines.length - 1) * lineHeight + 2.5);
     };
-    paint(left, pen.margin);
-    paint(right, pen.margin + col);
-    pen.y = y + 13;
+    paint(left, pen.margin, leftLines);
+    paint(right, pen.margin + col, rightLines);
+    pen.y = y + rowHeight;
   }
 
   if (personal.summary) {

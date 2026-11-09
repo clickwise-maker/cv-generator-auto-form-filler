@@ -360,7 +360,7 @@ export class PaymentService {
     if (!company) throw new PaymentError(404, "no_reservation", "Unknown form-fill reservation.");
     delete pending[reservationId];
     const plan = getPlan(ent.planId)!;
-    let updated: EntitlementRecord = { ...ent, pendingFills: pending };
+    const updated: EntitlementRecord = { ...ent, pendingFills: pending };
     if (success) {
       const companies = ent.companies ?? [];
       updated.companies = companies.includes(company) ? companies : [...companies, company];

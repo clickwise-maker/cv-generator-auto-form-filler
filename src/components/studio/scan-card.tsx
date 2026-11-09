@@ -63,7 +63,7 @@ export function ScanCard() {
     const selected = proposals.filter((item) => item.selected);
     if (!selected.length) return;
     commit(applyProposals(profile, proposals), true);
-    toast.success(`Mapped ${selected.length} items onto the form.`);
+    toast.success(tr("Mapped {count} items onto the form.", { count: selected.length }));
     setProposals([]);
   }
 

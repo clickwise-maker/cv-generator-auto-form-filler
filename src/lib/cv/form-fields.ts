@@ -23,30 +23,30 @@ export type FormFieldDef = {
   detect?: RegExp;
 };
 
-const L = (words: string) => new RegExp(`^\\s*(?:${words})\\s*(?:[:\\-–]|$)`, "im");
+const L = (words: string) => new RegExp(`^\\s*(?:${words})\\s*(?:[:\\-–：]|$)`, "im");
 
 export const FORM_FIELDS: FormFieldDef[] = [
   // used — mapped by parse.ts KV (lines 411-430) and personalProposals (548-567)
-  { key: "givenName", usage: "used", en: "Given name", hi: "पहला नाम", detect: L("first name|given names?|prénom|prenom|vorname|nombre de pila|full name|name|applicant name|customer name") },
-  { key: "familyName", usage: "used", en: "Family name", hi: "उपनाम", detect: L("last name|family name|surname|nom de famille|nachname|apellidos?|full name|name|applicant name|customer name") },
-  { key: "headline", usage: "used", en: "Occupation / headline", hi: "पेशा / शीर्षक", detect: L("headline|title|occupation|job title|poste|beruf|profesi[oó]n") },
-  { key: "email", usage: "used", en: "Email", hi: "ईमेल", input: "email", detect: L("e-?mail(?: address)?|courriel|correo") },
-  { key: "phoneCode", usage: "used", en: "Calling code", hi: "देश कोड", detect: L("(?:phone|telephone|mobile|cell|whatsapp)(?: number| no\\.?)?") },
-  { key: "phone", usage: "used", en: "Phone", hi: "फ़ोन", input: "tel", detect: L("(?:phone|telephone|téléphone|telefon|teléfono|mobile|cell|whatsapp)(?: number| no\\.?)?") },
-  { key: "street", usage: "used", en: "Street / address", hi: "पता", detect: L("street|address|adresse|direcci[oó]n|stra(?:ß|ss)e") },
-  { key: "postalCode", usage: "used", en: "Postal code", hi: "पिन कोड", detect: L("postal code|postcode|zip(?: code)?|pin(?: code)?|code postal|plz") },
-  { key: "city", usage: "used", en: "City", hi: "शहर", detect: L("city|ville|stadt|ciudad") },
-  { key: "region", usage: "used", en: "State / region", hi: "राज्य", detect: L("region|state|province|région|bundesland|canton") },
-  { key: "country", usage: "used", en: "Country", hi: "देश", detect: L("country|pays|land|pa[ií]s") },
-  { key: "nationality", usage: "used", en: "Nationality", hi: "राष्ट्रीयता", detect: L("nationality|nationalité|staatsangehörigkeit|nacionalidad|citizenship") },
-  { key: "dateOfBirth", usage: "used", en: "Date of birth", hi: "जन्म तिथि", input: "date", detect: L("date of birth|dob|birth date|born|date de naissance|geburtsdatum|fecha de nacimiento") },
-  { key: "placeOfBirth", usage: "used", en: "Place of birth", hi: "जन्म स्थान", detect: L("place of birth|birth place|lieu de naissance|geburtsort|lugar de nacimiento") },
-  { key: "passportNumber", usage: "used", en: "Passport number", hi: "पासपोर्ट नंबर", detect: L("passport(?: number| no\\.?)?|passeport|reisepass|pasaporte") },
+  { key: "givenName", usage: "used", en: "Given name", hi: "पहला नाम", detect: L("first name|given names?|prénom|prenom|vorname|nombre de pila|nom complet|nombre completo|full name|name|applicant name|customer name|पहला नाम|पूरा नाम|الاسم الأول|الاسم الكامل|名|氏名|姓名") },
+  { key: "familyName", usage: "used", en: "Family name", hi: "उपनाम", detect: L("last name|family name|surname|nom de famille|nachname|apellidos?|nom complet|nombre completo|full name|name|applicant name|customer name|उपनाम|पूरा नाम|اسم العائلة|الاسم الكامل|姓|氏名|姓名") },
+  { key: "headline", usage: "used", en: "Occupation / headline", hi: "पेशा / शीर्षक", detect: L("headline|title|occupation|job title|poste|beruf|profesi[oó]n|पेशा|المهنة|職業|职业") },
+  { key: "email", usage: "used", en: "Email", hi: "ईमेल", input: "email", detect: L("e-?mail(?: address)?|courriel|correo|ईमेल|البريد الإلكتروني|メールアドレス|电子邮箱|邮箱") },
+  { key: "phoneCode", usage: "used", en: "Calling code", hi: "देश कोड", detect: L("(?:phone|telephone|téléphone|telefon|teléfono|mobile|cell|whatsapp|फ़ोन|الهاتف|電話番号|電話|电话)(?: number| no\\.?)?") },
+  { key: "phone", usage: "used", en: "Phone", hi: "फ़ोन", input: "tel", detect: L("(?:phone|telephone|téléphone|telefon|teléfono|mobile|cell|whatsapp|फ़ोन|टेलीफ़ोन|الهاتف|電話番号|電話|电话|手机)(?: number| no\\.?)?") },
+  { key: "street", usage: "used", en: "Street / address", hi: "पता", detect: L("street|address|adresse|direcci[oó]n|stra(?:ß|ss)e|पता|العنوان|住所|地址") },
+  { key: "postalCode", usage: "used", en: "Postal code", hi: "पिन कोड", detect: L("postal code|postcode|zip(?: code)?|pin(?: code)?|पिन कोड|code postal|código postal|codigo postal|plz|الرمز البريدي|郵便番号|邮政编码") },
+  { key: "city", usage: "used", en: "City", hi: "शहर", detect: L("city|ville|stadt|ciudad|शहर|المدينة|市|城市") },
+  { key: "region", usage: "used", en: "State / region", hi: "राज्य", detect: L("region|state|province|région|bundesland|canton|राज्य|المنطقة|都道府県|省") },
+  { key: "country", usage: "used", en: "Country", hi: "देश", detect: L("country|pays|land|pa[ií]s|देश|البلد|国|国家") },
+  { key: "nationality", usage: "used", en: "Nationality", hi: "राष्ट्रीयता", detect: L("nationality|nationalité|staatsangehörigkeit|nacionalidad|citizenship|राष्ट्रीयता|الجنسية|国籍") },
+  { key: "dateOfBirth", usage: "used", en: "Date of birth", hi: "जन्म तिथि", input: "date", detect: L("date of birth|dob|birth date|born|date de naissance|geburtsdatum|fecha de nacimiento|जन्म तिथि|تاريخ الميلاد|生年月日|出生日期") },
+  { key: "placeOfBirth", usage: "used", en: "Place of birth", hi: "जन्म स्थान", detect: L("place of birth|birth place|lieu de naissance|geburtsort|lugar de nacimiento|जन्म स्थान|مكان الميلاد|出生地") },
+  { key: "passportNumber", usage: "used", en: "Passport number", hi: "पासपोर्ट नंबर", detect: L("passport(?: number| no\\.?)?|passeport|reisepass|pasaporte|पासपोर्ट|جواز السفر|パスポート|护照") },
   { key: "linkedin", usage: "used", en: "LinkedIn", hi: "लिंक्डइन", detect: L("linkedin") },
   { key: "website", usage: "used", en: "Website", hi: "वेबसाइट", detect: L("website|site|web|url|portfolio") },
-  { key: "summary", usage: "used", en: "Profile / summary", hi: "प्रोफ़ाइल सारांश", input: "area", detect: L("summary|profile|profil|about|résumé|resumen") },
+  { key: "summary", usage: "used", en: "Profile / summary", hi: "प्रोफ़ाइल सारांश", input: "area", detect: L("summary|profile|profil|about|résumé|resumen|सारांश|ملخص|概要|简介") },
 
-  { key: "signature", usage: "used", en: "Signature", hi: "हस्ताक्षर", input: "signature", detect: L("(?:applicant'?s |candidate'?s )?signature(?: of (?:the )?applicant)?|sign(?:ed)?(?: here)?|unterschrift|firma|हस्ताक्षर") },
+  { key: "signature", usage: "used", en: "Signature", hi: "हस्ताक्षर", input: "signature", detect: L("(?:applicant'?s |candidate'?s )?signature(?: of (?:the )?applicant)?|sign(?:ed)?(?: here)?|unterschrift|firma|हस्ताक्षर|التوقيع|署名|签名") },
 
   // extra — "International options" panel (profile-form.tsx 356-518), never auto-mapped
   { key: "sex", usage: "extra", en: "Sex", hi: "लिंग", detect: L("sex|gender") },
@@ -77,8 +77,8 @@ export const FORM_FIELDS: FormFieldDef[] = [
   { key: "exitDate", usage: "extra", en: "Exit date", hi: "प्रस्थान तिथि", input: "date", detect: L("(?:date of )?exit(?: date)?|departure date") },
   { key: "accommodation", usage: "extra", en: "Accommodation", hi: "आवास", detect: L("accommodation|address in destination") },
   { key: "sponsor", usage: "extra", en: "Costs paid by", hi: "खर्च कौन देगा", detect: L("sponsor|costs paid by") },
-  { key: "signaturePlace", usage: "extra", en: "Place (signature)", hi: "स्थान (हस्ताक्षर)", detect: L("place|ort|lieu|lugar|स्थान") },
-  { key: "signatureDate", usage: "extra", en: "Date (signature)", hi: "दिनांक (हस्ताक्षर)", input: "date", detect: L("date|datum|fecha|दिनांक|तारीख") },
+  { key: "signaturePlace", usage: "extra", en: "Place (signature)", hi: "स्थान (हस्ताक्षर)", detect: L("place|ort|lieu|lugar|स्थान|مكان|場所|地点") },
+  { key: "signatureDate", usage: "extra", en: "Date (signature)", hi: "दिनांक (हस्ताक्षर)", input: "date", detect: L("date|datum|fecha|दिनांक|तारीख|تاريخ|日付|日期") },
   { key: "previousVisa", usage: "extra", en: "Previous visa", hi: "पिछला वीज़ा", detect: L("previous visa") },
 
   // unused — editor only (Identity photo + Passport panel book details); form filler never reads them
