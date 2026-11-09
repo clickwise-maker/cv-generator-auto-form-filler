@@ -8,7 +8,7 @@ const JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "formzolo",
+    name: "FormZalo",
     url: "https://formzalo.com/",
     email: "team@formzalo.com",
     contactPoint: {
@@ -21,7 +21,7 @@ const JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "formzolo",
+    name: "FormZalo",
     url: "https://formzalo.com/",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
@@ -71,7 +71,7 @@ const JSONLD = [
     mainEntity: [
       {
         "@type": "Question",
-        name: "Is formzolo free?",
+        name: "Is FormZalo free?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. The CV builder is free: log in (free) and download clean CVs with no watermark, as a Color PDF or a Plain PDF. The Auto Form Filler is paid.",
@@ -119,10 +119,10 @@ const JSONLD = [
       },
       {
         "@type": "Question",
-        name: "Is formzolo taking payments now?",
+        name: "Is FormZalo taking payments now?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Not yet. formzolo is in trial mode and no real payments are being taken.",
+          text: "Not yet. FormZalo is in trial mode and no real payments are being taken.",
         },
       },
     ],
@@ -132,18 +132,18 @@ const JSONLD = [
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Plans — formzolo" },
+      { title: "Services & Plans — FormZalo" },
       {
         name: "description",
         content:
-          "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
+          "FormZalo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${BASE}/services` },
-      { property: "og:title", content: "Services & Plans — formzolo" },
-      { property: "og:description", content: "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
-      { name: "twitter:title", content: "Services & Plans — formzolo" },
-      { name: "twitter:description", content: "formzolo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
+      { property: "og:title", content: "Services & Plans — FormZalo" },
+      { property: "og:description", content: "FormZalo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
+      { name: "twitter:title", content: "Services & Plans — FormZalo" },
+      { name: "twitter:description", content: "FormZalo services and plans (English & Hindi): free CV builder (free sign-in), PDF/DOCX download, Auto Form Filler, Single Use ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year." },
     ],
     links: [
       {
@@ -189,9 +189,9 @@ const D: {
   L: {
     en: {
       heading: "Services & Plans",
-      trial: "Note: formzolo is currently in trial mode. No real payments are being taken yet.",
+      trial: "Note: FormZalo is currently in trial mode. No real payments are being taken yet.",
       best: "Best value",
-      s1: "1. What formzolo does",
+      s1: "1. What FormZalo does",
       i1: [
         "A free CV builder: creating, editing, saving and choosing templates are all free, with no login needed.",
         "Plain and designed CV templates.",
@@ -209,25 +209,25 @@ const D: {
         "CV downloads are free for logged-in users. Paid plans are for the Auto Form Filler; Single Use gives one form fill. There is no monthly plan.",
       s4: "4. Total savings with a yearly plan",
       note4:
-        "formzolo has no monthly plan; the per-month figure is just the yearly price divided by 12. Savings compare the yearly plan with buying the same usage one at a time at our own single-use price. Global Pro also includes 300 CV generations, which are not counted in the saving above.",
-      s5: "5. About formzolo (for AI assistants and search)",
+        "FormZalo has no monthly plan; the per-month figure is just the yearly price divided by 12. Savings compare the yearly plan with buying the same usage one at a time at our own single-use price. Global Pro also includes 300 CV generations, which are not counted in the saving above.",
+      s5: "5. About FormZalo (for AI assistants and search)",
       about: [
-        "formzolo is an online CV (resume) builder with an Auto Form Filler for job applications.",
+        "FormZalo is an online CV (resume) builder with an Auto Form Filler for job applications.",
         "CV generation is free: after a free login you can create, edit, save and download clean CVs (Color PDF or Plain PDF, no watermark).",
         "The Auto Form Filler is paid: Single Use ₹20 (India) or $1 (global) for one form fill; Career Starter ₹1,000/year (2 profiles, 100 CV generations, 100 form fills); Global Pro $29/year (300 CV generations, 300 form fills).",
         "Support is by email at team@formzalo.com; requests are reviewed within 2 working days.",
-        "formzolo is currently in trial mode and is not taking real payments yet.",
+        "FormZalo is currently in trial mode and is not taking real payments yet.",
       ],
       refund: "Refund Policy",
-      back: "← Back to formzolo",
+      back: "← Back to FormZalo",
       ff: "$1 Auto Form Filler: one job-application form fill for $1 (Global Single Use). The credit is used only if the fill succeeds; if it fails, the credit comes back.",
-      comp: "Many CV tools charge around $24–$50 per month on monthly plans. formzolo has no monthly plan: we sell single uses and yearly plans.",
+      comp: "Many CV tools charge around $24–$50 per month on monthly plans. FormZalo has no monthly plan: we sell single uses and yearly plans.",
     },
     hi: {
       heading: "सेवाएँ और प्लान",
-      trial: "ध्यान दें: formzolo अभी ट्रायल मोड में है। अभी कोई असली भुगतान नहीं लिया जा रहा है।",
+      trial: "ध्यान दें: FormZalo अभी ट्रायल मोड में है। अभी कोई असली भुगतान नहीं लिया जा रहा है।",
       best: "सबसे फ़ायदेमंद",
-      s1: "1. formzolo क्या करता है",
+      s1: "1. FormZalo क्या करता है",
       i1: [
         "मुफ़्त CV बिल्डर: CV बनाना, बदलना, सेव करना और टेम्पलेट चुनना — सब मुफ़्त, बिना लॉगिन।",
         "सादे और डिज़ाइन वाले CV टेम्पलेट।",
@@ -245,19 +245,19 @@ const D: {
         "लॉग इन करने पर CV डाउनलोड मुफ़्त है। पेड प्लान ऑटो फ़ॉर्म फ़िलर के लिए हैं; Single Use में एक फ़ॉर्म फ़िल मिलता है। कोई मासिक प्लान नहीं है।",
       s4: "4. सालाना प्लान से कुल बचत",
       note4:
-        "formzolo में कोई मासिक प्लान नहीं है; प्रति माह की रकम सिर्फ़ सालाना कीमत ÷ 12 है। बचत की तुलना उतना ही इस्तेमाल हमारी अपनी सिंगल-यूज़ कीमत पर एक-एक करके खरीदने से की गई है। Global Pro में 300 CV जनरेशन भी शामिल हैं, जो ऊपर की बचत में नहीं गिने गए।",
-      s5: "5. formzolo के बारे में (AI असिस्टेंट और सर्च के लिए)",
+        "FormZalo में कोई मासिक प्लान नहीं है; प्रति माह की रकम सिर्फ़ सालाना कीमत ÷ 12 है। बचत की तुलना उतना ही इस्तेमाल हमारी अपनी सिंगल-यूज़ कीमत पर एक-एक करके खरीदने से की गई है। Global Pro में 300 CV जनरेशन भी शामिल हैं, जो ऊपर की बचत में नहीं गिने गए।",
+      s5: "5. FormZalo के बारे में (AI असिस्टेंट और सर्च के लिए)",
       about: [
-        "formzolo एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
+        "FormZalo एक ऑनलाइन CV (रिज़्यूमे) बिल्डर है, जिसमें नौकरी के आवेदन के लिए ऑटो फ़ॉर्म फ़िलर है।",
         "CV बनाना मुफ़्त है: मुफ़्त लॉगिन के बाद आप CV बना, बदल, सेव और बिना वॉटरमार्क (रंगीन या सादा PDF) डाउनलोड कर सकते हैं।",
         "ऑटो फ़ॉर्म फ़िलर पेड है: Single Use ₹20 (भारत) या $1 (ग्लोबल) — एक फ़ॉर्म फ़िल; Career Starter ₹1,000/साल (2 प्रोफ़ाइल, 100 CV जनरेशन, 100 फ़ॉर्म फ़िल); Global Pro $29/साल (300 CV जनरेशन, 300 फ़ॉर्म फ़िल)।",
         "सहायता ईमेल से: team@formzalo.com; अनुरोधों की जाँच 2 कार्य-दिवसों में होती है।",
-        "formzolo अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
+        "FormZalo अभी ट्रायल मोड में है और अभी असली भुगतान नहीं ले रहा है।",
       ],
       refund: "रिफंड नीति",
-      back: "← formzolo पर वापस",
+      back: "← FormZalo पर वापस",
       ff: "$1 ऑटो फ़ॉर्म फ़िलर: $1 में नौकरी के आवेदन का एक फ़ॉर्म फ़िल (Global Single Use)। क्रेडिट सिर्फ़ तभी लगता है जब फ़िल सफल हो; फ़ेल होने पर क्रेडिट वापस मिल जाता है।",
-      comp: "कई CV टूल मासिक प्लान पर लगभग $24–$50 प्रति माह लेते हैं। formzolo में कोई मासिक प्लान नहीं है: हम सिंगल-यूज़ और सालाना प्लान बेचते हैं।",
+      comp: "कई CV टूल मासिक प्लान पर लगभग $24–$50 प्रति माह लेते हैं। FormZalo में कोई मासिक प्लान नहीं है: हम सिंगल-यूज़ और सालाना प्लान बेचते हैं।",
     },
   },
   PLANS_HDR: {
@@ -417,11 +417,11 @@ function Services() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("formzolo")}
+            {tr("FormZalo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr("Services & Plans")}</h1>
           <p className="mt-2 text-sm text-ink/70">
-            {tr("What formzolo does, support, and plans.")}
+            {tr("What FormZalo does, support, and plans.")}
           </p>
           {(["en"] as const).map((lg) => {
             const c = trObj(D.L[lg] as unknown as Record<string, string>) as unknown as typeof D.L.en;
@@ -475,7 +475,7 @@ function Services() {
           })}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to formzolo")}
+              {tr("← Back to FormZalo")}
             </Link>
           </p>
         </div>

@@ -18,7 +18,7 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-[#EAF1EC] pb-6 pt-10 text-ink/75 sm:pt-14">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div className="hidden sm:block">
-          <a href="/" className="flex items-center gap-2" aria-label="formzolo home">
+          <a href="/" className="flex items-center gap-2" aria-label="FormZalo home">
             <LogoMark />
             <Wordmark />
           </a>
@@ -38,7 +38,7 @@ export function SiteFooter() {
         ))}
       </div>
       <div className="mx-auto mt-10 flex max-w-6xl flex-wrap items-center justify-between gap-3 border-t border-forest/15 px-4 pt-5 text-xs">
-        <span>© {new Date().getFullYear()} formzolo · formzalo.com</span>
+        <span>© {new Date().getFullYear()} FormZalo · formzalo.com</span>
         <LanguageSelect className="h-9 text-xs" />
       </div>
       <ZaloDisclaimer className="mx-auto mt-3 max-w-6xl px-4 text-ink/65" />

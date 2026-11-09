@@ -16,7 +16,7 @@ const SITE = SITE_URL;
 const webAppLd = (DESCRIPTION: string, url: string, inLanguage: string) => ({
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "formzolo",
+  name: "FormZalo",
   alternateName: ["formzalo", "CV Studio"],
   url,
   applicationCategory: "BusinessApplication",
@@ -25,12 +25,12 @@ const webAppLd = (DESCRIPTION: string, url: string, inLanguage: string) => ({
   inLanguage,
   availableLanguage: ["en-IN", "en-GB", "hi-IN", "ar-SA", "es-ES", "fr-FR", "ja", "zh-CN"],
   offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-  publisher: { "@type": "Organization", name: "formzolo", url: `${SITE}/` },
+  publisher: { "@type": "Organization", name: "FormZalo", url: `${SITE}/` },
 });
 const ORG_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "formzolo",
+  name: "FormZalo",
   url: `${SITE}/`,
   logo: `${SITE}/favicon.svg`,
 };
@@ -72,7 +72,7 @@ export const Route = createRootRoute({
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "formzolo" },
+        { property: "og:site_name", content: "FormZalo" },
         { property: "og:image", content: `${SITE}/og.jpg` },
         { property: "og:url", content: url },
         { property: "og:locale", content: seo.ogLocale },
@@ -126,7 +126,7 @@ export const Route = createRootRoute({
       <body>
         <noscript>
           <p>
-            formzolo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
+            FormZalo: free CV builder (free sign-in), plain and designed templates, PDF/DOCX download,
             free clean CV download (Color or Plain PDF) after login, and a paid Auto Form Filler for job applications. Single Use
             ₹20/$1, Career Starter ₹1,000/year, Global Pro $29/year. Support:
             team@formzalo.com (reviewed within 2 working days).{" "}

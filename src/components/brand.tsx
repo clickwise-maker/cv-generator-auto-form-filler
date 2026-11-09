@@ -1,6 +1,6 @@
 import { tr } from "@/lib/i18n/i18n";
 
-/** formzolo mark: document with a brass check. */
+/** FormZalo mark: document with a brass check. */
 export function LogoMark({ size = 36, onDark = false }: { size?: number; onDark?: boolean }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" aria-hidden="true" style={onDark ? { filter: "drop-shadow(0 2px 6px rgba(0,0,0,.2))" } : undefined}>
@@ -55,7 +55,7 @@ export function SiteHeader({ current }: { current?: string }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-sheet/95 text-ink backdrop-blur-sm">
       <nav className="mx-auto flex h-[64px] max-w-6xl sm:h-[72px] items-center gap-3 px-4" aria-label={tr("Main")}>
-        <a href="/" className="me-auto flex items-center gap-2" aria-label="formzolo home">
+        <a href="/" className="me-auto flex items-center gap-2" aria-label="FormZalo home">
           <LogoMark size={30} />
           <Wordmark />
         </a>

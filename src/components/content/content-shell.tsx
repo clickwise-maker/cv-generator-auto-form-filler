@@ -18,12 +18,12 @@ export function contentHead(title: string, desc: string, path: string) {
   const url = `https://formzalo.com${path}`;
   return {
     meta: [
-      { title: `${title} — formzolo` },
+      { title: `${title} — FormZalo` },
       { name: "description", content: desc },
-      { property: "og:title", content: `${title} — formzolo` },
+      { property: "og:title", content: `${title} — FormZalo` },
       { property: "og:description", content: desc },
       { property: "og:url", content: url },
-      { name: "twitter:title", content: `${title} — formzolo` },
+      { name: "twitter:title", content: `${title} — FormZalo` },
       { name: "twitter:description", content: desc },
     ],
     links: [],
