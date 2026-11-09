@@ -76,8 +76,17 @@ export const LOCALE_SEO: Record<UiLang, LocaleSeo> = {
   },
 };
 
-/** Locales advertised with hreflang (the researched markets) + x-default. */
-export const HREFLANG_LANGS: UiLang[] = ["en", "en-GB", "ar", "es-ES", "fr-FR", "hi"];
+/** Every UI locale has translated copy above, so every one gets hreflang (+ x-default). */
+export const HREFLANG_LANGS: UiLang[] = [
+  "en",
+  "en-GB",
+  "hi",
+  "ar",
+  "es-ES",
+  "fr-FR",
+  "ja",
+  "zh-CN",
+];
 
 export function langFromSearch(search: unknown): UiLang {
   const raw = search && typeof search === "object" ? (search as Record<string, unknown>).lang : undefined;

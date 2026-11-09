@@ -1,11 +1,10 @@
 import { Fragment, useEffect } from "react";
-import { LANG_BOOT, useLang } from "@/lib/i18n/i18n";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { LANG_BOOT, dirOf, useLang } from "@/lib/i18n/i18n";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
-import { ADS, ADSENSE_CLIENT, adsenseScriptSrc } from "@/config/ads";
 
 import { META_KEYWORDS, SITE_URL } from "@/lib/seo-keywords";
 import { LOCALE_SEO, hreflangLinks, langFromSearch, localeUrl } from "@/lib/seo-locales";
@@ -67,7 +66,7 @@ export const Route = createRootRoute({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
-        ...(ADS.enabled ? [{ name: "google-adsense-account", content: ADSENSE_CLIENT }] : []),
+        { name: "google-adsense-account", content: "ca-pub-5439325240008654" },
         { name: "keywords", content: KEYWORDS },
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
@@ -96,10 +95,11 @@ export const Route = createRootRoute({
         ...(ANALYTICS_DOMAIN
           ? [{ src: ANALYTICS_SRC, defer: true, "data-domain": ANALYTICS_DOMAIN }]
           : []),
-        // AdSense loads ONLY when VITE_ADSENSE_CLIENT is a valid ca-pub id (src/config/ads.ts). Off by default.
-        ...(ADS.enabled
-          ? [{ src: adsenseScriptSrc(), async: true, crossOrigin: "anonymous" as const }]
-          : []),
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5439325240008654",
+          async: true,
+          crossOrigin: "anonymous" as const,
+        },
       ],
       links: [
         { rel: "canonical", href: url },
@@ -117,8 +117,17 @@ export const Route = createRootRoute({
       ],
     };
   },
-  component: () => (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+  component: RootDocument,
+});
+
+/** Server-renders the right lang/dir per locale instead of always lang="en". */
+function RootDocument() {
+  const ready = useLang((s) => s.ready);
+  const stored = useLang((s) => s.lang);
+  const routeLang = useRouterState({ select: (s) => langFromSearch(s.location.search) });
+  const lang = ready ? stored : routeLang;
+  return (
+    <html lang={lang} dir={dirOf(lang)} className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />
@@ -153,5 +162,5 @@ export const Route = createRootRoute({
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}
