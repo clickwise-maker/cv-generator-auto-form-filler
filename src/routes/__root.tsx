@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
-import { LANG_BOOT, useLang } from "@/lib/i18n/i18n";
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { LANG_BOOT, dirOf, useLang } from "@/lib/i18n/i18n";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Toaster } from "sonner";
@@ -117,8 +117,17 @@ export const Route = createRootRoute({
       ],
     };
   },
-  component: () => (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+  component: RootDocument,
+});
+
+/** Server-renders the right lang/dir per locale instead of always lang="en". */
+function RootDocument() {
+  const ready = useLang((s) => s.ready);
+  const stored = useLang((s) => s.lang);
+  const routeLang = useRouterState({ select: (s) => langFromSearch(s.location.search) });
+  const lang = ready ? stored : routeLang;
+  return (
+    <html lang={lang} dir={dirOf(lang)} className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} />
@@ -153,5 +162,5 @@ export const Route = createRootRoute({
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}
