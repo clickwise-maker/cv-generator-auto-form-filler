@@ -11,7 +11,7 @@ const TERMS = (terms as unknown as { title: string; en: [string, string[]][] });
 // "You can delete your data anytime, but we recommend keeping it so we can send you updates. Tick if you agree."
 // "Keeping it means your CVs, drafts and form details are ready the next time you visit, and you hear about new templates, features and job-season tips first."
 // "Changed your mind later? Use “Withdraw consent” at any time and everything is erased from this browser at once."
-// "I agree to keep my data and receive updates from formzolo."
+// "I agree to keep my data and receive updates from FormZalo."
 // "Keep data & continue"
 // "Delete data"
 // i18n-data:end
@@ -64,7 +64,7 @@ export function ConsentNotice({
         <label className="mt-3 flex items-start gap-3 rounded-xl bg-paper p-3">
           <input type="checkbox" className="mt-1 size-5" checked={ticked} onChange={(e) => setTicked(e.target.checked)} data-testid="consent-check" />
           <span>
-            {tr("I agree to keep my data and receive updates from formzolo.")}
+            {tr("I agree to keep my data and receive updates from FormZalo.")}
           </span>
         </label>
         <div className="mt-4 flex gap-2">
@@ -95,8 +95,8 @@ export function ConsentGate({ floating = true }: { floating?: boolean } = {}) {
       <div className="fixed inset-0 z-[100] grid place-items-center bg-black/50 p-3" data-testid="consent-declined">
         <div className="w-full max-w-md rounded-2xl bg-sheet p-5 text-sm">
           <p className="font-serif text-xl text-forest">{tr("Deleted")}</p>
-          <p className="mt-2">{tr("Nothing from formzolo is stored in this browser now. You can close this tab.")}</p>
-          <p className="text-muted">{tr("इस ब्राउज़र में अब formzolo का कोई डेटा संग्रहीत नहीं है। आप यह टैब बंद कर सकते हैं।")}</p>
+          <p className="mt-2">{tr("Nothing from FormZalo is stored in this browser now. You can close this tab.")}</p>
+          <p className="text-muted">{tr("इस ब्राउज़र में अब FormZalo का कोई डेटा संग्रहीत नहीं है। आप यह टैब बंद कर सकते हैं।")}</p>
           <button type="button" className={`${btn} mt-4 w-full`} onClick={() => setState("ask")}>{tr("Show the notice again")}</button>
         </div>
       </div>
@@ -132,7 +132,7 @@ export function WithdrawButton({ className, label = tr("Withdraw consent & delet
       className={className}
       data-testid="withdraw-consent"
       onClick={() => {
-        if (!window.confirm(tr("Withdraw consent and delete all formzolo data saved in this browser (CVs, drafts, plan key, history)? This cannot be undone."))) return;
+        if (!window.confirm(tr("Withdraw consent and delete all FormZalo data saved in this browser (CVs, drafts, plan key, history)? This cannot be undone."))) return;
         eraseAllLocalData();
         window.location.href = "/";
       }}

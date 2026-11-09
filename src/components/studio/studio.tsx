@@ -27,7 +27,7 @@ export function Studio() {
             <span className="grid size-9 shrink-0 place-items-center rounded-lg" aria-hidden><LogoMark />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="font-serif text-lg leading-none">{tr("formzolo")}</p>
+              <p className="font-serif text-lg leading-none">{tr("FormZalo")}</p>
               <p className="truncate text-xs text-muted">{tr("Guest mode — no email, phone or OTP needed")}</p>
             </div>
             <a href="/guides" className="hidden h-11 content-center px-2 text-sm font-medium text-forest sm:block">

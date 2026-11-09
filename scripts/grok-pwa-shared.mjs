@@ -445,7 +445,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  // formzolo: pages that render their own per-route share tags (og:title) keep them.
+  // FormZalo: pages that render their own per-route share tags (og:title) keep them.
   const pageOwnsShareTags = /<meta\b[^>]*\bproperty\s*=\s*["']og:title["']/i.test(html);
   let next = pageOwnsShareTags ? html : stripShareMetaTags(html);
   if (!readGrokExtensionsEnabled()) next = stripGrokExtensionsScript(next);

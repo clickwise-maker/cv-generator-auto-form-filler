@@ -34,7 +34,7 @@ export function ShareFormzolo({ referral = false, className = "" }: { referral?:
     window.addEventListener("meridian-guest", load);
     return () => window.removeEventListener("meridian-guest", load);
   }, [referral]);
-  const text = tr("Make a CV and fill forms for free with formzolo");
+  const text = tr("Make a CV and fill forms for free with FormZalo");
   const u = encodeURIComponent(url);
   const t = encodeURIComponent(text);
   const links: [string, string][] = [
@@ -46,14 +46,14 @@ export function ShareFormzolo({ referral = false, className = "" }: { referral?:
   const pill = "inline-flex h-10 items-center rounded-full border border-forest/25 bg-white px-4 text-sm font-medium text-forest hover:bg-forest/5";
   return (
     <section className={`rounded-2xl border border-line bg-sheet p-4 sm:p-5 ${className}`} data-testid={referral ? "referral" : "share"} aria-labelledby={referral ? "ref-title" : "share-title"}>
-      <h2 id={referral ? "ref-title" : "share-title"} className="font-serif text-xl text-forest">{referral ? tr("Your referral link") : tr("Share formzolo")}</h2>
-      <p className="mt-1 text-sm text-muted">{referral ? tr("Share this link with friends. It is unique to this browser.") : tr("Know someone applying for jobs? Send them formzolo.")}</p>
+      <h2 id={referral ? "ref-title" : "share-title"} className="font-serif text-xl text-forest">{referral ? tr("Your referral link") : tr("Share FormZalo")}</h2>
+      <p className="mt-1 text-sm text-muted">{referral ? tr("Share this link with friends. It is unique to this browser.") : tr("Know someone applying for jobs? Send them FormZalo.")}</p>
       {referral ? (
         <input readOnly value={url} onFocus={(e) => e.currentTarget.select()} aria-label={tr("Your referral link")} className="mt-3 h-11 w-full rounded-xl border border-line bg-paper px-3 text-sm" data-testid="ref-link" dir="ltr" />
       ) : null}
       <div className="mt-3 flex flex-wrap gap-2">
         {canShare ? (
-          <button type="button" className={`${pill} bg-forest text-white hover:bg-[#24624F]`} onClick={() => navigator.share({ title: "formzolo", text, url }).catch(() => {})}>
+          <button type="button" className={`${pill} bg-forest text-white hover:bg-[#24624F]`} onClick={() => navigator.share({ title: "FormZalo", text, url }).catch(() => {})}>
             {tr("Share…")}
           </button>
         ) : null}

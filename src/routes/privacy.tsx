@@ -8,14 +8,14 @@ type Sec = [string, string[]];
 
 // i18n-data:start
 const EN: Sec[] = [
-  ["Who we are", [`formzolo ("we") is a CV builder and form-filling tool. Contact / Grievance Officer: {email} (we aim to reply within 2 working days).`]],
+  ["Who we are", [`FormZalo ("we") is a CV builder and form-filling tool. Contact / Grievance Officer: {email} (we aim to reply within 2 working days).`]],
   ["Data we collect", [
     "CV editor: the details you type or upload (name, contact details, date of birth, address, ID/passport numbers if you enter them, education, experience, skills, photo).",
     "Plan & usage: an anonymous guest id, your plan key, download/form-fill counts and the company names you fill forms for.",
     "Business (Commercial) clients: details a client submits through a share link, the time of consent and submission.",
     "Payments are processed by the payment provider; we do not store card numbers.",
   ]],
-  ["Purpose", ["Only to build your CV and fill your forms, and to count plan usage. We do not sell your data or use your CV data for profiling. Ads, if switched on, appear only on content pages and may use Google advertising cookies (see the full privacy policy). formzolo has no interest in your data beyond this purpose."]],
+  ["Purpose", ["Only to build your CV and fill your forms, and to count plan usage. We do not sell your data or use your CV data for profiling. Ads, if switched on, appear only on content pages and may use Google advertising cookies (see the full privacy policy). FormZalo has no interest in your data beyond this purpose."]],
   ["Consent", ["We ask before storing your data, with an unticked box. You can withdraw consent at any time with “Withdraw consent & delete my data” (editor and dashboard) or “Withdraw consent” on a client link page. Withdrawing is as easy as giving consent."]],
   ["Where it is stored", [
     "Your CVs and drafts are stored in your own browser (localStorage) on your device. They are not uploaded unless you use a feature that needs the server (e.g. reading a document, checkout).",
@@ -36,13 +36,14 @@ const EN: Sec[] = [
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy notice (DPDP) · formzolo" },
-      { name: "description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
-      { property: "og:title", content: "Privacy notice (DPDP) · formzolo" },
-      { property: "og:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { title: "Privacy notice (DPDP) · FormZalo" },
+      { name: "robots", content: "noindex" },
+      { name: "description", content: "FormZalo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { property: "og:title", content: "Privacy notice (DPDP) · FormZalo" },
+      { property: "og:description", content: "FormZalo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
       { property: "og:url", content: "https://formzalo.com/privacy" },
-      { name: "twitter:title", content: "Privacy notice (DPDP) · formzolo" },
-      { name: "twitter:description", content: "formzolo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
+      { name: "twitter:title", content: "Privacy notice (DPDP) · FormZalo" },
+      { name: "twitter:description", content: "FormZalo privacy notice in English and Hindi: data collected, purpose, storage, retention, your rights, grievance contact." },
     ],
   }),
   component: PrivacyPage,

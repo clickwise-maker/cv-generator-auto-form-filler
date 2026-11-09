@@ -5,13 +5,13 @@ import { SiteFooter } from "@/components/site-footer";
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
     meta: [
-      { title: "Refund Policy — formzolo" },
-      { name: "description", content: "formzolo refund policy in English and Hindi." },
-      { property: "og:title", content: "Refund Policy — formzolo" },
-      { property: "og:description", content: "formzolo refund policy in English and Hindi." },
+      { title: "Refund Policy — FormZalo" },
+      { name: "description", content: "FormZalo refund policy in English and Hindi." },
+      { property: "og:title", content: "Refund Policy — FormZalo" },
+      { property: "og:description", content: "FormZalo refund policy in English and Hindi." },
       { property: "og:url", content: "https://formzalo.com/refund-policy" },
-      { name: "twitter:title", content: "Refund Policy — formzolo" },
-      { name: "twitter:description", content: "formzolo refund policy in English and Hindi." },
+      { name: "twitter:title", content: "Refund Policy — FormZalo" },
+      { name: "twitter:description", content: "FormZalo refund policy in English and Hindi." },
     ],
     links: [
       {
@@ -34,7 +34,7 @@ const CONTENT: Lang[] = [
     id: "en",
     lang: "en",
     heading: "Refund Policy",
-    trial: "Note: formzolo is currently in trial mode. No real payments are being taken yet.",
+    trial: "Note: FormZalo is currently in trial mode. No real payments are being taken yet.",
     sections: [
       {
         title: "1. ₹20 / $1 Single Use form fill",
@@ -79,7 +79,7 @@ function RefundPolicy() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("formzolo")}
+            {tr("FormZalo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
           <p className="mt-2 text-sm text-ink/70">
@@ -123,7 +123,7 @@ function RefundPolicy() {
           ))}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to formzolo")}
+              {tr("← Back to FormZalo")}
             </Link>
           </p>
         </div>

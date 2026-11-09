@@ -46,7 +46,7 @@ export function LandingHero() {
       ) : null}
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div>
-          <p className="hidden w-fit rounded-full border border-forest/15 bg-white/70 px-2.5 py-0.5 text-[11px] font-medium text-forest/80 sm:ml-auto sm:block">{tr("formzolo · Free CV maker & form filler")}</p>
+          <p className="hidden w-fit rounded-full border border-forest/15 bg-white/70 px-2.5 py-0.5 text-[11px] font-medium text-forest/80 sm:ml-auto sm:block">{tr("FormZalo · Free CV maker & form filler")}</p>
           <h1 className="mt-3 font-serif text-3xl font-medium leading-tight text-forest sm:mt-3 sm:text-5xl">
             {LOCALE_SEO[useLang.getState().lang].h1}
           </h1>

@@ -370,7 +370,7 @@ function ConsulatePage() {
 
   return (
     <div className="paper px-5 py-6 sm:px-8">
-      <p className="kicker text-forest">formzolo {dossierCode(profile)}</p>
+      <p className="kicker text-forest">FormZalo {dossierCode(profile)}</p>
       {personal.photo ? <img src={personal.photo} alt="" className="mt-3 size-20 rounded-md object-cover" /> : null}
       <h3 className="mt-2 font-serif text-2xl">{copy.particulars}</h3>
       <PreparedFor className="mt-1 text-muted" />

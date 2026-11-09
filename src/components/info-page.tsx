@@ -23,12 +23,12 @@ export function infoHead(c: InfoContent) {
   const url = `https://formzalo.com/${c.slug}`;
   return {
     meta: [
-      { title: `${c.title} — formzolo` },
+      { title: `${c.title} — FormZalo` },
       { name: "description", content: c.desc },
-      { property: "og:title", content: `formzolo — ${c.title}` },
+      { property: "og:title", content: `FormZalo — ${c.title}` },
       { property: "og:description", content: c.desc },
       { property: "og:url", content: url },
-      { name: "twitter:title", content: `formzolo — ${c.title}` },
+      { name: "twitter:title", content: `FormZalo — ${c.title}` },
       { name: "twitter:description", content: c.desc },
     ],
     links: [
@@ -78,7 +78,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("formzolo")}
+            {tr("FormZalo")}
           </Link>
           <h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
           <p className="mt-2 text-sm text-ink/70">
@@ -95,7 +95,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
           </section>
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to formzolo")}
+              {tr("← Back to FormZalo")}
             </Link>
           </p>
         </div>
