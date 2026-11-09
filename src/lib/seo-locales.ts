@@ -16,63 +16,63 @@ export const LOCALE_SEO: Record<UiLang, LocaleSeo> = {
   en: {
     hreflang: "en-IN",
     ogLocale: "en_IN",
-    title: "Free CV Maker India & Resume for Freshers | formzolo",
+    title: "Free CV Maker India & Resume for Freshers | FormZalo",
     description: PUBLIC_COPY["en"].pages.home.description,
     h1: "Free CV maker for India, resume for freshers and online form filling",
   },
   "en-GB": {
     hreflang: "en-GB",
     ogLocale: "en_GB",
-    title: "Free CV Builder UK, CV Template & Form Filler | formzolo",
+    title: "Free CV Builder UK, CV Template & Form Filler | FormZalo",
     description: PUBLIC_COPY["en"].pages.home.description,
     h1: "Free CV builder and online form filler",
   },
   hi: {
     hreflang: "hi-IN",
     ogLocale: "hi_IN",
-    title: "फ्री बायोडाटा और रिज्यूम कैसे बनाएं | formzolo",
+    title: "फ्री बायोडाटा और रिज्यूम कैसे बनाएं | FormZalo",
     description: PUBLIC_COPY["hi"].pages.home.description,
     h1: "मुफ़्त बायोडाटा / रिज्यूम मेकर और ऑनलाइन फॉर्म भरना",
   },
   ar: {
     hreflang: "ar-SA",
     ogLocale: "ar_SA",
-    title: "إنشاء سيرة ذاتية مجانية وتعبئة النماذج | formzolo",
+    title: "إنشاء سيرة ذاتية مجانية وتعبئة النماذج | FormZalo",
     description: PUBLIC_COPY["ar"].pages.home.description,
     h1: "إنشاء سيرة ذاتية مجانية وتعبئة النماذج أونلاين",
   },
   "es-ES": {
     hreflang: "es-ES",
     ogLocale: "es_ES",
-    title: "Hacer currículum gratis y rellenar formularios | formzolo",
+    title: "Hacer currículum gratis y rellenar formularios | FormZalo",
     description: PUBLIC_COPY["es"].pages.home.description,
     h1: "Hacer currículum gratis y rellenar formularios online",
   },
   "fr-FR": {
     hreflang: "fr-FR",
     ogLocale: "fr_FR",
-    title: "Créer un CV gratuit en ligne et remplir un formulaire | formzolo",
+    title: "Créer un CV gratuit en ligne et remplir un formulaire | FormZalo",
     description: PUBLIC_COPY["fr"].pages.home.description,
     h1: "Créer un CV gratuit et remplir vos formulaires en ligne",
   },
   ja: {
     hreflang: "ja",
     ogLocale: "ja_JP",
-    title: "無料の履歴書（CV）作成とフォーム入力 | formzolo",
+    title: "無料の履歴書（CV）作成とフォーム入力 | FormZalo",
     description: PUBLIC_COPY["ja"].pages.home.description,
     h1: "無料のCV作成とオンラインフォーム入力",
   },
   "zh-CN": {
     hreflang: "zh-CN",
     ogLocale: "zh_CN",
-    title: "免费简历（CV）制作与表格填写 | formzolo",
+    title: "免费简历（CV）制作与表格填写 | FormZalo",
     description: PUBLIC_COPY["zh-cn"].pages.home.description,
     h1: "免费简历制作与在线表格填写",
   },
 };
 
 /** Locales advertised with hreflang (the researched markets) + x-default. */
-export const HREFLANG_LANGS: UiLang[] = ["en", "en-GB", "ar", "es-ES", "fr-FR", "hi"];
+export const HREFLANG_LANGS: UiLang[] = ["en", "en-GB", "ar", "es-ES", "fr-FR", "hi", "ja", "zh-CN"];
 
 export function langFromSearch(search: unknown): UiLang {
   const raw = search && typeof search === "object" ? (search as Record<string, unknown>).lang : undefined;

@@ -151,7 +151,7 @@ export async function openRazorpay(order: PublicOrder, description: string): Pro
       order_id: order.providerOrderId,
       amount: order.amountMinor,
       currency: order.currency,
-      name: "formzolo",
+      name: "FormZalo",
       description,
       handler: (r: RazorpayResult) => resolve(r),
       modal: { ondismiss: () => resolve("dismissed") },

@@ -5,7 +5,7 @@
  */
 export const SITE_URL = "https://formzalo.com";
 
-export const SEO_TITLE = "Free CV Builder & Document Reading | formzolo";
+export const SEO_TITLE = "Free CV Builder & Document Reading | FormZalo";
 export const SEO_DESCRIPTION =
   "Sign in to create a CV with three templates and download Color PDF or Plain PDF without a watermark. Review document field suggestions and reading limits.";
 

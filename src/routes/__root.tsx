@@ -47,7 +47,7 @@ export const Route = createRootRoute({
     const legacySeo=LEGACY_PUBLIC_SEO[path];
     const publicCopy = publicRoute ? publicPageCopy(publicRoute) : null;
     const seo = LOCALE_SEO[lang];
-    const APP_NAME = publicCopy ? `${publicCopy.title} | formzolo` : legacySeo ? `${legacySeo.title} — formzolo` : seo.title;
+    const APP_NAME = publicCopy ? `${publicCopy.title} | FormZalo` : legacySeo ? `${legacySeo.title} — FormZalo` : seo.title;
     const DESCRIPTION = publicCopy?.description ?? legacySeo?.description ?? seo.description;
     const url = publicRoute?.url ?? (legacySeo ? `${SITE}${path}` : localeUrl(path, lang));
     return {
@@ -61,7 +61,7 @@ export const Route = createRootRoute({
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "formzolo" },
+        { property: "og:site_name", content: "FormZalo" },
         { property: "og:image", content: `${SITE}/og.jpg` },
         { property: "og:url", content: url },
         { property: "og:locale", content: publicRoute ? registry.locales[publicRoute.locale].ogLocale : legacySeo ? "en_IN" : seo.ogLocale },
@@ -115,7 +115,7 @@ function RootDocument() {
       </head>
       <body>
         {!publicRoute && <noscript>
-          <p>formzolo: sign in to build a CV and download Color PDF or Plain PDF without a watermark. Document reading proposes fields for review; it is not verified generative writing or automatic application submission. <a href="/en/services/">Plans and dated checkout availability</a> · <a href="/en/help/">Document limits and help</a></p>
+          <p>FormZalo: sign in to build a CV and download Color PDF or Plain PDF without a watermark. Document reading proposes fields for review; it is not verified generative writing or automatic application submission. <a href="/en/services/">Plans and dated checkout availability</a> · <a href="/en/help/">Document limits and help</a></p>
         </noscript>}
         <PreviewHostBridge />
         <AuthProvider>

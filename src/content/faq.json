@@ -2,11 +2,11 @@
   "slug": "faq",
   "title": "FAQ",
   "hi_title": "अक्सर पूछे जाने वाले सवाल",
-  "desc": "formzolo frequently asked questions in English and Hindi: pricing, login, downloads, storage, refunds.",
+  "desc": "FormZalo frequently asked questions in English and Hindi: pricing, login, downloads, storage, refunds.",
   "lead": "Short answers to common questions.",
   "en": [
     [
-      "Is formzolo free?",
+      "Is FormZalo free?",
       [
         "After sign-in, Color PDF and Plain PDF downloads are free without watermark. Paid checkout was unavailable in the public status observed on 7 November 2026; recheck availability before purchasing."
       ]
@@ -50,7 +50,7 @@
     [
       "Are payments live?",
       [
-        "Not yet. formzolo is in trial mode and no real payments are taken."
+        "Not yet. FormZalo is in trial mode and no real payments are taken."
       ]
     ],
     [
@@ -68,7 +68,7 @@
   ],
   "hi": [
     [
-      "क्या formzolo मुफ़्त है?",
+      "क्या FormZalo मुफ़्त है?",
       [
         "मुफ़्त लॉगिन के बाद रंगीन और सादा PDF बिना वॉटरमार्क मिलते हैं। 7 नवंबर 2026 की सार्वजनिक जाँच में भुगतान उपलब्ध नहीं था; खरीदने से पहले स्थिति जाँचें।"
       ]
@@ -112,7 +112,7 @@
     [
       "क्या भुगतान चालू है?",
       [
-        "अभी नहीं। formzolo ट्रायल मोड में है और कोई असली भुगतान नहीं लिया जा रहा है।"
+        "अभी नहीं। FormZalo ट्रायल मोड में है और कोई असली भुगतान नहीं लिया जा रहा है।"
       ]
     ],
     [

@@ -7,7 +7,7 @@ import { MIN_PW, PasswordField, pwError } from "@/components/auth/password-field
 import { consumeHash, updatePassword } from "@/lib/auth/supa";
 
 export const Route = createFileRoute("/reset-password")({
-  head: () => ({ meta: [{ title: "Reset password · formzolo" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Reset password · FormZalo" }, { name: "robots", content: "noindex" }] }),
   component: ResetPage,
 });
 
@@ -41,7 +41,7 @@ function ResetPage() {
             <p className="mt-3 text-sm text-muted">{tr("Open this page from the reset link in your email.")}</p>
           )}
           {msg ? <p className="mt-3 text-sm" role="status">{msg}</p> : null}
-          <a href="/" className="mt-4 inline-block text-sm text-forest underline">{tr("← Back to formzolo")}</a>
+          <a href="/" className="mt-4 inline-block text-sm text-forest underline">{tr("← Back to FormZalo")}</a>
         </div>
       </main>
       <SiteFooter />
