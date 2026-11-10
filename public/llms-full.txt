@@ -1,4 +1,4 @@
-# formzolo — product facts
+# FormZalo — product facts
 
 > A sign-in CV builder with free clean Color and Plain PDF downloads and local document-to-profile field-mapping assistance.
 

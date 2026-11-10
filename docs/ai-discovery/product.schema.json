@@ -43,7 +43,7 @@
       ],
       "properties": {
         "displayName": {
-          "const": "formzolo"
+          "const": "FormZalo"
         },
         "aliases": {
           "type": "array",

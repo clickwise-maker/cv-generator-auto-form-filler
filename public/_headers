@@ -1,0 +1,75 @@
+# Cloudflare Workers Static Assets header rules (public/_headers).
+#
+# FIX 2026-11-10 (Phase 6, front-look fix #1) — explicit Content-Type rules.
+#
+# LIVE EVIDENCE (2026-11-10 ~00:15 IST, curl against formzalo.com):
+# 9 of 33 files under /assets/* and every unchanged file at the site root
+# (templates/*.png, og.jpg, favicon.svg, robots.txt, sitemap.xml, llms.txt)
+# are served with NO Content-Type header at all, even though the files exist
+# and return 200 with the correct bytes. Only files re-uploaded by the
+# 2026-11-09 wrangler deploy (the 25 changed chunks + ads.txt) carry a
+# Content-Type — the rest kept the previous (8 Nov, manual/API) upload's
+# metadata, which has none, and wrangler's content-hash dedup never
+# re-uploads unchanged files, so the bad metadata survives every deploy.
+#
+# A module script with no JavaScript MIME type is rejected by the browser's
+# strict MIME check, so the dynamic import of the routes chunk fails with
+# "Failed to fetch dynamically imported module: .../routes-DVImTrUA.js"
+# — because its static dependency rolldown-runtime-C0FnF6B9.js (imported by
+# EVERY route chunk) is one of the files served without a Content-Type.
+# That is the whole homepage failure: the file exists, the loading path is
+# broken. /faq, /templates and /services only *look* alive because their
+# SSR HTML renders; their client JS is dead for the same reason.
+#
+# _headers rules override whatever the asset store has (Cloudflare docs:
+# "Headers defined in the _headers file override what Cloudflare
+# ordinarily sends"), and the existing /assets/* cache-control rule below
+# is already visibly live on every asset response, which proves _headers
+# IS applied to env.ASSETS.fetch() responses in this Worker. So these
+# rules fix the MIME type at the asset-serving layer, independent of the
+# stored upload metadata, and they survive future deploys unchanged.
+/assets/*
+  cache-control: public, max-age=31536000, immutable
+/assets/*.js
+  Content-Type: text/javascript; charset=utf-8
+/assets/*.mjs
+  Content-Type: text/javascript; charset=utf-8
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+/assets/*.png
+  Content-Type: image/png
+/assets/*.jpg
+  Content-Type: image/jpeg
+/assets/*.jpeg
+  Content-Type: image/jpeg
+/assets/*.svg
+  Content-Type: image/svg+xml
+/assets/*.webp
+  Content-Type: image/webp
+/assets/*.json
+  Content-Type: application/json; charset=utf-8
+/assets/*.txt
+  Content-Type: text/plain; charset=utf-8
+/assets/*.xml
+  Content-Type: application/xml; charset=utf-8
+/templates/*.png
+  Content-Type: image/png
+/og.jpg
+  Content-Type: image/jpeg
+/favicon.svg
+  Content-Type: image/svg+xml
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/assets/*
+  cache-control: public, max-age=31536000, immutable
+/*
+  strict-transport-security: max-age=31536000; includeSubDomains
+  x-content-type-options: nosniff
+  referrer-policy: strict-origin-when-cross-origin

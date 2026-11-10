@@ -83,10 +83,10 @@
       ]
     },
     "about": {
-      "title": "formzoloとFormZaloについて",
-      "description": "formzalo.com上の既存CV作成ツールformzolo、プロフィール項目の提案と実際の制限を紹介します。",
+      "title": "FormZaloについて",
+      "description": "formzalo.com上の既存CV作成ツールFormZalo、プロフィール項目の提案と実際の制限を紹介します。",
       "h1": "CVに使う情報を整理する",
-      "intro": "既存製品のブランドはformzolo、ドメインはformzalo.comです。FormZaloはプロジェクトの別名としても使われますが、編集画面を改名するものではありません。",
+      "intro": "既存製品のブランドはFormZalo、ドメインはformzalo.comです。FormZaloはプロジェクトの別名としても使われますが、編集画面を改名するものではありません。",
       "sections": [
         {
           "heading": "実用的な補助機能",

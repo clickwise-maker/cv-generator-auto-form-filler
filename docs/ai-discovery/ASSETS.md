@@ -50,7 +50,7 @@ This prepared sitemap is **not live or submitted**. The parent's separate author
 ## Update process and remaining work
 
 1. Recheck source/runtime facts through approved read-only methods; update the manifest, schema and tests together only with evidence. A future functioning provider/model/output flow needs proof, not a flag or new claim.
-2. Keep aliases and existing `formzolo` branding; no surprise UI rename. Keep only published support contact information; do not invent support@/hello@/billing@ inboxes.
+2. Keep aliases and existing `FormZalo` branding; no surprise UI rename. Keep only published support contact information; do not invent support@/hello@/billing@ inboxes.
 3. Regenerate and check all six outputs. Test both training policies without committing a default change. No private records, tokens, session material or personal CV data belong in assets.
 4. Run safe `typecheck`, `build:cloudflare` and relevant offline regressions. Never use generic `npm run build` here: it invokes migrations. No real checkout/payment or submissions.
 5. Preserve PR3/PR4 and leave PR5 unmerged. Deployment remains blocked by the sanctioned connector's 4 MiB/no-stream limitation and explicit asset-domain network restriction; do not use incomplete assets or alternate deployment credentials/routes.

@@ -97,7 +97,7 @@ export function renderAssets(m = manifest, p = policy) {
     'robots.txt is not authentication, and a user-initiated fetcher may follow different robots behavior.', ''
   ].join('\n');
   const discovery = [
-    '# FormZalo / formzolo — AI discovery notes', '',
+    '# FormZalo — AI discovery notes', '',
     `Factual snapshot: ${m.reviewedAt}. Canonical origin: ${origin}.`,
     'Generated repository assets are not a claim of deployment, indexing, platform submission or recommendation.', '',
     '## Read the product truth',

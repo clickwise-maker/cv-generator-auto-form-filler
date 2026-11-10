@@ -1,4 +1,4 @@
-# FormZalo / formzolo — AI discovery notes
+# FormZalo — AI discovery notes
 
 Factual snapshot: 2026-11-07T23:19:30+05:30. Canonical origin: https://formzalo.com.
 Generated repository assets are not a claim of deployment, indexing, platform submission or recommendation.
