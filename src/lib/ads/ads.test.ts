@@ -19,13 +19,14 @@ test("ads are off by default: no publisher id, no ads.txt", () => {
   assert.equal(adsTxt("ca-pub-1234567890123456"), "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0\n");
   assert.equal(adsTxt("ca-pub-XXXXXXXXXXXXXXXX"), null);
   assert.match(adsenseScriptSrc("ca-pub-1234567890123456"), /adsbygoogle\.js\?client=ca-pub-1234567890123456$/);
-  assert.equal(fs.existsSync(path.join(SRC, "../public/ads.txt")), false);
+  // public/ads.txt now ships the real publisher line (matches live v19); ad units/slots stay disabled.
+  assert.match(fs.readFileSync(path.join(SRC, "../public/ads.txt"), "utf8"), /^google\.com, pub-5439325240008654, DIRECT, f08c47fec0942fa0$/m);
 });
 
-test("AdSense head script and account meta are conditional on ADS.enabled", () => {
+test("AdSense ownership loader + account meta are unconditional (Wilson-approved 2026-11-08); ad units stay gated by ADS.enabled", () => {
   const root = read("routes/__root.tsx");
-  assert.match(root, /ADS\.enabled\s*\?\s*\[\{ src: adsenseScriptSrc\(\)/);
-  assert.match(root, /ADS\.enabled \? \[\{ name: "google-adsense-account", content: ADSENSE_CLIENT \}\]/);
+  assert.match(root, /adsbygoogle\.js\?client=ca-pub-5439325240008654/);
+  assert.match(root, /name: "google-adsense-account", content: "ca-pub-5439325240008654"/);
 });
 
 test("ad placement allow-list: only landing, guides, gallery, dashboard, below preview", () => {

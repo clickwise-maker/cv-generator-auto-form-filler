@@ -11,7 +11,7 @@ export function PublicLocalizedPage({page}:{page:PublicPage}){
  const app=`/?lang=${encodeURIComponent(registry.locales[locale].appLocale)}#signin`;
  return <div data-public-locale={locale} data-public-page={page}>
   <header className="border-b border-line bg-sheet"><div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-4">
-   <a href={publicUrl(locale)} className="me-auto font-serif text-xl text-forest">formzolo</a>
+   <a href={publicUrl(locale)} className="me-auto font-serif text-xl text-forest">FormZalo</a>
    <nav aria-label={copy.language} className="flex flex-wrap gap-3 text-sm">{registry.activeLocales.map(l=><a key={l} href={publicUrl(l,page)} hrefLang={registry.locales[l].languageTag} lang={registry.locales[l].languageTag} aria-current={locale===l?'page':undefined} className="underline">{registry.locales[l].label}</a>)}</nav>
   </div><nav aria-label={copy.navLabel} className="mx-auto flex max-w-6xl flex-wrap gap-4 px-4 pb-4 text-sm">{registry.pages.map(p=><a key={p} href={publicUrl(locale,p)} aria-current={p===page?'page':undefined} className="underline">{copy.nav[p]}</a>)}</nav></header>
   <main className="mx-auto max-w-4xl px-4 py-10 text-start"><Breadcrumbs items={publicBreadcrumbs(locale,page)} label={copy.breadcrumbLabel}/><h1 className="font-serif text-3xl text-forest sm:text-5xl">{content.h1}</h1><p className="mt-5 text-lg leading-relaxed">{content.intro}</p>
