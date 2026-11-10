@@ -1,0 +1,18 @@
+--- /workspace/formzalo-v19-recovery/modules/index.mjs	2026-11-10 08:56:31.310038076 +0530
++++ /workspace/formzalo-v19-recovery/patched/index.mjs	2026-11-10 08:57:08.457500587 +0530
+@@ -1386,6 +1386,15 @@
+ //#endregion
+ //#region ../repo/node_modules/nitro/dist/presets/cloudflare/runtime/cloudflare-module.mjs
+ var cloudflare_module_default = createHandler({ fetch(cfRequest, env, context, url) {
++	// formzalo-v19 overlay 2026-11-10: www/http-www canonicalisation + Bing site auth file (no other behaviour change)
++	if (url.hostname === "www.formzalo.com") return new Response(null, {
++		status: 301,
++		headers: { location: "https://formzalo.com" + url.pathname + url.search, "cache-control": "public, max-age=300" }
++	});
++	if (url.pathname === "/BingSiteAuth.xml" && (cfRequest.method === "GET" || cfRequest.method === "HEAD")) return new Response("<?xml version=\"1.0\"?>\n<users>\n\t<user>8D212A4216CC1E3C06C3716B84A80955</user>\n</users>\n", { headers: {
++		"content-type": "application/xml; charset=utf-8",
++		"cache-control": "public, max-age=3600"
++	} });
+ 	if (env.ASSETS && isPublicAssetURL(url.pathname)) return env.ASSETS.fetch(cfRequest);
+ } });
+ //#endregion

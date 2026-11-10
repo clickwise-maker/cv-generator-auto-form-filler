@@ -1,0 +1,5 @@
+# AdSense authorised seller — publisher id observed live on formzalo.com.
+# Ads are NOT enabled in the app (src/config/ads.ts: ADS.enabled is false) and
+# no ad units exist yet: real AdSense ad-unit IDs from THOR's AdSense account
+# are still required before any unit can serve. Do not enable ads until then.
+google.com, pub-5439325240008654, DIRECT, f08c47fec0942fa0
