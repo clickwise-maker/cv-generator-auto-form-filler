@@ -56,6 +56,7 @@ export const Route = createRootRoute({
         { title: APP_NAME },
         { name: "description", content: DESCRIPTION },
         { name: "google-adsense-account", content: "ca-pub-5439325240008654" },
+        { name: "msvalidate.01", content: "8D212A4216CC1E3C06C3716B84A80955" },
 
         { property: "og:title", content: APP_NAME },
         { property: "og:description", content: DESCRIPTION },
