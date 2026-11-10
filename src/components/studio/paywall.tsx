@@ -18,8 +18,6 @@ import {
   type PublicOrder,
 } from "@/lib/payments/client";
 import { layeredProfile, useStudio } from "@/lib/cv/store";
-import { downloadPreviewPdf } from "@/lib/cv/export-pdf";
-import { WATERMARK_LINES } from "@/lib/payments/config";
 import { WatchAdOption } from "@/components/ads/watch-ad-unlock";
 
 type Phase =
@@ -157,7 +155,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
     <div className="fixed inset-0 z-40 grid place-items-end bg-ink/40 p-4 sm:place-items-center" role="presentation" onClick={() => !busy && onClose()}>
       <section role="dialog" aria-modal="true" aria-labelledby="unlock-title" aria-describedby="unlock-desc" className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-line bg-sheet p-5 text-ink" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start gap-2">
-          <p className="kicker flex-1 text-forest">{tr("Unlock clean download")}</p>
+          <p className="kicker flex-1 text-forest">{tr("Choose a plan")}</p>
           {isTest ? (
             <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900" role="note">
               {tr("TEST MODE — no real payment")}
@@ -170,7 +168,7 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
           </button>
         </div>
         <h2 id="unlock-title" className="mt-2 font-serif text-2xl">
-          {tr("Clean {label}", { label })}
+          {tr("Form filler plans")}
         </h2>
 
         {status.mode === "unavailable" ? (
@@ -199,10 +197,10 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                     <div className="flex gap-3 rounded-xl border border-dashed border-line p-3 text-sm" data-testid="plan-free">
                       <span className="flex-1">
                         <span className="flex justify-between gap-2 font-semibold">
-                          <span>{tr("Free preview")}</span>
+                          <span>{tr("Color PDF")} / {tr("Plain PDF")}</span>
                           <span>{tr("Free")}</span>
                         </span>
-                        <span className="block text-xs text-muted">{tr("Watermarked PDF · unlimited · no sign-in")}</span>
+                        <span className="block text-xs text-muted">{tr("CV downloads are free and clean (no watermark) when you are logged in.")}</span>
                       </span>
                     </div>
                     {visiblePlans(status.mode === "test").map((p) => (
@@ -225,17 +223,6 @@ export function UnlockDialog({ open, format, status, onClose }: { open: boolean;
                 <div className="mt-5 flex flex-col gap-2">
                   <Button type="button" onClick={() => void start()}>
                     {isTest ? tr("Continue to TEST payment ({price})", { price: planLabel }) : tr("Pay {price} and unlock", { price: planLabel })}
-                  </Button>
-                  <Button
-                    type="button"
-                    tone="quiet"
-                    onClick={() => {
-                      const { settings } = useStudio.getState();
-      const profile = layeredProfile();
-                      downloadPreviewPdf(profile, settings, WATERMARK_LINES);
-                    }}
-                  >
-                    {tr("Download FREE watermarked PDF")}
                   </Button>
                   {/* Opt-in rewarded-ad unlock: renders nothing unless WATCH_AD_UNLOCK.enabled (default off). */}
                   <WatchAdOption format={format} />

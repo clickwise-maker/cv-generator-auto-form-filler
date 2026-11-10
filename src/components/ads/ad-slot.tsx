@@ -28,9 +28,9 @@ export function AdSlot({ placement, className = "" }: { placement: AdPlacement; 
   if (pathname === "/" && mode === "filler") return null;
   if (!ADS.enabled && !preview) return null;
   return (
-    <aside className={`my-10 ${className}`} aria-label={tr("Advertisement")} data-testid={`ad-slot-${placement}`}>
+    <aside className={`my-10 min-h-[290px] ${className}`} aria-label={tr("Advertisement")} data-testid={`ad-slot-${placement}`}>
       <p className="mb-1 text-[11px] uppercase tracking-wider text-muted">{tr("Advertisement")}</p>
-      {ADS.enabled ? <AdUnit key={pathname} slot={ADS.slots[placement]} /> : <div className="h-28 rounded-lg border border-dashed border-line bg-paper" />}
+      {ADS.enabled ? <AdUnit key={pathname} slot={ADS.slots[placement]} /> : <div className="h-[250px] rounded-lg border border-dashed border-line bg-paper" />}
     </aside>
   );
 }
@@ -47,5 +47,5 @@ function AdUnit({ slot }: { slot: string }) {
       /* ad blockers: ignore */
     }
   }, []);
-  return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client={ADSENSE_PUB_ID} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true" />;
+  return <ins className="adsbygoogle" style={{ display: "block", minHeight: 250 }} data-ad-client={ADSENSE_PUB_ID} {...(slot ? { "data-ad-slot": slot } : {})} data-ad-format="auto" data-full-width-responsive="true" />;
 }

@@ -1,0 +1,240 @@
+[
+  {
+    "locale": "en",
+    "phrase": "free resume builder",
+    "url": "https://meracvresume.com/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "en",
+    "phrase": "free online form filler",
+    "url": "https://nanonets.com/pdf-form-filling/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "en",
+    "phrase": "job application autofill",
+    "url": "https://sealapply.com/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "en",
+    "phrase": "fill PDF form online free",
+    "url": "https://nanonets.com/pdf-form-filling/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "en",
+    "phrase": "AI form filler",
+    "url": "https://www.mera-form.com/",
+    "result": "exact_phrase_read",
+    "excerpt": "AI Form Filler — Free Browser Extension for Job Applications | Mera Form\nMera F"
+  },
+  {
+    "locale": "hi",
+    "phrase": "फ्री रिज्यूमे बनाएं",
+    "url": "https://nobsresume.com/resume-builder/hindi",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "hi",
+    "phrase": "बायोडाटा बनाने वाली वेबसाइट",
+    "url": "https://www.csctoolhub.com/resume-builder.html",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "pl",
+    "phrase": "kreator CV za darmo",
+    "url": "https://owlapply.com/pl",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "pl",
+    "phrase": "generator CV online",
+    "url": "https://makecv.pl/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "pl",
+    "phrase": "kreator CV z AI",
+    "url": "https://owlapply.com/pl",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "pl",
+    "phrase": "automatyczne wypełnianie formularzy",
+    "url": "https://www.loopcv.pro/pl/job-application-autofill/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "pl",
+    "phrase": "autouzupełnianie aplikacji o pracę",
+    "url": "https://aplikomat.pl/auto-apply",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "ar",
+    "phrase": "إنشاء سيرة ذاتية مجانا",
+    "url": "https://atheel.ai/free-tools/cv-maker",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "ar",
+    "phrase": "صانع سيرة ذاتية",
+    "url": "https://atheel.ai/free-tools/cv-maker",
+    "result": "exact_phrase_read",
+    "excerpt": "صانع سيرة ذاتية مجاني بالعربي وقالب ATS | أثيل\nأثيل\nEN\n◐\nآخر الأخبار\nأثيل\n›\nأدوا"
+  },
+  {
+    "locale": "ar",
+    "phrase": "منشئ سيرة ذاتية بالذكاء الاصطناعي",
+    "url": "https://taqdeem.net/ai-cv-builder",
+    "result": "exact_phrase_read",
+    "excerpt": "منشئ سيرة ذاتية بالذكاء الاصطناعي - مجاني بالعربي والإنجليزي | تقديم\nEN\n/\nع\nتسجيل الدخول\nابدأ مجان"
+  },
+  {
+    "locale": "ar",
+    "phrase": "تعبئة تلقائية للنماذج",
+    "url": "https://taqdeem.net/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "zh-cn",
+    "phrase": "免费简历制作",
+    "url": "https://keenresume.com/cn/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "zh-cn",
+    "phrase": "在线简历生成器",
+    "url": "https://uddatak.com/zh-hans/tools/cv-builder",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "ru",
+    "phrase": "создать резюме бесплатно",
+    "url": "https://keenresume.com/ru/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "ru",
+    "phrase": "конструктор резюме онлайн",
+    "url": "https://uddatak.com/ru/tools/cv-builder",
+    "result": "exact_phrase_read",
+    "excerpt": "Бесплатный конструктор резюме онлайн — 15 шаблонов | Uddatak\nПерейти к основному содержимому\nU\nUddata"
+  },
+  {
+    "locale": "es",
+    "phrase": "crear curriculum gratis",
+    "url": "https://curriculumvitaeonline.com/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "es",
+    "phrase": "hacer CV online",
+    "url": "https://trakrio.com/es/tools/resume-builder",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "es",
+    "phrase": "rellenar PDF online gratis",
+    "url": "https://turbopdf.app/es/formularios_pdf",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "fr",
+    "phrase": "créer un CV gratuit",
+    "url": "https://cv-en-ligne.fr/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "fr",
+    "phrase": "CV en ligne",
+    "url": "https://cv-en-ligne.fr/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "de",
+    "phrase": "Lebenslauf erstellen kostenlos",
+    "url": "https://meinpdf.de/lebenslauf-erstellen",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "de",
+    "phrase": "Lebenslauf Generator",
+    "url": "https://lebenslauf-vorlage-kostenlos.de/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "pt",
+    "phrase": "criar currículo grátis",
+    "url": "https://simplecv.io/pt-br/",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "pt",
+    "phrase": "gerador de currículo",
+    "url": "https://rotinadiaria.com/gerador-de-curriculo",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "ja",
+    "phrase": "履歴書 作成 無料",
+    "url": "https://rirekisho-note.jp/",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "ja",
+    "phrase": "履歴書メーカー",
+    "url": "https://rirekimaker.com/",
+    "result": "exact_phrase_read",
+    "excerpt": "履歴書メーカー｜無料・登録不要で履歴書をPDF作成\n履歴書メーカー\n履歴書・職務経歴書を無料で作成\n登録なしで入力からPDF保存まで。スマホ・パ"
+  },
+  {
+    "locale": "ja",
+    "phrase": "AI 履歴書 作成",
+    "url": "https://helloboss.com/resume",
+    "result": "not_found_in_fetched_text",
+    "excerpt": null
+  },
+  {
+    "locale": "id",
+    "phrase": "buat CV gratis",
+    "url": "https://lanjut.org/id",
+    "result": "not_accessible",
+    "excerpt": null
+  },
+  {
+    "locale": "id",
+    "phrase": "CV maker online",
+    "url": "https://pulsarkit.com/id/tools/resume-builder",
+    "result": "not_accessible",
+    "excerpt": null
+  }
+]

@@ -86,3 +86,20 @@ describe("auto form filler regression (text → profile)", () => {
     }
   });
 });
+
+describe("clean Color and Plain PDFs", () => {
+  for (const template of ["meridian", "consulate", "atlas"] as const) {
+    it(`${template}: both styles generate with no watermark; plain has no colour`, () => {
+      const settings = { ...defaultSettings(), template };
+      const color = buildPdf(sampleProfile(), settings, "color").output();
+      const plain = buildPdf(sampleProfile(), settings, "plain").output();
+      for (const out of [color, plain]) {
+        assert.match(out, /Amira/i);
+        assert.doesNotMatch(out, /UNPAID PREVIEW|SAMPLE - NOT FOR OFFICIAL USE/);
+      }
+      const colours = (out: string) => [...out.matchAll(/([\d.]+) ([\d.]+) ([\d.]+) (rg|RG)\b/g)].filter((m) => !(m[1] === m[2] && m[2] === m[3]));
+      assert.equal(colours(plain).length, 0, "plain PDF uses only black/white/grey");
+      if (template === "meridian") assert.ok(colours(color).length > 0, "color PDF keeps colour");
+    });
+  }
+});

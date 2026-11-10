@@ -1,13 +1,12 @@
 import { tr } from "@/lib/i18n/i18n";
-import { AdSlot } from "@/components/ads/ad-slot";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Ink } from "@/components/studio/ink";
 import { UnlockDialog } from "@/components/studio/paywall";
 import { Button, Select } from "@/components/studio/ui";
-import { downloadPreviewPdf } from "@/lib/cv/export-pdf";
-import { watermarkDataUrl } from "@/lib/cv/watermark";
-import { WATERMARK_LINES, type ExportFormat, type PaywallStatus } from "@/lib/payments/config";
+import { downloadCvPdf, type PdfStyle } from "@/lib/cv/export-pdf";
+import { type ExportFormat, type PaywallStatus } from "@/lib/payments/config";
+import { goToSignIn, useSupaSession } from "@/components/landing/auth-gate";
 import { fetchStatus } from "@/lib/payments/client";
 import {
   COPY,
@@ -34,6 +33,7 @@ export function PreviewColumn() {
   const [unlockFor, setUnlockFor] = useState<ExportFormat | null>(null);
   const [status, setStatus] = useState<PaywallStatus | null>(null);
   const closeUnlock = useCallback(() => setUnlockFor(null), []);
+  const session = useSupaSession();
 
   useEffect(() => {
     void fetchStatus().then(setStatus);
@@ -46,23 +46,22 @@ export function PreviewColumn() {
     return () => window.removeEventListener("meridian-open-plans", open);
   }, []);
 
-  function previewPdf() {
+  // CV downloads are free and clean (no watermark) for signed-in users; guests are asked to log in.
+  function download(style: PdfStyle) {
+    if (!session) {
+      toast.message(tr("Log in to download your CV for free."));
+      return goToSignIn();
+    }
     const { settings: current } = useStudio.getState();
-    const profile = layeredProfile();
     setBusy(true);
     try {
-      downloadPreviewPdf(profile, current, WATERMARK_LINES);
-      toast.success(tr("Watermarked preview PDF downloaded."));
+      downloadCvPdf(layeredProfile(), current, style);
+      toast.success(style === "plain" ? tr("Plain PDF downloaded.") : tr("Color PDF downloaded."));
     } catch (error) {
       toast.error(error instanceof Error ? error.message : tr("Could not build that file."));
     } finally {
       setBusy(false);
     }
-  }
-
-  async function unlock(format: ExportFormat) {
-    setStatus(status ?? (await fetchStatus()));
-    setUnlockFor(format);
   }
 
   return (
@@ -102,40 +101,26 @@ export function PreviewColumn() {
       </div>
       <div className="mb-3 rounded-2xl border border-line bg-sheet p-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold tracking-wide text-forest" aria-label={tr("Free preview")}>
-            {tr("FREE PREVIEW")}
-          </span>
-          {status?.mode === "test" ? <span className="rounded-full bg-amber-200 px-2 py-0.5 text-xs font-bold text-amber-900">{tr("TEST MODE")}</span> : null}
-          <p className="min-w-0 flex-1 text-xs text-muted">{tr("Editing, templates and the watermarked preview are free. A clean, watermark-free file needs an unlock — options appear when you download.")}</p>
+          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold tracking-wide text-forest">{tr("FREE")}</span>
+          <p className="min-w-0 flex-1 text-xs text-muted">
+            {session ? tr("CV downloads are free and clean (no watermark) when you are logged in.") : tr("Log in to download your CV for free, with no watermark.")}
+          </p>
         </div>
-        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
-          <Button type="button" onClick={() => void unlock("pdf")} disabled={busy}>
-            {tr("Unlock Clean Download · PDF")}
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <Button type="button" onClick={() => download("color")} disabled={busy} data-testid="download-color-pdf">
+            {busy ? tr("Building…") : tr("Color PDF")}
           </Button>
-          <Button type="button" tone="quiet" onClick={() => void unlock("docx")} disabled={busy}>
-            {tr("Unlock Clean Download · Word")}
-          </Button>
-          <Button type="button" tone="quiet" onClick={previewPdf} disabled={busy}>
-            {busy ? tr("Building…") : tr("Preview PDF (watermarked)")}
+          <Button type="button" tone="quiet" onClick={() => download("plain")} disabled={busy} data-testid="download-plain-pdf">
+            {tr("Plain PDF")}
           </Button>
         </div>
+        <p className="mt-2 text-xs text-muted">{tr("Plain PDF: black and white, simple styling, printer-friendly. Same content.")}</p>
       </div>
       <UnlockDialog open={unlockFor !== null} format={unlockFor ?? "pdf"} status={status} onClose={closeUnlock} />
       <p className="mb-3 text-xs text-muted">{tr("Click any line on the page to edit it. The form stays in step.")}</p>
-      <article key={settings.template} className="cv-preview sheet-shadow rise relative overflow-hidden rounded-2xl border border-line bg-sheet" aria-describedby="preview-watermark-note">
+      <article key={settings.template} className="cv-preview sheet-shadow rise relative overflow-hidden rounded-2xl border border-line bg-sheet">
         {settings.template === "consulate" ? <ConsulatePage /> : settings.template === "atlas" ? <AtlasPage /> : <MeridianPage />}
-        <div
-          className="cv-watermark pointer-events-none absolute inset-0 z-10"
-          aria-hidden
-          data-testid="cv-watermark"
-          style={{ backgroundImage: watermarkDataUrl(WATERMARK_LINES, settings.paper), backgroundRepeat: "repeat-y", backgroundSize: "100% auto" }}
-        />
       </article>
-      <p id="preview-watermark-note" className="cv-print-note mt-2 text-xs text-muted">
-        {tr("Preview carries a “{mark}” watermark on every page. Use “Unlock Clean Download” for a clean file. (The watermark deters casual reuse; screenshots cannot be prevented.)", { mark: WATERMARK_LINES[1] ?? "" })}
-      </p>
-      {/* Below the preview only; download/pay buttons are above the preview, well away from this unit. */}
-      <AdSlot placement="belowPreview" className="mt-16" />
     </div>
   );
 }
@@ -385,7 +370,7 @@ function ConsulatePage() {
 
   return (
     <div className="paper px-5 py-6 sm:px-8">
-      <p className="kicker text-forest">CV Studio {dossierCode(profile)}</p>
+      <p className="kicker text-forest">FormZalo {dossierCode(profile)}</p>
       {personal.photo ? <img src={personal.photo} alt="" className="mt-3 size-20 rounded-md object-cover" /> : null}
       <h3 className="mt-2 font-serif text-2xl">{copy.particulars}</h3>
       <PreparedFor className="mt-1 text-muted" />

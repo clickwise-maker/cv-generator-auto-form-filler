@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { ADS, ADSENSE_PUB_ID, AFFILIATES, WATCH_AD_UNLOCK, adAllowed, adsenseScriptSrc } from "../../config/ads.ts";
+import { ADS, ADSENSE_PUB_ID, AFFILIATES, WATCH_AD_UNLOCK, adAllowed, adsTxt, adsenseScriptSrc } from "../../config/ads.ts";
 import { UnlockTokens } from "./unlock.server.ts";
 import { handleUnlockDownload, handleUnlockGrant, handleUnlockStatus } from "./unlock-http.server.ts";
 
@@ -11,22 +11,27 @@ const SRC = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const read = (p: string) => fs.readFileSync(path.join(SRC, p), "utf8");
 const SECRET = "test-secret-0123456789abcdef";
 
-test("ads are off by default with placeholder ids", () => {
+test("ads are off by default: no publisher id, no ads.txt", () => {
   assert.equal(ADS.enabled, false);
-  assert.equal(ADSENSE_PUB_ID, "ca-pub-XXXXXXXXXXXXXXXX");
+  assert.equal(ADSENSE_PUB_ID, "");
   assert.equal(WATCH_AD_UNLOCK.enabled, false);
-  assert.match(adsenseScriptSrc(), /adsbygoogle\.js\?client=ca-pub-X+$/);
-  assert.match(fs.readFileSync(path.join(SRC, "../public/ads.txt"), "utf8"), /^google\.com, pub-X{16}, DIRECT, f08c47fec0942fa0$/m);
+  assert.equal(adsTxt(), null);
+  assert.equal(adsTxt("ca-pub-1234567890123456"), "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0\n");
+  assert.equal(adsTxt("ca-pub-XXXXXXXXXXXXXXXX"), null);
+  assert.match(adsenseScriptSrc("ca-pub-1234567890123456"), /adsbygoogle\.js\?client=ca-pub-1234567890123456$/);
+  // public/ads.txt now ships the real publisher line (matches live v19); ad units/slots stay disabled.
+  assert.match(fs.readFileSync(path.join(SRC, "../public/ads.txt"), "utf8"), /^google\.com, pub-5439325240008654, DIRECT, f08c47fec0942fa0$/m);
 });
 
-test("AdSense head script is conditional on ADS.enabled", () => {
+test("AdSense ownership loader + account meta are unconditional (Wilson-approved 2026-11-08); ad units stay gated by ADS.enabled", () => {
   const root = read("routes/__root.tsx");
-  assert.match(root, /ADS\.enabled \? \[\{ src: adsenseScriptSrc\(\)/);
+  assert.match(root, /adsbygoogle\.js\?client=ca-pub-5439325240008654/);
+  assert.match(root, /name: "google-adsense-account", content: "ca-pub-5439325240008654"/);
 });
 
 test("ad placement allow-list: only landing, guides, gallery, dashboard, below preview", () => {
   assert.ok(adAllowed("/", "landing"));
-  assert.ok(adAllowed("/", "belowPreview"));
+  assert.equal(adAllowed("/", "belowPreview"), false);
   assert.ok(adAllowed("/guides", "guides"));
   assert.ok(adAllowed("/guides/cv-for-freshers", "guides"));
   assert.ok(adAllowed("/templates", "gallery"));
@@ -40,9 +45,8 @@ test("ad placement allow-list: only landing, guides, gallery, dashboard, below p
 test("no ad slot in editor, form filler, paywall, pricing or checkout components", () => {
   const banned = ["components/studio/form-filler.tsx", "components/studio/profile-form.tsx", "components/studio/paywall.tsx", "components/studio/scan-card.tsx", "components/studio/signature-pad.tsx", "components/studio/custom-details.tsx", "components/studio/studio.tsx", "routes/services.tsx", "routes/refund-policy.tsx", "routes/c.$token.tsx", "routes/next-steps.tsx"];
   for (const f of banned) assert.doesNotMatch(read(f), /AdSlot/, f);
-  // Below-preview unit sits after the watermark note, not next to the download buttons.
-  const prev = read("components/studio/preview-doc.tsx");
-  assert.ok(prev.indexOf('<AdSlot placement="belowPreview"') > prev.indexOf('id="preview-watermark-note"'));
+  // No ad anywhere in the CV preview / download area.
+  assert.doesNotMatch(read("components/studio/preview-doc.tsx"), /AdSlot/);
 });
 
 test("ad slots are labelled Advertisement and never auto-refresh", () => {

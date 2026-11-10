@@ -1,0 +1,1272 @@
+{
+  "schemaVersion": 1,
+  "project": "FormZalo Global AI Discovery & Multilingual SEO",
+  "reviewedAt": "2026-11-07T17:22:27.920386+00:00",
+  "reviewTimezone": "Asia/Kolkata",
+  "scope": "Phase 2 directory only. Official public sources; no accounts, API calls, submissions, robots changes or application integration. Unknowns are intentional.",
+  "submissionCount": 0,
+  "sources": [
+    {
+      "id": "openai",
+      "url": "https://openai.com/chatgpt/search/",
+      "finalUrl": "https://openai.com/chatgpt/search/",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:39.905204+00:00",
+      "access": "inaccessible",
+      "title": null,
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "openai_bots",
+      "url": "https://platform.openai.com/docs/bots",
+      "finalUrl": "https://developers.openai.com/api/docs/bots",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:39.905854+00:00",
+      "access": "content_fetched",
+      "title": "\n  Overview of OpenAI Crawlers\n",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "google",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "finalUrl": "https://developers.google.com/search/docs/appearance/ai-features",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:39.908292+00:00",
+      "access": "content_fetched",
+      "title": "AI Features and Your Website | Google Search Central  |  Documentation  |  Google for Developers",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "gemini",
+      "url": "https://gemini.google.com/",
+      "finalUrl": "https://gemini.google.com/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:39.909243+00:00",
+      "access": "shell_only",
+      "title": "‎Google Gemini",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "google_bots",
+      "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "finalUrl": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.003008+00:00",
+      "access": "content_fetched",
+      "title": "Google's common crawlers | Google Crawling Infrastructure  |  Crawling infrastructure  |  Google for Developers",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "microsoft",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot",
+      "finalUrl": "https://www.microsoft.com/en-us/copilot",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.118183+00:00",
+      "access": "content_fetched",
+      "title": "Microsoft Copilot: AI built for work",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "bing_bots",
+      "url": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+      "finalUrl": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.327393+00:00",
+      "access": "shell_only",
+      "title": "Bing Webmaster Tools - Help Documentation",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "anthropic",
+      "url": "https://claude.ai/",
+      "finalUrl": "https://claude.ai/",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:40.408261+00:00",
+      "access": "inaccessible",
+      "title": "Just a moment...",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "anthropic_bots",
+      "url": "https://privacy.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "finalUrl": "https://privacy.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.456150+00:00",
+      "access": "content_fetched",
+      "title": "Does Anthropic crawl data from the web, and how can site owners block the crawler? | Anthropic Privacy Center",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "perplexity",
+      "url": "https://www.perplexity.ai/",
+      "finalUrl": "https://www.perplexity.ai/",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:40.635478+00:00",
+      "access": "inaccessible",
+      "title": "Just a moment...",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "perplexity_bots",
+      "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "finalUrl": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.639290+00:00",
+      "access": "content_fetched",
+      "title": "Perplexity Crawlers - Perplexity",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "grok",
+      "url": "https://x.ai/grok",
+      "finalUrl": "https://x.ai/grok",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.729700+00:00",
+      "access": "content_fetched",
+      "title": "Grok — Useful AI Chatbot with Voice & Image Generation | SpaceXSI",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "meta",
+      "url": "https://www.meta.ai/",
+      "finalUrl": "https://www.meta.ai/",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:40.794475+00:00",
+      "access": "inaccessible",
+      "title": "Meta AI",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "deepseek",
+      "url": "https://www.deepseek.com/",
+      "finalUrl": "https://www.deepseek.com/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.850472+00:00",
+      "access": "content_fetched",
+      "title": "DeepSeek | æ·±åº¦æ±ç´¢",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "mistral",
+      "url": "https://mistral.ai/products/le-chat",
+      "finalUrl": "https://mistral.ai/products/vibe/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.894712+00:00",
+      "access": "content_fetched",
+      "title": "Mistral Vibe (formerly Le Chat) - AI chat and coding agent",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "you",
+      "url": "https://you.com/",
+      "finalUrl": "https://you.com/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:40.999484+00:00",
+      "access": "content_fetched",
+      "title": "You.com | Search and inference for AI",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "poe",
+      "url": "https://poe.com/",
+      "finalUrl": "https://poe.com/login?redirect_url=%2F",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:41.207392+00:00",
+      "access": "inaccessible",
+      "title": "Just a moment...",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "brave",
+      "url": "https://search.brave.com/",
+      "finalUrl": "https://search.brave.com/",
+      "httpStatus": 429,
+      "checkedAt": "2026-11-07T17:20:41.264711+00:00",
+      "access": "inaccessible",
+      "title": "Brave Search",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "brave_bots",
+      "url": "https://search.brave.com/help/brave-search-crawler",
+      "finalUrl": "https://search.brave.com/help/brave-search-crawler",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:41.355745+00:00",
+      "access": "content_fetched",
+      "title": "Brave Search Crawler | Brave Search",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "phind",
+      "url": "https://www.phind.com/",
+      "finalUrl": "https://www.phind.com/",
+      "httpStatus": 403,
+      "checkedAt": "2026-11-07T17:20:41.387383+00:00",
+      "access": "inaccessible",
+      "title": "Just a moment...",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "ernie",
+      "url": "https://yiyan.baidu.com/",
+      "finalUrl": "https://wenxin.baidu.com/?enter_type=yiyan_site",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:41.503153+00:00",
+      "access": "shell_only",
+      "title": "百度文心助手 - 办公学习一站解决",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "qwen",
+      "url": "https://qwen.ai/",
+      "finalUrl": "https://qwen.ai/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:41.506669+00:00",
+      "access": "shell_only",
+      "title": "Qwen",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "doubao",
+      "url": "https://www.doubao.com/",
+      "finalUrl": "https://www.doubao.com/chat/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:41.533016+00:00",
+      "access": "shell_only",
+      "title": "豆包 - 字节跳动旗下 AI 智能助手",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "kimi",
+      "url": "https://www.kimi.com/",
+      "finalUrl": "https://www.kimi.com/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:41.691688+00:00",
+      "access": "shell_only",
+      "title": "Kimi AI 官网：K3.1 Pro 上线，编程与智能体任务全面升级",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "yuanbao",
+      "url": "https://yuanbao.tencent.com/",
+      "finalUrl": "https://yuanbao.tencent.com/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:42.644638+00:00",
+      "access": "shell_only",
+      "title": null,
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "glm",
+      "url": "https://z.ai/",
+      "finalUrl": "https://chat.z.ai/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:42.844972+00:00",
+      "access": "shell_only",
+      "title": "Z.ai - Advanced AI Chatbot & Agent powered by GLM-5.3-Flash",
+      "note": "Public HTTP/text check only; no signed-in or geographic feature test. HTTP 200 shells do not verify capabilities."
+    },
+    {
+      "id": "glm_search",
+      "url": "https://docs.z.ai/guides/tools/web-search",
+      "finalUrl": "https://docs.z.ai/guides/tools/web-search",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:43.841566+00:00",
+      "access": "content_fetched",
+      "title": "Web Search - Overview - Z.AI DEVELOPER DOCUMENT",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "alice",
+      "url": "https://alice.yandex.ru/",
+      "finalUrl": "https://alice.yandex.ru/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:44.131178+00:00",
+      "access": "content_fetched",
+      "title": "Нейросеть Алиса AI - бесплатный ии-чат Яндекса с генерацией текстов и изображений",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "naver",
+      "url": "https://navercorp.com/en/service/search",
+      "finalUrl": "https://navercorp.com/en/service/search",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:44.715617+00:00",
+      "access": "content_fetched",
+      "title": "Search l NAVER Corp.",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "apple",
+      "url": "https://www.apple.com/apple-intelligence/",
+      "finalUrl": "https://www.apple.com/apple-intelligence/",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:45.158094+00:00",
+      "access": "content_fetched",
+      "title": "Apple Intelligence and Siri - Apple",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "apple_bots",
+      "url": "https://support.apple.com/en-us/119829",
+      "finalUrl": "https://support.apple.com/en-us/119829",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:45.285657+00:00",
+      "access": "content_fetched",
+      "title": "About Applebot - Apple Support",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "alexa",
+      "url": "https://www.amazon.com/alexaplus",
+      "finalUrl": "https://www.amazon.com/alexaplus",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:45.448490+00:00",
+      "access": "content_fetched",
+      "title": "Alexa Plus",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    },
+    {
+      "id": "google_submit",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl",
+      "finalUrl": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl",
+      "httpStatus": 200,
+      "checkedAt": "2026-11-07T17:20:45.786743+00:00",
+      "access": "content_fetched",
+      "title": "Ask Google to Recrawl Your Website | Google Search Central  |  Documentation  |  Google for Developers",
+      "note": "Official public page text fetched and reviewed; does not verify every product surface or geography."
+    }
+  ],
+  "platforms": [
+    {
+      "id": "openai",
+      "requestedName": "OpenAI ChatGPT and ChatGPT Search",
+      "officialName": "OpenAI ChatGPT and ChatGPT Search",
+      "officialWebsite": {
+        "url": "https://openai.com/chatgpt/search/",
+        "sourceId": "openai"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Search crawling and user-initiated page retrieval are documented separately from foundation-model training.",
+        "sourceIds": [
+          "openai_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "openai_bots"
+        ],
+        "agents": [
+          {
+            "token": "OAI-SearchBot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "search"
+            ],
+            "sourceId": "openai_bots"
+          },
+          {
+            "token": "GPTBot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "training"
+            ],
+            "sourceId": "openai_bots"
+          },
+          {
+            "token": "ChatGPT-User",
+            "kind": "http_user_agent",
+            "purposes": [
+              "user_fetch"
+            ],
+            "sourceId": "openai_bots"
+          }
+        ],
+        "notes": "Agent names are official tokens; no inference that robots permission guarantees indexing. User-directed fetchers can have different robots behavior."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:39.905204+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:39.905854+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Product landing page returned HTTP 403; crawler documentation was readable and is the capability evidence."
+      ]
+    },
+    {
+      "id": "google",
+      "requestedName": "Google Gemini and Google AI Search",
+      "officialName": "Google Gemini; Google Search AI Overviews and AI Mode",
+      "officialWebsite": {
+        "url": "https://gemini.google.com/",
+        "sourceId": "gemini"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Google Search AI features surface relevant links; normal Search eligibility applies. Gemini Apps controls are distinct.",
+        "sourceIds": [
+          "google",
+          "google_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "google_bots"
+        ],
+        "agents": [
+          {
+            "token": "Googlebot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "search"
+            ],
+            "sourceId": "google_bots"
+          },
+          {
+            "token": "Google-Extended",
+            "kind": "robots_control_token",
+            "purposes": [
+              "training",
+              "grounding"
+            ],
+            "sourceId": "google_bots"
+          }
+        ],
+        "notes": "Google-Extended has no separate HTTP user-agent; it also controls some Gemini grounding, not only training. It does not control Google Search inclusion."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "documented_indirect",
+        "mechanisms": [
+          {
+            "name": "Google Search Console URL Inspection / sitemap discovery",
+            "url": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl",
+            "sourceId": "google_submit",
+            "relationship": "indirect_search_index",
+            "notes": "Owner access required for URL Inspection. Crawl request is not guaranteed indexing and is not a direct Gemini listing."
+          }
+        ],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:39.909243+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.003008+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "microsoft",
+      "requestedName": "Microsoft Copilot",
+      "officialName": "Microsoft Copilot",
+      "officialWebsite": {
+        "url": "https://www.microsoft.com/en-us/copilot",
+        "sourceId": "microsoft"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.118183+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Corporate product page fetched; search-specific official result was seen in search snippets but not verified as fetched content. Bing help returned a JS shell; no Bingbot token asserted here. Bing indexing would be indirect, not a direct Copilot listing."
+      ]
+    },
+    {
+      "id": "anthropic",
+      "requestedName": "Anthropic Claude",
+      "officialName": "Anthropic Claude",
+      "officialWebsite": {
+        "url": "https://claude.ai/",
+        "sourceId": "anthropic"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official robots documentation distinguishes search indexing, user-directed fetching and model training.",
+        "sourceIds": [
+          "anthropic_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "anthropic_bots"
+        ],
+        "agents": [
+          {
+            "token": "Claude-SearchBot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "search"
+            ],
+            "sourceId": "anthropic_bots"
+          },
+          {
+            "token": "Claude-User",
+            "kind": "http_user_agent",
+            "purposes": [
+              "user_fetch"
+            ],
+            "sourceId": "anthropic_bots"
+          },
+          {
+            "token": "ClaudeBot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "training"
+            ],
+            "sourceId": "anthropic_bots"
+          }
+        ],
+        "notes": "Agent names are official tokens; no inference that robots permission guarantees indexing. User-directed fetchers can have different robots behavior."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.408261+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.456150+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "perplexity",
+      "requestedName": "Perplexity",
+      "officialName": "Perplexity",
+      "officialWebsite": {
+        "url": "https://www.perplexity.ai/",
+        "sourceId": "perplexity"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Search surfacing/linking and user-requested page retrieval are documented; these agents are not foundation-model training crawlers.",
+        "sourceIds": [
+          "perplexity_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "perplexity_bots"
+        ],
+        "agents": [
+          {
+            "token": "PerplexityBot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "search"
+            ],
+            "sourceId": "perplexity_bots"
+          },
+          {
+            "token": "Perplexity-User",
+            "kind": "http_user_agent",
+            "purposes": [
+              "user_fetch"
+            ],
+            "sourceId": "perplexity_bots"
+          }
+        ],
+        "notes": "Agent names are official tokens; no inference that robots permission guarantees indexing. User-directed fetchers can have different robots behavior."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.635478+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.639290+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "grok",
+      "requestedName": "xAI Grok",
+      "officialName": "Grok",
+      "officialWebsite": {
+        "url": "https://x.ai/grok",
+        "sourceId": "grok"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official product page describes live web and X search with citations.",
+        "sourceIds": [
+          "grok"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.729700+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.729700+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "meta",
+      "requestedName": "Meta AI",
+      "officialName": "Meta AI",
+      "officialWebsite": {
+        "url": "https://www.meta.ai/",
+        "sourceId": "meta"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.794475+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Official app request returned HTTP 403. No sign-in, challenge solving or access workaround attempted."
+      ]
+    },
+    {
+      "id": "deepseek",
+      "requestedName": "DeepSeek",
+      "officialName": "DeepSeek",
+      "officialWebsite": {
+        "url": "https://www.deepseek.com/",
+        "sourceId": "deepseek"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.850472+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "mistral",
+      "requestedName": "Mistral Le Chat",
+      "officialName": "Mistral Vibe (formerly Le Chat)",
+      "officialWebsite": {
+        "url": "https://mistral.ai/products/vibe/",
+        "sourceId": "mistral"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Fetched official page redirects from Le Chat to Vibe and describes web search and sourced deep research. Requested legacy name is retained for traceability.",
+        "sourceIds": [
+          "mistral"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.894712+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.894712+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "you",
+      "requestedName": "You.com",
+      "officialName": "You.com",
+      "officialWebsite": {
+        "url": "https://you.com/",
+        "sourceId": "you"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official site describes web search, contents, answer and research infrastructure for AI. API/product capability is not a publisher submission mechanism.",
+        "sourceIds": [
+          "you"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:40.999484+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:40.999484+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "poe",
+      "requestedName": "Poe",
+      "officialName": "Poe",
+      "officialWebsite": {
+        "url": "https://poe.com/login?redirect_url=%2F",
+        "sourceId": "poe"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.207392+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Official app request returned HTTP 403. No sign-in, challenge solving or access workaround attempted."
+      ]
+    },
+    {
+      "id": "brave",
+      "requestedName": "Brave Search",
+      "officialName": "Brave Search",
+      "officialWebsite": {
+        "url": "https://search.brave.com/",
+        "sourceId": "brave"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official help describes its own search index and crawler; no differentiated crawler user agent is advertised.",
+        "sourceIds": [
+          "brave_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "brave_bots"
+        ],
+        "agents": [],
+        "notes": "Official page says its crawler does not advertise a differentiated user agent. Do not invent Bravebot. Re-fetch/delisting forms are not new-site submission."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.264711+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:41.355745+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Search homepage returned HTTP 429; separate official crawler help was readable. No retry of the rate-limited homepage."
+      ]
+    },
+    {
+      "id": "phind",
+      "requestedName": "Phind",
+      "officialName": "Phind",
+      "officialWebsite": {
+        "url": "https://www.phind.com/",
+        "sourceId": "phind"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.387383+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Official app request returned HTTP 403. No sign-in, challenge solving or access workaround attempted."
+      ]
+    },
+    {
+      "id": "ernie",
+      "requestedName": "Baidu ERNIE",
+      "officialName": "Baidu Wenxin Assistant (ERNIE family)",
+      "officialWebsite": {
+        "url": "https://wenxin.baidu.com/?enter_type=yiyan_site",
+        "sourceId": "ernie"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.503153+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "Requested yiyan.baidu.com redirects to wenxin.baidu.com. Only a short app shell/title was available; product-family search behavior remains unverified."
+      ]
+    },
+    {
+      "id": "qwen",
+      "requestedName": "Alibaba Qwen",
+      "officialName": "Qwen",
+      "officialWebsite": {
+        "url": "https://qwen.ai/",
+        "sourceId": "qwen"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.506669+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "doubao",
+      "requestedName": "ByteDance Doubao",
+      "officialName": "Doubao",
+      "officialWebsite": {
+        "url": "https://www.doubao.com/chat/",
+        "sourceId": "doubao"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.533016+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "kimi",
+      "requestedName": "Moonshot Kimi",
+      "officialName": "Kimi",
+      "officialWebsite": {
+        "url": "https://www.kimi.com/",
+        "sourceId": "kimi"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:41.691688+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "yuanbao",
+      "requestedName": "Tencent Yuanbao",
+      "officialName": "Tencent Yuanbao",
+      "officialWebsite": {
+        "url": "https://yuanbao.tencent.com/",
+        "sourceId": "yuanbao"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:42.644638+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "glm",
+      "requestedName": "Zhipu GLM",
+      "officialName": "Z.ai / GLM",
+      "officialWebsite": {
+        "url": "https://chat.z.ai/",
+        "sourceId": "glm"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official developer documentation describes Web Search API and Web Search in Chat. This does not establish a particular consumer-app rollout.",
+        "sourceIds": [
+          "glm_search"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:42.844972+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:43.841566+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "alice",
+      "requestedName": "Yandex Alice",
+      "officialName": "Alice AI",
+      "officialWebsite": {
+        "url": "https://alice.yandex.ru/",
+        "sourceId": "alice"
+      },
+      "discovery": {
+        "status": "unknown",
+        "summary": "Public web-search/discovery behavior was not verified from readable official content in this bounded review. Reachable app shells or blocked pages are not proof of availability or absence.",
+        "sourceIds": []
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:44.131178+00:00",
+        "contentVerifiedAt": null,
+        "coverage": "inaccessible_or_insufficient_content",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": [
+        "App contains embedded configuration; no public-search capability inferred from that payload. Official snippet is insufficient for a fetched-content verification claim."
+      ]
+    },
+    {
+      "id": "naver",
+      "requestedName": "Naver AI Search",
+      "officialName": "NAVER Search: AI Briefing and AI Tab",
+      "officialWebsite": {
+        "url": "https://navercorp.com/en/service/search",
+        "sourceId": "naver"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official service page describes search-intent summaries with source links and conversational AI search.",
+        "sourceIds": [
+          "naver"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:44.715617+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:44.715617+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "apple",
+      "requestedName": "Apple Intelligence",
+      "officialName": "Apple Intelligence",
+      "officialWebsite": {
+        "url": "https://www.apple.com/apple-intelligence/",
+        "sourceId": "apple"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official Applebot documentation describes Apple search surfaces and context retrieval; Apple Intelligence is not a standalone publisher-submission search engine.",
+        "sourceIds": [
+          "apple",
+          "apple_bots"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "verified",
+        "sourceIds": [
+          "apple_bots"
+        ],
+        "agents": [
+          {
+            "token": "Applebot",
+            "kind": "http_user_agent",
+            "purposes": [
+              "search",
+              "grounding"
+            ],
+            "sourceId": "apple_bots"
+          },
+          {
+            "token": "Applebot-Extended",
+            "kind": "robots_control_token",
+            "purposes": [
+              "training"
+            ],
+            "sourceId": "apple_bots"
+          }
+        ],
+        "notes": "Applebot-Extended is a usage-control token, not a distinct request crawler. Applebot supports multiple Apple surfaces."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:45.158094+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:45.285657+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    },
+    {
+      "id": "alexa",
+      "requestedName": "Amazon Alexa+",
+      "officialName": "Alexa+",
+      "officialWebsite": {
+        "url": "https://www.amazon.com/alexaplus",
+        "sourceId": "alexa"
+      },
+      "discovery": {
+        "status": "verified",
+        "summary": "Official product page describes an assistant answering questions and handling complex information across Alexa surfaces; website inclusion and a separate web-search crawler are not established.",
+        "sourceIds": [
+          "alexa"
+        ]
+      },
+      "crawlers": {
+        "documentationStatus": "not_found_in_review",
+        "sourceIds": [],
+        "agents": [],
+        "notes": "No readable official crawler specification established in this bounded review. Unknown is not proof that no crawler exists; do not derive tokens from product names."
+      },
+      "publicSubmission": {
+        "mechanismStatus": "unknown",
+        "mechanisms": [],
+        "notes": "No proprietary direct AI-app website listing verified. No submissions performed."
+      },
+      "submissionStatus": "NOT_SUBMITTED",
+      "lastVerification": {
+        "attemptedAt": "2026-11-07T17:20:45.448490+00:00",
+        "contentVerifiedAt": "2026-11-07T17:20:45.448490+00:00",
+        "coverage": "official_content_fetched",
+        "notes": "Dates record this review, not continuous monitoring or worldwide product testing."
+      },
+      "notes": []
+    }
+  ],
+  "reviewNotes": [
+    "Supplementary source fetch batch was interrupted by user steering; incomplete results were not counted as verification.",
+    "One old Bing URL-submission help URL returned 404 and is omitted from recommended/source URLs; no submission mechanism is asserted from it.",
+    "Search snippets only guided discovery; capability and crawler verification require fetched readable official content.",
+    "Crawlability, indexing, retrieval, citation and recommendation are distinct; this directory promises none of them."
+  ]
+}

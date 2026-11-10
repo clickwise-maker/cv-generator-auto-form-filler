@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#1B4D3E"/>
-  <rect x="2.25" y="2.25" width="27.5" height="27.5" fill="none" stroke="#A68456" stroke-width="0.75"/>
-  <text x="16" y="17.4" text-anchor="middle" dominant-baseline="middle"
-    font-family="Georgia, 'Liberation Serif', 'Times New Roman', Times, serif"
-    font-size="20" fill="#F6F1E8">M</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="FormZalo logo"><rect width="40" height="40" rx="10" fill="#1B4D3E"/><path d="M12 10h13l4 4v16a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2z" fill="#fff"/><path d="M15 17h10M15 21h10M15 25h6" stroke="#1B4D3E" stroke-width="2" stroke-linecap="round"/><circle cx="29" cy="29" r="6" fill="#A68456"/><path d="m26.5 29 1.8 1.8 3.2-3.4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>

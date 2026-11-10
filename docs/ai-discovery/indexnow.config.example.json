@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "endpoint": "https://api.indexnow.org/indexnow",
+  "host": "formzalo.com",
+  "key": null,
+  "keyLocation": null
+}

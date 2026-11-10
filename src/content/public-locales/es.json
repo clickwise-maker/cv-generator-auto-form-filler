@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "templates": "Plantillas",
+    "services": "Planes y disponibilidad",
+    "faq": "Preguntas",
+    "about": "Acerca del producto",
+    "help": "Ayuda"
+  },
+  "openEditor": "Inicia sesión para crear tu CV",
+  "language": "Idioma",
+  "editorNote": "El editor requiere iniciar sesión. El idioma de estas páginas, el editor, el OCR y los encabezados PDF son funciones distintas. Las páginas polacas abren por ahora el editor en inglés.",
+  "contact": "Contacto publicado",
+  "templateAlt": "Vista previa de la plantilla de CV {name}",
+  "faqTitle": "Preguntas frecuentes",
+  "pages": {
+    "home": {
+      "title": "Crea tu CV y descarga un PDF gratis",
+      "description": "Inicia sesión para crear un CV y descargar un PDF a color o sencillo sin marca de agua. Consulta los límites reales de lectura y la disponibilidad del pago.",
+      "h1": "Prepara tu CV y descarga un PDF sin marca de agua",
+      "intro": "Organiza experiencia, formación y habilidades en un perfil. El editor ofrece tres plantillas y dos estilos PDF gratuitos después de iniciar sesión.",
+      "sections": [
+        {
+          "heading": "Revisa tus datos",
+          "body": "Comprueba los valores extraídos antes de aplicarlos. Los datos que faltan se solicitan al usuario, no se inventan."
+        },
+        {
+          "heading": "Conoce los límites",
+          "body": "La lectura de documentos extrae texto y propone campos del perfil. No se ha verificado redacción con un modelo generativo activo, envío automático de candidaturas ni edición de cualquier PDF."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Plantillas de CV: Meridian, Consulate y Atlas",
+      "description": "Compara los tres diseños y los PDF a color y sencillos. Sigue las instrucciones de la empresa, sin promesas de puntuación ATS.",
+      "h1": "Elige el diseño adecuado para tu candidatura",
+      "intro": "Meridian, Consulate y Atlas son diseños existentes del editor. Introduce datos ciertos y respeta el formato solicitado.",
+      "sections": [
+        {
+          "heading": "A color o sencillo",
+          "body": "El PDF a color conserva el diseño. El PDF sencillo incluye el mismo contenido con estilo blanco y negro. Ninguno lleva marca de agua."
+        },
+        {
+          "heading": "Comprueba el archivo",
+          "body": "Abre el PDF y revisa los saltos de página y los caracteres antes de enviarlo. No se han completado las pruebas Unicode para todos los idiomas."
+        }
+      ]
+    },
+    "services": {
+      "title": "PDF gratuitos y disponibilidad de planes de pago",
+      "description": "Los PDF a color y sencillos son gratuitos tras iniciar sesión. La observación pública registrada indicó que el pago del rellenador no estaba disponible.",
+      "h1": "¿Qué es gratis y qué no está listo?",
+      "intro": "El editor actual permite descargar PDF a color y sencillos sin marca de agua tras iniciar sesión. La interfaz gratuita no acredita una descarga Word gratuita.",
+      "sections": [
+        {
+          "heading": "El pago no está listo",
+          "body": "Los planes de formularios existen en el código, pero el 7 de noviembre de 2026 el estado público indicó pago no disponible, modo de prueba activo y ningún proveedor. Comprueba el estado antes de depender de una compra."
+        },
+        {
+          "heading": "Sin promesa de uso ilimitado",
+          "body": "No se encontró una cuota diaria numérica en la ruta directa de PDF del navegador. Eso no significa servicio ilimitado; importan los recursos del dispositivo y los límites de los documentos."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas sobre CV PDF gratuitos y lectura de documentos",
+      "description": "Respuestas sobre inicio de sesión, PDF sin marca de agua, OCR en inglés, límites de archivos y disponibilidad de pago.",
+      "h1": "Conoce lo que hace realmente el producto",
+      "intro": "Estas respuestas describen funciones implementadas y señalan lo que no se ha verificado.",
+      "sections": [
+        {
+          "heading": "Antes de empezar",
+          "body": "Usa solo los datos que quieras incluir en el CV. Revisa las sugerencias y el PDF final."
+        },
+        {
+          "heading": "Los idiomas son capacidades distintas",
+          "body": "Traducir la web no demuestra OCR multilingüe, disponibilidad mundial ni compatibilidad con todos los caracteres en PDF."
+        }
+      ]
+    },
+    "about": {
+      "title": "Acerca de FormZalo",
+      "description": "Una explicación fiel del creador FormZalo, el dominio FormZalo, la asistencia para mapear documentos y sus límites.",
+      "h1": "Un perfil para preparar mejor tu CV",
+      "intro": "El producto utiliza la marca FormZalo en formzalo.com. FormZalo también es un nombre del proyecto; estas páginas no cambian el nombre del editor.",
+      "sections": [
+        {
+          "heading": "Asistencia práctica",
+          "body": "El producto organiza el perfil, muestra plantillas y propone valores del texto para revisión. No se ha verificado una integración activa de un modelo generativo."
+        },
+        {
+          "heading": "Límites claros",
+          "body": "No prometemos empleo, puntuaciones ATS, candidaturas automáticas, escritura en cualquier PDF, posiciones en buscadores ni recomendaciones de asistentes de IA."
+        }
+      ]
+    },
+    "help": {
+      "title": "Ayuda: inicia sesión, lee un documento y descarga tu CV",
+      "description": "Sigue el proceso PDF y consulta el límite de 12 MiB, las dos páginas del PDF escaneado y el OCR en inglés.",
+      "h1": "Prepara y revisa tu CV paso a paso",
+      "intro": "Abre el editor, inicia sesión, introduce datos o lee un documento compatible. Revisa las sugerencias y descarga el PDF a color o sencillo.",
+      "sections": [
+        {
+          "heading": "Límites de lectura",
+          "body": "Se aceptan texto PDF, imágenes compatibles y texto sin formato. El límite es 12 MiB; la alternativa OCR de PDF escaneado lee como máximo dos páginas e inicia el OCR en inglés. Puede requerir descargar recursos."
+        },
+        {
+          "heading": "Si debes corregir el resultado",
+          "body": "Usa una imagen más clara o un PDF con texto y corrige el perfil manualmente. Revisa siempre el archivo descargado y no subas datos innecesarios para tu CV."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "¿Debo iniciar sesión?",
+      "answer": "Sí. El editor actual y los controles de descarga gratuita requieren iniciar sesión."
+    },
+    {
+      "question": "¿El PDF gratuito tiene marca de agua?",
+      "answer": "No. Tras iniciar sesión puedes descargar PDF a color o sencillos sin marca de agua."
+    },
+    {
+      "question": "¿Hay Word gratuito o un CV redactado por IA?",
+      "answer": "La interfaz gratuita muestra estilos PDF, no un botón Word gratuito. No se ha verificado una integración generativa activa para redactar CV."
+    },
+    {
+      "question": "¿Cuáles son los límites de lectura?",
+      "answer": "El archivo puede tener hasta 12 MiB. La alternativa para PDF escaneado lee hasta dos páginas e inicia solo OCR en inglés."
+    },
+    {
+      "question": "¿Puedo comprar un plan de formularios?",
+      "answer": "El 7 de noviembre de 2026 el estado público indicó pago no disponible, modo de prueba activo y ningún proveedor. No afirmamos una compra real completada."
+    }
+  ],
+  "locale": "es",
+  "privacyLabel": "Privacidad (inglés)",
+  "termsLabel": "Condiciones (inglés)",
+  "navLabel": "Navegación principal",
+  "chooseTemplate": "Usar esta plantilla",
+  "breadcrumbLabel": "Ruta de navegación"
+}

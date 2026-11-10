@@ -10,16 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdsDottxtRouteImport } from './routes/ads[.]txt'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as NextStepsRouteImport } from './routes/next-steps'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as LocaleIndexRouteImport } from './routes/$locale.index'
+import { Route as LocalePageRouteImport } from './routes/$locale.$page'
 import { Route as CTokenRouteImport } from './routes/c.$token'
 import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as GuidesSlugRouteImport } from './routes/guides.$slug'
@@ -32,9 +37,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleRoute = LocaleRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdsDottxtRoute = AdsDottxtRouteImport.update({
+  id: '/ads.txt',
+  path: '/ads.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -67,6 +82,11 @@ const RefundPolicyRoute = RefundPolicyRouteImport.update({
   path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -81,6 +101,16 @@ const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocalePageRoute = LocalePageRouteImport.update({
+  id: '/$page',
+  path: '/$page',
+  getParentRoute: () => LocaleRoute,
 } as any)
 const CTokenRoute = CTokenRouteImport.update({
   id: '/c/$token',
@@ -115,18 +145,23 @@ const ApiPaidExportSplatRoute = ApiPaidExportSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale/': typeof LocaleIndexRoute
   '/guides/': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -135,17 +170,21 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale': typeof LocaleIndexRoute
   '/guides': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -154,18 +193,23 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/about': typeof AboutRoute
+  '/ads.txt': typeof AdsDottxtRoute
   '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/next-steps': typeof NextStepsRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/$locale/$page': typeof LocalePageRoute
   '/c/$token': typeof CTokenRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/$locale/': typeof LocaleIndexRoute
   '/guides/': typeof GuidesIndexRoute
   '/api/ad-unlock/$': typeof ApiAdUnlockSplatRoute
   '/api/clients/$': typeof ApiClientsSplatRoute
@@ -175,18 +219,23 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$locale'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
+    | '/reset-password'
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale/'
     | '/guides/'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -195,17 +244,21 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
+    | '/reset-password'
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale'
     | '/guides'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -213,18 +266,23 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$locale'
     | '/about'
+    | '/ads.txt'
     | '/dashboard'
     | '/faq'
     | '/next-steps'
     | '/privacy'
     | '/privacy-policy'
     | '/refund-policy'
+    | '/reset-password'
     | '/services'
     | '/templates'
     | '/terms'
+    | '/$locale/$page'
     | '/c/$token'
     | '/guides/$slug'
+    | '/$locale/'
     | '/guides/'
     | '/api/ad-unlock/$'
     | '/api/clients/$'
@@ -233,13 +291,16 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocaleRoute: typeof LocaleRouteWithChildren
   AboutRoute: typeof AboutRoute
+  AdsDottxtRoute: typeof AdsDottxtRoute
   DashboardRoute: typeof DashboardRoute
   FaqRoute: typeof FaqRoute
   NextStepsRoute: typeof NextStepsRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ServicesRoute: typeof ServicesRoute
   TemplatesRoute: typeof TemplatesRoute
   TermsRoute: typeof TermsRoute
@@ -260,11 +321,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ads.txt': {
+      id: '/ads.txt'
+      path: '/ads.txt'
+      fullPath: '/ads.txt'
+      preLoaderRoute: typeof AdsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -309,6 +384,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -329,6 +411,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/$page': {
+      id: '/$locale/$page'
+      path: '/$page'
+      fullPath: '/$locale/$page'
+      preLoaderRoute: typeof LocalePageRouteImport
+      parentRoute: typeof LocaleRoute
     }
     '/c/$token': {
       id: '/c/$token'
@@ -375,15 +471,31 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface LocaleRouteChildren {
+  LocalePageRoute: typeof LocalePageRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteChildren: LocaleRouteChildren = {
+  LocalePageRoute: LocalePageRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteWithChildren =
+  LocaleRoute._addFileChildren(LocaleRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocaleRoute: LocaleRouteWithChildren,
   AboutRoute: AboutRoute,
+  AdsDottxtRoute: AdsDottxtRoute,
   DashboardRoute: DashboardRoute,
   FaqRoute: FaqRoute,
   NextStepsRoute: NextStepsRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ServicesRoute: ServicesRoute,
   TemplatesRoute: TemplatesRoute,
   TermsRoute: TermsRoute,

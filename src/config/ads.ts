@@ -1,21 +1,41 @@
 /**
  * Advertising configuration. EVERYTHING HERE IS OFF BY DEFAULT.
- * - Replace ADSENSE_PUB_ID with the real "ca-pub-…" id only after AdSense approval,
- *   then set ADS.enabled = true (see research/ADSENSE_APPLICATION.md).
- * - The AdSense <script> is added to <head> only when ADS.enabled is true.
- * - public/ads.txt must be updated with the same publisher id.
+ *
+ * ONE value drives all of AdSense: the publisher id "ca-pub-<digits>".
+ * The one-line change once Wilson has the id: set the build-time env var
+ *     VITE_ADSENSE_CLIENT=ca-pub-1234567890123456
+ * (Cloudflare build env / .env), then rebuild. That single value:
+ *  - loads the AdSense <script> in <head>,
+ *  - adds <meta name="google-adsense-account" content="ca-pub-…"> in <head>,
+ *  - renders the <ins class="adsbygoogle"> units in the allowed slots,
+ *  - makes /ads.txt serve "google.com, pub-…, DIRECT, f08c47fec0942fa0".
+ * While unset/invalid: no script, no meta tag, slots render nothing, /ads.txt is 404.
+ * No publisher id is invented here.
  */
-export const ADSENSE_PUB_ID = "ca-pub-XXXXXXXXXXXXXXXX";
+export const ADSENSE_CLIENT: string = ((import.meta as { env?: Record<string, string | undefined> }).env?.VITE_ADSENSE_CLIENT || "").trim();
+
+const PUB_RE = /^ca-pub-\d{10,20}$/;
+export function adsenseConfigured(client: string = ADSENSE_CLIENT): boolean {
+  return PUB_RE.test(client);
+}
+/** Back-compat alias. */
+export const ADSENSE_PUB_ID = ADSENSE_CLIENT;
+
+/** ads.txt body, or null when no valid publisher id is configured. */
+export function adsTxt(client: string = ADSENSE_CLIENT): string | null {
+  if (!adsenseConfigured(client)) return null;
+  return `google.com, ${client.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`;
+}
 
 export const ADS = {
-  enabled: false,
+  enabled: adsenseConfigured(),
   /** Ad unit ids from AdSense → Ads → By ad unit. Placeholders until approved. */
   slots: {
-    landing: "0000000001",
-    guides: "0000000002",
-    gallery: "0000000003",
-    dashboard: "0000000004",
-    belowPreview: "0000000005",
+    landing: "",
+    guides: "",
+    gallery: "",
+    dashboard: "",
+    belowPreview: "",
   },
 } as const;
 
@@ -57,7 +77,7 @@ const AD_ROUTES: { prefix: string; placements: AdPlacement[] }[] = [
 
 export function adAllowed(pathname: string, placement: AdPlacement): boolean {
   const path = pathname.replace(/\/+$/, "") || "/";
-  if (path === "/") return placement === "landing" || placement === "belowPreview";
+  if (path === "/") return placement === "landing";
   return AD_ROUTES.some((r) => (path === r.prefix || path.startsWith(`${r.prefix}/`)) && r.placements.includes(placement));
 }
 

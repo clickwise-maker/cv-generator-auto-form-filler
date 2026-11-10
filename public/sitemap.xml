@@ -1,23 +1,1191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cvstudio-app.onrender.com/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/services</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/refund-policy</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/privacy-policy</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/services</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/refund-policy</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/privacy</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/terms</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/faq</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/about</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/templates</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/cv-for-freshers</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/cv-vs-resume</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/government-job-forms</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/cover-letter</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/form-mistakes</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/photo-signature-specs</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://cvstudio-app.onrender.com/guides/ats-friendly-cv</loc><lastmod>2026-10-27</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://formzalo.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/en/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/en/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/en/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/hi/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pl/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ar/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/es/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/zh-cn/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ru/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/de/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/fr/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/pt/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/ja/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/templates/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/templates/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/templates/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/templates/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/templates/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/templates/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/templates/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/templates/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/templates/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/templates/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/templates/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/templates/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/templates/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/templates/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/services/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/services/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/services/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/services/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/faq/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/faq/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/faq/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/faq/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/faq/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/faq/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/faq/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/faq/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/faq/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/about/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/about/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/about/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/about/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/about/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/id/help/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://formzalo.com/en/help/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://formzalo.com/hi/help/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://formzalo.com/pl/help/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://formzalo.com/ar/help/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://formzalo.com/es/help/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://formzalo.com/zh-cn/help/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://formzalo.com/ru/help/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://formzalo.com/de/help/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://formzalo.com/fr/help/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://formzalo.com/pt/help/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://formzalo.com/ja/help/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://formzalo.com/id/help/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://formzalo.com/en/help/" />
+  </url>
+  <url>
+    <loc>https://formzalo.com/refund-policy</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/privacy-policy</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/terms</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/cv-for-freshers</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/cv-vs-resume</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/government-job-forms</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/cover-letter</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/form-mistakes</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/photo-signature-specs</loc>
+  </url>
+  <url>
+    <loc>https://formzalo.com/guides/ats-friendly-cv</loc>
+  </url>
 </urlset>

@@ -1,3 +1,4 @@
+import { LegacyBreadcrumbs } from "@/components/content/seo-breadcrumbs";
 import { tr } from "@/lib/i18n/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/site-footer";
@@ -5,8 +6,13 @@ import { SiteFooter } from "@/components/site-footer";
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
     meta: [
-      { title: "Refund Policy — CV Studio" },
-      { name: "description", content: "CV Studio refund policy in English and Hindi." },
+      { title: "Refund Policy — FormZalo" },
+      { name: "description", content: "FormZalo refund policy in English and Hindi." },
+      { property: "og:title", content: "Refund Policy — FormZalo" },
+      { property: "og:description", content: "FormZalo refund policy in English and Hindi." },
+      { property: "og:url", content: "https://formzalo.com/refund-policy" },
+      { name: "twitter:title", content: "Refund Policy — FormZalo" },
+      { name: "twitter:description", content: "FormZalo refund policy in English and Hindi." },
     ],
     links: [
       {
@@ -18,7 +24,7 @@ export const Route = createFileRoute("/refund-policy")({
   component: RefundPolicy,
 });
 
-const EMAIL = "team@clickwisewe24in.we24.in";
+const EMAIL = "team@formzalo.com";
 
 type Section = { title: string; items?: string[]; intro?: string; mail?: boolean };
 type Lang = { id: string; lang: string; heading: string; trial: string; sections: Section[] };
@@ -29,13 +35,13 @@ const CONTENT: Lang[] = [
     id: "en",
     lang: "en",
     heading: "Refund Policy",
-    trial: "Note: CV Studio is currently in trial mode. No real payments are being taken yet.",
+    trial: "Note: FormZalo is currently in trial mode. No real payments are being taken yet.",
     sections: [
       {
-        title: "1. ₹20 one-time clean download (no watermark)",
+        title: "1. ₹20 / $1 Single Use form fill",
         items: [
-          "You can always try the free watermarked download first, so you see exactly what you will get.",
-          "If you paid ₹20 and the PDF/DOCX does not generate, or the download fails because of a technical error on our side, you get a full refund.",
+          "CV downloads are free (no watermark) for logged-in users, so there is nothing to refund for them.",
+          "If you paid ₹20 / $1 and the form fill fails because of a technical error on our side, the credit is returned or you get a full refund.",
         ],
       },
       {
@@ -74,9 +80,9 @@ function RefundPolicy() {
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("CV Studio")}
+            {tr("FormZalo")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
+          <LegacyBreadcrumbs/><h1 className="mt-4 font-serif text-4xl">{tr("Refund Policy")}</h1>
           <p className="mt-2 text-sm text-ink/70">
             {tr("Plain and simple.")}
           </p>
@@ -118,7 +124,7 @@ function RefundPolicy() {
           ))}
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to CV Studio")}
+              {tr("← Back to FormZalo")}
             </Link>
           </p>
         </div>

@@ -1,8 +1,11 @@
+import { LegacyBreadcrumbs } from "./content/seo-breadcrumbs";
+import { ZaloDisclaimer } from "@/components/zalo-disclaimer";
+import { SiteHeader, LogoMark } from "@/components/brand";
 import { tr } from "@/lib/i18n/i18n";
 import { Link } from "@tanstack/react-router";
 import { SiteFooter } from "./site-footer";
 
-export const EMAIL = "team@clickwisewe24in.we24.in";
+export const EMAIL = "team@formzalo.com";
 
 type Sec = [string, string[]];
 export type InfoContent = {
@@ -18,23 +21,24 @@ export type InfoContent = {
 };
 
 export function infoHead(c: InfoContent) {
-  const url = `https://cvstudio-app.onrender.com/${c.slug}`;
+  const url = `https://formzalo.com/${c.slug}`;
   return {
     meta: [
-      { title: `${c.title} — CV Studio` },
+      { title: `${c.title} — FormZalo` },
       { name: "description", content: c.desc },
-      { property: "og:title", content: `CV Studio — ${c.title}` },
+      { property: "og:title", content: `${c.title} — FormZalo` },
       { property: "og:description", content: c.desc },
       { property: "og:url", content: url },
+      { name: "twitter:title", content: `${c.title} — FormZalo` },
+      { name: "twitter:description", content: c.desc },
     ],
     links: [
-      { rel: "canonical", href: url },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap",
       },
     ],
-    scripts: c.faqld ? [{ type: "application/ld+json", children: JSON.stringify(c.faqld) }] : [],
+    scripts: [], // FAQ rich-result markup intentionally not emitted.
   };
 }
 
@@ -71,15 +75,17 @@ function Items({ items, plain }: { items: string[]; plain: boolean }) {
 export function InfoPage({ c }: { c: InfoContent }) {
   return (
     <>
+      <SiteHeader />
       <main className="min-h-screen bg-paper px-4 py-10 text-ink">
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="text-xs uppercase tracking-[0.3em] text-ink/60 hover:text-ink">
-            {tr("CV Studio")}
+            {tr("FormZalo")}
           </Link>
-          <h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
+          <LegacyBreadcrumbs/><h1 className="mt-4 font-serif text-4xl">{tr(c.title)}</h1>
           <p className="mt-2 text-sm text-ink/70">
             {tr(c.lead)}
           </p>
+          {c.slug === "about" || c.slug === "terms" ? <ZaloDisclaimer className="mt-4 rounded-md border border-line bg-sheet px-3 py-2 text-sm" /> : null}
           <section className="mt-8 rounded-lg border border-line bg-sheet p-6">
             {c.en.map(([t, items]) => (
               <div key={t} className="mt-6 first:mt-0">
@@ -90,7 +96,7 @@ export function InfoPage({ c }: { c: InfoContent }) {
           </section>
           <p className="mt-8 text-sm">
             <Link to="/" className="underline">
-              {tr("← Back to CV Studio")}
+              {tr("← Back to FormZalo")}
             </Link>
           </p>
         </div>

@@ -93,7 +93,7 @@ export async function fetchStatus(): Promise<PaywallStatus> {
       maxDownloads: 0,
       policyText: "",
       provider: null,
-      message: "Paid clean exports are not yet available. You can keep editing and download the watermarked preview for free.",
+      message: "Paid form-filler plans are not yet available. CV downloads stay free for logged-in users.",
     };
   }
 }
@@ -151,7 +151,7 @@ export async function openRazorpay(order: PublicOrder, description: string): Pro
       order_id: order.providerOrderId,
       amount: order.amountMinor,
       currency: order.currency,
-      name: "Meridian CV",
+      name: "FormZalo",
       description,
       handler: (r: RazorpayResult) => resolve(r),
       modal: { ondismiss: () => resolve("dismissed") },

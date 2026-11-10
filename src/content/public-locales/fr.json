@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "templates": "Modèles",
+    "services": "Offres et disponibilité",
+    "faq": "Questions fréquentes",
+    "about": "À propos",
+    "help": "Aide"
+  },
+  "openEditor": "Se connecter pour créer son CV",
+  "language": "Langue",
+  "editorNote": "La langue de la page, celle de l’éditeur, la reconnaissance de caractères et les titres du PDF sont des fonctions distinctes ; les caractères du PDF n’ont pas été validés dans toutes les langues.",
+  "contact": "Contact publié",
+  "templateAlt": "Aperçu du modèle de CV {name}",
+  "faqTitle": "Questions fréquentes",
+  "privacyLabel": "Confidentialité (anglais)",
+  "termsLabel": "Conditions (anglais)",
+  "navLabel": "Navigation principale",
+  "chooseTemplate": "Utiliser ce modèle",
+  "pages": {
+    "home": {
+      "title": "Créateur de CV gratuit avec téléchargement PDF",
+      "description": "Connectez-vous pour créer un CV et télécharger un PDF en couleur ou sobre sans filigrane. Consultez les limites de lecture et la disponibilité du paiement.",
+      "h1": "Préparez votre CV, puis téléchargez un PDF",
+      "intro": "Organisez vos expériences, formations et compétences dans un profil structuré. Après connexion, l’éditeur propose trois modèles et deux styles PDF gratuits.",
+      "sections": [
+        {
+          "heading": "Des informations modifiables",
+          "body": "Vérifiez chaque suggestion importée avant de l’appliquer. Les informations manquantes doivent être demandées, pas inventées."
+        },
+        {
+          "heading": "Connaître les possibilités réelles",
+          "body": "La lecture extrait du texte et propose des champs de profil. La rédaction générative, l’envoi automatique de candidatures et la réécriture de n’importe quel PDF ne sont pas établis."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Modèles de CV Meridian, Consulate et Atlas",
+      "description": "Comparez trois mises en page existantes et les styles PDF couleur et sobre gratuits, sans promesse de score ATS.",
+      "h1": "Choisissez une mise en page adaptée à la candidature",
+      "intro": "Meridian, Consulate et Atlas sont disponibles dans l’éditeur. Gardez des informations exactes et respectez le format demandé par l’employeur.",
+      "sections": [
+        {
+          "heading": "En couleur ou sobre",
+          "body": "Le PDF couleur conserve la présentation graphique. Le PDF sobre utilise le noir et blanc avec le même contenu, sans filigrane dans les deux cas."
+        },
+        {
+          "heading": "Contrôlez le fichier exporté",
+          "body": "Ouvrez le PDF et vérifiez les sauts de page et les caractères avant l’envoi. La sortie Unicode n’est pas encore validée dans toutes les langues."
+        }
+      ]
+    },
+    "services": {
+      "title": "PDF gratuits et disponibilité des offres payantes",
+      "description": "Les PDF couleur et sobre sont gratuits après connexion. Le paiement de l’aide aux formulaires était indisponible lors du contrôle daté.",
+      "h1": "Qu’est-ce qui est gratuit ou pas encore prêt ?",
+      "intro": "L’éditeur permet de télécharger deux styles PDF sans filigrane après connexion. L’interface gratuite actuelle ne présente pas de bouton Word gratuit établi.",
+      "sections": [
+        {
+          "heading": "Paiement pas encore disponible",
+          "body": "Le statut public observé le 7 novembre 2026 indiquait un paiement indisponible, un mode d’essai actif et aucun prestataire. Vérifiez de nouveau la disponibilité avant tout achat."
+        },
+        {
+          "heading": "Pas de promesse d’usage illimité",
+          "body": "Aucun quota quotidien chiffré n’a été trouvé dans l’export PDF direct du navigateur. Cela ne signifie pas un service illimité : les limites des documents et de l’appareil restent applicables."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions sur les PDF de CV gratuits et la lecture de documents",
+      "description": "Connexion, PDF sans filigrane, OCR en anglais, limite des fichiers et état observé du paiement.",
+      "h1": "Comprendre les capacités réelles",
+      "intro": "Ces réponses décrivent le fonctionnement existant et signalent explicitement les capacités non vérifiées.",
+      "sections": [
+        {
+          "heading": "Avant de commencer",
+          "body": "N’utilisez que les informations destinées à votre CV. Vérifiez les suggestions extraites et le PDF final."
+        },
+        {
+          "heading": "Ne pas confondre les fonctions",
+          "body": "La traduction du site ne prouve ni un OCR multilingue, ni tous les caractères PDF, ni une disponibilité mondiale."
+        }
+      ]
+    },
+    "about": {
+      "title": "À propos de FormZalo",
+      "description": "Présentation factuelle du créateur de CV FormZalo sur formzalo.com, de ses suggestions de champs et de ses limites.",
+      "h1": "Des informations mieux organisées pour votre CV",
+      "intro": "Le produit existant utilise la marque FormZalo sur formzalo.com. FormZalo est aussi un nom de projet ; ces pages ne renomment pas l’éditeur.",
+      "sections": [
+        {
+          "heading": "Une aide pratique",
+          "body": "L’outil organise le profil, affiche des modèles et propose des champs à partir du texte d’un document, à vérifier par l’utilisateur. Aucune intégration générative active n’a été confirmée."
+        },
+        {
+          "heading": "Des limites explicites",
+          "body": "Aucune garantie d’emploi, de score ATS, de candidature automatique, de réécriture de tout PDF, de classement ou de recommandation par une IA."
+        }
+      ]
+    },
+    "help": {
+      "title": "Aide : connexion, lecture de document et téléchargement du CV",
+      "description": "Suivez le parcours PDF existant : fichiers de 12 MiB maximum, deux pages scannées en repli OCR et reconnaissance en anglais.",
+      "h1": "Préparez et vérifiez votre CV étape par étape",
+      "intro": "Ouvrez l’éditeur, connectez-vous, saisissez vos informations ou lisez un document compatible, vérifiez les suggestions puis téléchargez un PDF couleur ou sobre.",
+      "sections": [
+        {
+          "heading": "Limites de lecture",
+          "body": "Le texte PDF, les images compatibles et le texte brut sont acceptés. La limite est de 12 MiB ; le repli OCR lit au plus deux pages PDF scannées et initialise uniquement l’anglais. Des ressources peuvent nécessiter un téléchargement."
+        },
+        {
+          "heading": "Si le résultat demande des corrections",
+          "body": "Utilisez une image plus nette ou un PDF textuel et corrigez le profil manuellement. Vérifiez le fichier obtenu et n’ajoutez pas d’informations inutiles au CV."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Faut-il se connecter ?",
+      "answer": "Oui. L’éditeur actuel et les commandes de téléchargement gratuit nécessitent une connexion."
+    },
+    {
+      "question": "Les PDF gratuits ont-ils un filigrane ?",
+      "answer": "Non. Après connexion, les PDF couleur et sobre sont téléchargeables sans filigrane."
+    },
+    {
+      "question": "Peut-on obtenir gratuitement un Word ou faire rédiger son CV par une IA ?",
+      "answer": "L’interface gratuite propose des styles PDF, pas un bouton Word gratuit. Aucune intégration générative active de rédaction n’a été vérifiée."
+    },
+    {
+      "question": "Quelles sont les limites de lecture ?",
+      "answer": "Les fichiers sont limités à 12 MiB. Le repli OCR des PDF scannés lit au plus deux pages ; seul l’anglais est initialisé."
+    },
+    {
+      "question": "Peut-on acheter une offre d’aide aux formulaires maintenant ?",
+      "answer": "Le statut public du 7 novembre 2026 indiquait un paiement indisponible, un mode d’essai actif et aucun prestataire. Aucun achat réel réussi n’est revendiqué."
+    }
+  ],
+  "locale": "fr",
+  "breadcrumbLabel": "Fil d’Ariane"
+}

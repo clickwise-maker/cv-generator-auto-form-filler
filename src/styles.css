@@ -5,11 +5,11 @@
   --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   --font-paper: "Libre Baskerville", Georgia, serif;
 
-  --color-paper: #f3eee4;
+  --color-paper: #f6f8f4;
   --color-sheet: #fffdf8;
-  --color-ink: #1c1915;
+  --color-ink: #2a2723;
   --color-muted: #5c554c;
-  --color-line: #e3dacb;
+  --color-line: #dfe6df;
   --color-forest: #1b4d3e;
   --color-forest-deep: #102e26;
   --color-mist: #d7e6de;
@@ -147,4 +147,9 @@
     font: 16pt/1.5 Georgia, serif;
     color: #1c1915;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-poster { display: block; }
 }

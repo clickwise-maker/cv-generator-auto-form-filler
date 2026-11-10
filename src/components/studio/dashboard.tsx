@@ -15,7 +15,7 @@ import { readConsent, RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consen
 // i18n-data:start
 export const DASH_TEXT = {
   title: "Your dashboard",
-  subtitle: "Everything you have created with CV Studio, saved in this browser.",
+  subtitle: "Everything you have created with FormZalo, saved in this browser.",
   guestBadge: "Guest session · saved in this browser",
   cvsMade: "CVs made",
   cvsInProgress: "CVs in progress",
@@ -59,7 +59,7 @@ export const DASH_TEXT = {
   privacyHint: "Your CVs, drafts and plan key are stored only in this browser. You can withdraw consent and delete them at any time.",
   consentGiven: "Consent given",
   deleteClient: "Delete client data",
-  confirmDeleteClient: "Permanently delete this client's details from CV Studio?",
+  confirmDeleteClient: "Permanently delete this client's details from FormZalo?",
   revokeLink: "Revoke share link",
   confirmRevoke: "Revoke the share link? Clients will no longer be able to open it. You can create a new link later.",
   revoked: "Link revoked.",

@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "templates": "Templat",
+    "services": "Paket dan ketersediaan",
+    "faq": "Pertanyaan",
+    "about": "Tentang",
+    "help": "Bantuan"
+  },
+  "openEditor": "Masuk untuk membuat CV",
+  "language": "Bahasa",
+  "editorNote": "Editor saat ini dibuka dalam bahasa Inggris. Bahasa halaman, bahasa editor, OCR, dan judul PDF adalah kemampuan yang berbeda; karakter PDF belum diuji untuk semua bahasa.",
+  "contact": "Kontak yang dipublikasikan",
+  "templateAlt": "Pratinjau templat CV {name}",
+  "faqTitle": "Pertanyaan umum",
+  "privacyLabel": "Privasi (bahasa Inggris)",
+  "termsLabel": "Ketentuan (bahasa Inggris)",
+  "navLabel": "Navigasi utama",
+  "chooseTemplate": "Gunakan templat ini",
+  "pages": {
+    "home": {
+      "title": "Pembuat CV gratis dengan unduhan PDF",
+      "description": "Masuk untuk membuat CV dan mengunduh PDF berwarna atau sederhana tanpa tanda air. Pelajari batas pembacaan dokumen dan status pembayaran.",
+      "h1": "Susun CV, lalu unduh sebagai PDF",
+      "intro": "Atur pengalaman kerja, pendidikan, dan keterampilan dalam profil terstruktur. Setelah masuk, editor menyediakan tiga templat dan dua gaya PDF gratis.",
+      "sections": [
+        {
+          "heading": "Data tetap bisa diedit",
+          "body": "Periksa saran hasil impor sebelum menerapkannya. Informasi yang belum ada perlu ditanyakan, bukan dibuat-buat."
+        },
+        {
+          "heading": "Pahami kemampuan alat",
+          "body": "Pembacaan dokumen mengekstrak teks dan menyarankan kolom profil. Penulisan generatif, pengiriman lamaran otomatis, dan penulisan kembali ke sembarang PDF belum terbukti."
+        }
+      ]
+    },
+    "templates": {
+      "title": "Templat CV Meridian, Consulate, dan Atlas",
+      "description": "Bandingkan tiga tata letak yang tersedia serta gaya PDF berwarna dan sederhana yang gratis, tanpa janji skor ATS.",
+      "h1": "Pilih tata letak sesuai kebutuhan lamaran",
+      "intro": "Meridian, Consulate, dan Atlas tersedia di editor. Gunakan informasi yang benar dan ikuti format yang diminta pemberi kerja.",
+      "sections": [
+        {
+          "heading": "Berwarna atau sederhana",
+          "body": "PDF berwarna mempertahankan desain. PDF sederhana menggunakan hitam putih dengan isi yang sama; keduanya tanpa tanda air."
+        },
+        {
+          "heading": "Periksa hasil ekspor",
+          "body": "Buka PDF dan periksa karakter serta pergantian halaman sebelum mengirimkannya. Keluaran Unicode belum divalidasi untuk semua bahasa."
+        }
+      ]
+    },
+    "services": {
+      "title": "PDF gratis dan ketersediaan paket berbayar",
+      "description": "PDF berwarna dan sederhana gratis setelah masuk. Pembayaran bantuan formulir belum tersedia pada pengamatan yang dicatat.",
+      "h1": "Apa yang gratis dan apa yang belum siap?",
+      "intro": "Editor menyediakan dua gaya PDF tanpa tanda air setelah masuk. Antarmuka gratis saat ini tidak menunjukkan tombol Word gratis yang telah terbukti.",
+      "sections": [
+        {
+          "heading": "Pembayaran belum siap",
+          "body": "Status publik pada 7 November 2026 menunjukkan pembayaran tidak tersedia, mode uji coba aktif, dan tidak ada penyedia. Periksa kembali ketersediaannya sebelum membeli."
+        },
+        {
+          "heading": "Tidak menjanjikan penggunaan tanpa batas",
+          "body": "Tidak ditemukan kuota harian numerik pada ekspor PDF langsung di peramban. Ini bukan berarti layanan tanpa batas; batas dokumen dan sumber daya perangkat tetap berlaku."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Pertanyaan tentang PDF CV gratis dan pembacaan dokumen",
+      "description": "Jawaban tentang masuk akun, PDF tanpa tanda air, OCR bahasa Inggris, batas berkas, dan status pembayaran yang diamati.",
+      "h1": "Kenali kemampuan yang sebenarnya",
+      "intro": "Jawaban ini menjelaskan perilaku yang sudah diterapkan dan menyebutkan kemampuan yang belum diverifikasi.",
+      "sections": [
+        {
+          "heading": "Sebelum memulai",
+          "body": "Gunakan hanya informasi yang ingin dicantumkan dalam CV. Periksa saran hasil ekstraksi dan PDF akhir."
+        },
+        {
+          "heading": "Pisahkan cakupan kemampuan",
+          "body": "Terjemahan situs tidak membuktikan OCR multibahasa, dukungan semua karakter PDF, atau ketersediaan di seluruh dunia."
+        }
+      ]
+    },
+    "about": {
+      "title": "Tentang FormZalo",
+      "description": "Kenali pembuat CV FormZalo di formzalo.com, saran kolom dari dokumen, dan batas kemampuannya.",
+      "h1": "Rapikan informasi untuk menyiapkan CV",
+      "intro": "Produk yang ada menggunakan merek FormZalo pada domain formzalo.com. FormZalo juga digunakan sebagai nama proyek; halaman ini tidak mengganti nama editor.",
+      "sections": [
+        {
+          "heading": "Bantuan praktis",
+          "body": "Alat ini mengatur profil, menampilkan templat, dan menyarankan kolom dari teks dokumen untuk diperiksa pengguna. Integrasi model generatif yang aktif belum dikonfirmasi."
+        },
+        {
+          "heading": "Batas yang jelas",
+          "body": "Tidak ada jaminan pekerjaan, skor ATS, lamaran otomatis, penulisan ke semua PDF, peringkat pencarian, atau rekomendasi AI."
+        }
+      ]
+    },
+    "help": {
+      "title": "Bantuan: masuk, baca dokumen, dan unduh CV",
+      "description": "Ikuti alur PDF yang ada: batas masukan 12 MiB, cadangan OCR maksimal dua halaman PDF pindai, dan OCR bahasa Inggris.",
+      "h1": "Siapkan dan periksa CV langkah demi langkah",
+      "intro": "Buka editor, masuk, isi data atau baca dokumen yang didukung, periksa saran nilainya, lalu unduh PDF berwarna atau sederhana.",
+      "sections": [
+        {
+          "heading": "Batas pembacaan dokumen",
+          "body": "Teks PDF, gambar yang didukung, dan teks biasa dapat dibaca. Batas masukan 12 MiB; OCR cadangan PDF pindai membaca paling banyak dua halaman dan hanya menginisialisasi bahasa Inggris. Sumber daya mungkin perlu diunduh."
+        },
+        {
+          "heading": "Jika hasil perlu diperbaiki",
+          "body": "Gunakan gambar yang lebih jelas atau PDF teks, lalu perbaiki profil secara manual. Periksa berkas unduhan dan jangan unggah informasi yang tidak diperlukan untuk CV."
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "Apakah saya perlu masuk akun?",
+      "answer": "Ya. Editor dan kontrol unduhan gratis saat ini memerlukan masuk akun."
+    },
+    {
+      "question": "Apakah PDF gratis memiliki tanda air?",
+      "answer": "Tidak. Setelah masuk, pengguna dapat mengunduh PDF berwarna dan sederhana tanpa tanda air."
+    },
+    {
+      "question": "Bisakah saya mengunduh Word gratis atau membuat teks CV dengan AI?",
+      "answer": "Antarmuka gratis menyediakan gaya PDF, bukan tombol Word gratis. Integrasi generatif aktif untuk menulis belum diverifikasi."
+    },
+    {
+      "question": "Apa batas pembacaan dokumen?",
+      "answer": "Berkas dibatasi hingga 12 MiB. OCR cadangan PDF pindai membaca maksimal dua halaman dan hanya menginisialisasi bahasa Inggris."
+    },
+    {
+      "question": "Bisakah saya membeli paket bantuan formulir sekarang?",
+      "answer": "Status publik pada 7 November 2026 menunjukkan pembayaran tidak tersedia, mode uji coba aktif, dan tanpa penyedia. Tidak ada klaim pembelian nyata yang berhasil."
+    }
+  ],
+  "locale": "id",
+  "breadcrumbLabel": "Jejak navigasi"
+}

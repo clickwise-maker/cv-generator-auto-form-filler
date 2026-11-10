@@ -6,7 +6,7 @@ import { ConsentNotice } from "@/components/privacy/consent-ui";
 import { RETENTION_DAYS, SUPPORT_EMAIL } from "@/lib/privacy/consent";
 
 export const Route = createFileRoute("/c/$token")({
-  head: () => ({ meta: [{ title: "Share your details · CV Studio" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Share your details · FormZalo" }, { name: "robots", content: "noindex" }] }),
   component: IntakePage,
 });
 
@@ -132,7 +132,7 @@ function IntakePage() {
   return (
     <div className="min-h-screen bg-paper text-ink">
       <header className="border-b border-line px-4 py-3">
-        <p className="font-serif text-lg">{tr("CV Studio")}</p>
+        <p className="font-serif text-lg">{tr("FormZalo")}</p>
         <p className="text-xs text-muted">{tr("Secure client details form")}</p>
       </header>
       <main className="mx-auto max-w-xl px-4 py-6" data-testid="intake">
