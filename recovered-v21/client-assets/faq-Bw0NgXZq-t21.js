@@ -1,0 +1,1 @@
+import{_ as e}from"./i18n-Cw7u_R40-t21.js";import{b as t,v as n}from"./index-DF5lSSg7-t21.js";var r=e();function i(){return(0,r.jsx)(t,{c:n})}export{i as component};

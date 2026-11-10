@@ -1,7 +1,7 @@
 //#region ../repo/node_modules/.nitro/vite/services/ssr/assets/consent-DPmgtzXN.js
 /** DPDP-style consent + local data erase helpers (browser only). Not legal advice. */
 var CONSENT_KEY = "cvstudio.consent.v1";
-var SUPPORT_EMAIL = "partners@formzalo.com";
+var SUPPORT_EMAIL = "team@formzalo.com";
 function readConsent() {
 	try {
 		const v = JSON.parse(localStorage.getItem("cvstudio.consent.v1") ?? "null");

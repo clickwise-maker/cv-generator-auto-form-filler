@@ -2,7 +2,7 @@ import { w as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].
 import { n as SiteFooter } from "./site-footer-CrbBo0PJ.mjs";
 //#region ../repo/node_modules/.nitro/vite/services/ssr/assets/contact-GdUL6iww.js
 var import_jsx_runtime = require_jsx_runtime();
-var EMAIL = "partners@formzalo.com";
+var EMAIL = "team@formzalo.com";
 function ContactPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
 		className: "min-h-screen bg-paper px-4 py-10 text-ink",

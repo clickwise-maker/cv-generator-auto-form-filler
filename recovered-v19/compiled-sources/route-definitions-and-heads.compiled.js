@@ -162,7 +162,7 @@ var c$3 = {
 	],
 	faqld: null
 };
-var EMAIL = "partners@formzalo.com";
+var EMAIL = "team@formzalo.com";
 function infoHead(c) {
 	const url = `https://formzalo.com/${c.slug}`;
 	return {
@@ -431,7 +431,7 @@ var c$2 = {
 				"name": "How do I contact you?",
 				"acceptedAnswer": {
 					"@type": "Answer",
-					"text": "partners@formzalo.com"
+					"text": "team@formzalo.com"
 				}
 			}
 		]
@@ -585,7 +585,7 @@ var JSONLD = [{
 			name: "How do I contact support?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Email partners@formzalo.com. Requests are reviewed within 2 working days."
+				text: "Email team@formzalo.com. Requests are reviewed within 2 working days."
 			}
 		},
 		{
